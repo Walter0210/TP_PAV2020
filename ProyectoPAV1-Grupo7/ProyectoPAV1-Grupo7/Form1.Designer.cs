@@ -33,6 +33,7 @@
             this.lblContrasena = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -66,15 +67,24 @@
             // 
             this.txtUsuario.Location = new System.Drawing.Point(146, 46);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(131, 20);
             this.txtUsuario.TabIndex = 3;
             // 
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(146, 74);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasena.Size = new System.Drawing.Size(131, 20);
             this.txtContrasena.TabIndex = 4;
+            // 
+            // btnIniciarSesion
+            // 
+            this.btnIniciarSesion.Location = new System.Drawing.Point(206, 126);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(85, 23);
+            this.btnIniciarSesion.TabIndex = 5;
+            this.btnIniciarSesion.Text = "Iniciar Sesion";
+            this.btnIniciarSesion.UseVisualStyleBackColor = true;
             // 
             // LogIn
             // 
@@ -82,6 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 161);
             this.ControlBox = false;
+            this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContrasena);
@@ -103,6 +114,7 @@
         private System.Windows.Forms.Label lblContrasena;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Button btnIniciarSesion;
     }
 }
 
