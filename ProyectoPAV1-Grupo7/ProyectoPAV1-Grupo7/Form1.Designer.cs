@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblContrasena = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -40,24 +44,65 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(59, 49);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 1;
+            this.lblUsuario.Text = "Usuario";
+            // 
+            // lblContrasena
+            // 
+            this.lblContrasena.AutoSize = true;
+            this.lblContrasena.Location = new System.Drawing.Point(59, 77);
+            this.lblContrasena.Name = "lblContrasena";
+            this.lblContrasena.Size = new System.Drawing.Size(61, 13);
+            this.lblContrasena.TabIndex = 2;
+            this.lblContrasena.Text = "Contraseña";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(146, 46);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 3;
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(146, 74);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasena.TabIndex = 4;
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 161);
             this.ControlBox = false;
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.lblContrasena);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblContrasena;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContrasena;
     }
 }
 
