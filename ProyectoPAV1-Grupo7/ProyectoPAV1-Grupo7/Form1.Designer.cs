@@ -44,7 +44,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(297, 126);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
@@ -54,7 +54,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(119, 58);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
-            this.lblUsuario.TabIndex = 1;
+            this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "Usuario";
             // 
             // lblContrasena
@@ -63,7 +63,7 @@
             this.lblContrasena.Location = new System.Drawing.Point(119, 86);
             this.lblContrasena.Name = "lblContrasena";
             this.lblContrasena.Size = new System.Drawing.Size(61, 13);
-            this.lblContrasena.TabIndex = 2;
+            this.lblContrasena.TabIndex = 4;
             this.lblContrasena.Text = "Contraseña";
             // 
             // txtUsuario
@@ -71,21 +71,21 @@
             this.txtUsuario.Location = new System.Drawing.Point(206, 55);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(131, 20);
-            this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(206, 83);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(131, 20);
-            this.txtContrasena.TabIndex = 4;
+            this.txtContrasena.TabIndex = 1;
             // 
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.Location = new System.Drawing.Point(206, 126);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(85, 23);
-            this.btnIniciarSesion.TabIndex = 5;
+            this.btnIniciarSesion.TabIndex = 2;
             this.btnIniciarSesion.Text = "Iniciar Sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             // 
