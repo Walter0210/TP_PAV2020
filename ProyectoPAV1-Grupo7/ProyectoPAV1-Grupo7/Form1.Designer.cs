@@ -47,6 +47,7 @@
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblUsuario
             // 
@@ -69,6 +70,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(206, 55);
+            this.txtUsuario.MaxLength = 8;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(131, 20);
             this.txtUsuario.TabIndex = 0;
@@ -76,7 +78,9 @@
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(206, 83);
+            this.txtContrasena.MaxLength = 8;
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(131, 20);
             this.txtContrasena.TabIndex = 1;
             // 
