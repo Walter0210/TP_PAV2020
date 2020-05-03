@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAV1_Grupo7.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +35,9 @@ namespace ProyectoPAV1_Grupo7
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frm_Menu ventana = new frm_Menu();
+            ventana.Show();
+            
         }
     }
 }
