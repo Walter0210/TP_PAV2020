@@ -50,6 +50,10 @@
             this.unidadDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nivelDeUrgeciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.surtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenuLateral.SuspendLayout();
             this.subPanel_producto.SuspendLayout();
             this.subPanel_empleado.SuspendLayout();
@@ -272,10 +276,14 @@
             // aBMToolStripMenuItem
             // 
             this.aBMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soporteToolStripMenuItem});
+            this.soporteToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.surtidorToolStripMenuItem,
+            this.productoToolStripMenuItem,
+            this.estaciónToolStripMenuItem});
             this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
-            this.aBMToolStripMenuItem.Text = "ABM";
+            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.aBMToolStripMenuItem.Text = "Editar";
             // 
             // soporteToolStripMenuItem
             // 
@@ -318,6 +326,29 @@
             this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
             this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // surtidorToolStripMenuItem
+            // 
+            this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
+            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.surtidorToolStripMenuItem.Text = "Surtidor";
+            // 
+            // productoToolStripMenuItem
+            // 
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productoToolStripMenuItem.Text = "Producto";
+            // 
+            // estaciónToolStripMenuItem
+            // 
+            this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
+            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estaciónToolStripMenuItem.Text = "Estación";
             // 
             // frm_Menu
             // 
@@ -367,5 +398,9 @@
         private System.Windows.Forms.ToolStripMenuItem unidadDeMedidaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nivelDeUrgeciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeDocumentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem surtidorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estaciónToolStripMenuItem;
     }
 }
