@@ -36,6 +36,7 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRegistrarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(119, 58);
+            this.lblUsuario.Location = new System.Drawing.Point(96, 58);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 5;
@@ -61,7 +62,7 @@
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(119, 86);
+            this.lblContrasena.Location = new System.Drawing.Point(96, 86);
             this.lblContrasena.Name = "lblContrasena";
             this.lblContrasena.Size = new System.Drawing.Size(61, 13);
             this.lblContrasena.TabIndex = 4;
@@ -69,19 +70,19 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(206, 55);
+            this.txtUsuario.Location = new System.Drawing.Point(176, 55);
             this.txtUsuario.MaxLength = 8;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(131, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(196, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(206, 83);
+            this.txtContrasena.Location = new System.Drawing.Point(176, 83);
             this.txtContrasena.MaxLength = 8;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(131, 20);
+            this.txtContrasena.Size = new System.Drawing.Size(196, 20);
             this.txtContrasena.TabIndex = 1;
             // 
             // btnIniciarSesion
@@ -96,19 +97,29 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 55);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 103);
+            this.pictureBox1.Size = new System.Drawing.Size(51, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // btnRegistrarUsuario
+            // 
+            this.btnRegistrarUsuario.Location = new System.Drawing.Point(99, 125);
+            this.btnRegistrarUsuario.Name = "btnRegistrarUsuario";
+            this.btnRegistrarUsuario.Size = new System.Drawing.Size(98, 23);
+            this.btnRegistrarUsuario.TabIndex = 7;
+            this.btnRegistrarUsuario.Text = "Registar Usuario";
+            this.btnRegistrarUsuario.UseVisualStyleBackColor = true;
             // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 161);
+            this.Controls.Add(this.btnRegistrarUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContrasena);
@@ -136,6 +147,7 @@
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnRegistrarUsuario;
     }
 }
 
