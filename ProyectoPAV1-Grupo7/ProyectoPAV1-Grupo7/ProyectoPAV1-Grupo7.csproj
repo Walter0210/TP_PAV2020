@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ABMs\frm_ABMEstacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABMs\frm_ABMEstacion.Designer.cs">
+      <DependentUpon>frm_ABMEstacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frm_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABMs\frm_ABMEstacion.resx">
+      <DependentUpon>frm_ABMEstacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Empleado.resx">
       <DependentUpon>frm_Empleado.cs</DependentUpon>

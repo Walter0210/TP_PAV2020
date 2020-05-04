@@ -361,7 +361,8 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Menu";
-            this.Text = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.frm_Menu_Load);
             this.panelMenuLateral.ResumeLayout(false);
             this.subPanel_producto.ResumeLayout(false);
