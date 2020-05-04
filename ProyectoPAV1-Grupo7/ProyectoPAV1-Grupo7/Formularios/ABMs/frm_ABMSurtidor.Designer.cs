@@ -35,6 +35,7 @@
             this.cmbCuilEstacion = new System.Windows.Forms.ComboBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.cmbTipoCombustible = new System.Windows.Forms.ComboBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,11 +98,22 @@
             this.cmbTipoCombustible.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoCombustible.TabIndex = 6;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(416, 307);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 7;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frm_ABMSurtidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.cmbTipoCombustible);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.cmbCuilEstacion);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.ComboBox cmbCuilEstacion;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.ComboBox cmbTipoCombustible;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

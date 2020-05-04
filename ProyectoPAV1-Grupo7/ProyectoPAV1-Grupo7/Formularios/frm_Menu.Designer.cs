@@ -41,7 +41,6 @@
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_empleado = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +53,7 @@
             this.surtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenuLateral.SuspendLayout();
             this.subPanel_producto.SuspendLayout();
             this.subPanel_empleado.SuspendLayout();
@@ -253,16 +253,6 @@
             this.panelLogo.Size = new System.Drawing.Size(188, 77);
             this.panelLogo.TabIndex = 2;
             // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(188, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(485, 454);
-            this.panelChildForm.TabIndex = 2;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -337,18 +327,31 @@
             this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
             this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.surtidorToolStripMenuItem.Text = "Surtidor";
+            this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productoToolStripMenuItem.Text = "Producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // estaciónToolStripMenuItem
             // 
             this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
             this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estaciónToolStripMenuItem.Text = "Estación";
+            this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(188, 0);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(485, 454);
+            this.panelChildForm.TabIndex = 2;
             // 
             // frm_Menu
             // 

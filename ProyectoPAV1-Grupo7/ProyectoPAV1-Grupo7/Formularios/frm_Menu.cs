@@ -113,5 +113,23 @@ namespace ProyectoPAV1_Grupo7.Formularios
             childForm.BringToFront();
             childForm.Show();
         }
+
+        private void surtidorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_ABMSurtidor frm_ABMSurtidor = new ABMs.frm_ABMSurtidor();
+            frm_ABMSurtidor.ShowDialog();
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_ABMProducto frm_ABMProducto = new ABMs.frm_ABMProducto();
+            frm_ABMProducto.ShowDialog();
+        }
+
+        private void estaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.frm_ABMEstacion frm_ABMEstacion = new frm_ABMEstacion();
+            frm_ABMEstacion.ShowDialog();
+        }
     }
 }

@@ -39,5 +39,26 @@ namespace ProyectoPAV1_Grupo7
             ventana.Show();
             
         }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            if (txtBoxUsuario.Text == "")
+            {
+                MessageBox.Show("Ingrese un Usuario");
+                txtBoxUsuario.Focus();
+            }
+            else if (txtBoxContrasena.Text == "")
+            {
+                MessageBox.Show("Ingrese una contraseña!");
+                txtBoxContrasena.Focus();
+            }
+            else
+            {
+                this.Hide();
+                frm_Menu menu = new frm_Menu();
+                menu.ShowDialog();
+
+            }
+        }
     }
 }

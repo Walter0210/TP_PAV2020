@@ -38,6 +38,7 @@
             this.txtBoxRazonSocial = new System.Windows.Forms.TextBox();
             this.txtBoxCalle = new System.Windows.Forms.TextBox();
             this.txtBoxNumero = new System.Windows.Forms.TextBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCuit
@@ -95,6 +96,7 @@
             // txtBoxCuit
             // 
             this.txtBoxCuit.Location = new System.Drawing.Point(110, 50);
+            this.txtBoxCuit.MaxLength = 11;
             this.txtBoxCuit.Name = "txtBoxCuit";
             this.txtBoxCuit.Size = new System.Drawing.Size(100, 20);
             this.txtBoxCuit.TabIndex = 6;
@@ -102,6 +104,7 @@
             // txtBoxRazonSocial
             // 
             this.txtBoxRazonSocial.Location = new System.Drawing.Point(110, 76);
+            this.txtBoxRazonSocial.MaxLength = 25;
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
             this.txtBoxRazonSocial.Size = new System.Drawing.Size(100, 20);
             this.txtBoxRazonSocial.TabIndex = 7;
@@ -109,6 +112,7 @@
             // txtBoxCalle
             // 
             this.txtBoxCalle.Location = new System.Drawing.Point(110, 102);
+            this.txtBoxCalle.MaxLength = 32;
             this.txtBoxCalle.Name = "txtBoxCalle";
             this.txtBoxCalle.Size = new System.Drawing.Size(100, 20);
             this.txtBoxCalle.TabIndex = 8;
@@ -116,15 +120,27 @@
             // txtBoxNumero
             // 
             this.txtBoxNumero.Location = new System.Drawing.Point(110, 128);
+            this.txtBoxNumero.MaxLength = 5;
             this.txtBoxNumero.Name = "txtBoxNumero";
             this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
             this.txtBoxNumero.TabIndex = 9;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(394, 285);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frm_ABMEstacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCalle);
             this.Controls.Add(this.txtBoxRazonSocial);
@@ -154,5 +170,6 @@
         private System.Windows.Forms.TextBox txtBoxRazonSocial;
         private System.Windows.Forms.TextBox txtBoxCalle;
         private System.Windows.Forms.TextBox txtBoxNumero;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
