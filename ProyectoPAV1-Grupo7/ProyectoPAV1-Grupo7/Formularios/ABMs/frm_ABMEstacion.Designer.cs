@@ -43,7 +43,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(50, 130);
+            this.lblCuit.Location = new System.Drawing.Point(12, 53);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(35, 13);
             this.lblCuit.TabIndex = 0;
@@ -52,7 +52,7 @@
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(50, 153);
+            this.lblRazonSocial.Location = new System.Drawing.Point(12, 79);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(73, 13);
             this.lblRazonSocial.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblCalle
             // 
             this.lblCalle.AutoSize = true;
-            this.lblCalle.Location = new System.Drawing.Point(50, 178);
+            this.lblCalle.Location = new System.Drawing.Point(12, 105);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(30, 13);
             this.lblCalle.TabIndex = 2;
@@ -70,7 +70,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(50, 202);
+            this.lblNumero.Location = new System.Drawing.Point(12, 131);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 3;
@@ -79,7 +79,7 @@
             // lblFechaHabilitacion
             // 
             this.lblFechaHabilitacion.AutoSize = true;
-            this.lblFechaHabilitacion.Location = new System.Drawing.Point(50, 233);
+            this.lblFechaHabilitacion.Location = new System.Drawing.Point(12, 160);
             this.lblFechaHabilitacion.Name = "lblFechaHabilitacion";
             this.lblFechaHabilitacion.Size = new System.Drawing.Size(73, 13);
             this.lblFechaHabilitacion.TabIndex = 4;
@@ -87,44 +87,44 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(212, 233);
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 154);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // txtBoxCuit
             // 
-            this.txtBoxCuit.Location = new System.Drawing.Point(212, 123);
+            this.txtBoxCuit.Location = new System.Drawing.Point(110, 50);
             this.txtBoxCuit.Name = "txtBoxCuit";
             this.txtBoxCuit.Size = new System.Drawing.Size(100, 20);
             this.txtBoxCuit.TabIndex = 6;
             // 
             // txtBoxRazonSocial
             // 
-            this.txtBoxRazonSocial.Location = new System.Drawing.Point(212, 150);
+            this.txtBoxRazonSocial.Location = new System.Drawing.Point(110, 76);
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
             this.txtBoxRazonSocial.Size = new System.Drawing.Size(100, 20);
             this.txtBoxRazonSocial.TabIndex = 7;
             // 
             // txtBoxCalle
             // 
-            this.txtBoxCalle.Location = new System.Drawing.Point(212, 178);
+            this.txtBoxCalle.Location = new System.Drawing.Point(110, 102);
             this.txtBoxCalle.Name = "txtBoxCalle";
             this.txtBoxCalle.Size = new System.Drawing.Size(100, 20);
             this.txtBoxCalle.TabIndex = 8;
             // 
             // txtBoxNumero
             // 
-            this.txtBoxNumero.Location = new System.Drawing.Point(212, 204);
+            this.txtBoxNumero.Location = new System.Drawing.Point(110, 128);
             this.txtBoxNumero.Name = "txtBoxNumero";
-            this.txtBoxNumero.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
             this.txtBoxNumero.TabIndex = 9;
             // 
             // frm_ABMEstacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 561);
+            this.ClientSize = new System.Drawing.Size(684, 361);
             this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCalle);
             this.Controls.Add(this.txtBoxRazonSocial);

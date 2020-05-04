@@ -42,7 +42,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(297, 126);
+            this.btnCerrar.Location = new System.Drawing.Point(286, 116);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 3;
@@ -53,7 +53,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(96, 58);
+            this.lblUsuario.Location = new System.Drawing.Point(85, 39);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 5;
@@ -62,7 +62,7 @@
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(96, 86);
+            this.lblContrasena.Location = new System.Drawing.Point(85, 67);
             this.lblContrasena.Name = "lblContrasena";
             this.lblContrasena.Size = new System.Drawing.Size(61, 13);
             this.lblContrasena.TabIndex = 4;
@@ -70,7 +70,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(176, 55);
+            this.txtUsuario.Location = new System.Drawing.Point(165, 36);
             this.txtUsuario.MaxLength = 8;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(196, 20);
@@ -78,7 +78,7 @@
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(176, 83);
+            this.txtContrasena.Location = new System.Drawing.Point(165, 64);
             this.txtContrasena.MaxLength = 8;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
@@ -87,7 +87,7 @@
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(206, 126);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(195, 116);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(85, 23);
             this.btnIniciarSesion.TabIndex = 2;
@@ -97,7 +97,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(35, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +107,7 @@
             // 
             // btnRegistrarUsuario
             // 
-            this.btnRegistrarUsuario.Location = new System.Drawing.Point(99, 125);
+            this.btnRegistrarUsuario.Location = new System.Drawing.Point(88, 116);
             this.btnRegistrarUsuario.Name = "btnRegistrarUsuario";
             this.btnRegistrarUsuario.Size = new System.Drawing.Size(98, 23);
             this.btnRegistrarUsuario.TabIndex = 7;

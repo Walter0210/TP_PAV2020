@@ -93,6 +93,12 @@
     <EmbeddedResource Include="Formularios\ABMs\frm_ABMEstacion.resx">
       <DependentUpon>frm_ABMEstacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABMs\frm_ABMProducto.resx">
+      <DependentUpon>frm_ABMProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABMs\frm_ABMSurtidor.resx">
+      <DependentUpon>frm_ABMSurtidor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Empleado.resx">
       <DependentUpon>frm_Empleado.cs</DependentUpon>
     </EmbeddedResource>
