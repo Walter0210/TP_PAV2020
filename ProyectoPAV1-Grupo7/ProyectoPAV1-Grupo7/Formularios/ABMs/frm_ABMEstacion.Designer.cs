@@ -237,6 +237,7 @@
             this.Controls.Add(this.lblCuit);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ABMEstacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Estación de Servicio";
             this.ResumeLayout(false);
             this.PerformLayout();
