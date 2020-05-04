@@ -122,6 +122,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frm_ABMSurtidor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ABMSurtidor";
             this.ResumeLayout(false);
             this.PerformLayout();

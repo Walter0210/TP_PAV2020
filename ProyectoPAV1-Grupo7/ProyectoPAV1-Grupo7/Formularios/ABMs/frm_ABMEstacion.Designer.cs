@@ -152,6 +152,7 @@
             this.Controls.Add(this.lblRazonSocial);
             this.Controls.Add(this.lblCuit);
             this.Name = "frm_ABMEstacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Estación de Servicio";
             this.ResumeLayout(false);
             this.PerformLayout();
