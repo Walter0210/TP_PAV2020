@@ -41,5 +41,10 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
 
         }
+
+        private void txtBoxCalle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
