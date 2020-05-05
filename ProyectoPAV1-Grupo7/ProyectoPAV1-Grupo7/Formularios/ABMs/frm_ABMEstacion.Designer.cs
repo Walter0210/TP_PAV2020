@@ -38,18 +38,14 @@
             this.txtBoxCalle = new System.Windows.Forms.TextBox();
             this.txtBoxNumero = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrEstacion = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCuit
@@ -82,20 +78,18 @@
             // lblFechaHabilitacion
             // 
             this.lblFechaHabilitacion.AutoSize = true;
-            this.lblFechaHabilitacion.Location = new System.Drawing.Point(14, 218);
+            this.lblFechaHabilitacion.Location = new System.Drawing.Point(12, 143);
             this.lblFechaHabilitacion.Name = "lblFechaHabilitacion";
             this.lblFechaHabilitacion.Size = new System.Drawing.Size(73, 13);
             this.lblFechaHabilitacion.TabIndex = 4;
             this.lblFechaHabilitacion.Text = "Fecha de Alta";
-            this.lblFechaHabilitacion.Click += new System.EventHandler(this.lblFechaHabilitacion_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 212);
+            this.dateTimePicker1.Location = new System.Drawing.Point(135, 136);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txtBoxCuit
             // 
@@ -120,7 +114,6 @@
             this.txtBoxCalle.Name = "txtBoxCalle";
             this.txtBoxCalle.Size = new System.Drawing.Size(200, 20);
             this.txtBoxCalle.TabIndex = 8;
-            this.txtBoxCalle.TextChanged += new System.EventHandler(this.txtBoxCalle_TextChanged);
             // 
             // txtBoxNumero
             // 
@@ -132,22 +125,13 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(260, 326);
+            this.btnCerrar.Location = new System.Drawing.Point(260, 387);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(135, 134);
-            this.textBox1.MaxLength = 5;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblNumero
             // 
@@ -158,61 +142,23 @@
             this.lblNumero.TabIndex = 3;
             this.lblNumero.Text = "Número";
             // 
-            // label1
+            // dgrEstacion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Provincia";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Localidad";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Barrio";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(135, 160);
-            this.textBox2.MaxLength = 5;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(135, 186);
-            this.textBox3.MaxLength = 5;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(372, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(300, 337);
-            this.dataGridView1.TabIndex = 17;
+            this.dgrEstacion.AllowUserToAddRows = false;
+            this.dgrEstacion.AllowUserToDeleteRows = false;
+            this.dgrEstacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrEstacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cuit,
+            this.Nombre});
+            this.dgrEstacion.Location = new System.Drawing.Point(420, 12);
+            this.dgrEstacion.Name = "dgrEstacion";
+            this.dgrEstacion.ReadOnly = true;
+            this.dgrEstacion.Size = new System.Drawing.Size(244, 398);
+            this.dgrEstacion.TabIndex = 17;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(17, 326);
+            this.btnGuardar.Location = new System.Drawing.Point(10, 387);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 18;
@@ -221,7 +167,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(98, 326);
+            this.btnModificar.Location = new System.Drawing.Point(91, 387);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 19;
@@ -230,28 +176,36 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(179, 326);
+            this.btnEliminar.Location = new System.Drawing.Point(172, 387);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // Cuit
+            // 
+            this.Cuit.DataPropertyName = "CUIT";
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "razonSocial";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
             // frm_ABMEstacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 361);
+            this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgrEstacion);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCalle);
@@ -266,7 +220,8 @@
             this.Name = "frm_ABMEstacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Estación de Servicio";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frm_ABMEstacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,16 +239,12 @@
         private System.Windows.Forms.TextBox txtBoxCalle;
         private System.Windows.Forms.TextBox txtBoxNumero;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrEstacion;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

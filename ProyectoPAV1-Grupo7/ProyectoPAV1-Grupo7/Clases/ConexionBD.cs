@@ -79,7 +79,7 @@ namespace ProyectoPAV1_Grupo7.Clases
             DataTable tabla = new DataTable();
             cmd.CommandText = sql;
             try
-            {
+            { 
                 tabla.Load(cmd.ExecuteReader());
             }
             catch (Exception e)

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ProyectoPAV1_Grupo7.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,30 +23,33 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             this.Close();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        //Inicio de VENTANA
+        private void frm_ABMEstacion_Load(object sender, EventArgs e)
         {
-
+            LimpiarCampos();
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+            CargarGrilla();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        //FUNCION LIMPIAR CAMPOS
+        private void LimpiarCampos()
         {
-
+            txtBoxCalle.Text = "";
+            txtBoxCuit.Text = "";
+            txtBoxNumero.Text = "";
+            txtBoxRazonSocial.Text = "";
         }
 
-        private void lblFechaHabilitacion_Click(object sender, EventArgs e)
+        //FUNCION CARGAR GRILLA
+
+        private void CargarGrilla()
         {
 
+            string sql = "SELECT CUIT , razonSocial FROM Estacion";
+            DataTable tabla = consulta(sql);
+            dgrEstacion.DataSource = tabla;
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxCalle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

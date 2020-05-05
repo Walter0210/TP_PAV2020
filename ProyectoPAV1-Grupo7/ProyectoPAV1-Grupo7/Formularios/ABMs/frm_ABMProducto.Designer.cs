@@ -147,6 +147,7 @@
             // 
             // txtBoxProducto
             // 
+            this.txtBoxProducto.Enabled = false;
             this.txtBoxProducto.Location = new System.Drawing.Point(145, 52);
             this.txtBoxProducto.Name = "txtBoxProducto";
             this.txtBoxProducto.Size = new System.Drawing.Size(200, 20);

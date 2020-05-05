@@ -22,7 +22,7 @@ namespace ProyectoPAV1_Grupo7.Clases
             StockActual = stockActual;
             PrecioCompra = precioCompra;
             PrecioVenta = precioVenta;
-            UltimaFechaActStock = ultimaFechaActStock
+            UltimaFechaActStock = ultimaFechaActStock;
 
         }
 

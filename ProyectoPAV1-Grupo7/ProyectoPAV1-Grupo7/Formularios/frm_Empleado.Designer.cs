@@ -60,7 +60,7 @@
             // textBox_legajo
             // 
             this.textBox_legajo.Location = new System.Drawing.Point(183, 76);
-            this.textBox_legajo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_legajo.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_legajo.Name = "textBox_legajo";
             this.textBox_legajo.Size = new System.Drawing.Size(161, 20);
             this.textBox_legajo.TabIndex = 1;
@@ -68,7 +68,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(183, 115);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(161, 20);
             this.textBox1.TabIndex = 3;
@@ -86,7 +86,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(183, 149);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(161, 20);
             this.textBox2.TabIndex = 5;
@@ -104,7 +104,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(183, 180);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(161, 20);
             this.textBox3.TabIndex = 7;
@@ -138,7 +138,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
             this.dateTimePicker1.TabIndex = 20;
@@ -164,7 +164,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(183, 283);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(161, 20);
             this.dateTimePicker2.TabIndex = 12;
@@ -172,7 +172,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(183, 315);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(161, 20);
             this.textBox4.TabIndex = 15;
@@ -191,15 +191,15 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(183, 212);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(161, 21);
             this.comboBox1.TabIndex = 16;
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(362, 369);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_exit.Location = new System.Drawing.Point(239, 369);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(67, 26);
             this.btn_exit.TabIndex = 17;
@@ -209,8 +209,8 @@
             // btn_save
             // 
             this.btn_save.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_save.Location = new System.Drawing.Point(286, 369);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_save.Location = new System.Drawing.Point(101, 369);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(62, 26);
             this.btn_save.TabIndex = 18;
@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 561);
+            this.ClientSize = new System.Drawing.Size(818, 561);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.comboBox1);
@@ -242,7 +242,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_legajo);
             this.Controls.Add(this.lbl_legajo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Empleado";
             this.Text = "frm_Empleado";
             this.ResumeLayout(false);
