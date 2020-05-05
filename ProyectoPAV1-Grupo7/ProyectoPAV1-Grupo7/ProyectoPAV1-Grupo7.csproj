@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
     <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Estado.cs" />
+    <Compile Include="Clases\NivelUrgencia.cs" />
+    <Compile Include="Clases\Surtidor.cs" />
+    <Compile Include="Clases\TipoCombustible.cs" />
+    <Compile Include="Clases\TipoDocumento.cs" />
+    <Compile Include="Clases\UnidadMedida.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
