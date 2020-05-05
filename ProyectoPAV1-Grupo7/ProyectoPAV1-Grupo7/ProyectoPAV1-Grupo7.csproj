@@ -52,6 +52,7 @@
     <Compile Include="Clases\Estacion.cs" />
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\NivelUrgencia.cs" />
+    <Compile Include="Clases\OrdenPago.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Surtidor.cs" />
     <Compile Include="Clases\TipoCombustible.cs" />

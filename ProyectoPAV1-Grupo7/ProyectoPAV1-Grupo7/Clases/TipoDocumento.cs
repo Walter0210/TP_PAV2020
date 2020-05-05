@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPAV1_Grupo7.Clases
 {
-    class TipoDocumento
+    public class TipoDocumento
     {
         private int idEstado;
         private string nombre;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPAV1_Grupo7.Clases
 {
-    class Surtidor
+    public class Surtidor
     {
         private int nroSurtidor;
         private int cuit;

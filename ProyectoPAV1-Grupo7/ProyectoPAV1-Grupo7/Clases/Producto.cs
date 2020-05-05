@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPAV1_Grupo7.Clases
 {
-    class Producto
+    public class Producto
     {
         private int codigo;
         private string descripcion;

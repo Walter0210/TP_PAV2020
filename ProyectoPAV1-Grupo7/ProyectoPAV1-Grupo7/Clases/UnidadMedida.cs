@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPAV1_Grupo7.Clases
 {
-    class UnidadMedida
+    public class UnidadMedida
     {
         private int idEstado;
         private string nombre;

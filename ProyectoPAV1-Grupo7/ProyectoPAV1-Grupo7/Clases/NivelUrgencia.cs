@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPAV1_Grupo7.Clases
 {
-    class NivelUrgencia
+    public class NivelUrgencia
     {
         private int idEstado;
         private string nombre;
