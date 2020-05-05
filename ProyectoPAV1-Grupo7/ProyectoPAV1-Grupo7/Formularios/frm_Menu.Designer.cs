@@ -299,6 +299,7 @@
             this.tipoDeCombustibleToolStripMenuItem.Name = "tipoDeCombustibleToolStripMenuItem";
             this.tipoDeCombustibleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tipoDeCombustibleToolStripMenuItem.Text = "Tipo de Combustible";
+            this.tipoDeCombustibleToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCombustibleToolStripMenuItem_Click);
             // 
             // unidadDeMedidaToolStripMenuItem
             // 

@@ -43,7 +43,8 @@ namespace ProyectoPAV1_Grupo7.Formularios
             {
                 hideSubMenu();
                 subMenu.Visible = true;
-            } else
+            } 
+            else
             {
                 subMenu.Visible = false;
             }
@@ -137,6 +138,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
             Formularios.ABMs.frm_AMBSoporte frm_AMBSoporte = new ABMs.frm_AMBSoporte();
             frm_AMBSoporte.ShowDialog();
          
+        }
+
+        private void tipoDeCombustibleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_AMBSoporte frm_AMBSoporte = new ABMs.frm_AMBSoporte();
+            frm_AMBSoporte.ShowDialog();
         }
     }
 }
