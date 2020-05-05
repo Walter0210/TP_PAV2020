@@ -32,19 +32,20 @@
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblFechaHabilitacion = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtBoxCuit = new System.Windows.Forms.TextBox();
+            this.dtFechaAta = new System.Windows.Forms.DateTimePicker();
             this.txtBoxRazonSocial = new System.Windows.Forms.TextBox();
             this.txtBoxCalle = new System.Windows.Forms.TextBox();
-            this.txtBoxNumero = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblNumero = new System.Windows.Forms.Label();
             this.dgrEstacion = new System.Windows.Forms.DataGridView();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bynLimpiarDatos = new System.Windows.Forms.Button();
+            this.txtBoxCuit = new System.Windows.Forms.MaskedTextBox();
+            this.txtBoxNumero = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,26 +79,18 @@
             // lblFechaHabilitacion
             // 
             this.lblFechaHabilitacion.AutoSize = true;
-            this.lblFechaHabilitacion.Location = new System.Drawing.Point(12, 143);
+            this.lblFechaHabilitacion.Location = new System.Drawing.Point(14, 143);
             this.lblFechaHabilitacion.Name = "lblFechaHabilitacion";
             this.lblFechaHabilitacion.Size = new System.Drawing.Size(73, 13);
             this.lblFechaHabilitacion.TabIndex = 4;
             this.lblFechaHabilitacion.Text = "Fecha de Alta";
             // 
-            // dateTimePicker1
+            // dtFechaAta
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 136);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // txtBoxCuit
-            // 
-            this.txtBoxCuit.Location = new System.Drawing.Point(135, 30);
-            this.txtBoxCuit.MaxLength = 11;
-            this.txtBoxCuit.Name = "txtBoxCuit";
-            this.txtBoxCuit.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxCuit.TabIndex = 6;
+            this.dtFechaAta.Location = new System.Drawing.Point(136, 136);
+            this.dtFechaAta.Name = "dtFechaAta";
+            this.dtFechaAta.Size = new System.Drawing.Size(200, 20);
+            this.dtFechaAta.TabIndex = 5;
             // 
             // txtBoxRazonSocial
             // 
@@ -114,14 +107,6 @@
             this.txtBoxCalle.Name = "txtBoxCalle";
             this.txtBoxCalle.Size = new System.Drawing.Size(200, 20);
             this.txtBoxCalle.TabIndex = 8;
-            // 
-            // txtBoxNumero
-            // 
-            this.txtBoxNumero.Location = new System.Drawing.Point(135, 108);
-            this.txtBoxNumero.MaxLength = 5;
-            this.txtBoxNumero.Name = "txtBoxNumero";
-            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxNumero.TabIndex = 9;
             // 
             // btnCerrar
             // 
@@ -150,11 +135,25 @@
             this.dgrEstacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cuit,
             this.Nombre});
-            this.dgrEstacion.Location = new System.Drawing.Point(420, 12);
+            this.dgrEstacion.Location = new System.Drawing.Point(475, 12);
             this.dgrEstacion.Name = "dgrEstacion";
             this.dgrEstacion.ReadOnly = true;
             this.dgrEstacion.Size = new System.Drawing.Size(244, 398);
             this.dgrEstacion.TabIndex = 17;
+            // 
+            // Cuit
+            // 
+            this.Cuit.DataPropertyName = "CUIT";
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "razonSocial";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // btnGuardar
             // 
@@ -164,6 +163,7 @@
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnModificar
             // 
@@ -183,35 +183,48 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // Cuit
+            // bynLimpiarDatos
             // 
-            this.Cuit.DataPropertyName = "CUIT";
-            this.Cuit.HeaderText = "Cuit";
-            this.Cuit.Name = "Cuit";
-            this.Cuit.ReadOnly = true;
+            this.bynLimpiarDatos.Location = new System.Drawing.Point(371, 30);
+            this.bynLimpiarDatos.Name = "bynLimpiarDatos";
+            this.bynLimpiarDatos.Size = new System.Drawing.Size(75, 42);
+            this.bynLimpiarDatos.TabIndex = 30;
+            this.bynLimpiarDatos.Text = "Limpiar Datos";
+            this.bynLimpiarDatos.UseVisualStyleBackColor = true;
+            this.bynLimpiarDatos.Click += new System.EventHandler(this.bynLimpiarDatos_Click);
             // 
-            // Nombre
+            // txtBoxCuit
             // 
-            this.Nombre.DataPropertyName = "razonSocial";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.txtBoxCuit.Location = new System.Drawing.Point(135, 30);
+            this.txtBoxCuit.Mask = " 9999999999999";
+            this.txtBoxCuit.Name = "txtBoxCuit";
+            this.txtBoxCuit.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxCuit.TabIndex = 31;
+            // 
+            // txtBoxNumero
+            // 
+            this.txtBoxNumero.Location = new System.Drawing.Point(136, 108);
+            this.txtBoxNumero.Mask = "99999999999999";
+            this.txtBoxNumero.Name = "txtBoxNumero";
+            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxNumero.TabIndex = 32;
             // 
             // frm_ABMEstacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 422);
+            this.Controls.Add(this.txtBoxNumero);
+            this.Controls.Add(this.txtBoxCuit);
+            this.Controls.Add(this.bynLimpiarDatos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgrEstacion);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCalle);
             this.Controls.Add(this.txtBoxRazonSocial);
-            this.Controls.Add(this.txtBoxCuit);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtFechaAta);
             this.Controls.Add(this.lblFechaHabilitacion);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblCalle);
@@ -233,11 +246,9 @@
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.Label lblFechaHabilitacion;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtBoxCuit;
+        private System.Windows.Forms.DateTimePicker dtFechaAta;
         private System.Windows.Forms.TextBox txtBoxRazonSocial;
         private System.Windows.Forms.TextBox txtBoxCalle;
-        private System.Windows.Forms.TextBox txtBoxNumero;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.DataGridView dgrEstacion;
@@ -246,5 +257,8 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Button bynLimpiarDatos;
+        private System.Windows.Forms.MaskedTextBox txtBoxCuit;
+        private System.Windows.Forms.MaskedTextBox txtBoxNumero;
     }
 }
