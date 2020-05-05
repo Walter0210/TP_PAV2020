@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="Clases\DetalleOC.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Estacion.cs" />
     <Compile Include="Clases\Estado.cs" />
@@ -55,6 +56,8 @@
     <Compile Include="Clases\OrdenPago.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Surtidor.cs" />
+    <Compile Include="Clases\Ticket.cs" />
+    <Compile Include="Clases\TicketProducto.cs" />
     <Compile Include="Clases\TipoCombustible.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\UnidadMedida.cs" />
