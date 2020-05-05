@@ -131,5 +131,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
             Formularios.frm_ABMEstacion frm_ABMEstacion = new frm_ABMEstacion();
             frm_ABMEstacion.ShowDialog();
         }
+
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_AMBSoporte frm_AMBSoporte = new ABMs.frm_AMBSoporte();
+            frm_AMBSoporte.ShowDialog();
+         
+        }
     }
 }
