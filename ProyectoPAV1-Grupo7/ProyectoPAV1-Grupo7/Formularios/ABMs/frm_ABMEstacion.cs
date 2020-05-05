@@ -49,21 +49,15 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void CargarGrilla()
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT CUIT , razonSocial FROM Estacion";
+            string sql = "SELECT * FROM Estacion";
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrEstacion.DataSource = tabla;
 
         }
 
-        //BOTON LIMPIAR CAMPOS
-        private void bynLimpiarDatos_Click(object sender, EventArgs e)
-        {
-            LimpiarCampos();
-        }
-
         //Control De existencia de estacion.
         private bool ExisteEstacion(int Criterio)
-        {
+        {   
             bool resultado = false;
             for (int i = 0; i < dgrEstacion.Rows.Count; i++)
             {
@@ -140,7 +134,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private bool CargoCampos(Estacion estacion)
         {
             bool resultado = true;
-            if (estacion.Cuit.Equals(0) || estacion.RazonSocial.Equals(0) || estacion.Calle.Equals(""))
+            if (estacion.Cuit.Equals(0) || estacion.RazonSocial.Equals("") || estacion.Calle.Equals(""))
             {
                 resultado = false;
                 MessageBox.Show("CUIT, razon social y calle son obligatorios");
