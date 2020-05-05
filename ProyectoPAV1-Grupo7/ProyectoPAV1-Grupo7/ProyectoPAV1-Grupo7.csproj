@@ -49,8 +49,10 @@
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
     <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Estacion.cs" />
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\NivelUrgencia.cs" />
+    <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Surtidor.cs" />
     <Compile Include="Clases\TipoCombustible.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
