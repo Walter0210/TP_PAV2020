@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 76);
+            this.label1.Location = new System.Drawing.Point(21, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 0;
@@ -199,7 +199,7 @@
             // txtBoxNroSurtidor
             // 
             this.txtBoxNroSurtidor.Enabled = false;
-            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 73);
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 64);
             this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
             this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
             this.txtBoxNroSurtidor.TabIndex = 34;
