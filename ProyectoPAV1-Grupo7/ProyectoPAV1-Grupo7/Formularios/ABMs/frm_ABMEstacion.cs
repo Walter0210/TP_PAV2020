@@ -162,7 +162,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             int num = int.Parse(tabla.Rows[0]["Numero"].ToString());
             //DateTime fecha = DateTime.Parse(tabla.Rows[0]["fechaHabilitacion"].ToString());
             DateTime fecha = Convert.ToDateTime(tabla.Rows[0]["fechaHabilitacion"].ToString());
-            Estacion estacion1 = new Estacion(111, "dd", "aa", 11, DateTime.Parse("31/10/2019")); 
             Estacion estacion = new Estacion(CUIT, razonSocial, calle, num, fecha);
             return estacion;
 

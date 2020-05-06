@@ -15,7 +15,7 @@ namespace ProyectoPAV1_Grupo7.Clases
         private float precioVenta;
         private DateTime ultimaFechaActStock;
 
-        public Producto(int codigo, string descripcion, int stockActual, float precioCompra, float precioVenta, DateTime ultimaFechaActStock)
+        public Producto(string descripcion, int stockActual, float precioCompra, float precioVenta, DateTime ultimaFechaActStock)
         {
             Codigo = codigo;
             Descripcion = descripcion;
