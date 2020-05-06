@@ -244,6 +244,7 @@
             this.Controls.Add(this.lbl_legajo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Empleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Empleado";
             this.ResumeLayout(false);
             this.PerformLayout();

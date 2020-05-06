@@ -138,5 +138,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_AMBSoporte.ShowDialog();
          
         }
+
+        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.frm_Empleado frm_Empleado = new frm_Empleado();
+            frm_Empleado.ShowDialog();
+
+        }
     }
 }
