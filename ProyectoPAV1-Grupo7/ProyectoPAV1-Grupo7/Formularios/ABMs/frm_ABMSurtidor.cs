@@ -17,6 +17,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         {
             InitializeComponent();
             CargarGrilla();
+            CargarComboEstacion();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -31,6 +32,18 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             DataTable tabla = conexion.ejecutar_consulta(sql);
             grdSurtidor.DataSource = tabla;
 
+        }
+
+        private void CargarComboEstacion()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Estacion";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            
+            cmbCuilEstacion.DataSource = tabla;
+            cmbCuilEstacion.DisplayMember = "razonSocial";
+            cmbCuilEstacion.ValueMember = "CUIT";
+            cmbCuilEstacion.SelectedIndex = -1;
         }
     }
 }
