@@ -13,7 +13,7 @@ namespace ProyectoPAV1_Grupo7.Clases
     {
         public enum estado_BE { correcto, error }
         public enum tipo_conexion { simple, transaccion }
-        string cadena_conexion = "";
+        string cadena_conexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
 
 
         OleDbConnection conexion = new OleDbConnection();
@@ -34,7 +34,7 @@ namespace ProyectoPAV1_Grupo7.Clases
             if (analisis_tipo_conexion == tipo_conexion.simple)
             {
                 MessageBox.Show("Está intentado cerrar una transacción que no abrio"
-                , "Erro", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                , "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
             if (control_transaccion == estado_BE.correcto)
@@ -79,7 +79,7 @@ namespace ProyectoPAV1_Grupo7.Clases
             DataTable tabla = new DataTable();
             cmd.CommandText = sql;
             try
-            {
+            { 
                 tabla.Load(cmd.ExecuteReader());
             }
             catch (Exception e)

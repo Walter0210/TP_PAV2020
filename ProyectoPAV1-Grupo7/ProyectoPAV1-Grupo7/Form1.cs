@@ -35,9 +35,7 @@ namespace ProyectoPAV1_Grupo7
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            frm_Menu ventana = new frm_Menu();
-            ventana.Show();
-            
+            this.Close();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)

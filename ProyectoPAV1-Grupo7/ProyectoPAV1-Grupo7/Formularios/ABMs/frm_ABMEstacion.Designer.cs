@@ -32,214 +32,227 @@
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblFechaHabilitacion = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtBoxCuit = new System.Windows.Forms.TextBox();
+            this.dtFechaAta = new System.Windows.Forms.DateTimePicker();
             this.txtBoxRazonSocial = new System.Windows.Forms.TextBox();
             this.txtBoxCalle = new System.Windows.Forms.TextBox();
-            this.txtBoxNumero = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblNumero = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dgrEstacion = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtBoxCuit = new System.Windows.Forms.MaskedTextBox();
+            this.txtBoxNumero = new System.Windows.Forms.MaskedTextBox();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(16, 65);
-            this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuit.Location = new System.Drawing.Point(14, 33);
             this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(43, 17);
+            this.lblCuit.Size = new System.Drawing.Size(35, 13);
             this.lblCuit.TabIndex = 0;
             this.lblCuit.Text = "CUIT:";
             // 
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(16, 97);
-            this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRazonSocial.Location = new System.Drawing.Point(14, 59);
             this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(95, 17);
+            this.lblRazonSocial.Size = new System.Drawing.Size(73, 13);
             this.lblRazonSocial.TabIndex = 1;
             this.lblRazonSocial.Text = "Razon Social:";
             // 
             // lblCalle
             // 
             this.lblCalle.AutoSize = true;
-            this.lblCalle.Location = new System.Drawing.Point(13, 131);
-            this.lblCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCalle.Location = new System.Drawing.Point(14, 85);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(39, 17);
+            this.lblCalle.Size = new System.Drawing.Size(30, 13);
             this.lblCalle.TabIndex = 2;
             this.lblCalle.Text = "Calle";
             // 
             // lblFechaHabilitacion
             // 
             this.lblFechaHabilitacion.AutoSize = true;
-            this.lblFechaHabilitacion.Location = new System.Drawing.Point(16, 285);
-            this.lblFechaHabilitacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaHabilitacion.Location = new System.Drawing.Point(14, 143);
             this.lblFechaHabilitacion.Name = "lblFechaHabilitacion";
-            this.lblFechaHabilitacion.Size = new System.Drawing.Size(95, 17);
+            this.lblFechaHabilitacion.Size = new System.Drawing.Size(73, 13);
             this.lblFechaHabilitacion.TabIndex = 4;
             this.lblFechaHabilitacion.Text = "Fecha de Alta";
-            this.lblFechaHabilitacion.Click += new System.EventHandler(this.lblFechaHabilitacion_Click);
             // 
-            // dateTimePicker1
+            // dtFechaAta
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(147, 280);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // txtBoxCuit
-            // 
-            this.txtBoxCuit.Location = new System.Drawing.Point(147, 62);
-            this.txtBoxCuit.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxCuit.MaxLength = 11;
-            this.txtBoxCuit.Name = "txtBoxCuit";
-            this.txtBoxCuit.Size = new System.Drawing.Size(132, 22);
-            this.txtBoxCuit.TabIndex = 6;
+            this.dtFechaAta.Location = new System.Drawing.Point(136, 136);
+            this.dtFechaAta.Name = "dtFechaAta";
+            this.dtFechaAta.Size = new System.Drawing.Size(200, 20);
+            this.dtFechaAta.TabIndex = 5;
             // 
             // txtBoxRazonSocial
             // 
-            this.txtBoxRazonSocial.Location = new System.Drawing.Point(147, 94);
-            this.txtBoxRazonSocial.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxRazonSocial.Location = new System.Drawing.Point(135, 56);
             this.txtBoxRazonSocial.MaxLength = 25;
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
-            this.txtBoxRazonSocial.Size = new System.Drawing.Size(132, 22);
+            this.txtBoxRazonSocial.Size = new System.Drawing.Size(200, 20);
             this.txtBoxRazonSocial.TabIndex = 7;
             // 
             // txtBoxCalle
             // 
-            this.txtBoxCalle.Location = new System.Drawing.Point(147, 126);
-            this.txtBoxCalle.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxCalle.Location = new System.Drawing.Point(135, 82);
             this.txtBoxCalle.MaxLength = 32;
             this.txtBoxCalle.Name = "txtBoxCalle";
-            this.txtBoxCalle.Size = new System.Drawing.Size(265, 22);
+            this.txtBoxCalle.Size = new System.Drawing.Size(200, 20);
             this.txtBoxCalle.TabIndex = 8;
-            this.txtBoxCalle.TextChanged += new System.EventHandler(this.txtBoxCalle_TextChanged);
-            // 
-            // txtBoxNumero
-            // 
-            this.txtBoxNumero.Location = new System.Drawing.Point(147, 157);
-            this.txtBoxNumero.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxNumero.MaxLength = 5;
-            this.txtBoxNumero.Name = "txtBoxNumero";
-            this.txtBoxNumero.Size = new System.Drawing.Size(132, 22);
-            this.txtBoxNumero.TabIndex = 9;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(525, 351);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Location = new System.Drawing.Point(260, 387);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(147, 187);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.MaxLength = 5;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 22);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(16, 160);
-            this.lblNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumero.Location = new System.Drawing.Point(14, 111);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(58, 17);
+            this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 3;
             this.lblNumero.Text = "Número";
             // 
-            // label1
+            // dgrEstacion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 251);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Provincia";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.dgrEstacion.AllowUserToAddRows = false;
+            this.dgrEstacion.AllowUserToDeleteRows = false;
+            this.dgrEstacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrEstacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cuit,
+            this.Nombre,
+            this.Calle,
+            this.Numero,
+            this.FechaAlta});
+            this.dgrEstacion.Location = new System.Drawing.Point(358, 12);
+            this.dgrEstacion.Name = "dgrEstacion";
+            this.dgrEstacion.ReadOnly = true;
+            this.dgrEstacion.Size = new System.Drawing.Size(445, 398);
+            this.dgrEstacion.TabIndex = 17;
             // 
-            // label2
+            // btnGuardar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 221);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Localidad";
+            this.btnGuardar.Location = new System.Drawing.Point(10, 387);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // label3
+            // btnModificar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 192);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Barrio";
+            this.btnModificar.Location = new System.Drawing.Point(91, 387);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 19;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // btnEliminar
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 218);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.MaxLength = 5;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 22);
-            this.textBox2.TabIndex = 15;
+            this.btnEliminar.Location = new System.Drawing.Point(172, 387);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtBoxCuit
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 248);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.MaxLength = 5;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 22);
-            this.textBox3.TabIndex = 16;
+            this.txtBoxCuit.Location = new System.Drawing.Point(135, 30);
+            this.txtBoxCuit.Mask = "99999999999";
+            this.txtBoxCuit.Name = "txtBoxCuit";
+            this.txtBoxCuit.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxCuit.TabIndex = 31;
+            // 
+            // txtBoxNumero
+            // 
+            this.txtBoxNumero.Location = new System.Drawing.Point(136, 108);
+            this.txtBoxNumero.Mask = "99999999999999";
+            this.txtBoxNumero.Name = "txtBoxNumero";
+            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxNumero.TabIndex = 32;
+            // 
+            // Cuit
+            // 
+            this.Cuit.DataPropertyName = "CUIT";
+            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.Name = "Cuit";
+            this.Cuit.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "razonSocial";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Calle
+            // 
+            this.Calle.DataPropertyName = "calle";
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
+            // 
+            // Numero
+            // 
+            this.Numero.DataPropertyName = "numero";
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Width = 50;
+            // 
+            // FechaAlta
+            // 
+            this.FechaAlta.DataPropertyName = "fechaHabilitacion";
+            this.FechaAlta.HeaderText = "Fecha de Alta";
+            this.FechaAlta.Name = "FechaAlta";
+            this.FechaAlta.ReadOnly = true;
+            this.FechaAlta.Width = 50;
             // 
             // frm_ABMEstacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 444);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnCerrar);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(934, 422);
             this.Controls.Add(this.txtBoxNumero);
+            this.Controls.Add(this.txtBoxCuit);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.dgrEstacion);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBoxCalle);
             this.Controls.Add(this.txtBoxRazonSocial);
-            this.Controls.Add(this.txtBoxCuit);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtFechaAta);
             this.Controls.Add(this.lblFechaHabilitacion);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblCalle);
             this.Controls.Add(this.lblRazonSocial);
             this.Controls.Add(this.lblCuit);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_ABMEstacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Estación de Servicio";
+            this.Load += new System.EventHandler(this.frm_ABMEstacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,18 +264,21 @@
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.Label lblFechaHabilitacion;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txtBoxCuit;
+        private System.Windows.Forms.DateTimePicker dtFechaAta;
         private System.Windows.Forms.TextBox txtBoxRazonSocial;
         private System.Windows.Forms.TextBox txtBoxCalle;
-        private System.Windows.Forms.TextBox txtBoxNumero;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblNumero;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridView dgrEstacion;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.MaskedTextBox txtBoxCuit;
+        private System.Windows.Forms.MaskedTextBox txtBoxNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
     }
 }

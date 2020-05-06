@@ -15,9 +15,9 @@ namespace ProyectoPAV1_Grupo7.Clases
         private int nroDoc;
         private DateTime fechaNacimiento;
         private DateTime fechaAlta;
-        private string legajoSuperior;
+        private int legajoSuperior;
 
-        public Empleado(int legajo, string nombre, string apellido, int tipoDoc, int nroDoc, DateTime fechaNacimiento, DateTime fechaAlta, string legajoSuperior)
+        public Empleado(int legajo, string nombre, string apellido, int tipoDoc, int nroDoc, DateTime fechaNacimiento, DateTime fechaAlta, int legajoSuperior)
         {
             Legajo = legajo;
             Nombre = nombre;
@@ -29,13 +29,45 @@ namespace ProyectoPAV1_Grupo7.Clases
             LegajoSuperior = legajoSuperior;
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public int Legajo { get => legajo; set => legajo = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public int TipoDoc { get => tipoDoc; set => tipoDoc = value; }
-        public int NroDoc { get => nroDoc; set => nroDoc = value; }
-        public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
-        public DateTime FechaAlta { get => fechaAlta; set => fechaAlta = value; }
-        public string LegajoSuperior { get => legajoSuperior; set => legajoSuperior = value; }
+        public string Nombre 
+        {   
+            get => nombre; 
+            set => nombre = value; 
+        }
+        public int Legajo 
+        { 
+            get => legajo; 
+            set => legajo = value; 
+        }
+        public string Apellido 
+        { 
+            get => apellido; 
+            set => apellido = value; 
+        }
+        public int TipoDoc 
+        { 
+            get => tipoDoc; 
+            set => tipoDoc = value; 
+        }
+        public int NroDoc 
+        { 
+            get => nroDoc; 
+            set => nroDoc = value; 
+        }
+        public DateTime FechaNacimiento 
+        { 
+            get => fechaNacimiento; 
+            set => fechaNacimiento = value; 
+        }
+        public DateTime FechaAlta 
+        { 
+            get => fechaAlta; 
+            set => fechaAlta = value; 
+        }
+        public int LegajoSuperior 
+        { 
+            get => legajoSuperior; 
+            set => legajoSuperior = value; 
+        }
     }
 }

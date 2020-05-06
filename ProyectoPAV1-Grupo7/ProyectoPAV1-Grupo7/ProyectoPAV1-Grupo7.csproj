@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,7 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="Clases\DetalleOC.cs" />
     <Compile Include="Clases\Empleado.cs" />
+    <Compile Include="Clases\Estacion.cs" />
+    <Compile Include="Clases\Estado.cs" />
+    <Compile Include="Clases\NivelUrgencia.cs" />
+    <Compile Include="Clases\OrdenPago.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\Surtidor.cs" />
+    <Compile Include="Clases\Ticket.cs" />
+    <Compile Include="Clases\TicketProducto.cs" />
+    <Compile Include="Clases\TipoCombustible.cs" />
+    <Compile Include="Clases\TipoDocumento.cs" />
+    <Compile Include="Clases\UnidadMedida.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +85,12 @@
     </Compile>
     <Compile Include="Formularios\ABMs\frm_ABMSurtidor.Designer.cs">
       <DependentUpon>frm_ABMSurtidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABMs\frm_AMBSoporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABMs\frm_AMBSoporte.Designer.cs">
+      <DependentUpon>frm_AMBSoporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frm_Empleado.cs">
       <SubType>Form</SubType>
@@ -98,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABMs\frm_ABMSurtidor.resx">
       <DependentUpon>frm_ABMSurtidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABMs\frm_AMBSoporte.resx">
+      <DependentUpon>frm_AMBSoporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Empleado.resx">
       <DependentUpon>frm_Empleado.cs</DependentUpon>
