@@ -32,7 +32,6 @@
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblFechaHabilitacion = new System.Windows.Forms.Label();
-            this.dtFechaAta = new System.Windows.Forms.DateTimePicker();
             this.txtBoxRazonSocial = new System.Windows.Forms.TextBox();
             this.txtBoxCalle = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBoxCuit = new System.Windows.Forms.MaskedTextBox();
             this.txtBoxNumero = new System.Windows.Forms.MaskedTextBox();
+            this.txtFechaHab = new System.Windows.Forms.MaskedTextBox();
             this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,13 +86,6 @@
             this.lblFechaHabilitacion.Size = new System.Drawing.Size(73, 13);
             this.lblFechaHabilitacion.TabIndex = 4;
             this.lblFechaHabilitacion.Text = "Fecha de Alta";
-            // 
-            // dtFechaAta
-            // 
-            this.dtFechaAta.Location = new System.Drawing.Point(136, 136);
-            this.dtFechaAta.Name = "dtFechaAta";
-            this.dtFechaAta.Size = new System.Drawing.Size(200, 20);
-            this.dtFechaAta.TabIndex = 5;
             // 
             // txtBoxRazonSocial
             // 
@@ -143,8 +136,9 @@
             this.dgrEstacion.Location = new System.Drawing.Point(358, 12);
             this.dgrEstacion.Name = "dgrEstacion";
             this.dgrEstacion.ReadOnly = true;
-            this.dgrEstacion.Size = new System.Drawing.Size(445, 398);
+            this.dgrEstacion.Size = new System.Drawing.Size(525, 398);
             this.dgrEstacion.TabIndex = 17;
+            this.dgrEstacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEstacion_CellClick);
             // 
             // btnGuardar
             // 
@@ -164,6 +158,7 @@
             this.btnModificar.TabIndex = 19;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -173,6 +168,7 @@
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtBoxCuit
             // 
@@ -190,12 +186,23 @@
             this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
             this.txtBoxNumero.TabIndex = 32;
             // 
+            // txtFechaHab
+            // 
+            this.txtFechaHab.Enabled = false;
+            this.txtFechaHab.Location = new System.Drawing.Point(136, 143);
+            this.txtFechaHab.Mask = "00/00/0000";
+            this.txtFechaHab.Name = "txtFechaHab";
+            this.txtFechaHab.Size = new System.Drawing.Size(200, 20);
+            this.txtFechaHab.TabIndex = 33;
+            this.txtFechaHab.ValidatingType = typeof(System.DateTime);
+            // 
             // Cuit
             // 
             this.Cuit.DataPropertyName = "CUIT";
             this.Cuit.HeaderText = "Cuit";
             this.Cuit.Name = "Cuit";
             this.Cuit.ReadOnly = true;
+            this.Cuit.Width = 70;
             // 
             // Nombre
             // 
@@ -210,6 +217,7 @@
             this.Calle.HeaderText = "Calle";
             this.Calle.Name = "Calle";
             this.Calle.ReadOnly = true;
+            this.Calle.Width = 130;
             // 
             // Numero
             // 
@@ -217,7 +225,7 @@
             this.Numero.HeaderText = "Numero";
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
-            this.Numero.Width = 50;
+            this.Numero.Width = 80;
             // 
             // FechaAlta
             // 
@@ -225,7 +233,6 @@
             this.FechaAlta.HeaderText = "Fecha de Alta";
             this.FechaAlta.Name = "FechaAlta";
             this.FechaAlta.ReadOnly = true;
-            this.FechaAlta.Width = 50;
             // 
             // frm_ABMEstacion
             // 
@@ -233,6 +240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(934, 422);
+            this.Controls.Add(this.txtFechaHab);
             this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCuit);
             this.Controls.Add(this.btnEliminar);
@@ -242,7 +250,6 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtBoxCalle);
             this.Controls.Add(this.txtBoxRazonSocial);
-            this.Controls.Add(this.dtFechaAta);
             this.Controls.Add(this.lblFechaHabilitacion);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblCalle);
@@ -264,7 +271,6 @@
         private System.Windows.Forms.Label lblRazonSocial;
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.Label lblFechaHabilitacion;
-        private System.Windows.Forms.DateTimePicker dtFechaAta;
         private System.Windows.Forms.TextBox txtBoxRazonSocial;
         private System.Windows.Forms.TextBox txtBoxCalle;
         private System.Windows.Forms.Button btnCerrar;
@@ -275,6 +281,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.MaskedTextBox txtBoxCuit;
         private System.Windows.Forms.MaskedTextBox txtBoxNumero;
+        private System.Windows.Forms.MaskedTextBox txtFechaHab;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
