@@ -94,7 +94,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en cargar datos de Estacion: Base de datos corrompida");
+                MessageBox.Show("Error en cargar datos de persona: Base de datos corrompida");
             }
             return resultado;
         }
@@ -152,7 +152,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         //Obtener estacion de Base de datos
         private Estacion ObtenerEstacion(int CUIT)
-        {   
+        {
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT * FROM Estacion WHERE CUIT like '" + CUIT + "'";
             DataTable tabla = conexion.ejecutar_consulta(sql);
@@ -160,10 +160,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             string razonSocial = tabla.Rows[0]["razonSocial"].ToString();
             string calle = tabla.Rows[0]["Calle"].ToString();
             int num = int.Parse(tabla.Rows[0]["Numero"].ToString());
+            //DateTime fecha = DateTime.Parse(tabla.Rows[0]["fechaHabilitacion"].ToString());
             DateTime fecha = Convert.ToDateTime(tabla.Rows[0]["fechaHabilitacion"].ToString());
+            //Estacion estacion1 = new Estacion(111, "dd", "aa", 11, DateTime.Parse("31/10/2019")); 
             Estacion estacion = new Estacion(CUIT, razonSocial, calle, num, fecha);
             return estacion;
-
         }
 
         //Seleccion de item en grilla
@@ -189,7 +190,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             txtBoxCalle.Text = estacion.Calle;
             txtBoxNumero.Text = estacion.Nro.ToString();
             txtFechaHab.Text = estacion.FechaHabilitacion.ToString();
-
         }
 
         //Actualizar datos en bd 
