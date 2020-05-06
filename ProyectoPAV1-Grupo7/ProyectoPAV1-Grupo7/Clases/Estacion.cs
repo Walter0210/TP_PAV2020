@@ -15,7 +15,7 @@ namespace ProyectoPAV1_Grupo7.Clases
         private int nro;
         private DateTime fechaHabilitacion;
 
-        public Estacion(int cuit, string razonSocial, string calle, int nro, DateTime fechaHabilitaicon)
+        public Estacion(int cuit, string razonSocial, string calle, int nro, DateTime fechaHabilitacion)
         {
             Cuit = cuit;
             RazonSocial = razonSocial;
