@@ -198,6 +198,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //Actualizar datos en bd 
         private bool ActualizarProductoBD(Producto producto)
         {
+
+            producto.UltimaFechaActStock = DateTime.Today;
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
