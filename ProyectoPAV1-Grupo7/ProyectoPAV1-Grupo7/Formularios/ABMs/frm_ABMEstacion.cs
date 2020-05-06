@@ -48,7 +48,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
             txtBoxCuit.Enabled = true;
-
         }
 
         //FUNCION CARGAR GRILLA
@@ -114,7 +113,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
                     txtBoxCuit.Focus();
                 }
             }
-            
         }
 
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO

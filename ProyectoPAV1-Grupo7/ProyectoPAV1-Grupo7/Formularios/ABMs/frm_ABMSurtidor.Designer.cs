@@ -39,9 +39,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgrSurtidor = new System.Windows.Forms.DataGridView();
+            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
+            this.nroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +86,7 @@
             // 
             // cmbCuilEstacion
             // 
+            this.cmbCuilEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCuilEstacion.FormattingEnabled = true;
             this.cmbCuilEstacion.Location = new System.Drawing.Point(221, 99);
             this.cmbCuilEstacion.Name = "cmbCuilEstacion";
@@ -90,6 +95,7 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(221, 126);
             this.cmbEstado.Name = "cmbEstado";
@@ -98,6 +104,7 @@
             // 
             // cmbTipoCombustible
             // 
+            this.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCombustible.FormattingEnabled = true;
             this.cmbTipoCombustible.Location = new System.Drawing.Point(221, 153);
             this.cmbTipoCombustible.Name = "cmbTipoCombustible";
@@ -140,29 +147,66 @@
             this.btnGuardar.TabIndex = 30;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dataGridView1
+            // dgrSurtidor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(372, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(300, 337);
-            this.dataGridView1.TabIndex = 33;
+            this.dgrSurtidor.AllowUserToAddRows = false;
+            this.dgrSurtidor.AllowUserToDeleteRows = false;
+            this.dgrSurtidor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrSurtidor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nroSurtidor,
+            this.cuit,
+            this.idEstado,
+            this.idTipoCombustible});
+            this.dgrSurtidor.Location = new System.Drawing.Point(372, 12);
+            this.dgrSurtidor.Name = "dgrSurtidor";
+            this.dgrSurtidor.ReadOnly = true;
+            this.dgrSurtidor.Size = new System.Drawing.Size(446, 337);
+            this.dgrSurtidor.TabIndex = 33;
             // 
-            // textBox1
+            // txtBoxNroSurtidor
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 34;
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 73);
+            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
+            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNroSurtidor.TabIndex = 34;
+            // 
+            // nroSurtidor
+            // 
+            this.nroSurtidor.DataPropertyName = "numeroSurtidor";
+            this.nroSurtidor.HeaderText = "Nro Surtidor";
+            this.nroSurtidor.Name = "nroSurtidor";
+            this.nroSurtidor.ReadOnly = true;
+            // 
+            // cuit
+            // 
+            this.cuit.DataPropertyName = "cuit";
+            this.cuit.HeaderText = "CUIT";
+            this.cuit.Name = "cuit";
+            this.cuit.ReadOnly = true;
+            // 
+            // idEstado
+            // 
+            this.idEstado.DataPropertyName = "idEstado";
+            this.idEstado.HeaderText = "Estado";
+            this.idEstado.Name = "idEstado";
+            this.idEstado.ReadOnly = true;
+            // 
+            // idTipoCombustible
+            // 
+            this.idTipoCombustible.DataPropertyName = "idTipoCombustible";
+            this.idTipoCombustible.HeaderText = "Tipo de Combustible";
+            this.idTipoCombustible.Name = "idTipoCombustible";
+            this.idTipoCombustible.ReadOnly = true;
             // 
             // frm_ABMSurtidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 361);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(829, 361);
+            this.Controls.Add(this.txtBoxNroSurtidor);
+            this.Controls.Add(this.dgrSurtidor);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
@@ -177,7 +221,8 @@
             this.Name = "frm_ABMSurtidor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ABMSurtidor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frm_ABMSurtidor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +241,11 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgrSurtidor;
+        private System.Windows.Forms.TextBox txtBoxNroSurtidor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroSurtidor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTipoCombustible;
     }
 }
