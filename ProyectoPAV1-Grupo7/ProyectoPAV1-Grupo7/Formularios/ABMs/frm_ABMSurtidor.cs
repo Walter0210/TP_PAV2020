@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAV1_Grupo7.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,21 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         public frm_ABMSurtidor()
         {
             InitializeComponent();
+            CargarGrilla();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CargarGrilla()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Surtidor";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            grdSurtidor.DataSource = tabla;
+
         }
     }
 }
