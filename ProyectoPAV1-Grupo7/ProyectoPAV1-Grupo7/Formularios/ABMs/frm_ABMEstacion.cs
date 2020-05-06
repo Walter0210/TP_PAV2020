@@ -32,6 +32,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
             LimpiarCampos();
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
+            txtFechaHab.Text = DateTime.Today.ToString();
 
             CargarGrilla();
         }
@@ -43,6 +44,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             txtBoxCuit.Text = "";
             txtBoxNumero.Text = "";
             txtBoxRazonSocial.Text = "";
+            btnGuardar.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
+            txtBoxCuit.Enabled = true;
+
         }
 
         //FUNCION CARGAR GRILLA
@@ -117,9 +123,9 @@ namespace ProyectoPAV1_Grupo7.Formularios
             //VARIABLES DE CONTROL
             string CUIT = txtBoxCuit.Text.Trim();
             string razonSocial = txtBoxRazonSocial.Text.Trim();
-            string calle = txtBoxRazonSocial.Text.Trim();
+            string calle = txtBoxCalle.Text.Trim();
             string numero = txtBoxNumero.Text.Trim();
-            DateTime fechaHabilitacion = DateTime.Parse(dtFechaAta.Text);
+            DateTime fechaHabilitacion = DateTime.Parse(txtFechaHab.Text.ToString());
             if (CUIT.Equals("") || numero.Equals(""))
             {
                 CUIT = "0";
@@ -143,5 +149,126 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
             return resultado;
         }
+
+        //Obtener estacion de Base de datos
+        private Estacion ObtenerEstacion(int CUIT)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Estacion WHERE CUIT like '" + CUIT + "'";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            string razonSocial = tabla.Rows[0]["razonSocial"].ToString();
+            string calle = tabla.Rows[0]["Calle"].ToString();
+            int num = int.Parse(tabla.Rows[0]["Numero"].ToString());
+            //DateTime fecha = DateTime.Parse(tabla.Rows[0]["fechaHabilitacion"].ToString());
+            DateTime fecha = Convert.ToDateTime(tabla.Rows[0]["fechaHabilitacion"].ToString());
+            Estacion estacion1 = new Estacion(111, "dd", "aa", 11, DateTime.Parse("31/10/2019")); 
+            Estacion estacion = new Estacion(CUIT, razonSocial, calle, num, fecha);
+            return estacion;
+
+
+        }
+
+        //Seleccion de item en grilla
+        private void dgrEstacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            LimpiarCampos();
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = false;
+            txtBoxCuit.Enabled = false;
+            DataGridViewRow fila = dgrEstacion.Rows[indice];
+            string CUIT = fila.Cells["CUIT"].Value.ToString();
+            Estacion estacion = ObtenerEstacion(int.Parse(CUIT));
+            CargarCampos(estacion);
+        }
+
+        //Cargar campos de TEXTO automaticamente.
+        private void CargarCampos(Estacion estacion)
+        {
+            txtBoxCuit.Text = estacion.Cuit.ToString();
+            txtBoxRazonSocial.Text = estacion.RazonSocial;
+            txtBoxCalle.Text = estacion.Calle;
+            txtBoxNumero.Text = estacion.Nro.ToString();
+            txtFechaHab.Text = estacion.FechaHabilitacion.ToString();
+
+        }
+
+        //Actualizar datos en bd 
+        private bool ActualizarEstacionBD(Estacion estacion)
+        {
+            bool resultado = false;
+            ConexionBD conexion = new ConexionBD();
+            try
+            {
+                string sql = "UPDATE Estacion SET CUIT = '" + estacion.Cuit + "', razonSocial = ' " + estacion.RazonSocial + "', calle = '" + estacion.Calle +
+                    "', numero ='" + estacion.Nro + "',fechaHabilitacion ='" + estacion.FechaHabilitacion + "' WHERE CUIT like '" + estacion.Cuit + "'";
+
+                conexion.modificar(sql);
+
+                resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en cargar datos de persona: Base de datos corrompida");
+            }
+            return resultado;
+        }
+
+        //CLICK boton Modificar.
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Estacion estacion = ObtenerDatosEstacion();
+            if (CargoCampos(estacion))
+            {
+                bool resultado = ActualizarEstacionBD(estacion);
+                if(resultado)
+                {
+                    MessageBox.Show("Estacion Modificada con exito");
+                    LimpiarCampos();
+                    CargarGrilla();
+                    txtBoxCuit.Focus();
+                }
+            }
+        }
+
+        //Borrar estacion de base de datos
+        private bool BorrarEstacionBD(Estacion estacion)
+        {
+            bool resultado = false;
+            ConexionBD conexion = new ConexionBD();
+            try
+            {
+                string sql = "DELETE FROM Estacion WHERE CUIT = '" + estacion.Cuit + "'";
+
+                conexion.borrar(sql);
+
+                resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en cargar datos de persona: Base de datos corrompida");
+            }
+            return resultado;
+        }
+
+        //CLICK boton Eliminar
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Estacion estacion = ObtenerDatosEstacion();
+            if (CargoCampos(estacion))
+            {
+                bool resultado = BorrarEstacionBD(estacion);
+                if (resultado)
+                {   
+                    MessageBox.Show("Estacion Eliminada con exito");
+                    LimpiarCampos();
+                    CargarGrilla();
+                    txtBoxCuit.Focus();
+                }
+            }
+        }
     }
 }
+
