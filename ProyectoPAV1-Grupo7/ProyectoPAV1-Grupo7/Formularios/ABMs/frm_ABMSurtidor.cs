@@ -118,12 +118,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private Surtidor ArmarSurtidor()
         {
             //VARIABLES DE CONTROL
-            //string nroSurtidor = txtBoxNroSurtidor.Text.Trim();
+            
+            //int nroSurtidor = int.Parse(txtBoxNroSurtidor.Text);
             int cuit = (int)cmbCuilEstacion.SelectedValue;
             int idEstado = (int)cmbEstado.SelectedValue;
             int idTipoCombustible = (int)cmbTipoCombustible.SelectedValue;
 
-            //Surtidor sur = new Surtidor(int.Parse(nroSurtidor), cuit, idEstado, idTipoCombustible);
+            //Surtidor sur = new Surtidor(nroSurtidor, cuit, idEstado, idTipoCombustible);
             Surtidor sur = new Surtidor(cuit, idEstado, idTipoCombustible);
 
             return sur;
@@ -132,9 +133,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private Surtidor ObtenerSurtidor(int numeroSurtidor)
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Surtidor WHERE numeroSurtidor like '" + numeroSurtidor + "'";
+            string sql = "SELECT * FROM Surtidor WHERE numeroSurtidor = " + numeroSurtidor.ToString();
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
+            txtBoxNroSurtidor.Text = tabla.Rows[0]["numeroSurtidor"].ToString();
             int cuit = (int)tabla.Rows[0]["cuit"];
             int idEstado = (int)tabla.Rows[0]["idEstado"];
             int idTipoCombustible = (int)tabla.Rows[0]["idTipoCombustible"];
@@ -179,7 +181,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             btnModificar.Enabled = true;
             btnEliminar.Enabled = true;
             btnGuardar.Enabled = false;
-            
+
             DataGridViewRow fila = dgrSurtidor.Rows[indice];
             int nroSurtidor = (int)fila.Cells["nroSurtidor"].Value;
             Surtidor surtidor = ObtenerSurtidor(nroSurtidor);
@@ -189,7 +191,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private DataTable ObtenerComboBoxCUIT(Surtidor surtidor)
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Estacion WHERE Estacion.CUIT = " + surtidor.CUIT.ToString();
+            string sql = "SELECT Distinct * FROM Estacion WHERE Estacion.CUIT like " + surtidor.CUIT.ToString();
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             return tabla;
@@ -214,26 +216,73 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 
         private void CargarCampos(Surtidor surtidor)
         {
-            txtBoxNroSurtidor.Text = surtidor.NroSurtidor.ToString();
+            cmbCuilEstacion.SelectedValue = surtidor.CUIT;
+            cmbEstado.SelectedValue = surtidor.IdEstado;
+            cmbTipoCombustible.SelectedValue = surtidor.IdTipoComb;
+        }
 
-            DataTable tablaCUIT = ObtenerComboBoxCUIT(surtidor);
-            DataTable tablaEstado = ObtenerComboBoxEstados(surtidor);
-            DataTable tablaCombustibles = ObtenerComboBoxCombustible(surtidor);
+        private bool ActualizarSurtidorBD(Surtidor surtidor)
+        {
+            bool resultado = false;
+            ConexionBD conexion = new ConexionBD();
+            try
+            {
+                string sql = "UPDATE Surtidor SET cuit=" + surtidor.CUIT + ", idEstado =" + surtidor.IdEstado + ", idTipoCombustible=" + surtidor.IdTipoComb + "WHERE numeroSurtidor=" + surtidor.NroSurtidor;
 
-            cmbCuilEstacion.DataSource = tablaCUIT;
-            cmbCuilEstacion.DisplayMember = "razonSocial";
-            cmbCuilEstacion.ValueMember = "CUIT";
-            cmbCuilEstacion.SelectedIndex = 0;
+                conexion.modificar(sql);
 
-            cmbCuilEstacion.DataSource = tablaEstado;
-            cmbEstado.DisplayMember = "nombre";
-            cmbEstado.ValueMember = "idEstado";
-            cmbEstado.SelectedIndex = 0;
+                resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en cargar datos de persona: Base de datos corrompida");
+            }
+            return resultado;
+        }
 
-            cmbCuilEstacion.DataSource = tablaCombustibles;
-            cmbTipoCombustible.DisplayMember = "nombre";
-            cmbTipoCombustible.ValueMember = "idTipoCombustible";
-            cmbTipoCombustible.SelectedIndex = 0;
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Surtidor surtidor = ArmarSurtidor();
+            surtidor.NroSurtidor = int.Parse(txtBoxNroSurtidor.Text);
+            bool resultado = ActualizarSurtidorBD(surtidor);
+            if (resultado)
+            {
+                MessageBox.Show("Estacion Modificada con exito");
+                LimpiarCampos();
+                CargarGrilla();
+            }
+        }
+
+        //Borrar estacion de base de datos
+        private bool BorrarSurtidorBD(Surtidor surtidor)
+        {
+            surtidor.NroSurtidor = int.Parse(txtBoxNroSurtidor.Text);
+            bool resultado = false;
+            ConexionBD conexion = new ConexionBD();
+            try
+            {
+                string sql = "DELETE FROM Surtidor WHERE numeroSurtidor= " + surtidor.NroSurtidor;
+                conexion.borrar(sql);
+                resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo ejecutar la operacion. F");
+            }
+            return resultado;
+        }
+
+        //CLICK boton Eliminar
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Surtidor surtidor = ArmarSurtidor();
+            bool resultado = BorrarSurtidorBD(surtidor);
+            if (resultado)
+            {
+                MessageBox.Show("Estacion Eliminada con exito");
+                LimpiarCampos();
+                CargarGrilla();
+            }
         }
     }
 }
