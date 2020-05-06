@@ -52,7 +52,7 @@ namespace ProyectoPAV1_Grupo7
             }
             else
             {
-                this.Hide();
+                //this.Hide();
                 frm_Menu menu = new frm_Menu();
                 menu.ShowDialog();
 

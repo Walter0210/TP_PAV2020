@@ -86,6 +86,7 @@
             // 
             // cmbCuilEstacion
             // 
+            this.cmbCuilEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCuilEstacion.FormattingEnabled = true;
             this.cmbCuilEstacion.Location = new System.Drawing.Point(221, 99);
             this.cmbCuilEstacion.Name = "cmbCuilEstacion";
@@ -94,6 +95,7 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(221, 126);
             this.cmbEstado.Name = "cmbEstado";
@@ -102,6 +104,7 @@
             // 
             // cmbTipoCombustible
             // 
+            this.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCombustible.FormattingEnabled = true;
             this.cmbTipoCombustible.Location = new System.Drawing.Point(221, 153);
             this.cmbTipoCombustible.Name = "cmbTipoCombustible";
