@@ -37,17 +37,17 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblNumero = new System.Windows.Forms.Label();
             this.dgrEstacion = new System.Windows.Forms.DataGridView();
+            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBoxCuit = new System.Windows.Forms.MaskedTextBox();
             this.txtBoxNumero = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaHab = new System.Windows.Forms.MaskedTextBox();
-            this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +93,7 @@
             this.txtBoxRazonSocial.MaxLength = 25;
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
             this.txtBoxRazonSocial.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxRazonSocial.TabIndex = 7;
+            this.txtBoxRazonSocial.TabIndex = 1;
             // 
             // txtBoxCalle
             // 
@@ -101,14 +101,14 @@
             this.txtBoxCalle.MaxLength = 32;
             this.txtBoxCalle.Name = "txtBoxCalle";
             this.txtBoxCalle.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxCalle.TabIndex = 8;
+            this.txtBoxCalle.TabIndex = 2;
             // 
             // btnCerrar
             // 
             this.btnCerrar.Location = new System.Drawing.Point(260, 387);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 10;
+            this.btnCerrar.TabIndex = 8;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -139,62 +139,6 @@
             this.dgrEstacion.Size = new System.Drawing.Size(525, 398);
             this.dgrEstacion.TabIndex = 17;
             this.dgrEstacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEstacion_CellClick);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(10, 387);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 18;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(91, 387);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 19;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(172, 387);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 29;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // txtBoxCuit
-            // 
-            this.txtBoxCuit.Location = new System.Drawing.Point(135, 30);
-            this.txtBoxCuit.Mask = "99999999999";
-            this.txtBoxCuit.Name = "txtBoxCuit";
-            this.txtBoxCuit.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxCuit.TabIndex = 31;
-            // 
-            // txtBoxNumero
-            // 
-            this.txtBoxNumero.Location = new System.Drawing.Point(136, 108);
-            this.txtBoxNumero.Mask = "99999999999999";
-            this.txtBoxNumero.Name = "txtBoxNumero";
-            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxNumero.TabIndex = 32;
-            // 
-            // txtFechaHab
-            // 
-            this.txtFechaHab.Enabled = false;
-            this.txtFechaHab.Location = new System.Drawing.Point(136, 143);
-            this.txtFechaHab.Mask = "00/00/0000";
-            this.txtFechaHab.Name = "txtFechaHab";
-            this.txtFechaHab.Size = new System.Drawing.Size(200, 20);
-            this.txtFechaHab.TabIndex = 33;
-            this.txtFechaHab.ValidatingType = typeof(System.DateTime);
             // 
             // Cuit
             // 
@@ -233,6 +177,62 @@
             this.FechaAlta.HeaderText = "Fecha de Alta";
             this.FechaAlta.Name = "FechaAlta";
             this.FechaAlta.ReadOnly = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(10, 387);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(91, 387);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(172, 387);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtBoxCuit
+            // 
+            this.txtBoxCuit.Location = new System.Drawing.Point(135, 30);
+            this.txtBoxCuit.Mask = "99999999999";
+            this.txtBoxCuit.Name = "txtBoxCuit";
+            this.txtBoxCuit.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxCuit.TabIndex = 0;
+            // 
+            // txtBoxNumero
+            // 
+            this.txtBoxNumero.Location = new System.Drawing.Point(136, 108);
+            this.txtBoxNumero.Mask = "99999999999999";
+            this.txtBoxNumero.Name = "txtBoxNumero";
+            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxNumero.TabIndex = 3;
+            // 
+            // txtFechaHab
+            // 
+            this.txtFechaHab.Enabled = false;
+            this.txtFechaHab.Location = new System.Drawing.Point(136, 143);
+            this.txtFechaHab.Mask = "00/00/0000";
+            this.txtFechaHab.Name = "txtFechaHab";
+            this.txtFechaHab.Size = new System.Drawing.Size(200, 20);
+            this.txtFechaHab.TabIndex = 4;
+            this.txtFechaHab.ValidatingType = typeof(System.DateTime);
             // 
             // frm_ABMEstacion
             // 
