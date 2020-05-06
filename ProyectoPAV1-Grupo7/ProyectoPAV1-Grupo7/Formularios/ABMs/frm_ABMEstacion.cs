@@ -48,6 +48,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
             txtBoxCuit.Enabled = true;
+
         }
 
         //FUNCION CARGAR GRILLA
@@ -113,6 +114,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
                     txtBoxCuit.Focus();
                 }
             }
+            
         }
 
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO
@@ -188,7 +190,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             txtBoxCalle.Text = estacion.Calle;
             txtBoxNumero.Text = estacion.Nro.ToString();
             txtFechaHab.Text = estacion.FechaHabilitacion.ToString();
-
         }
 
         //Actualizar datos en bd 

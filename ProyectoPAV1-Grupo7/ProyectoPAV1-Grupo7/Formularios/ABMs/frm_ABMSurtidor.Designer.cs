@@ -40,11 +40,11 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgrSurtidor = new System.Windows.Forms.DataGridView();
-            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             this.nroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,13 +164,7 @@
             this.dgrSurtidor.ReadOnly = true;
             this.dgrSurtidor.Size = new System.Drawing.Size(446, 337);
             this.dgrSurtidor.TabIndex = 33;
-            // 
-            // txtBoxNroSurtidor
-            // 
-            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 73);
-            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
-            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxNroSurtidor.TabIndex = 34;
+            this.dgrSurtidor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSurtidor_CellClick);
             // 
             // nroSurtidor
             // 
@@ -199,6 +193,14 @@
             this.idTipoCombustible.HeaderText = "Tipo de Combustible";
             this.idTipoCombustible.Name = "idTipoCombustible";
             this.idTipoCombustible.ReadOnly = true;
+            // 
+            // txtBoxNroSurtidor
+            // 
+            this.txtBoxNroSurtidor.Enabled = false;
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 73);
+            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
+            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNroSurtidor.TabIndex = 34;
             // 
             // frm_ABMSurtidor
             // 

@@ -115,7 +115,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         }
 
         //Arma el nuevo objeto surtidor con los datos ingresados
-        private Surtidor ObtenerSurtidor()
+        private Surtidor ArmarSurtidor()
         {
             //VARIABLES DE CONTROL
             //string nroSurtidor = txtBoxNroSurtidor.Text.Trim();
@@ -129,10 +129,24 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             return sur;
         }
 
+        private Surtidor ObtenerSurtidor(int numeroSurtidor)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Surtidor WHERE numeroSurtidor like '" + numeroSurtidor + "'";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            int cuit = (int)tabla.Rows[0]["cuit"];
+            int idEstado = (int)tabla.Rows[0]["idEstado"];
+            int idTipoCombustible = (int)tabla.Rows[0]["idTipoCombustible"];
+
+            Surtidor surtidor = new Surtidor(cuit, idEstado, idTipoCombustible);
+            return surtidor;
+        }
+
         //BOTON GUARDAR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Surtidor surtidor = ObtenerSurtidor();
+            Surtidor surtidor = ArmarSurtidor();
             if (ExisteSurtidor(surtidor.NroSurtidor).Equals(false))
             {
                 bool resultado = InsertarSurtidor(surtidor);
@@ -156,8 +170,26 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             CargarComboEstacion();
             CargarComboEstados();
             CargarTipoCombustible();
-            txtBoxNroSurtidor.Focus();
+        }
 
+        private void dgrSurtidor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            LimpiarCampos();
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = false;
+            
+            DataGridViewRow fila = dgrSurtidor.Rows[indice];
+            int nroSurtidor = (int)fila.Cells["nroSurtidor"].Value;
+            Surtidor surtidor = ObtenerSurtidor(nroSurtidor);
+            CargarCampos(surtidor);
+        }
+
+        private void CargarCampos(Surtidor surtidor)
+        {
+            txtBoxNroSurtidor.Text = surtidor.NroSurtidor.ToString();
+            cmbCuilEstacion.SelectedIndex = 1;
         }
     }
 }
