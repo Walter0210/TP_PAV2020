@@ -186,10 +186,54 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             CargarCampos(surtidor);
         }
 
+        private DataTable ObtenerComboBoxCUIT(Surtidor surtidor)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Estacion WHERE Estacion.CUIT = " + surtidor.CUIT.ToString();
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+        private DataTable ObtenerComboBoxEstados(Surtidor surtidor)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Estado WHERE Estado.idEstado = " + surtidor.IdEstado.ToString();
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
+        private DataTable ObtenerComboBoxCombustible(Surtidor surtidor)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM TipoCombustible WHERE TipoCombustible.idTipoCombustible = " + surtidor.IdTipoComb.ToString();
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
         private void CargarCampos(Surtidor surtidor)
         {
             txtBoxNroSurtidor.Text = surtidor.NroSurtidor.ToString();
-            cmbCuilEstacion.SelectedIndex = 1;
+
+            DataTable tablaCUIT = ObtenerComboBoxCUIT(surtidor);
+            DataTable tablaEstado = ObtenerComboBoxEstados(surtidor);
+            DataTable tablaCombustibles = ObtenerComboBoxCombustible(surtidor);
+
+            cmbCuilEstacion.DataSource = tablaCUIT;
+            cmbCuilEstacion.DisplayMember = "razonSocial";
+            cmbCuilEstacion.ValueMember = "CUIT";
+            cmbCuilEstacion.SelectedIndex = 0;
+
+            cmbCuilEstacion.DataSource = tablaEstado;
+            cmbEstado.DisplayMember = "nombre";
+            cmbEstado.ValueMember = "idEstado";
+            cmbEstado.SelectedIndex = 0;
+
+            cmbCuilEstacion.DataSource = tablaCombustibles;
+            cmbTipoCombustible.DisplayMember = "nombre";
+            cmbTipoCombustible.ValueMember = "idTipoCombustible";
+            cmbTipoCombustible.SelectedIndex = 0;
         }
     }
 }
