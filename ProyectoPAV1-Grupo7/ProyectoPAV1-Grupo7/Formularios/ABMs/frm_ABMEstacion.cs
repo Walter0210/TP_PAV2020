@@ -48,6 +48,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
             txtBoxCuit.Enabled = true;
+
         }
 
         //FUNCION CARGAR GRILLA
@@ -113,6 +114,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
                     txtBoxCuit.Focus();
                 }
             }
+            
         }
 
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO
@@ -160,10 +162,9 @@ namespace ProyectoPAV1_Grupo7.Formularios
             int num = int.Parse(tabla.Rows[0]["Numero"].ToString());
             //DateTime fecha = DateTime.Parse(tabla.Rows[0]["fechaHabilitacion"].ToString());
             DateTime fecha = Convert.ToDateTime(tabla.Rows[0]["fechaHabilitacion"].ToString());
+            //Estacion estacion1 = new Estacion(111, "dd", "aa", 11, DateTime.Parse("31/10/2019")); 
             Estacion estacion = new Estacion(CUIT, razonSocial, calle, num, fecha);
             return estacion;
-
-
         }
 
         //Seleccion de item en grilla
@@ -189,7 +190,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             txtBoxCalle.Text = estacion.Calle;
             txtBoxNumero.Text = estacion.Nro.ToString();
             txtFechaHab.Text = estacion.FechaHabilitacion.ToString();
-
         }
 
         //Actualizar datos en bd 

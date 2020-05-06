@@ -40,18 +40,18 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgrSurtidor = new System.Windows.Forms.DataGridView();
-            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             this.nroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 76);
+            this.label1.Location = new System.Drawing.Point(21, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 0;
@@ -129,6 +129,7 @@
             this.btnEliminar.TabIndex = 32;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -138,6 +139,7 @@
             this.btnModificar.TabIndex = 31;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
@@ -164,13 +166,7 @@
             this.dgrSurtidor.ReadOnly = true;
             this.dgrSurtidor.Size = new System.Drawing.Size(446, 337);
             this.dgrSurtidor.TabIndex = 33;
-            // 
-            // txtBoxNroSurtidor
-            // 
-            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 73);
-            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
-            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxNroSurtidor.TabIndex = 34;
+            this.dgrSurtidor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSurtidor_CellClick);
             // 
             // nroSurtidor
             // 
@@ -199,6 +195,14 @@
             this.idTipoCombustible.HeaderText = "Tipo de Combustible";
             this.idTipoCombustible.Name = "idTipoCombustible";
             this.idTipoCombustible.ReadOnly = true;
+            // 
+            // txtBoxNroSurtidor
+            // 
+            this.txtBoxNroSurtidor.Enabled = false;
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 64);
+            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
+            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNroSurtidor.TabIndex = 34;
             // 
             // frm_ABMSurtidor
             // 
