@@ -39,13 +39,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.grdSurtidor = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgrSurtidor = new System.Windows.Forms.DataGridView();
+            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             this.nroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSurtidor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,29 +147,30 @@
             this.btnGuardar.TabIndex = 30;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // grdSurtidor
+            // dgrSurtidor
             // 
-            this.grdSurtidor.AllowUserToAddRows = false;
-            this.grdSurtidor.AllowUserToDeleteRows = false;
-            this.grdSurtidor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdSurtidor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrSurtidor.AllowUserToAddRows = false;
+            this.dgrSurtidor.AllowUserToDeleteRows = false;
+            this.dgrSurtidor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrSurtidor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nroSurtidor,
             this.cuit,
             this.idEstado,
             this.idTipoCombustible});
-            this.grdSurtidor.Location = new System.Drawing.Point(372, 12);
-            this.grdSurtidor.Name = "grdSurtidor";
-            this.grdSurtidor.ReadOnly = true;
-            this.grdSurtidor.Size = new System.Drawing.Size(446, 337);
-            this.grdSurtidor.TabIndex = 33;
+            this.dgrSurtidor.Location = new System.Drawing.Point(372, 12);
+            this.dgrSurtidor.Name = "dgrSurtidor";
+            this.dgrSurtidor.ReadOnly = true;
+            this.dgrSurtidor.Size = new System.Drawing.Size(446, 337);
+            this.dgrSurtidor.TabIndex = 33;
             // 
-            // textBox1
+            // txtBoxNroSurtidor
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 34;
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 73);
+            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
+            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNroSurtidor.TabIndex = 34;
             // 
             // nroSurtidor
             // 
@@ -204,8 +205,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 361);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.grdSurtidor);
+            this.Controls.Add(this.txtBoxNroSurtidor);
+            this.Controls.Add(this.dgrSurtidor);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
@@ -220,7 +221,8 @@
             this.Name = "frm_ABMSurtidor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ABMSurtidor";
-            ((System.ComponentModel.ISupportInitialize)(this.grdSurtidor)).EndInit();
+            this.Load += new System.EventHandler(this.frm_ABMSurtidor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,8 +241,8 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView grdSurtidor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgrSurtidor;
+        private System.Windows.Forms.TextBox txtBoxNroSurtidor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroSurtidor;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEstado;
