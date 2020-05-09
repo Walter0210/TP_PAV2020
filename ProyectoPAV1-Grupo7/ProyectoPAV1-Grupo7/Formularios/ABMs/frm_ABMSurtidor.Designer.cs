@@ -40,11 +40,11 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgrSurtidor = new System.Windows.Forms.DataGridView();
+            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             this.nroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,9 +62,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "CUIL de Estación";
+            this.label2.Text = "Estacion de Servicio: ";
             // 
             // label3
             // 
@@ -168,6 +168,14 @@
             this.dgrSurtidor.TabIndex = 33;
             this.dgrSurtidor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSurtidor_CellClick);
             // 
+            // txtBoxNroSurtidor
+            // 
+            this.txtBoxNroSurtidor.Enabled = false;
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 64);
+            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
+            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNroSurtidor.TabIndex = 34;
+            // 
             // nroSurtidor
             // 
             this.nroSurtidor.DataPropertyName = "numeroSurtidor";
@@ -177,32 +185,24 @@
             // 
             // cuit
             // 
-            this.cuit.DataPropertyName = "cuit";
+            this.cuit.DataPropertyName = "razonSocial";
             this.cuit.HeaderText = "CUIT";
             this.cuit.Name = "cuit";
             this.cuit.ReadOnly = true;
             // 
             // idEstado
             // 
-            this.idEstado.DataPropertyName = "idEstado";
+            this.idEstado.DataPropertyName = "nombre";
             this.idEstado.HeaderText = "Estado";
             this.idEstado.Name = "idEstado";
             this.idEstado.ReadOnly = true;
             // 
             // idTipoCombustible
             // 
-            this.idTipoCombustible.DataPropertyName = "idTipoCombustible";
+            this.idTipoCombustible.DataPropertyName = "nombre";
             this.idTipoCombustible.HeaderText = "Tipo de Combustible";
             this.idTipoCombustible.Name = "idTipoCombustible";
             this.idTipoCombustible.ReadOnly = true;
-            // 
-            // txtBoxNroSurtidor
-            // 
-            this.txtBoxNroSurtidor.Enabled = false;
-            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 64);
-            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
-            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxNroSurtidor.TabIndex = 34;
             // 
             // frm_ABMSurtidor
             // 

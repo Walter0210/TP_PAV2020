@@ -34,10 +34,17 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void CargarGrilla()
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Surtidor";
+            //string sql = "SELECT * FROM Surtidor";
+            //string consultarEstaciones = "SELECT * From Estacion";
+
+            string sql = string.Format("SELECT S.numeroSurtidor, A.razonSocial, E.nombre, TC.nombre " +
+                "FROM Surtidor S JOIN Estacion A ON S.cuit = A.CUIT " +
+                "JOIN Estado E ON S.idEstado = E.idEstado " +
+                "JOIN TipoCombustible TC ON S.idTipoCombustible = TC.idTipoCombustible");
+
+            //DataTable estaciones = conexion.ejecutar_consulta(consultarEstaciones);
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrSurtidor.DataSource = tabla;
-
         }
 
         private void CargarComboEstacion()
@@ -76,23 +83,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             cmbTipoCombustible.SelectedIndex = -1;
         }
 
-
-        //Valida que no haya otro surtidor EN LA GRILLA con el msimo numero.
-        private bool ExisteSurtidor(int Criterio)
-        {
-            bool resultado = false;
-            for (int i = 0; i < dgrSurtidor.Rows.Count; i++)
-            {
-                if (dgrSurtidor.Rows[i].Cells["nroSurtidor"].Value.Equals(Criterio))
-                {
-                    resultado = true;
-                    MessageBox.Show("Ya existe este Numero de Surtidor en el sistema.");
-                    break;
-
-                }
-            }
-            return resultado;
-        }
 
         //Insertar el objeto en base de datos.
         private bool InsertarSurtidor(Surtidor surtidor)
@@ -149,18 +139,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Surtidor surtidor = ArmarSurtidor();
-            if (ExisteSurtidor(surtidor.NroSurtidor).Equals(false))
+            bool resultado = InsertarSurtidor(surtidor);
+            if (resultado)
             {
-                bool resultado = InsertarSurtidor(surtidor);
-                if (resultado)
-                {
-                    MessageBox.Show("Estacion cargada con exito");
-                    LimpiarCampos();
-                    CargarGrilla();
-                    txtBoxNroSurtidor.Focus();
-                }
+                MessageBox.Show("Estacion cargada con exito");
+                LimpiarCampos();
+                CargarGrilla();
+                txtBoxNroSurtidor.Focus();
             }
-
         }
 
         private void frm_ABMSurtidor_Load(object sender, EventArgs e)
@@ -186,32 +172,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             int nroSurtidor = (int)fila.Cells["nroSurtidor"].Value;
             Surtidor surtidor = ObtenerSurtidor(nroSurtidor);
             CargarCampos(surtidor);
-        }
-
-        private DataTable ObtenerComboBoxCUIT(Surtidor surtidor)
-        {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT Distinct * FROM Estacion WHERE Estacion.CUIT like " + surtidor.CUIT.ToString();
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-
-            return tabla;
-        }
-        private DataTable ObtenerComboBoxEstados(Surtidor surtidor)
-        {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Estado WHERE Estado.idEstado = " + surtidor.IdEstado.ToString();
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-
-            return tabla;
-        }
-
-        private DataTable ObtenerComboBoxCombustible(Surtidor surtidor)
-        {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM TipoCombustible WHERE TipoCombustible.idTipoCombustible = " + surtidor.IdTipoComb.ToString();
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-
-            return tabla;
         }
 
         private void CargarCampos(Surtidor surtidor)
