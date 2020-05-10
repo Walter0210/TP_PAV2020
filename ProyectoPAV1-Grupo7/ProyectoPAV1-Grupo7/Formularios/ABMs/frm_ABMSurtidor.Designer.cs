@@ -1,4 +1,6 @@
-﻿namespace ProyectoPAV1_Grupo7.Formularios.ABMs
+﻿using System;
+
+namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 {
     partial class frm_ABMSurtidor
     {
@@ -114,11 +116,6 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> master
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(186, 326);
@@ -145,10 +142,9 @@
             this.btnGuardar.TabIndex = 30;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
+
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-=======
->>>>>>> master
+
             // 
             // dataGridView1
             // 
@@ -165,10 +161,6 @@
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 34;
             // 
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> master
             // frm_ABMSurtidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +186,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

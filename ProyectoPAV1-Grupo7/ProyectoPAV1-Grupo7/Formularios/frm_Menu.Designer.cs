@@ -53,8 +53,8 @@
             this.surtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenuLateral.SuspendLayout();
             this.subPanel_producto.SuspendLayout();
             this.subPanel_empleado.SuspendLayout();
@@ -312,7 +312,8 @@
             // 
             this.nivelDeUrgeciaToolStripMenuItem.Name = "nivelDeUrgeciaToolStripMenuItem";
             this.nivelDeUrgeciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgecia";
+            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgencia";
+            this.nivelDeUrgeciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeUrgeciaToolStripMenuItem_Click);
             // 
             // tipoDeDocumentoToolStripMenuItem
             // 
@@ -346,6 +347,13 @@
             this.estaciónToolStripMenuItem.Text = "Estación";
             this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
             // 
+            // empleadoToolStripMenuItem
+            // 
+            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleadoToolStripMenuItem.Text = "Empleado";
+            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
+            // 
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -355,13 +363,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(485, 454);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // empleadoToolStripMenuItem
-            // 
-            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empleadoToolStripMenuItem.Text = "Empleado";
-            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
