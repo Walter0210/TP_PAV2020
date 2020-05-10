@@ -13,12 +13,18 @@ namespace ProyectoPAV1_Grupo7.Clases
         private int idEstado;
         private int idTipoComb;
 
-        public Surtidor(int nroSurtidor, int cuit, int idEstado, int idTipoComb)
+        //le saco el tributo nroSurtidor porque no me deja insertar
+        public Surtidor(int cuit, int idEstado, int idTipoComb)
         {
             NroSurtidor = nroSurtidor;
             CUIT = cuit;
             IdEstado = idEstado;
             IdTipoComb = idTipoComb;
+        }
+
+        public Surtidor ()
+        {
+
         }
 
         public int NroSurtidor

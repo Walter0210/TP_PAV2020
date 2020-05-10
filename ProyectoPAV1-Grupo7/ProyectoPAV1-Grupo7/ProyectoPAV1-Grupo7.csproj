@@ -92,11 +92,11 @@
     <Compile Include="Formularios\ABMs\frm_ABMSoporte.Designer.cs">
       <DependentUpon>frm_ABMSoporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frm_Empleado.cs">
+    <Compile Include="Formularios\ABMs\frm_ABMEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frm_Empleado.Designer.cs">
-      <DependentUpon>frm_Empleado.cs</DependentUpon>
+    <Compile Include="Formularios\ABMs\frm_ABMEmpleado.Designer.cs">
+      <DependentUpon>frm_ABMEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frm_Menu.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     <EmbeddedResource Include="Formularios\ABMs\frm_ABMSoporte.resx">
       <DependentUpon>frm_ABMSoporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frm_Empleado.resx">
-      <DependentUpon>frm_Empleado.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\ABMs\frm_ABMEmpleado.resx">
+      <DependentUpon>frm_ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Menu.resx">
       <DependentUpon>frm_Menu.cs</DependentUpon>

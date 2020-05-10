@@ -29,6 +29,20 @@ namespace ProyectoPAV1_Grupo7.Clases
             LegajoSuperior = legajoSuperior;
         }
 
+        public Empleado(string nombre, string apellido, int tipoDoc, int nroDoc, DateTime fechaNacimiento, DateTime fechaAlta, int legajoSuperior)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+            TipoDoc = tipoDoc;
+            NroDoc = nroDoc;
+            FechaNacimiento = fechaNacimiento;
+            FechaAlta = fechaAlta;
+            LegajoSuperior = legajoSuperior;
+        }
+
+
+        public Empleado() { }
+
         public string Nombre 
         {   
             get => nombre; 
