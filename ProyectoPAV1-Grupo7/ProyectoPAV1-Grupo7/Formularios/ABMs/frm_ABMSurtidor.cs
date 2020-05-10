@@ -34,15 +34,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void CargarGrilla()
         {
             ConexionBD conexion = new ConexionBD();
-            //string sql = "SELECT * FROM Surtidor";
-            //string consultarEstaciones = "SELECT * From Estacion";
 
-            string sql = string.Format("SELECT S.numeroSurtidor, A.razonSocial, E.nombre, TC.nombre " +
-                "FROM Surtidor S JOIN Estacion A ON S.cuit = A.CUIT " +
-                "JOIN Estado E ON S.idEstado = E.idEstado " +
+            string sql = string.Format("SELECT S.numeroSurtidor, E.razonSocial, Es.nombre, TC.nombre " +
+                "FROM Surtidor S JOIN Estacion E ON S.cuit = E.CUIT " +
+                "JOIN Estado Es ON S.idEstado = Es.idEstado " +
                 "JOIN TipoCombustible TC ON S.idTipoCombustible = TC.idTipoCombustible");
 
-            //DataTable estaciones = conexion.ejecutar_consulta(consultarEstaciones);
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrSurtidor.DataSource = tabla;
         }
@@ -169,9 +166,16 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             btnGuardar.Enabled = false;
 
             DataGridViewRow fila = dgrSurtidor.Rows[indice];
-            int nroSurtidor = (int)fila.Cells["nroSurtidor"].Value;
-            Surtidor surtidor = ObtenerSurtidor(nroSurtidor);
-            CargarCampos(surtidor);
+            if (fila.Equals(-1))
+            {
+                MessageBox.Show("Seleccione un Item valido de la lista");
+            }
+            else
+            {
+                int nroSurtidor = (int)fila.Cells["nroSurtidor"].Value;
+                Surtidor surtidor = ObtenerSurtidor(nroSurtidor);
+                CargarCampos(surtidor);
+            }
         }
 
         private void CargarCampos(Surtidor surtidor)
@@ -211,6 +215,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
                 LimpiarCampos();
                 CargarGrilla();
             }
+            btnGuardar.Enabled = true;
         }
 
         //Borrar estacion de base de datos

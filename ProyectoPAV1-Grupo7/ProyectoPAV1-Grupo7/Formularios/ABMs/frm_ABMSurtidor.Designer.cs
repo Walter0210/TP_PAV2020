@@ -114,7 +114,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCerrar.Location = new System.Drawing.Point(267, 326);
+            this.btnCerrar.Location = new System.Drawing.Point(267, 330);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 7;
@@ -125,7 +125,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
+            this.btnEliminar.Location = new System.Drawing.Point(186, 330);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 32;
@@ -136,7 +136,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(105, 326);
+            this.btnModificar.Location = new System.Drawing.Point(105, 330);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 31;
@@ -147,7 +147,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
+            this.btnGuardar.Location = new System.Drawing.Point(24, 330);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 30;
@@ -170,9 +170,11 @@
             this.idEstado,
             this.idTipoCombustible});
             this.dgrSurtidor.Location = new System.Drawing.Point(372, 12);
+            this.dgrSurtidor.MultiSelect = false;
             this.dgrSurtidor.Name = "dgrSurtidor";
             this.dgrSurtidor.ReadOnly = true;
-            this.dgrSurtidor.Size = new System.Drawing.Size(446, 337);
+            this.dgrSurtidor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrSurtidor.Size = new System.Drawing.Size(463, 341);
             this.dgrSurtidor.TabIndex = 33;
             this.dgrSurtidor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSurtidor_CellClick);
             // 
@@ -207,7 +209,7 @@
             // 
             // idTipoCombustible
             // 
-            this.idTipoCombustible.DataPropertyName = "nombre";
+            this.idTipoCombustible.DataPropertyName = "nombre1";
             this.idTipoCombustible.HeaderText = "Tipo de Combustible";
             this.idTipoCombustible.Name = "idTipoCombustible";
             this.idTipoCombustible.ReadOnly = true;
@@ -216,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 361);
+            this.ClientSize = new System.Drawing.Size(846, 365);
             this.Controls.Add(this.txtBoxNroSurtidor);
             this.Controls.Add(this.dgrSurtidor);
             this.Controls.Add(this.btnEliminar);
