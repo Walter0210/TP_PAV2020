@@ -40,18 +40,18 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgrSurtidor = new System.Windows.Forms.DataGridView();
-            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             this.nroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 67);
+            this.label1.Location = new System.Drawing.Point(24, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 102);
+            this.label2.Location = new System.Drawing.Point(24, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 129);
+            this.label3.Location = new System.Drawing.Point(24, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 2;
@@ -78,7 +78,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 156);
+            this.label4.Location = new System.Drawing.Point(24, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 3;
@@ -88,33 +88,33 @@
             // 
             this.cmbCuilEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCuilEstacion.FormattingEnabled = true;
-            this.cmbCuilEstacion.Location = new System.Drawing.Point(221, 99);
+            this.cmbCuilEstacion.Location = new System.Drawing.Point(186, 78);
             this.cmbCuilEstacion.Name = "cmbCuilEstacion";
-            this.cmbCuilEstacion.Size = new System.Drawing.Size(121, 21);
+            this.cmbCuilEstacion.Size = new System.Drawing.Size(159, 21);
             this.cmbCuilEstacion.TabIndex = 4;
             // 
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(221, 126);
+            this.cmbEstado.Location = new System.Drawing.Point(186, 105);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(159, 21);
             this.cmbEstado.TabIndex = 5;
             // 
             // cmbTipoCombustible
             // 
             this.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCombustible.FormattingEnabled = true;
-            this.cmbTipoCombustible.Location = new System.Drawing.Point(221, 153);
+            this.cmbTipoCombustible.Location = new System.Drawing.Point(186, 132);
             this.cmbTipoCombustible.Name = "cmbTipoCombustible";
-            this.cmbTipoCombustible.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoCombustible.Size = new System.Drawing.Size(159, 21);
             this.cmbTipoCombustible.TabIndex = 6;
             // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCerrar.Location = new System.Drawing.Point(267, 330);
+            this.btnCerrar.Location = new System.Drawing.Point(270, 326);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 7;
@@ -125,7 +125,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(186, 330);
+            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 32;
@@ -136,7 +136,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(105, 330);
+            this.btnModificar.Location = new System.Drawing.Point(105, 326);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 31;
@@ -147,7 +147,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.Location = new System.Drawing.Point(24, 330);
+            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 30;
@@ -163,7 +163,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgrSurtidor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgrSurtidor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrSurtidor.ColumnHeadersHeight = 34;
+            this.dgrSurtidor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgrSurtidor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nroSurtidor,
             this.cuit,
@@ -174,17 +175,9 @@
             this.dgrSurtidor.Name = "dgrSurtidor";
             this.dgrSurtidor.ReadOnly = true;
             this.dgrSurtidor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrSurtidor.Size = new System.Drawing.Size(463, 341);
+            this.dgrSurtidor.Size = new System.Drawing.Size(500, 337);
             this.dgrSurtidor.TabIndex = 33;
             this.dgrSurtidor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSurtidor_CellClick);
-            // 
-            // txtBoxNroSurtidor
-            // 
-            this.txtBoxNroSurtidor.Enabled = false;
-            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(221, 64);
-            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
-            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxNroSurtidor.TabIndex = 34;
             // 
             // nroSurtidor
             // 
@@ -214,11 +207,19 @@
             this.idTipoCombustible.Name = "idTipoCombustible";
             this.idTipoCombustible.ReadOnly = true;
             // 
+            // txtBoxNroSurtidor
+            // 
+            this.txtBoxNroSurtidor.Enabled = false;
+            this.txtBoxNroSurtidor.Location = new System.Drawing.Point(186, 52);
+            this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";
+            this.txtBoxNroSurtidor.Size = new System.Drawing.Size(159, 20);
+            this.txtBoxNroSurtidor.TabIndex = 34;
+            // 
             // frm_ABMSurtidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 365);
+            this.ClientSize = new System.Drawing.Size(884, 361);
             this.Controls.Add(this.txtBoxNroSurtidor);
             this.Controls.Add(this.dgrSurtidor);
             this.Controls.Add(this.btnEliminar);
