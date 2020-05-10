@@ -54,7 +54,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(14, 33);
+            this.lblCuit.Location = new System.Drawing.Point(24, 55);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(35, 13);
             this.lblCuit.TabIndex = 0;
@@ -63,7 +63,7 @@
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(14, 59);
+            this.lblRazonSocial.Location = new System.Drawing.Point(24, 81);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(73, 13);
             this.lblRazonSocial.TabIndex = 1;
@@ -72,7 +72,7 @@
             // lblCalle
             // 
             this.lblCalle.AutoSize = true;
-            this.lblCalle.Location = new System.Drawing.Point(14, 85);
+            this.lblCalle.Location = new System.Drawing.Point(24, 107);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(30, 13);
             this.lblCalle.TabIndex = 2;
@@ -81,7 +81,7 @@
             // lblFechaHabilitacion
             // 
             this.lblFechaHabilitacion.AutoSize = true;
-            this.lblFechaHabilitacion.Location = new System.Drawing.Point(14, 143);
+            this.lblFechaHabilitacion.Location = new System.Drawing.Point(24, 159);
             this.lblFechaHabilitacion.Name = "lblFechaHabilitacion";
             this.lblFechaHabilitacion.Size = new System.Drawing.Size(73, 13);
             this.lblFechaHabilitacion.TabIndex = 4;
@@ -89,23 +89,24 @@
             // 
             // txtBoxRazonSocial
             // 
-            this.txtBoxRazonSocial.Location = new System.Drawing.Point(135, 56);
+            this.txtBoxRazonSocial.Location = new System.Drawing.Point(186, 78);
             this.txtBoxRazonSocial.MaxLength = 25;
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
-            this.txtBoxRazonSocial.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxRazonSocial.Size = new System.Drawing.Size(159, 20);
             this.txtBoxRazonSocial.TabIndex = 1;
             // 
             // txtBoxCalle
             // 
-            this.txtBoxCalle.Location = new System.Drawing.Point(135, 82);
+            this.txtBoxCalle.Location = new System.Drawing.Point(186, 104);
             this.txtBoxCalle.MaxLength = 32;
             this.txtBoxCalle.Name = "txtBoxCalle";
-            this.txtBoxCalle.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxCalle.Size = new System.Drawing.Size(159, 20);
             this.txtBoxCalle.TabIndex = 2;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(260, 387);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCerrar.Location = new System.Drawing.Point(270, 326);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 8;
@@ -116,7 +117,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(14, 111);
+            this.lblNumero.Location = new System.Drawing.Point(24, 133);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 3;
@@ -126,17 +127,22 @@
             // 
             this.dgrEstacion.AllowUserToAddRows = false;
             this.dgrEstacion.AllowUserToDeleteRows = false;
-            this.dgrEstacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrEstacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgrEstacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrEstacion.ColumnHeadersHeight = 34;
+            this.dgrEstacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgrEstacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cuit,
             this.Nombre,
             this.Calle,
             this.Numero,
             this.FechaAlta});
-            this.dgrEstacion.Location = new System.Drawing.Point(358, 12);
+            this.dgrEstacion.Location = new System.Drawing.Point(372, 12);
             this.dgrEstacion.Name = "dgrEstacion";
             this.dgrEstacion.ReadOnly = true;
-            this.dgrEstacion.Size = new System.Drawing.Size(525, 398);
+            this.dgrEstacion.Size = new System.Drawing.Size(500, 337);
             this.dgrEstacion.TabIndex = 17;
             this.dgrEstacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEstacion_CellClick);
             // 
@@ -146,7 +152,6 @@
             this.Cuit.HeaderText = "Cuit";
             this.Cuit.Name = "Cuit";
             this.Cuit.ReadOnly = true;
-            this.Cuit.Width = 70;
             // 
             // Nombre
             // 
@@ -161,7 +166,6 @@
             this.Calle.HeaderText = "Calle";
             this.Calle.Name = "Calle";
             this.Calle.ReadOnly = true;
-            this.Calle.Width = 130;
             // 
             // Numero
             // 
@@ -169,7 +173,6 @@
             this.Numero.HeaderText = "Numero";
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
-            this.Numero.Width = 80;
             // 
             // FechaAlta
             // 
@@ -180,7 +183,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(10, 387);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 5;
@@ -190,7 +194,8 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(91, 387);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Location = new System.Drawing.Point(105, 326);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 6;
@@ -200,7 +205,8 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(172, 387);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -210,27 +216,27 @@
             // 
             // txtBoxCuit
             // 
-            this.txtBoxCuit.Location = new System.Drawing.Point(135, 30);
+            this.txtBoxCuit.Location = new System.Drawing.Point(186, 52);
             this.txtBoxCuit.Mask = "99999999999";
             this.txtBoxCuit.Name = "txtBoxCuit";
-            this.txtBoxCuit.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxCuit.Size = new System.Drawing.Size(159, 20);
             this.txtBoxCuit.TabIndex = 0;
             // 
             // txtBoxNumero
             // 
-            this.txtBoxNumero.Location = new System.Drawing.Point(136, 108);
+            this.txtBoxNumero.Location = new System.Drawing.Point(186, 130);
             this.txtBoxNumero.Mask = "99999999999999";
             this.txtBoxNumero.Name = "txtBoxNumero";
-            this.txtBoxNumero.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxNumero.Size = new System.Drawing.Size(159, 20);
             this.txtBoxNumero.TabIndex = 3;
             // 
             // txtFechaHab
             // 
             this.txtFechaHab.Enabled = false;
-            this.txtFechaHab.Location = new System.Drawing.Point(136, 143);
+            this.txtFechaHab.Location = new System.Drawing.Point(186, 156);
             this.txtFechaHab.Mask = "00/00/0000";
             this.txtFechaHab.Name = "txtFechaHab";
-            this.txtFechaHab.Size = new System.Drawing.Size(200, 20);
+            this.txtFechaHab.Size = new System.Drawing.Size(159, 20);
             this.txtFechaHab.TabIndex = 4;
             this.txtFechaHab.ValidatingType = typeof(System.DateTime);
             // 
@@ -238,8 +244,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 422);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(884, 361);
             this.Controls.Add(this.txtFechaHab);
             this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCuit);
