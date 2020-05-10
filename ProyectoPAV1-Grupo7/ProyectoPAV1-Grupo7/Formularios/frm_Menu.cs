@@ -57,7 +57,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            openChildForm(new frm_Empleado());
+            openChildForm(new frm_ABMEmpleado());
             hideSubMenu();
         }
 
@@ -141,7 +141,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.frm_Empleado frm_Empleado = new frm_Empleado();
+            Formularios.frm_ABMEmpleado frm_Empleado = new frm_ABMEmpleado();
             frm_Empleado.ShowDialog();
 
         }
