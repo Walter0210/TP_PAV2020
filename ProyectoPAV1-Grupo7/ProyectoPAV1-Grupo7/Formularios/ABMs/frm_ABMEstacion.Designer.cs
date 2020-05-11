@@ -219,7 +219,7 @@
             // txtBoxCuit
             // 
             this.txtBoxCuit.Location = new System.Drawing.Point(186, 52);
-            this.txtBoxCuit.Mask = "99-99.999.999-9";
+            this.txtBoxCuit.Mask = "99999999999";
             this.txtBoxCuit.Name = "txtBoxCuit";
             this.txtBoxCuit.Size = new System.Drawing.Size(159, 20);
             this.txtBoxCuit.TabIndex = 0;

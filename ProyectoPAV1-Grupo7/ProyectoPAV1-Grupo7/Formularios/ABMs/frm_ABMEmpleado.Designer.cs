@@ -31,14 +31,6 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgrEmpleado = new System.Windows.Forms.DataGridView();
-            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LegSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarEmpleado = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -60,6 +52,14 @@
             this.tbxLegajo = new System.Windows.Forms.TextBox();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.tbxLegSup = new System.Windows.Forms.ComboBox();
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LegSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgrEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,62 +100,6 @@
             this.dgrEmpleado.Size = new System.Drawing.Size(500, 337);
             this.dgrEmpleado.TabIndex = 59;
             this.dgrEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEmpleado_CellContentClick);
-            // 
-            // Legajo
-            // 
-            this.Legajo.DataPropertyName = "legajo";
-            this.Legajo.HeaderText = "Legajo";
-            this.Legajo.Name = "Legajo";
-            this.Legajo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.DataPropertyName = "tipoDoc";
-            this.TipoDoc.HeaderText = "Tipo Documento";
-            this.TipoDoc.Name = "TipoDoc";
-            this.TipoDoc.ReadOnly = true;
-            // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "nroDoc";
-            this.Documento.HeaderText = "Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.DataPropertyName = "fechaNacimiento";
-            this.FechaNac.HeaderText = "Fecha Nacimiento";
-            this.FechaNac.Name = "FechaNac";
-            this.FechaNac.ReadOnly = true;
-            // 
-            // FechaAlta
-            // 
-            this.FechaAlta.DataPropertyName = "fechaAlta";
-            this.FechaAlta.HeaderText = "Fecha Alta";
-            this.FechaAlta.Name = "FechaAlta";
-            this.FechaAlta.ReadOnly = true;
-            // 
-            // LegSuperior
-            // 
-            this.LegSuperior.DataPropertyName = "legajoSuperior";
-            this.LegSuperior.HeaderText = "Legajo Superior";
-            this.LegSuperior.Name = "LegSuperior";
-            this.LegSuperior.ReadOnly = true;
             // 
             // btnEliminarEmpleado
             // 
@@ -368,6 +312,62 @@
             this.tbxLegSup.Size = new System.Drawing.Size(161, 21);
             this.tbxLegSup.TabIndex = 66;
             // 
+            // Legajo
+            // 
+            this.Legajo.DataPropertyName = "legajo";
+            this.Legajo.HeaderText = "Legajo";
+            this.Legajo.Name = "Legajo";
+            this.Legajo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.DataPropertyName = "nombre1";
+            this.TipoDoc.HeaderText = "Tipo Documento";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
+            // 
+            // Documento
+            // 
+            this.Documento.DataPropertyName = "nroDoc";
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            // 
+            // FechaNac
+            // 
+            this.FechaNac.DataPropertyName = "fechaNacimiento";
+            this.FechaNac.HeaderText = "Fecha Nacimiento";
+            this.FechaNac.Name = "FechaNac";
+            this.FechaNac.ReadOnly = true;
+            // 
+            // FechaAlta
+            // 
+            this.FechaAlta.DataPropertyName = "fechaAlta";
+            this.FechaAlta.HeaderText = "Fecha Alta";
+            this.FechaAlta.Name = "FechaAlta";
+            this.FechaAlta.ReadOnly = true;
+            // 
+            // LegSuperior
+            // 
+            this.LegSuperior.DataPropertyName = "legajoSuperior";
+            this.LegSuperior.HeaderText = "Legajo Superior";
+            this.LegSuperior.Name = "LegSuperior";
+            this.LegSuperior.ReadOnly = true;
+            // 
             // frm_ABMEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,6 +427,12 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox tbxNombre;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.MaskedTextBox dtpFechaNac;
+        private System.Windows.Forms.MaskedTextBox dtpFechaAlta;
+        private System.Windows.Forms.MaskedTextBox tbxDocumento;
+        private System.Windows.Forms.TextBox tbxLegajo;
+        private System.Windows.Forms.Label lblLegajo;
+        private System.Windows.Forms.ComboBox tbxLegSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -435,11 +441,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn LegSuperior;
-        private System.Windows.Forms.MaskedTextBox dtpFechaNac;
-        private System.Windows.Forms.MaskedTextBox dtpFechaAlta;
-        private System.Windows.Forms.MaskedTextBox tbxDocumento;
-        private System.Windows.Forms.TextBox tbxLegajo;
-        private System.Windows.Forms.Label lblLegajo;
-        private System.Windows.Forms.ComboBox tbxLegSup;
     }
 }

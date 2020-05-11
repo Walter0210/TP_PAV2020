@@ -53,7 +53,8 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void CargarGrilla()
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Empleado";
+            string sql = "SELECT E.legajo, E.nombre, E.apellido, TD.nombre, E.nroDoc, E.fechaNacimiento, E.fechaAlta, E.legajoSuperior " + 
+                "FROM Empleado E JOIN TipoDocumento TD on E.tipoDoc = TD.idTipoDocumento";
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrEmpleado.DataSource = tabla;
 
@@ -70,7 +71,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
                     resultado = true;
                     MessageBox.Show("Ya existe una empleado con ese legajo");
                     break;
-
                 }
             }
             return resultado;
@@ -201,6 +201,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
             string fechaNacimiento = tabla.Rows[0]["FechaNacimiento"].ToString();
             string fechaAlta = tabla.Rows[0]["FechaAlta"].ToString();
             int legajoSup = int.Parse(tabla.Rows[0]["LegajoSuperior"].ToString());
+
             Empleado empleado = new Empleado(legajo, nombre, apellido, tipoDoc, nrodoc, DateTime.Parse(fechaNacimiento), DateTime.Parse(fechaAlta), legajoSup);
             return empleado;
 
