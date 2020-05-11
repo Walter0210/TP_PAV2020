@@ -42,6 +42,8 @@
             this.btn_empleado = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +55,8 @@
             this.surtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenuLateral.SuspendLayout();
             this.subPanel_producto.SuspendLayout();
             this.subPanel_empleado.SuspendLayout();
@@ -160,7 +162,7 @@
             this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_producto.Size = new System.Drawing.Size(188, 37);
             this.btn_producto.TabIndex = 2;
-            this.btn_producto.Text = "Producto";
+            this.btn_producto.Text = "Transaccion2";
             this.btn_producto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_producto.UseVisualStyleBackColor = true;
             this.btn_producto.Click += new System.EventHandler(this.btn_producto_Click);
@@ -239,7 +241,7 @@
             this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_empleado.Size = new System.Drawing.Size(188, 37);
             this.btn_empleado.TabIndex = 2;
-            this.btn_empleado.Text = "Empleado";
+            this.btn_empleado.Text = "Transaccion1";
             this.btn_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_empleado.UseVisualStyleBackColor = true;
             this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
@@ -257,12 +259,28 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
             this.aBMToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(188, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // aBMToolStripMenuItem
             // 
@@ -286,7 +304,7 @@
             this.nivelDeUrgeciaToolStripMenuItem,
             this.tipoDeDocumentoToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // estadoToolStripMenuItem
@@ -323,28 +341,35 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 6);
             // 
             // surtidorToolStripMenuItem
             // 
             this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
-            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.surtidorToolStripMenuItem.Text = "Surtidor";
             this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // estaciónToolStripMenuItem
             // 
             this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
-            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.estaciónToolStripMenuItem.Text = "Estación";
             this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
+            // 
+            // empleadoToolStripMenuItem
+            // 
+            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.empleadoToolStripMenuItem.Text = "Empleado";
+            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
             // panelChildForm
             // 
@@ -355,13 +380,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(485, 454);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // empleadoToolStripMenuItem
-            // 
-            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empleadoToolStripMenuItem.Text = "Empleado";
-            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
@@ -417,5 +435,7 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
