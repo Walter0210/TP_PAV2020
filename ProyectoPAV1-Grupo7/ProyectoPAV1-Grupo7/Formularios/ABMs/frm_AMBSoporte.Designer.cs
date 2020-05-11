@@ -113,6 +113,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimumSize = new System.Drawing.Size(700, 250);
             this.Name = "frm_AMBSoporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_AMBSoporte";

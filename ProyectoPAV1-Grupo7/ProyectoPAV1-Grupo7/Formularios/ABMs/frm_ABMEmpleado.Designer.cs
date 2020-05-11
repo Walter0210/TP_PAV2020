@@ -67,16 +67,21 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(53, 53);
+            this.lblTitulo.Location = new System.Drawing.Point(22, 12);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(136, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(119, 25);
             this.lblTitulo.TabIndex = 60;
-            this.lblTitulo.Text = "Empleado";
+            this.lblTitulo.Text = "Empleados";
             // 
             // dgrEmpleado
             // 
             this.dgrEmpleado.AllowUserToAddRows = false;
             this.dgrEmpleado.AllowUserToDeleteRows = false;
+            this.dgrEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgrEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Legajo,
@@ -87,11 +92,12 @@
             this.FechaNac,
             this.FechaAlta,
             this.LegSuperior});
-            this.dgrEmpleado.Location = new System.Drawing.Point(497, 53);
-            this.dgrEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.dgrEmpleado.Location = new System.Drawing.Point(372, 12);
+            this.dgrEmpleado.MultiSelect = false;
             this.dgrEmpleado.Name = "dgrEmpleado";
             this.dgrEmpleado.ReadOnly = true;
-            this.dgrEmpleado.Size = new System.Drawing.Size(842, 493);
+            this.dgrEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrEmpleado.Size = new System.Drawing.Size(500, 337);
             this.dgrEmpleado.TabIndex = 59;
             this.dgrEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEmpleado_CellContentClick);
             // 
@@ -153,10 +159,10 @@
             // 
             // btnEliminarEmpleado
             // 
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(271, 518);
-            this.btnEliminarEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(186, 326);
             this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
-            this.btnEliminarEmpleado.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarEmpleado.TabIndex = 58;
             this.btnEliminarEmpleado.Text = "Eliminar";
             this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
@@ -164,10 +170,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(163, 518);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Location = new System.Drawing.Point(105, 326);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 28);
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 57;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -175,10 +181,10 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(55, 518);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 56;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -186,10 +192,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(389, 518);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCerrar.Location = new System.Drawing.Point(270, 326);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(100, 28);
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 55;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -198,158 +204,175 @@
             // lblTipoDoc
             // 
             this.lblTipoDoc.AutoSize = true;
-            this.lblTipoDoc.Location = new System.Drawing.Point(55, 276);
+            this.lblTipoDoc.Location = new System.Drawing.Point(24, 129);
+            this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoDoc.Name = "lblTipoDoc";
-            this.lblTipoDoc.Size = new System.Drawing.Size(132, 17);
+            this.lblTipoDoc.Size = new System.Drawing.Size(101, 13);
             this.lblTipoDoc.TabIndex = 53;
             this.lblTipoDoc.Text = "Tipo de Documento";
             // 
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(54, 370);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(24, 178);
+            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(141, 17);
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(108, 13);
             this.lblFechaNacimiento.TabIndex = 52;
             this.lblFechaNacimiento.Text = "Fecha de Nacimiento";
             // 
             // cmbTipoDoc
             // 
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Location = new System.Drawing.Point(242, 269);
-            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTipoDoc.Location = new System.Drawing.Point(186, 126);
+            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(213, 24);
+            this.cmbTipoDoc.Size = new System.Drawing.Size(161, 21);
             this.cmbTipoDoc.TabIndex = 47;
             // 
             // lblLegSup
             // 
             this.lblLegSup.AutoSize = true;
-            this.lblLegSup.Location = new System.Drawing.Point(54, 471);
+            this.lblLegSup.Location = new System.Drawing.Point(24, 227);
+            this.lblLegSup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLegSup.Name = "lblLegSup";
-            this.lblLegSup.Size = new System.Drawing.Size(76, 17);
+            this.lblLegSup.Size = new System.Drawing.Size(57, 13);
             this.lblLegSup.TabIndex = 45;
             this.lblLegSup.Text = "Supervisor";
             // 
             // lblFechaAlta
             // 
             this.lblFechaAlta.AutoSize = true;
-            this.lblFechaAlta.Location = new System.Drawing.Point(52, 421);
+            this.lblFechaAlta.Location = new System.Drawing.Point(24, 202);
+            this.lblFechaAlta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaAlta.Name = "lblFechaAlta";
-            this.lblFechaAlta.Size = new System.Drawing.Size(95, 17);
+            this.lblFechaAlta.Size = new System.Drawing.Size(73, 13);
             this.lblFechaAlta.TabIndex = 44;
             this.lblFechaAlta.Text = "Fecha de Alta";
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(55, 59);
+            this.label6.Location = new System.Drawing.Point(41, 48);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.Size = new System.Drawing.Size(75, 19);
             this.label6.TabIndex = 48;
             // 
             // lblDocumento
             // 
             this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(54, 322);
+            this.lblDocumento.Location = new System.Drawing.Point(24, 154);
+            this.lblDocumento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(80, 17);
+            this.lblDocumento.Size = new System.Drawing.Size(62, 13);
             this.lblDocumento.TabIndex = 41;
             this.lblDocumento.Text = "Documento";
             // 
             // tbxApellido
             // 
-            this.tbxApellido.Location = new System.Drawing.Point(242, 218);
-            this.tbxApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxApellido.Location = new System.Drawing.Point(186, 102);
+            this.tbxApellido.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxApellido.MaxLength = 20;
             this.tbxApellido.Name = "tbxApellido";
-            this.tbxApellido.Size = new System.Drawing.Size(213, 22);
+            this.tbxApellido.Size = new System.Drawing.Size(161, 20);
             this.tbxApellido.TabIndex = 40;
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(55, 223);
+            this.lblApellido.Location = new System.Drawing.Point(24, 105);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(58, 17);
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 39;
             this.lblApellido.Text = "Apellido";
             // 
             // tbxNombre
             // 
             this.tbxNombre.AcceptsReturn = true;
-            this.tbxNombre.Location = new System.Drawing.Point(242, 166);
-            this.tbxNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxNombre.Location = new System.Drawing.Point(186, 78);
+            this.tbxNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxNombre.MaxLength = 20;
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(213, 22);
+            this.tbxNombre.Size = new System.Drawing.Size(161, 20);
             this.tbxNombre.TabIndex = 38;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(55, 171);
+            this.lblNombre.Location = new System.Drawing.Point(24, 81);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 17);
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 37;
             this.lblNombre.Text = "Nombre";
             // 
             // dtpFechaNac
             // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(242, 365);
+            this.dtpFechaNac.Location = new System.Drawing.Point(186, 175);
+            this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaNac.Mask = "00/00/0000";
             this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(213, 22);
+            this.dtpFechaNac.Size = new System.Drawing.Size(161, 20);
             this.dtpFechaNac.TabIndex = 61;
             this.dtpFechaNac.ValidatingType = typeof(System.DateTime);
             // 
             // dtpFechaAlta
             // 
-            this.dtpFechaAlta.Location = new System.Drawing.Point(242, 418);
+            this.dtpFechaAlta.Location = new System.Drawing.Point(186, 199);
+            this.dtpFechaAlta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaAlta.Mask = "00/00/0000";
             this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(213, 22);
+            this.dtpFechaAlta.Size = new System.Drawing.Size(161, 20);
             this.dtpFechaAlta.TabIndex = 62;
             this.dtpFechaAlta.ValidatingType = typeof(System.DateTime);
             // 
             // tbxDocumento
             // 
-            this.tbxDocumento.Location = new System.Drawing.Point(242, 319);
-            this.tbxDocumento.Mask = "99999999";
+            this.tbxDocumento.Location = new System.Drawing.Point(186, 151);
+            this.tbxDocumento.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxDocumento.Mask = "00000000";
             this.tbxDocumento.Name = "tbxDocumento";
-            this.tbxDocumento.Size = new System.Drawing.Size(213, 22);
+            this.tbxDocumento.Size = new System.Drawing.Size(161, 20);
             this.tbxDocumento.TabIndex = 63;
             this.tbxDocumento.ValidatingType = typeof(int);
             // 
             // tbxLegajo
             // 
             this.tbxLegajo.AcceptsReturn = true;
-            this.tbxLegajo.Location = new System.Drawing.Point(361, 120);
-            this.tbxLegajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxLegajo.Location = new System.Drawing.Point(275, 52);
+            this.tbxLegajo.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxLegajo.MaxLength = 10;
             this.tbxLegajo.Name = "tbxLegajo";
-            this.tbxLegajo.Size = new System.Drawing.Size(94, 22);
+            this.tbxLegajo.Size = new System.Drawing.Size(72, 20);
             this.tbxLegajo.TabIndex = 64;
             // 
             // lblLegajo
             // 
             this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(55, 125);
+            this.lblLegajo.Location = new System.Drawing.Point(24, 55);
+            this.lblLegajo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLegajo.Name = "lblLegajo";
-            this.lblLegajo.Size = new System.Drawing.Size(51, 17);
+            this.lblLegajo.Size = new System.Drawing.Size(39, 13);
             this.lblLegajo.TabIndex = 65;
             this.lblLegajo.Text = "Legajo";
             // 
             // tbxLegSup
             // 
+            this.tbxLegSup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tbxLegSup.FormattingEnabled = true;
-            this.tbxLegSup.Location = new System.Drawing.Point(242, 464);
-            this.tbxLegSup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxLegSup.Location = new System.Drawing.Point(186, 224);
+            this.tbxLegSup.Margin = new System.Windows.Forms.Padding(2);
             this.tbxLegSup.Name = "tbxLegSup";
-            this.tbxLegSup.Size = new System.Drawing.Size(213, 24);
+            this.tbxLegSup.Size = new System.Drawing.Size(161, 21);
             this.tbxLegSup.TabIndex = 66;
             // 
             // frm_ABMEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1385, 586);
+            this.ClientSize = new System.Drawing.Size(884, 361);
             this.Controls.Add(this.tbxLegSup);
             this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.tbxLegajo);
@@ -373,7 +396,8 @@
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.tbxNombre);
             this.Controls.Add(this.lblNombre);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "frm_ABMEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Empleado";

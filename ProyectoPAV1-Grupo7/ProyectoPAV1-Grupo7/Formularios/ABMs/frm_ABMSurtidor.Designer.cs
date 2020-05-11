@@ -45,6 +45,7 @@
             this.idEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTipoCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBoxNroSurtidor = new System.Windows.Forms.TextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSurtidor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,11 +216,23 @@
             this.txtBoxNroSurtidor.Size = new System.Drawing.Size(159, 20);
             this.txtBoxNroSurtidor.TabIndex = 34;
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(19, 12);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(88, 25);
+            this.lblTitulo.TabIndex = 61;
+            this.lblTitulo.Text = "Surtidor";
+            // 
             // frm_ABMSurtidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 361);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtBoxNroSurtidor);
             this.Controls.Add(this.dgrSurtidor);
             this.Controls.Add(this.btnEliminar);
@@ -233,6 +246,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "frm_ABMSurtidor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ABMSurtidor";
@@ -262,5 +276,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTipoCombustible;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
