@@ -157,5 +157,23 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             this.Close();
         }
+
+        private void tipoDeCombustibleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("TipoCombustible");
+            frm_ABMSoporte.ShowDialog();
+        }
+
+        private void unidadDeMedidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("UnidadMedida");
+            frm_ABMSoporte.ShowDialog();
+        }
+
+        private void tipoDeDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("TipoDocumento");
+            frm_ABMSoporte.ShowDialog();
+        }
     }
 }

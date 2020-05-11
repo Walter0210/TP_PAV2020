@@ -304,7 +304,7 @@
             this.nivelDeUrgeciaToolStripMenuItem,
             this.tipoDeDocumentoToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // estadoToolStripMenuItem
@@ -319,12 +319,14 @@
             this.tipoDeCombustibleToolStripMenuItem.Name = "tipoDeCombustibleToolStripMenuItem";
             this.tipoDeCombustibleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tipoDeCombustibleToolStripMenuItem.Text = "Tipo de Combustible";
+            this.tipoDeCombustibleToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCombustibleToolStripMenuItem_Click);
             // 
             // unidadDeMedidaToolStripMenuItem
             // 
             this.unidadDeMedidaToolStripMenuItem.Name = "unidadDeMedidaToolStripMenuItem";
             this.unidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.unidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida";
+            this.unidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadDeMedidaToolStripMenuItem_Click);
             // 
             // nivelDeUrgeciaToolStripMenuItem
             // 
@@ -338,37 +340,38 @@
             this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
             this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
+            this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // surtidorToolStripMenuItem
             // 
             this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
-            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.surtidorToolStripMenuItem.Text = "Surtidor";
             this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // estaciónToolStripMenuItem
             // 
             this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
-            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estaciónToolStripMenuItem.Text = "Estación";
             this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
             // 
             // empleadoToolStripMenuItem
             // 
             this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empleadoToolStripMenuItem.Text = "Empleado";
             this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
