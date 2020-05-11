@@ -161,7 +161,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dgrSoporte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frm_ABMSoporte";
+            this.MinimumSize = new System.Drawing.Size(700, 250);
+            this.Name = "frm_AMBSoporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_AMBSoporte";
             ((System.ComponentModel.ISupportInitialize)(this.dgrSoporte)).EndInit();

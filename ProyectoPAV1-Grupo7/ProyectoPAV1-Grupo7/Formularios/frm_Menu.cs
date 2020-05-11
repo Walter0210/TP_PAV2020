@@ -57,8 +57,8 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            openChildForm(new frm_ABMEmpleado());
-            hideSubMenu();
+            //openChildForm(new frm_ABMEmpleado());
+            //hideSubMenu();
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
@@ -75,6 +75,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btn_producto_Click(object sender, EventArgs e)
         {
+            //codigo
             showSubMenu(subPanel_producto);
         }
 
@@ -146,20 +147,13 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         }
 
-        private void btnNivelUrgencia_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSoporte_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void nivelDeUrgeciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("Urgencia");
             frm_ABMSoporte.ShowDialog();
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

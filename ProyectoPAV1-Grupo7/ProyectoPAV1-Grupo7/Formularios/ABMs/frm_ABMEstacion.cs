@@ -154,15 +154,14 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private Estacion ObtenerEstacion(int CUIT)
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Estacion WHERE CUIT like '" + CUIT + "'";
+            string sql = "SELECT * FROM Estacion WHERE CUIT = '" + CUIT + "'";
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             string razonSocial = tabla.Rows[0]["razonSocial"].ToString();
             string calle = tabla.Rows[0]["Calle"].ToString();
-            int num = int.Parse(tabla.Rows[0]["Numero"].ToString());
-            //DateTime fecha = DateTime.Parse(tabla.Rows[0]["fechaHabilitacion"].ToString());
+            int num = (int)tabla.Rows[0]["Numero"];
             DateTime fecha = Convert.ToDateTime(tabla.Rows[0]["fechaHabilitacion"].ToString());
-            //Estacion estacion1 = new Estacion(111, "dd", "aa", 11, DateTime.Parse("31/10/2019")); 
+
             Estacion estacion = new Estacion(CUIT, razonSocial, calle, num, fecha);
             return estacion;
         }
