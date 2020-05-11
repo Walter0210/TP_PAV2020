@@ -173,15 +173,18 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void dgrProducto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
-            txtBoxCodigo.Enabled = false;
-            DataGridViewRow fila = dgrProducto.Rows[indice];
-            string Codigo = fila.Cells["Codigo"].Value.ToString();
-            Producto producto = ObtenerProducto(int.Parse(Codigo));
-            CargarCampos(producto);
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+                txtBoxCodigo.Enabled = false;
+                DataGridViewRow fila = dgrProducto.Rows[indice];
+                string Codigo = fila.Cells["Codigo"].Value.ToString();
+                Producto producto = ObtenerProducto(int.Parse(Codigo));
+                CargarCampos(producto);
+            }
         }
 
         //Cargar campos de TEXTO automaticamente.

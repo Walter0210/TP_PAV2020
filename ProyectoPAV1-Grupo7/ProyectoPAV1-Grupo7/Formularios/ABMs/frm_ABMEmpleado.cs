@@ -175,17 +175,20 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void dgrEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminarEmpleado.Enabled = true;
-            btnGuardar.Enabled = false;
-            tbxLegajo.Visible = true;
-            lblLegajo.Visible = true;
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminarEmpleado.Enabled = true;
+                btnGuardar.Enabled = false;
+                tbxLegajo.Visible = true;
+                lblLegajo.Visible = true;
 
-            DataGridViewRow fila = dgrEmpleado.Rows[indice];
-            string leg = fila.Cells["Legajo"].Value.ToString();
-            Empleado empleado = ObtenerEmpleado(int.Parse(leg));
-            CargarCampos(empleado);
+                DataGridViewRow fila = dgrEmpleado.Rows[indice];
+                string leg = fila.Cells["Legajo"].Value.ToString();
+                Empleado empleado = ObtenerEmpleado(int.Parse(leg));
+                CargarCampos(empleado);
+            }
         }
 
         private Empleado ObtenerEmpleado(int legajo)
@@ -193,14 +196,25 @@ namespace ProyectoPAV1_Grupo7.Formularios
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT * FROM Empleado WHERE Legajo like '" + legajo + "'";
             DataTable tabla = conexion.ejecutar_consulta(sql);
+            int legajoSup;
 
             string nombre = tabla.Rows[0]["Nombre"].ToString();
             string apellido = tabla.Rows[0]["Apellido"].ToString();
-            int tipoDoc = int.Parse(tabla.Rows[0]["TipoDoc"].ToString());
-            int nrodoc = int.Parse(tabla.Rows[0]["NroDoc"].ToString());
+            int tipoDoc = (int)tabla.Rows[0]["TipoDoc"];
+            int nrodoc = (int)tabla.Rows[0]["NroDoc"];
             string fechaNacimiento = tabla.Rows[0]["FechaNacimiento"].ToString();
             string fechaAlta = tabla.Rows[0]["FechaAlta"].ToString();
-            int legajoSup = int.Parse(tabla.Rows[0]["LegajoSuperior"].ToString());
+
+            int? legajoSuperior = tabla.Rows[0]["LegajoSuperior"] as int?;
+            if(legajoSuperior.HasValue)
+            {
+                legajoSup = legajoSuperior.Value;
+
+            }
+            else
+            {
+                legajoSup = 0;
+            }
 
             Empleado empleado = new Empleado(legajo, nombre, apellido, tipoDoc, nrodoc, DateTime.Parse(fechaNacimiento), DateTime.Parse(fechaAlta), legajoSup);
             return empleado;

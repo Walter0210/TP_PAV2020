@@ -160,18 +160,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void dgrSurtidor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
 
-            DataGridViewRow fila = dgrSurtidor.Rows[indice];
-            if (fila.Equals(-1))
-            {
-                MessageBox.Show("Seleccione un Item valido de la lista");
-            }
-            else
-            {
+                DataGridViewRow fila = dgrSurtidor.Rows[indice];
                 int nroSurtidor = (int)fila.Cells["nroSurtidor"].Value;
                 Surtidor surtidor = ObtenerSurtidor(nroSurtidor);
                 CargarCampos(surtidor);

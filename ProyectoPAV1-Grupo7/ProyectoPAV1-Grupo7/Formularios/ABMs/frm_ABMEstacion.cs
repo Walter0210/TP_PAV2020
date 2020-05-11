@@ -170,15 +170,18 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void dgrEstacion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
-            txtBoxCuit.Enabled = false;
-            DataGridViewRow fila = dgrEstacion.Rows[indice];
-            string CUIT = fila.Cells["CUIT"].Value.ToString();
-            Estacion estacion = ObtenerEstacion(int.Parse(CUIT));
-            CargarCampos(estacion);
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+                txtBoxCuit.Enabled = false;
+                DataGridViewRow fila = dgrEstacion.Rows[indice];
+                string CUIT = fila.Cells["CUIT"].Value.ToString();
+                Estacion estacion = ObtenerEstacion(int.Parse(CUIT));
+                CargarCampos(estacion);
+            }
         }
 
         //Cargar campos de TEXTO automaticamente.
