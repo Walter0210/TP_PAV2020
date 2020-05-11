@@ -255,10 +255,5 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
                 }
             }
         }
-
-        private void frm_ABMSoporte_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

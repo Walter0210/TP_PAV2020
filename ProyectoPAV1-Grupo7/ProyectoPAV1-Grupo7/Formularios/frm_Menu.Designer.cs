@@ -330,7 +330,8 @@
             // 
             this.nivelDeUrgeciaToolStripMenuItem.Name = "nivelDeUrgeciaToolStripMenuItem";
             this.nivelDeUrgeciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgecia";
+            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgencia";
+            this.nivelDeUrgeciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeUrgeciaToolStripMenuItem_Click);
             // 
             // tipoDeDocumentoToolStripMenuItem
             // 

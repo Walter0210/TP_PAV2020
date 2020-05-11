@@ -1,4 +1,6 @@
-﻿namespace ProyectoPAV1_Grupo7.Formularios.ABMs
+﻿using System;
+
+namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 {
     partial class frm_ABMSurtidor
     {
@@ -255,6 +257,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

@@ -135,7 +135,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.ABMs.frm_AMBSoporte frm_AMBSoporte = new ABMs.frm_AMBSoporte();
+            Formularios.ABMs.frm_ABMSoporte frm_AMBSoporte = new ABMs.frm_ABMSoporte("Estado");
             frm_AMBSoporte.ShowDialog();
          
         }
@@ -147,6 +147,10 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         }
 
+        private void nivelDeUrgeciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("Urgencia");
+            frm_ABMSoporte.ShowDialog();
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
