@@ -259,10 +259,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void btnGuardar_Click(object sender, EventArgs e)
+        //{
+        //   throw new NotImplementedException();
+        //}
 
         #endregion
 

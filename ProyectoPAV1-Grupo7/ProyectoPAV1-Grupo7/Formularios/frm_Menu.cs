@@ -151,6 +151,8 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("Urgencia");
             frm_ABMSoporte.ShowDialog();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
