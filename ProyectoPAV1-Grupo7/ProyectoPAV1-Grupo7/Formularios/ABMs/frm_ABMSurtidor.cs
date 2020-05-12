@@ -135,14 +135,21 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //BOTON GUARDAR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Surtidor surtidor = ArmarSurtidor();
-            bool resultado = InsertarSurtidor(surtidor);
-            if (resultado)
+            if (cmbTipoCombustible.SelectedIndex != -1 && cmbEstado.SelectedIndex != -1 && cmbCuilEstacion.SelectedIndex != -1)
             {
-                MessageBox.Show("Estacion cargada con exito");
-                LimpiarCampos();
-                CargarGrilla();
-                txtBoxNroSurtidor.Focus();
+                Surtidor surtidor = ArmarSurtidor();
+                bool resultado = InsertarSurtidor(surtidor);
+                if (resultado)
+                {
+                    MessageBox.Show("Estacion cargada con exito");
+                    LimpiarCampos();
+                    CargarGrilla();
+                    txtBoxNroSurtidor.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Complete los campos obligatoriosd");
             }
         }
 

@@ -209,7 +209,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             if(legajoSuperior.HasValue)
             {
                 legajoSup = legajoSuperior.Value;
-
             }
             else
             {
