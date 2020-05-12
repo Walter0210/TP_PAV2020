@@ -17,6 +17,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         {
             InitializeComponent();
             this.Text = nombre;
+            txtCodigo.Enabled = false;
             CargarGrilla(nombre);
         }
 
@@ -121,12 +122,11 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         {
             bool resultado = false;
 
-            Random random = new Random();
-            int id = random.Next(100, 1000);
+            
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "INSERT INTO Urgencia VALUES ('"+ id + "', '" + urgencia.Nombre + "' )";
+                string sql = "INSERT INTO Urgencia VALUES ('" + urgencia.Nombre + "' )";
 
                 conexion.insertar(sql);
 
@@ -254,6 +254,11 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
                     txtBoxNombre.Focus();
                 }
             }
+        }
+
+        private void frm_ABMSoporte_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

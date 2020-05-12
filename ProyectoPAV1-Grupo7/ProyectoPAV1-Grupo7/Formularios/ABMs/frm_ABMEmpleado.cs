@@ -66,10 +66,10 @@ namespace ProyectoPAV1_Grupo7.Formularios
             bool resultado = false;
             for (int i = 0; i < dgrEmpleado.Rows.Count; i++)
             {
-                if (dgrEmpleado.Rows[i].Cells["Legajo"].Value.Equals(Criterio))
+                if (dgrEmpleado.Rows[i].Cells["Documento"].Value.Equals(Criterio))
                 {
                     resultado = true;
-                    MessageBox.Show("Ya existe una empleado con ese legajo");
+                    MessageBox.Show("Ya existe una empleado con ese documento");
                     break;
                 }
             }
@@ -82,9 +82,20 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
+
             try
             {
-                string sql = "INSERT INTO Empleado VALUES ('" + empleado.Nombre + "','" + empleado.Apellido + "','" + empleado.TipoDoc + "','" + empleado.NroDoc + "','" + empleado.FechaNacimiento + "','" + empleado.FechaAlta + "','" + empleado.LegajoSuperior + "' )";
+                string sql =  "" ;
+                if (empleado.LegajoSuperior.Equals(0))
+                {
+                    sql = "INSERT INTO Empleado VALUES ('" + empleado.Nombre + "','" + empleado.Apellido + "','" + empleado.TipoDoc + "','" + empleado.NroDoc + "','" 
+                        + empleado.FechaNacimiento + "','" + empleado.FechaAlta + "', NULL)";
+                }
+                else
+                {
+                    sql = "INSERT INTO Empleado VALUES ('" + empleado.Nombre + "','" + empleado.Apellido + "','" + empleado.TipoDoc + "','" + empleado.NroDoc + "','"
+                        + empleado.FechaNacimiento + "','" + empleado.FechaAlta + "','" + empleado.LegajoSuperior + "' )";
+                }
 
                 conexion.insertar(sql);
 
@@ -122,38 +133,48 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //BOTON GUARDAR
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            Empleado empleado = ObtenerDatosEmpleado();
-            if (CargoCampos(empleado) && ExisteEmpleado(empleado.Legajo).Equals(false))
+            if (cmbTipoDoc.SelectedIndex != -1)
             {
-                bool resultado = GuardarEmpleadoBD(empleado);
-                if (resultado)
+                Empleado empleado = ObtenerDatosEmpleado();
+                if (CargoCampos(empleado) && ExisteEmpleado(empleado.Legajo).Equals(false))
+
                 {
-                    MessageBox.Show("Empleado cargado con exito");
-                    LimpiarCampos();
-                    CargarGrilla();
-                    tbxNombre.Focus();
+
+                    bool resultado = GuardarEmpleadoBD(empleado);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Empleado cargado con exito");
+                        LimpiarCampos();
+                        CargarGrilla();
+                        tbxNombre.Focus();
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Tipo de documento obligatorio");
             }
         }
 
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO
         private Empleado ObtenerDatosEmpleado()
         {
+            int t = 0;
+            if (tbxLegSup.SelectedIndex != -1)
+            {
+                t = (int) tbxLegSup.SelectedValue ;
+            }
             //VARIABLES DE CONTROL
             string nombre = tbxNombre.Text.Trim();
             string apellido = tbxApellido.Text.Trim();
-            string tipoDoc = cmbTipoDoc.SelectedValue.ToString();
+            int tipoDoc = (int)cmbTipoDoc.SelectedValue;
             string documento = tbxDocumento.Text.Trim();
             string fechaNacimiento = dtpFechaNac.Text;
             string fechaAlta = dtpFechaAlta.Text; 
-            string legajoSuperior = tbxLegSup.SelectedValue.ToString();
-            if (documento.Equals("") || tipoDoc.Equals("") || legajoSuperior.Equals(""))
-            {
-                tipoDoc = "0";
-                documento = "0";
-                legajoSuperior = "1";
-            }
-            Empleado emp = new Empleado(nombre, apellido, int.Parse(tipoDoc), int.Parse(documento), DateTime.Parse(fechaNacimiento), DateTime.Parse(fechaAlta), int.Parse(legajoSuperior));
+            int legajoSuperior = t;
+            
+            Empleado emp = new Empleado(nombre, apellido, tipoDoc, int.Parse(documento), DateTime.Parse(fechaNacimiento), DateTime.Parse(fechaAlta), legajoSuperior);
 
             return emp;
         }
@@ -162,14 +183,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private bool CargoCampos(Empleado empleado)
         {
             bool resultado = true;
-            if (empleado.NroDoc.Equals(0) || empleado.Nombre.Equals("") || empleado.Apellido.Equals("") || empleado.LegajoSuperior.Equals(0))
+            if (tbxDocumento.Text.Trim().Equals(""))
             {
                 resultado = false;
-                MessageBox.Show("Documento, nombre y apellido son obligatorios");
-
+                MessageBox.Show("Documento y tipo de documento es obligatrio.");
             }
-
-            return resultado;
+                return resultado;
         }
     
         private void dgrEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -256,7 +275,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             }
             return resultado;
         }
-
         
         private void btnModificar_Click(object sender, EventArgs e)
         {

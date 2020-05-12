@@ -31,6 +31,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void InitializeComponent()
         {
             this.dgrSoporte = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtBoxNombre = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSoporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,20 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.dgrSoporte.Size = new System.Drawing.Size(398, 187);
             this.dgrSoporte.TabIndex = 0;
             this.dgrSoporte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSoporte_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "idUrgencia";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // lblNombre
             // 
@@ -132,20 +146,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.txtCodigo.Size = new System.Drawing.Size(237, 20);
             this.txtCodigo.TabIndex = 31;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "idUrgencia";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
             // frm_ABMSoporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,9 +162,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.Controls.Add(this.dgrSoporte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimumSize = new System.Drawing.Size(700, 250);
-            this.Name = "frm_AMBSoporte";
+            this.Name = "frm_ABMSoporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_AMBSoporte";
+            this.Load += new System.EventHandler(this.frm_ABMSoporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgrSoporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
