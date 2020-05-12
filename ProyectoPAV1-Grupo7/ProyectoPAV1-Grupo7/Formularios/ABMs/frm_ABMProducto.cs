@@ -28,7 +28,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             LimpiarCampos();
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
-            txtFechaUltimaActualizacion.Text = DateTime.Today.ToString();
+            
 
             CargarGrilla();
         }
@@ -46,7 +46,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             btnModificar.Enabled = false;
             txtBoxCodigo.Enabled = false;
             txtFechaUltimaActualizacion.Enabled = false;
-
+            txtFechaUltimaActualizacion.Text = DateTime.Today.ToString();
         }
 
         //FUNCION CARGAR GRILLA

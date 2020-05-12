@@ -198,6 +198,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private bool ActualizarEstacionBD(Estacion estacion)
         {
             bool resultado = false;
+            estacion.FechaHabilitacion = DateTime.Today;
             ConexionBD conexion = new ConexionBD();
             try
             {
