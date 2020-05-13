@@ -80,11 +80,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //Guardar en base de datos.
         private bool GuardarProductoBD(Producto producto)
         {
+            string format = "yyyy-MM-dd HH:mm:ss";
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "INSERT INTO Producto VALUES ('" + producto.Descripcion + "','" + producto.StockActual + "','" + producto.PrecioCompra + "','" + producto.PrecioVenta + "','" + producto.UltimaFechaActStock + "' )";
+                string sql = "INSERT INTO Producto VALUES ('" + producto.Descripcion + "','" + producto.StockActual + "','" + producto.PrecioCompra + "','" + producto.PrecioVenta + "','" + producto.UltimaFechaActStock.ToString(format) + "' )";
 
                 conexion.insertar(sql);
 
@@ -201,13 +202,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //Actualizar datos en bd 
         private bool ActualizarProductoBD(Producto producto)
         {
-
+            string format = "yyyy-MM-dd HH:mm:ss";
             producto.UltimaFechaActStock = DateTime.Today;
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "UPDATE Producto SET descripcion = '" + producto.Descripcion + "', stockActual = '" + producto.StockActual + "',precioCompra ='" + producto.PrecioCompra + "',precioVenta ='"+ producto.PrecioVenta + "',fechaUltimaActualizacion ='" + producto.UltimaFechaActStock + "' WHERE idProducto like '" + producto.Codigo + "'";
+                string sql = "UPDATE Producto SET descripcion = '" + producto.Descripcion + "', stockActual = '" + producto.StockActual + "',precioCompra ='" + producto.PrecioCompra + "',precioVenta ='"+ producto.PrecioVenta + "',fechaUltimaActualizacion ='" + producto.UltimaFechaActStock.ToString(format) + "' WHERE idProducto like '" + producto.Codigo + "'";
 
                 conexion.modificar(sql);
 
