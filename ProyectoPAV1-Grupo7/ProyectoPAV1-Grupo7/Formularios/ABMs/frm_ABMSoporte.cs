@@ -11,20 +11,25 @@ using System.Windows.Forms;
 
 namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 {
-    public partial class frm_ABMSoporte : Form
+
+public partial class frm_ABMSoporte : Form
     {
+        static class NombreTabla
+        {
+            public static string nombreTabla;
+        }
         public frm_ABMSoporte(string nombre)
         {
             InitializeComponent();
-            this.Text = nombre;
-            txtCodigo.Enabled = false;
-            CargarGrilla(nombre);
+            NombreTabla.nombreTabla = nombre;
         }
 
-        private void CargarGrilla(string nombreTabla)
+        private void CargarGrilla()
         {
+            string tablaNom = NombreTabla.nombreTabla;
+
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM " + nombreTabla;
+            string sql = "SELECT * FROM " + tablaNom;
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrSoporte.DataSource = tabla;
         }
@@ -32,23 +37,28 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //Seleccion de item en grilla
         private void dgrSoporte_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string tablaNom = NombreTabla.nombreTabla;
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
-            txtBoxNombre.Enabled = true;
-            DataGridViewRow fila = dgrSoporte.Rows[indice];
-            string id = fila.Cells["ID"].Value.ToString();
-            NivelUrgencia urgencia = ObtenerUrgencia("Urgencia", "idUrgencia", int.Parse(id));
-            CargarCampos(urgencia);
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+                txtBoxNombre.Enabled = true;
+                DataGridViewRow fila = dgrSoporte.Rows[indice];
+                string id = fila.Cells["NUMERO DE IDENTIFFICACIONS"].Value.ToString();
+                NivelUrgencia urgencia = ObtenerUrgencia("id" + tablaNom, int.Parse(id));
+                CargarCampos(urgencia);
+            }
         }
 
         //Obtener estacion de Base de datos
-        private NivelUrgencia ObtenerUrgencia(string nombreTabla, string propiedad, int id )
+        private NivelUrgencia ObtenerUrgencia(string propiedad, int id )
         {
+            string tablaNom = NombreTabla.nombreTabla;
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM " + nombreTabla + " WHERE " + propiedad + " like '" + id + "'";
+            string sql = "SELECT * FROM " + tablaNom + " WHERE " + propiedad + " like '" + id + "'";
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             string nombre = tabla.Rows[0]["nombre"].ToString();
@@ -80,31 +90,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.Close();
         }
 
-        //CLICK boton Eliminar
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            NivelUrgencia urgencia = ObtenerDatosUrgencia();
-            if (CargoCampos(urgencia))
-            {
-                bool resultado = BorrarEstacionBD(urgencia, "Urgencia");
-                if (resultado)
-                {
-                    MessageBox.Show("Urgencia Eliminada con exito");
-                    LimpiarCampos();
-                    CargarGrilla("Urgencia");
-                    txtBoxNombre.Focus();
-                }
-            }
-        }
-
         //Borrar estacion de base de datos
-        private bool BorrarEstacionBD(NivelUrgencia urgencia, string nombreTabla)
+        private bool BorrarEstacionBD(NivelUrgencia urgencia)
         {
+            string nombreTabla = NombreTabla.nombreTabla;
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "DELETE FROM " + nombreTabla +" WHERE idUrgencia = '" + urgencia.IdEstado + "'";
+                string sql = "DELETE FROM " + nombreTabla +" WHERE id" + nombreTabla + " = '" + urgencia.IdEstado + "'";
 
                 conexion.borrar(sql);
 
@@ -121,12 +115,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private bool GuardarUrgenciaBD(NivelUrgencia urgencia)
         {
             bool resultado = false;
+            string tabla = NombreTabla.nombreTabla;
 
-            
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "INSERT INTO Urgencia VALUES ('" + urgencia.Nombre + "' )";
+                string sql = "INSERT INTO " + tabla + " VALUES ('" + urgencia.Nombre + "' )";
 
                 conexion.insertar(sql);
 
@@ -134,7 +128,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en cargar datos: Base de datos corrompida");
+                MessageBox.Show("Error en cargar datos");
             }
             return resultado;
         }
@@ -144,9 +138,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         {
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
+            string tabla = NombreTabla.nombreTabla;
             try
             {
-                string sql = "UPDATE Urgencia SET nombre = ' " + urgencia.Nombre + "' WHERE idUrgencia = ' " + urgencia.IdEstado + " '";
+                string sql = "UPDATE " + tabla + " SET nombre = ' " + urgencia.Nombre + "' WHERE id" + tabla + " = ' " + urgencia.IdEstado + " '";
 
                 conexion.modificar(sql);
 
@@ -202,25 +197,25 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             return urg;
         }
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            string nombreTabla = NombreTabla.nombreTabla;
             NivelUrgencia urgencia = ObtenerDatosUrgencia();
             if (CargoCampos(urgencia))
             {
                 bool resultado = GuardarUrgenciaBD(urgencia);
                 if (resultado)
                 {
-                    MessageBox.Show("Urgencia cargada con exito");
+                    MessageBox.Show(nombreTabla + " cargada con exito!!");
                     LimpiarCampos();
-                    CargarGrilla("Urgencia");
+                    CargarGrilla();
                     txtBoxNombre.Focus();
                 }
             }
 
         }
 
-        private void btnModificar_Click_1(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             NivelUrgencia urgencia = ObtenerDatosUrgencia();
             if (CargoCampos(urgencia))
@@ -232,25 +227,25 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
                 {
                     MessageBox.Show("Urgencia Modificada con exito");
                     LimpiarCampos();
-                    CargarGrilla("Urgencia");
+                    CargarGrilla();
                     txtBoxNombre.Focus();
                 }
             }
         }
 
-        private void btnEliminar_Click_1(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            string nombreTabla = NombreTabla.nombreTabla;
             NivelUrgencia urgencia = ObtenerDatosUrgencia();
             if (CargoCampos(urgencia))
             {
                 urgencia.IdEstado = int.Parse(txtCodigo.Text);
-                bool resultado = BorrarEstacionBD(urgencia, "Urgencia");
+                bool resultado = BorrarEstacionBD(urgencia);
                 if (resultado)
                 {
-                    MessageBox.Show("Urgencia Eliminada con exito");
+                    MessageBox.Show(nombreTabla + " eliminado con exito");
                     LimpiarCampos();
-                    CargarGrilla("Urgencia");
+                    CargarGrilla();
                     txtBoxNombre.Focus();
                 }
             }
@@ -258,7 +253,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 
         private void frm_ABMSoporte_Load(object sender, EventArgs e)
         {
-
+            string nombreTabla = NombreTabla.nombreTabla;
+            lblTitulo.Text = nombreTabla;
+            DataGridViewColumn column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "Numero Identificacion";
+            column.DataPropertyName = "id" + nombreTabla;
+            column.Name = "NUMERO DE IDENTIFFICACIONS";
+            dgrSoporte.Columns.Add(column);
+            txtCodigo.Enabled = false;
+            CargarGrilla();
         }
     }
 }
