@@ -21,5 +21,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             this.Close();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblResponsable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

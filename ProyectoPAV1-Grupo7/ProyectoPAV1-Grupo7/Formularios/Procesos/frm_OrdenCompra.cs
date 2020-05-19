@@ -16,5 +16,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             InitializeComponent();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
