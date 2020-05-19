@@ -100,7 +100,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private Form activeForm = null;
 
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
             {
