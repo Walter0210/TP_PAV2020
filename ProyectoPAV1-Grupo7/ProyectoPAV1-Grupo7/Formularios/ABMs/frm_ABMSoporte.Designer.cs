@@ -48,10 +48,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             this.dgrSoporte.AllowUserToAddRows = false;
             this.dgrSoporte.AllowUserToDeleteRows = false;
+            this.dgrSoporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgrSoporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrSoporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrSoporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre});
-            this.dgrSoporte.Location = new System.Drawing.Point(372, 12);
+            this.dgrSoporte.Location = new System.Drawing.Point(374, 12);
             this.dgrSoporte.Name = "dgrSoporte";
             this.dgrSoporte.ReadOnly = true;
             this.dgrSoporte.Size = new System.Drawing.Size(398, 187);
@@ -78,6 +82,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // txtBoxNombre
             // 
             this.txtBoxNombre.Location = new System.Drawing.Point(104, 44);
+            this.txtBoxNombre.MaxLength = 15;
             this.txtBoxNombre.Name = "txtBoxNombre";
             this.txtBoxNombre.Size = new System.Drawing.Size(237, 20);
             this.txtBoxNombre.TabIndex = 2;
@@ -134,6 +139,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(104, 81);
+            this.txtCodigo.MaxLength = 5;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(237, 20);
             this.txtCodigo.TabIndex = 31;
@@ -152,7 +158,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 211);
+            this.ClientSize = new System.Drawing.Size(784, 211);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);

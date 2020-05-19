@@ -227,7 +227,7 @@
             // txtBoxNumero
             // 
             this.txtBoxNumero.Location = new System.Drawing.Point(186, 130);
-            this.txtBoxNumero.Mask = "9999999999";
+            this.txtBoxNumero.Mask = "00000";
             this.txtBoxNumero.Name = "txtBoxNumero";
             this.txtBoxNumero.Size = new System.Drawing.Size(159, 20);
             this.txtBoxNumero.TabIndex = 3;

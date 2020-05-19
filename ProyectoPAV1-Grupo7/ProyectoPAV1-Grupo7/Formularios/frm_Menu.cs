@@ -29,6 +29,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             subPanel_empleado.Visible = false;
             subPanel_producto.Visible = false;
+            openChildForm(new Procesos.frm_Compra());
         }
 
         private void hideSubMenu()
@@ -57,8 +58,8 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frm_ABMEmpleado());
-            //hideSubMenu();
+            //openChildForm(new );
+            hideSubMenu();
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
@@ -81,7 +82,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btn_nuevo_prod_Click(object sender, EventArgs e)
         {
-            //codigo
+            openChildForm(new Procesos.frm_OrdenCompra());
             hideSubMenu();
         }
 
