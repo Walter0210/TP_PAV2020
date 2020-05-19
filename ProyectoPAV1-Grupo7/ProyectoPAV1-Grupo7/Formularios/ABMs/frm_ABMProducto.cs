@@ -28,7 +28,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             LimpiarCampos();
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
-            txtFechaUltimaActualizacion.Text = DateTime.Today.ToString();
+            
 
             CargarGrilla();
         }
@@ -46,7 +46,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             btnModificar.Enabled = false;
             txtBoxCodigo.Enabled = false;
             txtFechaUltimaActualizacion.Enabled = false;
-
+            txtFechaUltimaActualizacion.Text = DateTime.Today.ToString();
         }
 
         //FUNCION CARGAR GRILLA
@@ -80,11 +80,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //Guardar en base de datos.
         private bool GuardarProductoBD(Producto producto)
         {
+            string format = "yyyy-MM-dd HH:mm:ss";
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "INSERT INTO Producto VALUES ('" + producto.Descripcion + "','" + producto.StockActual + "','" + producto.PrecioCompra + "','" + producto.PrecioVenta + "','" + producto.UltimaFechaActStock + "' )";
+                string sql = "INSERT INTO Producto VALUES ('" + producto.Descripcion + "','" + producto.StockActual + "','" + producto.PrecioCompra + "','" + producto.PrecioVenta + "','" + producto.UltimaFechaActStock.ToString(format) + "' )";
 
                 conexion.insertar(sql);
 
@@ -173,15 +174,18 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void dgrProducto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
-            txtBoxCodigo.Enabled = false;
-            DataGridViewRow fila = dgrProducto.Rows[indice];
-            string Codigo = fila.Cells["Codigo"].Value.ToString();
-            Producto producto = ObtenerProducto(int.Parse(Codigo));
-            CargarCampos(producto);
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+                txtBoxCodigo.Enabled = false;
+                DataGridViewRow fila = dgrProducto.Rows[indice];
+                string Codigo = fila.Cells["Codigo"].Value.ToString();
+                Producto producto = ObtenerProducto(int.Parse(Codigo));
+                CargarCampos(producto);
+            }
         }
 
         //Cargar campos de TEXTO automaticamente.
@@ -198,13 +202,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         //Actualizar datos en bd 
         private bool ActualizarProductoBD(Producto producto)
         {
-
+            string format = "yyyy-MM-dd HH:mm:ss";
             producto.UltimaFechaActStock = DateTime.Today;
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "UPDATE Producto SET descripcion = '" + producto.Descripcion + "', stockActual = '" + producto.StockActual + "',precioCompra ='" + producto.PrecioCompra + "',precioVenta ='"+ producto.PrecioVenta + "',fechaUltimaActualizacion ='" + producto.UltimaFechaActStock + "' WHERE idProducto like '" + producto.Codigo + "'";
+                string sql = "UPDATE Producto SET descripcion = '" + producto.Descripcion + "', stockActual = '" + producto.StockActual + "',precioCompra ='" + producto.PrecioCompra + "',precioVenta ='"+ producto.PrecioVenta + "',fechaUltimaActualizacion ='" + producto.UltimaFechaActStock.ToString(format) + "' WHERE idProducto like '" + producto.Codigo + "'";
 
                 conexion.modificar(sql);
 

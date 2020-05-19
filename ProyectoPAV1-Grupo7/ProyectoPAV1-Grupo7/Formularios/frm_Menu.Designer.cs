@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.subPanel_producto = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_nuevo_prod = new System.Windows.Forms.Button();
             this.btn_producto = new System.Windows.Forms.Button();
@@ -42,6 +41,8 @@
             this.btn_empleado = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +54,8 @@
             this.surtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMenuLateral.SuspendLayout();
             this.subPanel_producto.SuspendLayout();
             this.subPanel_empleado.SuspendLayout();
@@ -89,44 +90,27 @@
             // subPanel_producto
             // 
             this.subPanel_producto.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.subPanel_producto.Controls.Add(this.button2);
             this.subPanel_producto.Controls.Add(this.button1);
             this.subPanel_producto.Controls.Add(this.btn_nuevo_prod);
             this.subPanel_producto.Dock = System.Windows.Forms.DockStyle.Top;
             this.subPanel_producto.Location = new System.Drawing.Point(0, 249);
             this.subPanel_producto.Margin = new System.Windows.Forms.Padding(2);
             this.subPanel_producto.Name = "subPanel_producto";
-            this.subPanel_producto.Size = new System.Drawing.Size(188, 102);
+            this.subPanel_producto.Size = new System.Drawing.Size(188, 84);
             this.subPanel_producto.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(0, 64);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(188, 32);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Eliminar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 32);
+            this.button1.Location = new System.Drawing.Point(0, 40);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(188, 32);
+            this.button1.Size = new System.Drawing.Size(188, 42);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Modificar";
+            this.button1.Text = "consultar orden";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -141,9 +125,9 @@
             this.btn_nuevo_prod.Margin = new System.Windows.Forms.Padding(2);
             this.btn_nuevo_prod.Name = "btn_nuevo_prod";
             this.btn_nuevo_prod.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btn_nuevo_prod.Size = new System.Drawing.Size(188, 32);
+            this.btn_nuevo_prod.Size = new System.Drawing.Size(188, 40);
             this.btn_nuevo_prod.TabIndex = 4;
-            this.btn_nuevo_prod.Text = "Nuevo";
+            this.btn_nuevo_prod.Text = "Nueva orden de compra";
             this.btn_nuevo_prod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nuevo_prod.UseVisualStyleBackColor = true;
             this.btn_nuevo_prod.Click += new System.EventHandler(this.btn_nuevo_prod_Click);
@@ -160,7 +144,7 @@
             this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_producto.Size = new System.Drawing.Size(188, 37);
             this.btn_producto.TabIndex = 2;
-            this.btn_producto.Text = "Producto";
+            this.btn_producto.Text = "Pedido";
             this.btn_producto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_producto.UseVisualStyleBackColor = true;
             this.btn_producto.Click += new System.EventHandler(this.btn_producto_Click);
@@ -239,7 +223,7 @@
             this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_empleado.Size = new System.Drawing.Size(188, 37);
             this.btn_empleado.TabIndex = 2;
-            this.btn_empleado.Text = "Empleado";
+            this.btn_empleado.Text = "Compra";
             this.btn_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_empleado.UseVisualStyleBackColor = true;
             this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
@@ -257,12 +241,28 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
             this.aBMToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(188, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // aBMToolStripMenuItem
             // 
@@ -286,7 +286,7 @@
             this.nivelDeUrgeciaToolStripMenuItem,
             this.tipoDeDocumentoToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // estadoToolStripMenuItem
@@ -301,50 +301,61 @@
             this.tipoDeCombustibleToolStripMenuItem.Name = "tipoDeCombustibleToolStripMenuItem";
             this.tipoDeCombustibleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tipoDeCombustibleToolStripMenuItem.Text = "Tipo de Combustible";
+            this.tipoDeCombustibleToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCombustibleToolStripMenuItem_Click);
             // 
             // unidadDeMedidaToolStripMenuItem
             // 
             this.unidadDeMedidaToolStripMenuItem.Name = "unidadDeMedidaToolStripMenuItem";
             this.unidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.unidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida";
+            this.unidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadDeMedidaToolStripMenuItem_Click);
             // 
             // nivelDeUrgeciaToolStripMenuItem
             // 
             this.nivelDeUrgeciaToolStripMenuItem.Name = "nivelDeUrgeciaToolStripMenuItem";
             this.nivelDeUrgeciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgecia";
+            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgencia";
+            this.nivelDeUrgeciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeUrgeciaToolStripMenuItem_Click);
             // 
             // tipoDeDocumentoToolStripMenuItem
             // 
             this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
             this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
+            this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 6);
             // 
             // surtidorToolStripMenuItem
             // 
             this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
-            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.surtidorToolStripMenuItem.Text = "Surtidor";
             this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // estaciónToolStripMenuItem
             // 
             this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
-            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.estaciónToolStripMenuItem.Text = "Estación";
             this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
+            // 
+            // empleadoToolStripMenuItem
+            // 
+            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.empleadoToolStripMenuItem.Text = "Empleado";
+            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
             // panelChildForm
             // 
@@ -355,13 +366,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(485, 454);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // empleadoToolStripMenuItem
-            // 
-            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empleadoToolStripMenuItem.Text = "Empleado";
-            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
@@ -399,7 +403,6 @@
         private System.Windows.Forms.Button btn_empleado;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel subPanel_producto;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_nuevo_prod;
         private System.Windows.Forms.Button btn_producto;
@@ -417,5 +420,7 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

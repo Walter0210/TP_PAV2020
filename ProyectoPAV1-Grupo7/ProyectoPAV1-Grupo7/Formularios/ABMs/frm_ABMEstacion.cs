@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,11 +83,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //Guardar en base de datos.
         private bool GuardarEstacionBD(Estacion estacion)
         {
+            string format = "yyyy-MM-dd HH:mm:ss";
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
             try
             {
-                string sql = "INSERT INTO Estacion VALUES ('"+ estacion.Cuit+"','"+ estacion.RazonSocial+"','"+ estacion.Calle+"','"+ estacion.Nro +"','"+estacion.FechaHabilitacion+"' )";
+                string sql = "INSERT INTO Estacion VALUES ('"+ estacion.Cuit+"','"+ estacion.RazonSocial+"','"+ estacion.Calle+"','"+ estacion.Nro + "', '"+ estacion.FechaHabilitacion.ToString(format) + "' )";
                 
                 conexion.insertar(sql);
                 
@@ -120,12 +122,15 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO
         private Estacion ObtenerDatosEstacion()
         {
+            
             //VARIABLES DE CONTROL
             string CUIT = txtBoxCuit.Text.Trim();
             string razonSocial = txtBoxRazonSocial.Text.Trim();
             string calle = txtBoxCalle.Text.Trim();
             string numero = txtBoxNumero.Text.Trim();
-            DateTime fechaHabilitacion = DateTime.Parse(txtFechaHab.Text.ToString());
+            DateTime fechaHabilitacion = DateTime.ParseExact(txtFechaHab.Text.Trim(), "dd/MM/yyyy",null);
+
+            //CultureInfo culture = new CultureInfo("pt-BR");
             if (CUIT.Equals("") || numero.Equals(""))
             {
                 CUIT = "0";
@@ -154,15 +159,14 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private Estacion ObtenerEstacion(int CUIT)
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Estacion WHERE CUIT like '" + CUIT + "'";
+            string sql = "SELECT * FROM Estacion WHERE CUIT = '" + CUIT + "'";
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             string razonSocial = tabla.Rows[0]["razonSocial"].ToString();
             string calle = tabla.Rows[0]["Calle"].ToString();
-            int num = int.Parse(tabla.Rows[0]["Numero"].ToString());
-            //DateTime fecha = DateTime.Parse(tabla.Rows[0]["fechaHabilitacion"].ToString());
+            int num = (int)tabla.Rows[0]["Numero"];
             DateTime fecha = Convert.ToDateTime(tabla.Rows[0]["fechaHabilitacion"].ToString());
-            //Estacion estacion1 = new Estacion(111, "dd", "aa", 11, DateTime.Parse("31/10/2019")); 
+
             Estacion estacion = new Estacion(CUIT, razonSocial, calle, num, fecha);
             return estacion;
         }
@@ -171,15 +175,18 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void dgrEstacion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            LimpiarCampos();
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnGuardar.Enabled = false;
-            txtBoxCuit.Enabled = false;
-            DataGridViewRow fila = dgrEstacion.Rows[indice];
-            string CUIT = fila.Cells["CUIT"].Value.ToString();
-            Estacion estacion = ObtenerEstacion(int.Parse(CUIT));
-            CargarCampos(estacion);
+            if (indice != -1)
+            {
+                LimpiarCampos();
+                btnModificar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+                txtBoxCuit.Enabled = false;
+                DataGridViewRow fila = dgrEstacion.Rows[indice];
+                string CUIT = fila.Cells["CUIT"].Value.ToString();
+                Estacion estacion = ObtenerEstacion(int.Parse(CUIT));
+                CargarCampos(estacion);
+            }
         }
 
         //Cargar campos de TEXTO automaticamente.
@@ -195,12 +202,17 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //Actualizar datos en bd 
         private bool ActualizarEstacionBD(Estacion estacion)
         {
+
+            string format = "yyyy-MM-dd HH:mm:ss";    // modify the format depending upon input required in the column in database 
+
+
             bool resultado = false;
+            estacion.FechaHabilitacion = DateTime.Today;
             ConexionBD conexion = new ConexionBD();
             try
             {
                 string sql = "UPDATE Estacion SET CUIT = '" + estacion.Cuit + "', razonSocial = ' " + estacion.RazonSocial + "', calle = '" + estacion.Calle +
-                    "', numero ='" + estacion.Nro + "',fechaHabilitacion ='" + estacion.FechaHabilitacion + "' WHERE CUIT like '" + estacion.Cuit + "'";
+                    "', numero ='" + estacion.Nro + "',fechaHabilitacion ='" + estacion.FechaHabilitacion.ToString(format) + "' WHERE CUIT like '" + estacion.Cuit + "'";
 
                 conexion.modificar(sql);
 

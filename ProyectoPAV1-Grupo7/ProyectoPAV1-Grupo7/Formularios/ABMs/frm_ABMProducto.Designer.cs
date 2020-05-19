@@ -51,6 +51,7 @@
             this.txtBoxPrecioVenta = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtFechaUltimaActualizacion = new System.Windows.Forms.MaskedTextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +112,7 @@
             // txtBoxDescripcion
             // 
             this.txtBoxDescripcion.Location = new System.Drawing.Point(186, 78);
+            this.txtBoxDescripcion.MaxLength = 140;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
             this.txtBoxDescripcion.Size = new System.Drawing.Size(159, 20);
             this.txtBoxDescripcion.TabIndex = 6;
@@ -169,6 +171,7 @@
             this.dgrProducto.Name = "dgrProducto";
             this.dgrProducto.ReadOnly = true;
             this.dgrProducto.RowHeadersWidth = 51;
+            this.dgrProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrProducto.Size = new System.Drawing.Size(500, 337);
             this.dgrProducto.TabIndex = 22;
             this.dgrProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrProducto_CellClick);
@@ -225,6 +228,7 @@
             // 
             this.txtBoxCodigo.Enabled = false;
             this.txtBoxCodigo.Location = new System.Drawing.Point(186, 52);
+            this.txtBoxCodigo.MaxLength = 6;
             this.txtBoxCodigo.Name = "txtBoxCodigo";
             this.txtBoxCodigo.Size = new System.Drawing.Size(159, 20);
             this.txtBoxCodigo.TabIndex = 23;
@@ -232,6 +236,7 @@
             // txtBoxStockActual
             // 
             this.txtBoxStockActual.Location = new System.Drawing.Point(186, 104);
+            this.txtBoxStockActual.MaxLength = 9;
             this.txtBoxStockActual.Name = "txtBoxStockActual";
             this.txtBoxStockActual.Size = new System.Drawing.Size(159, 20);
             this.txtBoxStockActual.TabIndex = 24;
@@ -239,6 +244,7 @@
             // txtBoxPrecioCompra
             // 
             this.txtBoxPrecioCompra.Location = new System.Drawing.Point(186, 130);
+            this.txtBoxPrecioCompra.MaxLength = 9;
             this.txtBoxPrecioCompra.Name = "txtBoxPrecioCompra";
             this.txtBoxPrecioCompra.Size = new System.Drawing.Size(159, 20);
             this.txtBoxPrecioCompra.TabIndex = 26;
@@ -246,6 +252,7 @@
             // txtBoxPrecioVenta
             // 
             this.txtBoxPrecioVenta.Location = new System.Drawing.Point(186, 156);
+            this.txtBoxPrecioVenta.MaxLength = 9;
             this.txtBoxPrecioVenta.Name = "txtBoxPrecioVenta";
             this.txtBoxPrecioVenta.Size = new System.Drawing.Size(159, 20);
             this.txtBoxPrecioVenta.TabIndex = 27;
@@ -264,18 +271,30 @@
             // txtFechaUltimaActualizacion
             // 
             this.txtFechaUltimaActualizacion.Location = new System.Drawing.Point(186, 181);
-            this.txtFechaUltimaActualizacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFechaUltimaActualizacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtFechaUltimaActualizacion.Mask = "00/00/0000";
             this.txtFechaUltimaActualizacion.Name = "txtFechaUltimaActualizacion";
             this.txtFechaUltimaActualizacion.Size = new System.Drawing.Size(159, 20);
             this.txtFechaUltimaActualizacion.TabIndex = 29;
             this.txtFechaUltimaActualizacion.ValidatingType = typeof(System.DateTime);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(22, 12);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(109, 25);
+            this.lblTitulo.TabIndex = 61;
+            this.lblTitulo.Text = "Productos";
+            // 
             // frm_ABMProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 361);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtFechaUltimaActualizacion);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtBoxPrecioVenta);
@@ -293,6 +312,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "frm_ABMProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ABMProducto";
@@ -328,5 +348,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn UltimaActualizacion;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

@@ -48,6 +48,7 @@
             this.txtBoxCuit = new System.Windows.Forms.MaskedTextBox();
             this.txtBoxNumero = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaHab = new System.Windows.Forms.MaskedTextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrEstacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             // txtBoxRazonSocial
             // 
             this.txtBoxRazonSocial.Location = new System.Drawing.Point(186, 78);
-            this.txtBoxRazonSocial.MaxLength = 25;
+            this.txtBoxRazonSocial.MaxLength = 15;
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
             this.txtBoxRazonSocial.Size = new System.Drawing.Size(159, 20);
             this.txtBoxRazonSocial.TabIndex = 1;
@@ -98,7 +99,7 @@
             // txtBoxCalle
             // 
             this.txtBoxCalle.Location = new System.Drawing.Point(186, 104);
-            this.txtBoxCalle.MaxLength = 32;
+            this.txtBoxCalle.MaxLength = 20;
             this.txtBoxCalle.Name = "txtBoxCalle";
             this.txtBoxCalle.Size = new System.Drawing.Size(159, 20);
             this.txtBoxCalle.TabIndex = 2;
@@ -142,6 +143,7 @@
             this.dgrEstacion.Location = new System.Drawing.Point(372, 12);
             this.dgrEstacion.Name = "dgrEstacion";
             this.dgrEstacion.ReadOnly = true;
+            this.dgrEstacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrEstacion.Size = new System.Drawing.Size(500, 337);
             this.dgrEstacion.TabIndex = 17;
             this.dgrEstacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEstacion_CellClick);
@@ -225,7 +227,7 @@
             // txtBoxNumero
             // 
             this.txtBoxNumero.Location = new System.Drawing.Point(186, 130);
-            this.txtBoxNumero.Mask = "99999999999999";
+            this.txtBoxNumero.Mask = "00000";
             this.txtBoxNumero.Name = "txtBoxNumero";
             this.txtBoxNumero.Size = new System.Drawing.Size(159, 20);
             this.txtBoxNumero.TabIndex = 3;
@@ -240,12 +242,24 @@
             this.txtFechaHab.TabIndex = 4;
             this.txtFechaHab.ValidatingType = typeof(System.DateTime);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(19, 12);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(118, 25);
+            this.lblTitulo.TabIndex = 61;
+            this.lblTitulo.Text = "Estaciones";
+            // 
             // frm_ABMEstacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(884, 361);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtFechaHab);
             this.Controls.Add(this.txtBoxNumero);
             this.Controls.Add(this.txtBoxCuit);
@@ -261,6 +275,7 @@
             this.Controls.Add(this.lblCalle);
             this.Controls.Add(this.lblRazonSocial);
             this.Controls.Add(this.lblCuit);
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "frm_ABMEstacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Estación de Servicio";
@@ -293,5 +308,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }
