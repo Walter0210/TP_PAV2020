@@ -8,23 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoPAV1_Grupo7.Formularios.ABMs
+namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 {
-    public partial class frm_AMBSoporte : Form
+    public partial class frm_OrdenCompra : Form
     {
-        public frm_AMBSoporte()
+        public frm_OrdenCompra()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
