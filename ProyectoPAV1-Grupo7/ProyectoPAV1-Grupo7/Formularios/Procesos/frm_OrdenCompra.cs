@@ -33,7 +33,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
         private void LimpiarCampos(GroupBox grupo)
         {
@@ -138,9 +138,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             btnEliminarProducto.Enabled = false;
             btnModificarProducto.Enabled = false;
         }
-        private void CompletarCombos()
+        private void CompletarCombos(int indiceProducto)
         {
-            DataGridViewRow fila = dgrDetalleOC.Rows[indice2];
+            DataGridViewRow fila = dgrDetalleOC.Rows[indiceProducto];
 
             cmbProducto.SelectedValue = fila.Cells["producto"].Value;
             txtBoxCantidad.Text = fila.Cells["cantidad"].Value.ToString();
@@ -158,7 +158,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 btnModificarProducto.Enabled = true;
                 btnEliminarProducto.Enabled = true;
                 btnAgregarProducto.Enabled = false;
-                CompletarCombos();
+                CompletarCombos(indice2);
             }
         }
 
@@ -169,19 +169,21 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 nuevaOrden = new OrdenCompra(int.Parse(txtBoxNroOrden.Text), dateTimePicker1.Value, (int)cmbEmpleado.SelectedValue, (int)cmbEstacion.SelectedValue, 0);
                 if (cmbProducto.SelectedIndex != -1 && txtBoxCantidad.Text != "" && cmbUnidadMedida.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1 && cmbUrgencia.SelectedIndex != -1)
                 {
+                    if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
+                    {
+                        groupBoxDatosOC.Enabled = false;
+                        int nroOrdenCompra = int.Parse(txtBoxNroOrden.Text);
+                        int idProducto = (int)cmbProducto.SelectedValue;
+                        int cantidad = int.Parse(txtBoxCantidad.Text);
+                        int idUnidadMedida = (int)cmbUnidadMedida.SelectedValue;
+                        float precio = float.Parse(txtBoxPrecio.Text);
+                        int idUrgencia = (int)cmbUrgencia.SelectedValue;
 
-                    groupBoxDatosOC.Enabled = false;
-                    int nroOrdenCompra = int.Parse(txtBoxNroOrden.Text);
-                    int idProducto = (int)cmbProducto.SelectedValue;
-                    int cantidad = int.Parse(txtBoxCantidad.Text);
-                    int idUnidadMedida = (int)cmbUnidadMedida.SelectedValue;
-                    float precio = float.Parse(txtBoxPrecio.Text);
-                    int idUrgencia = (int)cmbUrgencia.SelectedValue;
-
-                    dgrDetalleOC.Rows.Add(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
-                    //txtBoxCantidad.Focus();
-                    CalcularTotal();
-                    LimpiarCampos(groupBoxProductos);
+                        dgrDetalleOC.Rows.Add(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
+                        //txtBoxCantidad.Focus();
+                        CalcularTotal();
+                        LimpiarCampos(groupBoxProductos);
+                    }
                 }
                 else
                 {
@@ -220,9 +222,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             int total = 0;
             foreach (DataGridViewRow r in dgrDetalleOC.Rows)
-                {
+            {
                 total += Convert.ToInt32(r.Cells["precio"].Value) * Convert.ToInt32(r.Cells["cantidad"].Value);
-                }
+            }
             lblTotalCalculado.Text = total.ToString();
         }
 
@@ -235,7 +237,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             float precio = float.Parse(txtBoxPrecio.Text);
             int idUrgencia = (int)cmbUrgencia.SelectedValue;
 
-            dgrDetalleOC.Rows[indice2].SetValues(nroOrdenCompra, idProducto, cantidad,idUnidadMedida, precio, idUrgencia);
+            dgrDetalleOC.Rows[indice2].SetValues(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
 
             CalcularTotal();
         }
@@ -247,8 +249,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             DialogResult volver = MessageBox.Show("Esta seguro que desea emitir esta orden de compra?", "Guardar Orden de Compra", MessageBoxButtons.YesNo);
             if (volver == DialogResult.Yes)
             {
+                ConexionBD conexion = new ConexionBD();
+                conexion.iniciar_transaccion();
                 nuevaOrden.Total = float.Parse(lblTotalCalculado.Text);
-                if (InsertarOC(nuevaOrden))
+                if (InsertarOC(nuevaOrden, conexion))
                 {
                     foreach (DataGridViewRow r in dgrDetalleOC.Rows)
                     {
@@ -260,10 +264,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                         int idUrgencia = (int)r.Cells["idUrgencia"].Value;
 
                         DetalleOC nuevoDetalle = new DetalleOC(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
-                        InsertarDetalle(nuevoDetalle);
+                        InsertarDetalle(nuevoDetalle, conexion);
                     }
                     MessageBox.Show("Orden de Compra creada con exito!");
+                    conexion.cerrar_transaccion();
                 }
+
             }
             else
             {
@@ -272,18 +278,18 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
         }
 
-        private bool InsertarOC(OrdenCompra orden)
+        private bool InsertarOC(OrdenCompra orden, ConexionBD conexion)
         {
             string format = "yyyy-MM-dd HH:mm:ss";
             bool resultado = false;
-            ConexionBD conexion = new ConexionBD();
+
             try
             {
                 string sql = "INSERT INTO OrdenCompra VALUES ( '" + orden.Fecha.ToString(format) + "','" + orden.Legajo + "','" + orden.CuitSolicitante + "','" + orden.Total + "' )";
 
                 conexion.insertar(sql);
 
-               resultado = true;
+                resultado = true;
             }
             catch (Exception)
             {
@@ -292,11 +298,11 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             return resultado;
         }
 
-        private void InsertarDetalle(DetalleOC detalleOC)
+        private void InsertarDetalle(DetalleOC detalleOC, ConexionBD conexion)
         {
             //bool resultado = false;
 
-            ConexionBD conexion = new ConexionBD();
+            //ConexionBD conexion = new ConexionBD();
             try
             {
                 string sql = "INSERT INTO DetalleOrdenCompra VALUES ('" + detalleOC.NroOC + "','" + detalleOC.IdProducto + "','" + detalleOC.Cantidad + "','" + detalleOC.UnidadMedida + "','" + detalleOC.Precio + "','" + detalleOC.IdUrgencia + "')";
@@ -310,6 +316,28 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 MessageBox.Show("Error al insertar datos");
             }
             //return resultado;
+        }
+
+        private bool ExisteProducto(int idProducto)
+        {
+            bool resultado = false;
+            foreach (DataGridViewRow r in dgrDetalleOC.Rows)
+            {
+                if ((int)r.Cells["producto"].Value == idProducto)
+                {
+                    MessageBox.Show("Ya existe este producto en la lista!");
+                    r.Selected = true;
+                    CompletarCombos(r.Index);
+                    resultado = true;
+                    break;
+                }
+                else
+                {
+                    resultado = false;
+                }
+            }
+            return resultado;
+
         }
     }
 }
