@@ -297,11 +297,11 @@
             this.txtBoxNroOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxNroOrden.Enabled = false;
             this.txtBoxNroOrden.Location = new System.Drawing.Point(203, 21);
             this.txtBoxNroOrden.Name = "txtBoxNroOrden";
             this.txtBoxNroOrden.Size = new System.Drawing.Size(138, 20);
             this.txtBoxNroOrden.TabIndex = 83;
-            this.txtBoxNroOrden.Text = "1";
             // 
             // cmbUrgencia
             // 

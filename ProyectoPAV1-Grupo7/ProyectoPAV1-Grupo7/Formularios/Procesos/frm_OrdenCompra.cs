@@ -14,10 +14,21 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
     public partial class frm_OrdenCompra : Form
     {
         private int indice2;
+        private OrdenCompra nuevaOrden;
+        private int nroUltimaOC;
+
         public frm_OrdenCompra()
         {
             InitializeComponent();
-            
+        }
+
+        private void BuscarNroOrden()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "Select MAX(OC.numeroOrdenCompra) as ultimaOC " +
+            "From OrdenCompra OC";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            nroUltimaOC = (int)tabla.Rows[0]["ultimaOC"] + 1;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -121,8 +132,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             CargarComboEmpleados();
             CargarComboUrgencia();
 
-            //BUSCAR EL NRO DE ORDEN DE ORDEN
-            
+            BuscarNroOrden();
+
+            txtBoxNroOrden.Text = nroUltimaOC.ToString();
             btnEliminarProducto.Enabled = false;
             btnModificarProducto.Enabled = false;
         }
@@ -154,8 +166,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             if (cmbEmpleado.SelectedIndex != -1 && cmbEstacion.SelectedIndex != -1)
             {
-                OrdenCompra nuevaOrden = new OrdenCompra(int.Parse(txtBoxNroOrden.Text), dateTimePicker1.Value, (int)cmbEmpleado.SelectedValue, (int)cmbEstacion.SelectedValue);
-                if (cmbProducto.SelectedIndex != -1 && txtBoxCantidad.Text != "" && cmbUnidadMedida.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1)
+                nuevaOrden = new OrdenCompra(int.Parse(txtBoxNroOrden.Text), dateTimePicker1.Value, (int)cmbEmpleado.SelectedValue, (int)cmbEstacion.SelectedValue, 0);
+                if (cmbProducto.SelectedIndex != -1 && txtBoxCantidad.Text != "" && cmbUnidadMedida.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1 && cmbUrgencia.SelectedIndex != -1)
                 {
 
                     groupBoxDatosOC.Enabled = false;
@@ -218,7 +230,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             int nroOrdenCompra = int.Parse(txtBoxNroOrden.Text);
             int idProducto = (int)cmbProducto.SelectedValue;
-            int cantidad = int.Parse(txtBoxCantidad.Text);
+            int cantidad = int.Parse(txtBoxCantidad.Text.Trim());
             int idUnidadMedida = (int)cmbUnidadMedida.SelectedValue;
             float precio = float.Parse(txtBoxPrecio.Text);
             int idUrgencia = (int)cmbUrgencia.SelectedValue;
@@ -228,13 +240,76 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             CalcularTotal();
         }
 
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Armar detalles
+            DialogResult volver = MessageBox.Show("Esta seguro que desea emitir esta orden de compra?", "Guardar Orden de Compra", MessageBoxButtons.YesNo);
+            if (volver == DialogResult.Yes)
+            {
+                nuevaOrden.Total = float.Parse(lblTotalCalculado.Text);
+                if (InsertarOC(nuevaOrden))
+                {
+                    foreach (DataGridViewRow r in dgrDetalleOC.Rows)
+                    {
+                        int nroOrdenCompra = (int)r.Cells["numOrdenCompra"].Value;
+                        int idProducto = (int)r.Cells["producto"].Value;
+                        int cantidad = (int)r.Cells["cantidad"].Value;
+                        int idUnidadMedida = (int)r.Cells["uniMedida"].Value;
+                        float precio = (float)r.Cells["precio"].Value;
+                        int idUrgencia = (int)r.Cells["idUrgencia"].Value;
 
-            //llamar acceso a datos pasando los objetos
+                        DetalleOC nuevoDetalle = new DetalleOC(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
+                        InsertarDetalle(nuevoDetalle);
+                    }
+                    MessageBox.Show("Orden de Compra creada con exito!");
+                }
+            }
+            else
+            {
+                //Codigo
+            }
+
         }
 
+        private bool InsertarOC(OrdenCompra orden)
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+            bool resultado = false;
+            ConexionBD conexion = new ConexionBD();
+            try
+            {
+                string sql = "INSERT INTO OrdenCompra VALUES ( '" + orden.Fecha.ToString(format) + "','" + orden.Legajo + "','" + orden.CuitSolicitante + "','" + orden.Total + "' )";
 
+                conexion.insertar(sql);
+
+               resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al insertar datos");
+            }
+            return resultado;
+        }
+
+        private void InsertarDetalle(DetalleOC detalleOC)
+        {
+            //bool resultado = false;
+
+            ConexionBD conexion = new ConexionBD();
+            try
+            {
+                string sql = "INSERT INTO DetalleOrdenCompra VALUES ('" + detalleOC.NroOC + "','" + detalleOC.IdProducto + "','" + detalleOC.Cantidad + "','" + detalleOC.UnidadMedida + "','" + detalleOC.Precio + "','" + detalleOC.IdUrgencia + "')";
+
+                conexion.insertar(sql);
+
+                //resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al insertar datos");
+            }
+            //return resultado;
+        }
     }
 }

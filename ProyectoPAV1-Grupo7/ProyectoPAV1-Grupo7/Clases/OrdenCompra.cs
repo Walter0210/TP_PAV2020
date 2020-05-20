@@ -12,13 +12,20 @@ namespace ProyectoPAV1_Grupo7.Clases
         private DateTime fecha;
         private int legajo;
         private int cuitSolicitante;
+        private float total;
 
-        public OrdenCompra(int nroOC, DateTime fecha, int legajo, int cuitSolicitante)
+        public OrdenCompra(int nroOC, DateTime fecha, int legajo, int cuitSolicitante, float total)
         {
             NroOC = nroOC;
             Fecha = fecha;
             Legajo = legajo;
             CuitSolicitante = cuitSolicitante;
+            Total = total;
+        }
+
+        public OrdenCompra()
+        {
+
         }
 
         public int NroOC
@@ -40,6 +47,12 @@ namespace ProyectoPAV1_Grupo7.Clases
         {
             get => cuitSolicitante;
             set => cuitSolicitante = value;
+        }
+
+        public float Total
+        {
+            get => total;
+            set => total = value;
         }
     }
 }
