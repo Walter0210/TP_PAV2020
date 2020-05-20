@@ -89,7 +89,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //codigo
+            openChildForm(new frm_ConsultaOrdenCompra());
             hideSubMenu();
         }
 

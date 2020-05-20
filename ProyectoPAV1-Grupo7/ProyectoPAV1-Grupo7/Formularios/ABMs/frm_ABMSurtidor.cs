@@ -106,7 +106,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         {
             //VARIABLES DE CONTROL
             
-            //int nroSurtidor = int.Parse(txtBoxNroSurtidor.Text);
+            
             int cuit = (int)cmbCuilEstacion.SelectedValue;
             int idEstado = (int)cmbEstado.SelectedValue;
             int idTipoCombustible = (int)cmbTipoCombustible.SelectedValue;
