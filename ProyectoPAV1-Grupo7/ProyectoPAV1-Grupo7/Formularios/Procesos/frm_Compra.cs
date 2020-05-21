@@ -98,7 +98,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 // Empleado empleado = ObtenerDatosEmpleado();
                     // GuardarEmpleadoBDbool resultado = (empleado);
 
-                    if (resultado)
+                    //if (resultado)
                     {
                         MessageBox.Show("Compra cargada con exito");
                     }
