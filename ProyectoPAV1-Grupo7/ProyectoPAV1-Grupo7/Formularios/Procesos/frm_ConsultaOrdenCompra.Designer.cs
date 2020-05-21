@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgrOrdenCompra = new System.Windows.Forms.DataGridView();
-            this.dgrDetallesOrden = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgrDetallesOrden = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.NumeroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +68,41 @@
             this.dgrOrdenCompra.Size = new System.Drawing.Size(560, 231);
             this.dgrOrdenCompra.TabIndex = 0;
             this.dgrOrdenCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrOrdenCompra_CellContentClick);
+            // 
+            // Numero
+            // 
+            this.Numero.DataPropertyName = "numeroOrdenCompra";
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Responsable
+            // 
+            this.Responsable.DataPropertyName = "apenom";
+            this.Responsable.HeaderText = "Responsable";
+            this.Responsable.Name = "Responsable";
+            this.Responsable.ReadOnly = true;
+            // 
+            // Solicitante
+            // 
+            this.Solicitante.DataPropertyName = "razonSocial";
+            this.Solicitante.HeaderText = "Solicitante";
+            this.Solicitante.Name = "Solicitante";
+            this.Solicitante.ReadOnly = true;
+            // 
+            // PrecioTotal
+            // 
+            this.PrecioTotal.DataPropertyName = "total";
+            this.PrecioTotal.HeaderText = "Precio Total";
+            this.PrecioTotal.Name = "PrecioTotal";
+            this.PrecioTotal.ReadOnly = true;
             // 
             // dgrDetallesOrden
             // 
@@ -115,45 +150,10 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Detalle de orden";
             // 
-            // Numero
-            // 
-            this.Numero.DataPropertyName = "numeroOrdenCompra";
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Responsable
-            // 
-            this.Responsable.DataPropertyName = "apenom";
-            this.Responsable.HeaderText = "Responsable";
-            this.Responsable.Name = "Responsable";
-            this.Responsable.ReadOnly = true;
-            // 
-            // Solicitante
-            // 
-            this.Solicitante.DataPropertyName = "razonSocial";
-            this.Solicitante.HeaderText = "Solicitante";
-            this.Solicitante.Name = "Solicitante";
-            this.Solicitante.ReadOnly = true;
-            // 
-            // PrecioTotal
-            // 
-            this.PrecioTotal.DataPropertyName = "total";
-            this.PrecioTotal.HeaderText = "Precio Total";
-            this.PrecioTotal.Name = "PrecioTotal";
-            this.PrecioTotal.ReadOnly = true;
-            // 
             // NumeroOrden
             // 
             this.NumeroOrden.DataPropertyName = "numOrdenCompra";
-            this.NumeroOrden.HeaderText = "Numero";
+            this.NumeroOrden.HeaderText = "Numero de OC";
             this.NumeroOrden.Name = "NumeroOrden";
             this.NumeroOrden.ReadOnly = true;
             // 
@@ -181,14 +181,14 @@
             // Precio
             // 
             this.Precio.DataPropertyName = "precitotal";
-            this.Precio.HeaderText = "Precio";
+            this.Precio.HeaderText = "Precio por cantidad pedida";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
             // Urgencia
             // 
-            this.Urgencia.DataPropertyName = "nombre";
-            this.Urgencia.HeaderText = "Urgencia";
+            this.Urgencia.DataPropertyName = "nombre1";
+            this.Urgencia.HeaderText = "Nvel de urgencia";
             this.Urgencia.Name = "Urgencia";
             this.Urgencia.ReadOnly = true;
             // 
