@@ -230,16 +230,19 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            int nroOrdenCompra = int.Parse(txtBoxNroOrden.Text);
-            int idProducto = (int)cmbProducto.SelectedValue;
-            int cantidad = int.Parse(txtBoxCantidad.Text.Trim());
-            int idUnidadMedida = (int)cmbUnidadMedida.SelectedValue;
-            float precio = float.Parse(txtBoxPrecio.Text);
-            int idUrgencia = (int)cmbUrgencia.SelectedValue;
+            if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
+            {
+                int nroOrdenCompra = int.Parse(txtBoxNroOrden.Text);
+                int idProducto = (int)cmbProducto.SelectedValue;
+                int cantidad = int.Parse(txtBoxCantidad.Text.Trim());
+                int idUnidadMedida = (int)cmbUnidadMedida.SelectedValue;
+                float precio = float.Parse(txtBoxPrecio.Text);
+                int idUrgencia = (int)cmbUrgencia.SelectedValue;
 
-            dgrDetalleOC.Rows[indice2].SetValues(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
+                dgrDetalleOC.Rows[indice2].SetValues(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
 
-            CalcularTotal();
+                CalcularTotal();
+            }
         }
 
 

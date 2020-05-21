@@ -51,6 +51,9 @@
             // 
             this.dgrTicket.AllowUserToAddRows = false;
             this.dgrTicket.AllowUserToDeleteRows = false;
+            this.dgrTicket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgrTicket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrTicket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumeroTicket,
@@ -61,7 +64,7 @@
             this.ID_Unid_Medida,
             this.Observacion});
             this.dgrTicket.Location = new System.Drawing.Point(9, 33);
-            this.dgrTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrTicket.Margin = new System.Windows.Forms.Padding(2);
             this.dgrTicket.Name = "dgrTicket";
             this.dgrTicket.ReadOnly = true;
             this.dgrTicket.RowHeadersWidth = 51;
@@ -76,7 +79,6 @@
             this.NumeroTicket.MinimumWidth = 6;
             this.NumeroTicket.Name = "NumeroTicket";
             this.NumeroTicket.ReadOnly = true;
-            this.NumeroTicket.Width = 125;
             // 
             // Fecha
             // 
@@ -85,7 +87,6 @@
             this.Fecha.MinimumWidth = 6;
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 125;
             // 
             // Cuit
             // 
@@ -94,7 +95,6 @@
             this.Cuit.MinimumWidth = 6;
             this.Cuit.Name = "Cuit";
             this.Cuit.ReadOnly = true;
-            this.Cuit.Width = 125;
             // 
             // NumeroSurtidor
             // 
@@ -103,7 +103,6 @@
             this.NumeroSurtidor.MinimumWidth = 6;
             this.NumeroSurtidor.Name = "NumeroSurtidor";
             this.NumeroSurtidor.ReadOnly = true;
-            this.NumeroSurtidor.Width = 125;
             // 
             // Cantidad
             // 
@@ -112,7 +111,6 @@
             this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 125;
             // 
             // ID_Unid_Medida
             // 
@@ -121,7 +119,6 @@
             this.ID_Unid_Medida.MinimumWidth = 6;
             this.ID_Unid_Medida.Name = "ID_Unid_Medida";
             this.ID_Unid_Medida.ReadOnly = true;
-            this.ID_Unid_Medida.Width = 125;
             // 
             // Observacion
             // 
@@ -130,7 +127,6 @@
             this.Observacion.MinimumWidth = 6;
             this.Observacion.Name = "Observacion";
             this.Observacion.ReadOnly = true;
-            this.Observacion.Width = 125;
             // 
             // txtBoxLabelTicket
             // 
@@ -146,6 +142,8 @@
             // 
             this.dgrTicketProducto.AllowUserToAddRows = false;
             this.dgrTicketProducto.AllowUserToDeleteRows = false;
+            this.dgrTicketProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgrTicketProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrTicketProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrTicketProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumeroTicketProducto,
@@ -153,12 +151,12 @@
             this.CantidadProducto,
             this.Precio});
             this.dgrTicketProducto.Location = new System.Drawing.Point(9, 269);
-            this.dgrTicketProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrTicketProducto.Margin = new System.Windows.Forms.Padding(2);
             this.dgrTicketProducto.Name = "dgrTicketProducto";
             this.dgrTicketProducto.ReadOnly = true;
             this.dgrTicketProducto.RowHeadersWidth = 51;
             this.dgrTicketProducto.RowTemplate.Height = 24;
-            this.dgrTicketProducto.Size = new System.Drawing.Size(465, 213);
+            this.dgrTicketProducto.Size = new System.Drawing.Size(575, 213);
             this.dgrTicketProducto.TabIndex = 2;
             // 
             // NumeroTicketProducto
@@ -168,7 +166,6 @@
             this.NumeroTicketProducto.MinimumWidth = 6;
             this.NumeroTicketProducto.Name = "NumeroTicketProducto";
             this.NumeroTicketProducto.ReadOnly = true;
-            this.NumeroTicketProducto.Width = 175;
             // 
             // ID_Producto
             // 
@@ -177,7 +174,6 @@
             this.ID_Producto.MinimumWidth = 6;
             this.ID_Producto.Name = "ID_Producto";
             this.ID_Producto.ReadOnly = true;
-            this.ID_Producto.Width = 125;
             // 
             // CantidadProducto
             // 
@@ -186,7 +182,6 @@
             this.CantidadProducto.MinimumWidth = 6;
             this.CantidadProducto.Name = "CantidadProducto";
             this.CantidadProducto.ReadOnly = true;
-            this.CantidadProducto.Width = 125;
             // 
             // Precio
             // 
@@ -195,7 +190,6 @@
             this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
-            this.Precio.Width = 125;
             // 
             // txtBoxLabelTicketProd
             // 
@@ -216,7 +210,7 @@
             this.Controls.Add(this.dgrTicketProducto);
             this.Controls.Add(this.txtBoxLabelTicket);
             this.Controls.Add(this.dgrTicket);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_ConsultaCompra";
             this.Text = "ConsultaCompra";
             this.Load += new System.EventHandler(this.frm_ConsultaCompra_Load);
