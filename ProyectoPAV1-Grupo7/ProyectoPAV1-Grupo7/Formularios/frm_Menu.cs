@@ -18,6 +18,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         public frm_Menu()
         {
             InitializeComponent();
+            openChildForm(new Procesos.frm_Compra());
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,7 +88,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //codigo
+            openChildForm(new frm_ConsultaOrdenCompra());
             hideSubMenu();
         }
 
