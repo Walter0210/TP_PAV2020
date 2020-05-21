@@ -38,14 +38,21 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtBoxProducto = new System.Windows.Forms.TextBox();
+            this.dgrProducto = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UltimaActualizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBoxCodigo = new System.Windows.Forms.TextBox();
             this.txtBoxStockActual = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtBoxPrecioCompra = new System.Windows.Forms.TextBox();
             this.txtBoxPrecioVenta = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtFechaUltimaActualizacion = new System.Windows.Forms.MaskedTextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,7 +103,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 188);
+            this.label6.Location = new System.Drawing.Point(24, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 5;
@@ -104,13 +111,15 @@
             // 
             // txtBoxDescripcion
             // 
-            this.txtBoxDescripcion.Location = new System.Drawing.Point(145, 78);
+            this.txtBoxDescripcion.Location = new System.Drawing.Point(186, 78);
+            this.txtBoxDescripcion.MaxLength = 140;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
-            this.txtBoxDescripcion.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxDescripcion.Size = new System.Drawing.Size(159, 20);
             this.txtBoxDescripcion.TabIndex = 6;
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCerrar.Location = new System.Drawing.Point(270, 326);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -121,86 +130,178 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(108, 326);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Location = new System.Drawing.Point(105, 326);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 21;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(27, 326);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dataGridView1
+            // dgrProducto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(372, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(300, 337);
-            this.dataGridView1.TabIndex = 22;
+            this.dgrProducto.AllowUserToAddRows = false;
+            this.dgrProducto.AllowUserToDeleteRows = false;
+            this.dgrProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgrProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrProducto.ColumnHeadersHeight = 34;
+            this.dgrProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgrProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Descripcion,
+            this.StockActual,
+            this.PrecioCompra,
+            this.PrecioVenta,
+            this.UltimaActualizacion});
+            this.dgrProducto.Location = new System.Drawing.Point(372, 12);
+            this.dgrProducto.Name = "dgrProducto";
+            this.dgrProducto.ReadOnly = true;
+            this.dgrProducto.RowHeadersWidth = 51;
+            this.dgrProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrProducto.Size = new System.Drawing.Size(500, 337);
+            this.dgrProducto.TabIndex = 22;
+            this.dgrProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrProducto_CellClick);
             // 
-            // txtBoxProducto
+            // Codigo
             // 
-            this.txtBoxProducto.Location = new System.Drawing.Point(145, 52);
-            this.txtBoxProducto.Name = "txtBoxProducto";
-            this.txtBoxProducto.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxProducto.TabIndex = 23;
+            this.Codigo.DataPropertyName = "idProducto";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // StockActual
+            // 
+            this.StockActual.DataPropertyName = "stockActual";
+            this.StockActual.HeaderText = "StockActual";
+            this.StockActual.MinimumWidth = 6;
+            this.StockActual.Name = "StockActual";
+            this.StockActual.ReadOnly = true;
+            // 
+            // PrecioCompra
+            // 
+            this.PrecioCompra.DataPropertyName = "precioCompra";
+            this.PrecioCompra.HeaderText = "PrecioCompra";
+            this.PrecioCompra.MinimumWidth = 6;
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.ReadOnly = true;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.DataPropertyName = "precioVenta";
+            this.PrecioVenta.HeaderText = "PrecioVenta";
+            this.PrecioVenta.MinimumWidth = 6;
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            // 
+            // UltimaActualizacion
+            // 
+            this.UltimaActualizacion.DataPropertyName = "fechaUltimaActualizacion";
+            this.UltimaActualizacion.HeaderText = "UltimaActualizacion";
+            this.UltimaActualizacion.MinimumWidth = 6;
+            this.UltimaActualizacion.Name = "UltimaActualizacion";
+            this.UltimaActualizacion.ReadOnly = true;
+            // 
+            // txtBoxCodigo
+            // 
+            this.txtBoxCodigo.Enabled = false;
+            this.txtBoxCodigo.Location = new System.Drawing.Point(186, 52);
+            this.txtBoxCodigo.MaxLength = 6;
+            this.txtBoxCodigo.Name = "txtBoxCodigo";
+            this.txtBoxCodigo.Size = new System.Drawing.Size(159, 20);
+            this.txtBoxCodigo.TabIndex = 23;
             // 
             // txtBoxStockActual
             // 
-            this.txtBoxStockActual.Location = new System.Drawing.Point(145, 104);
+            this.txtBoxStockActual.Location = new System.Drawing.Point(186, 104);
+            this.txtBoxStockActual.MaxLength = 9;
             this.txtBoxStockActual.Name = "txtBoxStockActual";
-            this.txtBoxStockActual.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxStockActual.Size = new System.Drawing.Size(159, 20);
             this.txtBoxStockActual.TabIndex = 24;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(145, 182);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 25;
             // 
             // txtBoxPrecioCompra
             // 
-            this.txtBoxPrecioCompra.Location = new System.Drawing.Point(145, 130);
+            this.txtBoxPrecioCompra.Location = new System.Drawing.Point(186, 130);
+            this.txtBoxPrecioCompra.MaxLength = 9;
             this.txtBoxPrecioCompra.Name = "txtBoxPrecioCompra";
-            this.txtBoxPrecioCompra.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxPrecioCompra.Size = new System.Drawing.Size(159, 20);
             this.txtBoxPrecioCompra.TabIndex = 26;
             // 
             // txtBoxPrecioVenta
             // 
-            this.txtBoxPrecioVenta.Location = new System.Drawing.Point(145, 156);
+            this.txtBoxPrecioVenta.Location = new System.Drawing.Point(186, 156);
+            this.txtBoxPrecioVenta.MaxLength = 9;
             this.txtBoxPrecioVenta.Name = "txtBoxPrecioVenta";
-            this.txtBoxPrecioVenta.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxPrecioVenta.Size = new System.Drawing.Size(159, 20);
             this.txtBoxPrecioVenta.TabIndex = 27;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(189, 326);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtFechaUltimaActualizacion
+            // 
+            this.txtFechaUltimaActualizacion.Location = new System.Drawing.Point(186, 181);
+            this.txtFechaUltimaActualizacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFechaUltimaActualizacion.Mask = "00/00/0000";
+            this.txtFechaUltimaActualizacion.Name = "txtFechaUltimaActualizacion";
+            this.txtFechaUltimaActualizacion.Size = new System.Drawing.Size(159, 20);
+            this.txtFechaUltimaActualizacion.TabIndex = 29;
+            this.txtFechaUltimaActualizacion.ValidatingType = typeof(System.DateTime);
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(22, 12);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(109, 25);
+            this.lblTitulo.TabIndex = 61;
+            this.lblTitulo.Text = "Productos";
             // 
             // frm_ABMProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 361);
+            this.ClientSize = new System.Drawing.Size(884, 361);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.txtFechaUltimaActualizacion);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtBoxPrecioVenta);
             this.Controls.Add(this.txtBoxPrecioCompra);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtBoxStockActual);
-            this.Controls.Add(this.txtBoxProducto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtBoxCodigo);
+            this.Controls.Add(this.dgrProducto);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
@@ -211,10 +312,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "frm_ABMProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ABMProducto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frm_ABMEstacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,12 +335,19 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtBoxProducto;
+        private System.Windows.Forms.DataGridView dgrProducto;
+        private System.Windows.Forms.TextBox txtBoxCodigo;
         private System.Windows.Forms.TextBox txtBoxStockActual;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtBoxPrecioCompra;
         private System.Windows.Forms.TextBox txtBoxPrecioVenta;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.MaskedTextBox txtFechaUltimaActualizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UltimaActualizacion;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

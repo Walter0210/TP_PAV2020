@@ -34,7 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,7 +61,8 @@
     <Compile Include="Clases\Estacion.cs" />
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\NivelUrgencia.cs" />
-    <Compile Include="Clases\OrdenPago.cs" />
+    <Compile Include="Clases\OrdenCompra.cs" />
+    <Compile Include="Clases\pdfSharp.cs" />
     <Compile Include="Clases\Producto.cs" />
     <Compile Include="Clases\Surtidor.cs" />
     <Compile Include="Clases\Ticket.cs" />
@@ -86,23 +94,35 @@
     <Compile Include="Formularios\ABMs\frm_ABMSurtidor.Designer.cs">
       <DependentUpon>frm_ABMSurtidor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ABMs\frm_AMBSoporte.cs">
+    <Compile Include="Formularios\ABMs\frm_ABMSoporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ABMs\frm_AMBSoporte.Designer.cs">
-      <DependentUpon>frm_AMBSoporte.cs</DependentUpon>
+    <Compile Include="Formularios\ABMs\frm_ABMSoporte.Designer.cs">
+      <DependentUpon>frm_ABMSoporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frm_Empleado.cs">
+    <Compile Include="Formularios\ABMs\frm_ABMEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frm_Empleado.Designer.cs">
-      <DependentUpon>frm_Empleado.cs</DependentUpon>
+    <Compile Include="Formularios\ABMs\frm_ABMEmpleado.Designer.cs">
+      <DependentUpon>frm_ABMEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frm_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frm_Menu.Designer.cs">
       <DependentUpon>frm_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frm_Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frm_Compra.Designer.cs">
+      <DependentUpon>frm_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frm_OrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Procesos\frm_OrdenCompra.Designer.cs">
+      <DependentUpon>frm_OrdenCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,14 +138,20 @@
     <EmbeddedResource Include="Formularios\ABMs\frm_ABMSurtidor.resx">
       <DependentUpon>frm_ABMSurtidor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ABMs\frm_AMBSoporte.resx">
-      <DependentUpon>frm_AMBSoporte.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\ABMs\frm_ABMSoporte.resx">
+      <DependentUpon>frm_ABMSoporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frm_Empleado.resx">
-      <DependentUpon>frm_Empleado.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\ABMs\frm_ABMEmpleado.resx">
+      <DependentUpon>frm_ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frm_Menu.resx">
       <DependentUpon>frm_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frm_Compra.resx">
+      <DependentUpon>frm_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Procesos\frm_OrdenCompra.resx">
+      <DependentUpon>frm_OrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,6 +162,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

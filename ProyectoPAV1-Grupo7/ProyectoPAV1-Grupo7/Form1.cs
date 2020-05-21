@@ -23,21 +23,9 @@ namespace ProyectoPAV1_Grupo7
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            frm_Menu ventana = new frm_Menu();
-            ventana.Show();
-            
+            this.Close();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -54,7 +42,7 @@ namespace ProyectoPAV1_Grupo7
             }
             else
             {
-                this.Hide();
+                //this.Hide();
                 frm_Menu menu = new frm_Menu();
                 menu.ShowDialog();
 

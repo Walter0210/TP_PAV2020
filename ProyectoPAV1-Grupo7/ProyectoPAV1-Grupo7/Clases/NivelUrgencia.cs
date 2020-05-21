@@ -11,6 +11,11 @@ namespace ProyectoPAV1_Grupo7.Clases
         private int idEstado;
         private string nombre;
 
+        public NivelUrgencia(string nombre)
+        {
+            Nombre = nombre;
+        }
+
         public NivelUrgencia(int idEstado, string nombre)
         {
             IdEstado = idEstado;
