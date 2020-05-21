@@ -65,7 +65,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(441, 684);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 136);
             this.panel1.TabIndex = 0;
@@ -81,9 +81,9 @@
             this.panelMenuLateral.Controls.Add(this.panelLogo);
             this.panelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuLateral.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenuLateral.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenuLateral.Name = "panelMenuLateral";
-            this.panelMenuLateral.Size = new System.Drawing.Size(200, 526);
+            this.panelMenuLateral.Size = new System.Drawing.Size(200, 561);
             this.panelMenuLateral.TabIndex = 1;
             // 
             // subPanel_producto
@@ -93,7 +93,7 @@
             this.subPanel_producto.Controls.Add(this.btn_nuevo_prod);
             this.subPanel_producto.Dock = System.Windows.Forms.DockStyle.Top;
             this.subPanel_producto.Location = new System.Drawing.Point(0, 218);
-            this.subPanel_producto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subPanel_producto.Margin = new System.Windows.Forms.Padding(2);
             this.subPanel_producto.Name = "subPanel_producto";
             this.subPanel_producto.Size = new System.Drawing.Size(200, 84);
             this.subPanel_producto.TabIndex = 3;
@@ -104,7 +104,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(0, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(200, 42);
@@ -121,7 +121,7 @@
             this.btn_nuevo_prod.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_nuevo_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo_prod.Location = new System.Drawing.Point(0, 0);
-            this.btn_nuevo_prod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_nuevo_prod.Margin = new System.Windows.Forms.Padding(2);
             this.btn_nuevo_prod.Name = "btn_nuevo_prod";
             this.btn_nuevo_prod.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.btn_nuevo_prod.Size = new System.Drawing.Size(200, 40);
@@ -138,7 +138,7 @@
             this.btn_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_producto.Location = new System.Drawing.Point(0, 181);
-            this.btn_producto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_producto.Margin = new System.Windows.Forms.Padding(2);
             this.btn_producto.Name = "btn_producto";
             this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_producto.Size = new System.Drawing.Size(200, 37);
@@ -155,7 +155,7 @@
             this.subPanel_empleado.Controls.Add(this.btn_nuevo);
             this.subPanel_empleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.subPanel_empleado.Location = new System.Drawing.Point(0, 114);
-            this.subPanel_empleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subPanel_empleado.Margin = new System.Windows.Forms.Padding(2);
             this.subPanel_empleado.Name = "subPanel_empleado";
             this.subPanel_empleado.Size = new System.Drawing.Size(200, 67);
             this.subPanel_empleado.TabIndex = 2;
@@ -166,7 +166,7 @@
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar.Location = new System.Drawing.Point(0, 32);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.btn_eliminar.Size = new System.Drawing.Size(200, 32);
@@ -183,7 +183,7 @@
             this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nuevo.Location = new System.Drawing.Point(0, 0);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.btn_nuevo.Size = new System.Drawing.Size(200, 32);
@@ -200,7 +200,7 @@
             this.btn_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_empleado.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empleado.Location = new System.Drawing.Point(0, 77);
-            this.btn_empleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_empleado.Margin = new System.Windows.Forms.Padding(2);
             this.btn_empleado.Name = "btn_empleado";
             this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_empleado.Size = new System.Drawing.Size(200, 37);
@@ -215,7 +215,7 @@
             this.panelLogo.Controls.Add(this.menuStrip1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(200, 77);
             this.panelLogo.TabIndex = 2;
@@ -347,21 +347,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panelChildForm.Location = new System.Drawing.Point(202, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(678, 526);
+            this.panelChildForm.Size = new System.Drawing.Size(580, 561);
             this.panelChildForm.TabIndex = 2;
             // 
             // frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 526);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelMenuLateral);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
