@@ -27,12 +27,37 @@ namespace ProyectoPAV1_Grupo7
         {
             ConexionBD conexion = new ConexionBD();
 
-            string sql = string.Format("SELECT OC.numeroOrdenCompra, OC.fecha, E.legajo, S.CUIT, OC.total" +
-                "FROM OredenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+            string sql = string.Format("SELECT OC.numeroOrdenCompra , OC.fecha, E.nombre + E.apellido AS apenom, S.razonSocial, OC.total" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
                 "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT ");
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrOrdenCompra.DataSource = tabla;
+
+        }
+
+        private void dgrOrdenCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            if(indice != -1)
+            {
+                DataGridViewRow fila = dgrOrdenCompra.Rows[indice];
+                string numOrden = fila.Cells["Numero"].Value.ToString();
+                CargarGrilla2(numOrden);
+
+            }
+        }
+        private void CargarGrilla2(string numOrden)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT DC.numOrdenCompra, P.descripcion, DC.cantidad, UM.nombre, P.precioCompra * DC.cantidad AS precitotal, UR.nombre"
+                + " FROM DetalleOrdenCompra DC "
+                + "JOIN Producto P ON DC.idProducto = P.idProducto "
+                + "JOIN UnidadMedida UM ON DC.idUnidadMedida = UM.idUnidadMedida "
+                + "JOIN Urgencia UR ON DC.idUrgencia = UR.idUrgencia " +
+                "WHERE DC.numOrdenCompra = '" + numOrden + "'";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            dgrDetallesOrden.DataSource = tabla;
 
         }
     }
