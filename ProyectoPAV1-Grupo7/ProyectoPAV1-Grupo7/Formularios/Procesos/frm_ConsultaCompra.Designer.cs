@@ -60,12 +60,13 @@
             this.Cantidad,
             this.ID_Unid_Medida,
             this.Observacion});
-            this.dgrTicket.Location = new System.Drawing.Point(12, 41);
+            this.dgrTicket.Location = new System.Drawing.Point(9, 33);
+            this.dgrTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgrTicket.Name = "dgrTicket";
             this.dgrTicket.ReadOnly = true;
             this.dgrTicket.RowHeadersWidth = 51;
             this.dgrTicket.RowTemplate.Height = 24;
-            this.dgrTicket.Size = new System.Drawing.Size(932, 242);
+            this.dgrTicket.Size = new System.Drawing.Size(699, 197);
             this.dgrTicket.TabIndex = 0;
             // 
             // NumeroTicket
@@ -134,9 +135,10 @@
             // txtBoxLabelTicket
             // 
             this.txtBoxLabelTicket.AutoSize = true;
-            this.txtBoxLabelTicket.Location = new System.Drawing.Point(12, 21);
+            this.txtBoxLabelTicket.Location = new System.Drawing.Point(9, 17);
+            this.txtBoxLabelTicket.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtBoxLabelTicket.Name = "txtBoxLabelTicket";
-            this.txtBoxLabelTicket.Size = new System.Drawing.Size(46, 17);
+            this.txtBoxLabelTicket.Size = new System.Drawing.Size(37, 13);
             this.txtBoxLabelTicket.TabIndex = 1;
             this.txtBoxLabelTicket.Text = "Ticket";
             // 
@@ -150,12 +152,13 @@
             this.ID_Producto,
             this.CantidadProducto,
             this.Precio});
-            this.dgrTicketProducto.Location = new System.Drawing.Point(12, 331);
+            this.dgrTicketProducto.Location = new System.Drawing.Point(9, 269);
+            this.dgrTicketProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgrTicketProducto.Name = "dgrTicketProducto";
             this.dgrTicketProducto.ReadOnly = true;
             this.dgrTicketProducto.RowHeadersWidth = 51;
             this.dgrTicketProducto.RowTemplate.Height = 24;
-            this.dgrTicketProducto.Size = new System.Drawing.Size(620, 262);
+            this.dgrTicketProducto.Size = new System.Drawing.Size(465, 213);
             this.dgrTicketProducto.TabIndex = 2;
             // 
             // NumeroTicketProducto
@@ -197,21 +200,23 @@
             // txtBoxLabelTicketProd
             // 
             this.txtBoxLabelTicketProd.AutoSize = true;
-            this.txtBoxLabelTicketProd.Location = new System.Drawing.Point(12, 311);
+            this.txtBoxLabelTicketProd.Location = new System.Drawing.Point(9, 253);
+            this.txtBoxLabelTicketProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtBoxLabelTicketProd.Name = "txtBoxLabelTicketProd";
-            this.txtBoxLabelTicketProd.Size = new System.Drawing.Size(131, 17);
+            this.txtBoxLabelTicketProd.Size = new System.Drawing.Size(100, 13);
             this.txtBoxLabelTicketProd.TabIndex = 3;
             this.txtBoxLabelTicketProd.Text = "Ticket por producto";
             // 
             // frm_ConsultaCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 603);
+            this.ClientSize = new System.Drawing.Size(717, 490);
             this.Controls.Add(this.txtBoxLabelTicketProd);
             this.Controls.Add(this.dgrTicketProducto);
             this.Controls.Add(this.txtBoxLabelTicket);
             this.Controls.Add(this.dgrTicket);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_ConsultaCompra";
             this.Text = "ConsultaCompra";
             this.Load += new System.EventHandler(this.frm_ConsultaCompra_Load);
