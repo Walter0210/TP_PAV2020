@@ -28,6 +28,12 @@ namespace ProyectoPAV1_Grupo7.Clases
 
         }
 
+        public Ticket()
+        {
+          
+
+        }
+
         public int NroTicket
         {
             get => nroTicket;
