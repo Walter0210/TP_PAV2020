@@ -14,6 +14,7 @@ namespace ProyectoPAV1_Grupo7
 {
     public partial class frm_ConsultaOrdenCompra : Form
     {
+        // Declaro estas variables para poder ser accedidas
         int OrdenSeleccionada = 0;
         int DetalleSeleccionado = 0;
         int CantidadSeleccionada = 0;
@@ -23,8 +24,6 @@ namespace ProyectoPAV1_Grupo7
             InitializeComponent();
             //OrdenCompra OrdenSeleccionada = new OrdenCompra();
             //DetalleOC DetalleSeleccionado = new DetalleOC();
-            
-
         }
 
         private void frm_ConsultaOrdenCompra_Load(object sender, EventArgs e)
@@ -61,6 +60,7 @@ namespace ProyectoPAV1_Grupo7
 
         private void dgrDetallesOrden_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Tomo los datos del detalle seleccionado para realizar el Update
             int indice = e.RowIndex;
             if (indice != -1)
             {
@@ -95,11 +95,12 @@ namespace ProyectoPAV1_Grupo7
             try
             {
                 ConexionBD conexion = new ConexionBD();
+                // Consulto el stock actual del producto seleccionado
                 string consulta = "SELECT P.stockActual FROM Producto P WHERE P.idProducto like '"+DetalleSeleccionado+"'";
                 DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
                 int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
-                MessageBox.Show("Stock actual producto: " + stockActual);
                 int nuevaCantidad = stockActual + CantidadSeleccionada;
+                // Actualizo el stock del producto
                 string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + DetalleSeleccionado;
                 conexion.ejecutar_consulta(sql);
             } catch (Exception)
