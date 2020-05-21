@@ -66,9 +66,7 @@ namespace ProyectoPAV1_Grupo7
             {
                 DataGridViewRow fila = dgrDetallesOrden.Rows[indice];
                 string numDetalle = fila.Cells["idProducto"].Value.ToString();
-                MessageBox.Show(numDetalle);
                 string cantidad = fila.Cells["Cantidad"].Value.ToString();
-                MessageBox.Show(cantidad);
                 DetalleSeleccionado = int.Parse(numDetalle);
                 CantidadSeleccionada = int.Parse(cantidad);
             }
@@ -91,22 +89,30 @@ namespace ProyectoPAV1_Grupo7
         private void btnRegistrarPedido_Click(object sender, EventArgs e)
         {
             //(MessageBox.Show("Usted seleccionó Orden de Compra: " + OrdenSeleccionada + ", Detalle: " + DetalleSeleccionado + ", Cantidad: " + CantidadSeleccionada);
-            
-            try
+            if (DetalleSeleccionado != 0 || CantidadSeleccionada != 0)
             {
-                ConexionBD conexion = new ConexionBD();
-                // Consulto el stock actual del producto seleccionado
-                string consulta = "SELECT P.stockActual FROM Producto P WHERE P.idProducto like '"+DetalleSeleccionado+"'";
-                DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
-                int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
-                int nuevaCantidad = stockActual + CantidadSeleccionada;
-                // Actualizo el stock del producto
-                string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + DetalleSeleccionado;
-                conexion.ejecutar_consulta(sql);
-            } catch (Exception)
+                try
+                {
+                    ConexionBD conexion = new ConexionBD();
+                    // Consulto el stock actual del producto seleccionado
+                    string consulta = "SELECT P.stockActual FROM Producto P WHERE P.idProducto like '" + DetalleSeleccionado + "'";
+                    DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
+                    int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
+                    int nuevaCantidad = stockActual + CantidadSeleccionada;
+                    // Actualizo el stock del producto
+                    string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + DetalleSeleccionado;
+                    conexion.ejecutar_consulta(sql);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error de Base de Datos");
+                }
+
+            } else
             {
-                MessageBox.Show("error");
+                MessageBox.Show("Por favor, seleccione un Detalle de Orden");
             }
+            
 
             
             
@@ -115,6 +121,9 @@ namespace ProyectoPAV1_Grupo7
 
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,9 +41,9 @@
             this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Urgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnRegistrarPedido = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrOrdenCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDetallesOrden)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.dgrOrdenCompra.Name = "dgrOrdenCompra";
             this.dgrOrdenCompra.ReadOnly = true;
             this.dgrOrdenCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrOrdenCompra.Size = new System.Drawing.Size(718, 231);
+            this.dgrOrdenCompra.Size = new System.Drawing.Size(760, 168);
             this.dgrOrdenCompra.TabIndex = 0;
             this.dgrOrdenCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrOrdenCompra_CellContentClick);
             // 
@@ -120,11 +120,11 @@
             this.UnidadMedida,
             this.Precio,
             this.Urgencia});
-            this.dgrDetallesOrden.Location = new System.Drawing.Point(15, 311);
+            this.dgrDetallesOrden.Location = new System.Drawing.Point(12, 241);
             this.dgrDetallesOrden.Name = "dgrDetallesOrden";
             this.dgrDetallesOrden.ReadOnly = true;
             this.dgrDetallesOrden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrDetallesOrden.Size = new System.Drawing.Size(635, 238);
+            this.dgrDetallesOrden.Size = new System.Drawing.Size(757, 176);
             this.dgrDetallesOrden.TabIndex = 1;
             this.dgrDetallesOrden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDetallesOrden_CellContentClick);
             // 
@@ -170,6 +170,29 @@
             this.Urgencia.Name = "Urgencia";
             this.Urgencia.ReadOnly = true;
             // 
+            // btnRegistrarPedido
+            // 
+            this.btnRegistrarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarPedido.Location = new System.Drawing.Point(635, 425);
+            this.btnRegistrarPedido.Name = "btnRegistrarPedido";
+            this.btnRegistrarPedido.Size = new System.Drawing.Size(134, 38);
+            this.btnRegistrarPedido.TabIndex = 4;
+            this.btnRegistrarPedido.Text = "Registrar Pedido";
+            this.btnRegistrarPedido.UseVisualStyleBackColor = true;
+            this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Detalle de orden";
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -182,34 +205,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Odenes de compra";
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 283);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Detalle de orden";
-            // 
-            // btnRegistrarPedido
-            // 
-            this.btnRegistrarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarPedido.Location = new System.Drawing.Point(656, 440);
-            this.btnRegistrarPedido.Name = "btnRegistrarPedido";
-            this.btnRegistrarPedido.Size = new System.Drawing.Size(75, 109);
-            this.btnRegistrarPedido.TabIndex = 4;
-            this.btnRegistrarPedido.Text = "registrar pedido";
-            this.btnRegistrarPedido.UseVisualStyleBackColor = true;
-            this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
-            // 
             // frm_ConsultaOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 561);
+            this.ClientSize = new System.Drawing.Size(784, 475);
             this.Controls.Add(this.btnRegistrarPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -230,8 +230,6 @@
 
         private System.Windows.Forms.DataGridView dgrOrdenCompra;
         private System.Windows.Forms.DataGridView dgrDetallesOrden;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsable;
@@ -244,5 +242,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Urgencia;
         private System.Windows.Forms.Button btnRegistrarPedido;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
