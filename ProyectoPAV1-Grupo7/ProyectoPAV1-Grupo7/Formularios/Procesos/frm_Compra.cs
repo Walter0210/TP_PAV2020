@@ -139,7 +139,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         private bool ExisteProducto(int idProducto)
         {
             bool resultado = false;
-            if (dgrTicketxProducto.Rows.Count > 1)
+            if (dgrTicketxProducto.Rows.Count > 0)
             {
                 foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
                 {

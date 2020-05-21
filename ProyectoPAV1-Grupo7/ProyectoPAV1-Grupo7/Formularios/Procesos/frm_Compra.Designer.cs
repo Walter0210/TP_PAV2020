@@ -30,6 +30,10 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgrTicketxProducto = new System.Windows.Forms.DataGridView();
+            this.numeroTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioxcantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
@@ -38,29 +42,25 @@
             this.txtBoxTotal = new System.Windows.Forms.TextBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.grpDetalle = new System.Windows.Forms.GroupBox();
-            this.grpTicket = new System.Windows.Forms.GroupBox();
-            this.txtBoxNroTicket = new System.Windows.Forms.TextBox();
+            this.lblPrecioUnitario = new System.Windows.Forms.Label();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.cmbEstacion = new System.Windows.Forms.ComboBox();
-            this.cmbSurtidor = new System.Windows.Forms.ComboBox();
-            this.lblTotalCalculado = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.grpTicket = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbUnidadMedida = new System.Windows.Forms.ComboBox();
+            this.lblSurtidor = new System.Windows.Forms.Label();
             this.lblTotalTicket = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblNroTicket = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblTotalCalculado = new System.Windows.Forms.Label();
+            this.cmbSurtidor = new System.Windows.Forms.ComboBox();
+            this.cmbEstacion = new System.Windows.Forms.ComboBox();
+            this.txtBoxNroTicket = new System.Windows.Forms.TextBox();
             this.grpObservaciones = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.lblSurtidor = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbUnidadMedida = new System.Windows.Forms.ComboBox();
-            this.numeroTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioxcantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblPrecioUnitario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrTicketxProducto)).BeginInit();
             this.grpDetalle.SuspendLayout();
             this.grpTicket.SuspendLayout();
@@ -71,7 +71,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(39, 18);
+            this.lblTitulo.Location = new System.Drawing.Point(133, 12);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(202, 25);
@@ -92,14 +92,39 @@
             this.idProducto,
             this.cantidad,
             this.precioxcantidad});
-            this.dgrTicketxProducto.Location = new System.Drawing.Point(383, 29);
+            this.dgrTicketxProducto.Location = new System.Drawing.Point(383, 12);
             this.dgrTicketxProducto.MultiSelect = false;
             this.dgrTicketxProducto.Name = "dgrTicketxProducto";
             this.dgrTicketxProducto.ReadOnly = true;
             this.dgrTicketxProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrTicketxProducto.Size = new System.Drawing.Size(313, 394);
+            this.dgrTicketxProducto.Size = new System.Drawing.Size(313, 411);
             this.dgrTicketxProducto.TabIndex = 79;
             this.dgrTicketxProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrTicketxProducto_CellClick);
+            // 
+            // numeroTicket
+            // 
+            this.numeroTicket.HeaderText = "Numero de Ticket";
+            this.numeroTicket.Name = "numeroTicket";
+            this.numeroTicket.ReadOnly = true;
+            this.numeroTicket.Visible = false;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "Producto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precioxcantidad
+            // 
+            this.precioxcantidad.HeaderText = "Precio x Cantidad vendida";
+            this.precioxcantidad.Name = "precioxcantidad";
+            this.precioxcantidad.ReadOnly = true;
             // 
             // cmbProducto
             // 
@@ -202,37 +227,16 @@
             this.grpDetalle.TabStop = false;
             this.grpDetalle.Text = "Datos del Producto";
             // 
-            // grpTicket
+            // lblPrecioUnitario
             // 
-            this.grpTicket.Controls.Add(this.label3);
-            this.grpTicket.Controls.Add(this.cmbUnidadMedida);
-            this.grpTicket.Controls.Add(this.lblSurtidor);
-            this.grpTicket.Controls.Add(this.lblTotalTicket);
-            this.grpTicket.Controls.Add(this.label1);
-            this.grpTicket.Controls.Add(this.lblFecha);
-            this.grpTicket.Controls.Add(this.lblNroTicket);
-            this.grpTicket.Controls.Add(this.dateTimePicker1);
-            this.grpTicket.Controls.Add(this.lblTotalCalculado);
-            this.grpTicket.Controls.Add(this.cmbSurtidor);
-            this.grpTicket.Controls.Add(this.cmbEstacion);
-            this.grpTicket.Controls.Add(this.txtBoxNroTicket);
-            this.grpTicket.Location = new System.Drawing.Point(44, 56);
-            this.grpTicket.Name = "grpTicket";
-            this.grpTicket.Size = new System.Drawing.Size(291, 194);
-            this.grpTicket.TabIndex = 90;
-            this.grpTicket.TabStop = false;
-            this.grpTicket.Text = "Datos generales";
-            // 
-            // txtBoxNroTicket
-            // 
-            this.txtBoxNroTicket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNroTicket.Enabled = false;
-            this.txtBoxNroTicket.Location = new System.Drawing.Point(160, 32);
-            this.txtBoxNroTicket.Name = "txtBoxNroTicket";
-            this.txtBoxNroTicket.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxNroTicket.TabIndex = 89;
-            this.txtBoxNroTicket.Text = "1";
+            this.lblPrecioUnitario.AutoSize = true;
+            this.lblPrecioUnitario.Enabled = false;
+            this.lblPrecioUnitario.Location = new System.Drawing.Point(16, 58);
+            this.lblPrecioUnitario.Name = "lblPrecioUnitario";
+            this.lblPrecioUnitario.Size = new System.Drawing.Size(13, 13);
+            this.lblPrecioUnitario.TabIndex = 92;
+            this.lblPrecioUnitario.Text = "0";
+            this.lblPrecioUnitario.Visible = false;
             // 
             // btnModificarProducto
             // 
@@ -270,41 +274,57 @@
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // cmbEstacion
+            // grpTicket
             // 
-            this.cmbEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstacion.FormattingEnabled = true;
-            this.cmbEstacion.Location = new System.Drawing.Point(160, 84);
-            this.cmbEstacion.Name = "cmbEstacion";
-            this.cmbEstacion.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstacion.TabIndex = 93;
+            this.grpTicket.Controls.Add(this.label3);
+            this.grpTicket.Controls.Add(this.cmbUnidadMedida);
+            this.grpTicket.Controls.Add(this.lblSurtidor);
+            this.grpTicket.Controls.Add(this.lblTotalTicket);
+            this.grpTicket.Controls.Add(this.label1);
+            this.grpTicket.Controls.Add(this.lblFecha);
+            this.grpTicket.Controls.Add(this.lblNroTicket);
+            this.grpTicket.Controls.Add(this.dateTimePicker1);
+            this.grpTicket.Controls.Add(this.lblTotalCalculado);
+            this.grpTicket.Controls.Add(this.cmbSurtidor);
+            this.grpTicket.Controls.Add(this.cmbEstacion);
+            this.grpTicket.Controls.Add(this.txtBoxNroTicket);
+            this.grpTicket.Location = new System.Drawing.Point(44, 56);
+            this.grpTicket.Name = "grpTicket";
+            this.grpTicket.Size = new System.Drawing.Size(291, 194);
+            this.grpTicket.TabIndex = 90;
+            this.grpTicket.TabStop = false;
+            this.grpTicket.Text = "Datos generales";
             // 
-            // cmbSurtidor
+            // label3
             // 
-            this.cmbSurtidor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSurtidor.FormattingEnabled = true;
-            this.cmbSurtidor.Location = new System.Drawing.Point(160, 112);
-            this.cmbSurtidor.Name = "cmbSurtidor";
-            this.cmbSurtidor.Size = new System.Drawing.Size(121, 21);
-            this.cmbSurtidor.TabIndex = 94;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 103;
+            this.label3.Text = "Unidad de Medida";
             // 
-            // lblTotalCalculado
+            // cmbUnidadMedida
             // 
-            this.lblTotalCalculado.AutoSize = true;
-            this.lblTotalCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCalculado.Location = new System.Drawing.Point(157, 172);
-            this.lblTotalCalculado.Name = "lblTotalCalculado";
-            this.lblTotalCalculado.Size = new System.Drawing.Size(21, 13);
-            this.lblTotalCalculado.TabIndex = 95;
-            this.lblTotalCalculado.Text = "$0";
+            this.cmbUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUnidadMedida.FormattingEnabled = true;
+            this.cmbUnidadMedida.Location = new System.Drawing.Point(160, 139);
+            this.cmbUnidadMedida.Name = "cmbUnidadMedida";
+            this.cmbUnidadMedida.Size = new System.Drawing.Size(121, 21);
+            this.cmbUnidadMedida.TabIndex = 102;
             // 
-            // dateTimePicker1
+            // lblSurtidor
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 58);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 96;
+            this.lblSurtidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblSurtidor.AutoSize = true;
+            this.lblSurtidor.Location = new System.Drawing.Point(64, 115);
+            this.lblSurtidor.Name = "lblSurtidor";
+            this.lblSurtidor.Size = new System.Drawing.Size(46, 13);
+            this.lblSurtidor.TabIndex = 101;
+            this.lblSurtidor.Text = "Surtidor:";
             // 
             // lblTotalTicket
             // 
@@ -351,6 +371,53 @@
             this.lblNroTicket.TabIndex = 97;
             this.lblNroTicket.Text = "Nro. Ticket:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(160, 58);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker1.TabIndex = 96;
+            // 
+            // lblTotalCalculado
+            // 
+            this.lblTotalCalculado.AutoSize = true;
+            this.lblTotalCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCalculado.Location = new System.Drawing.Point(157, 172);
+            this.lblTotalCalculado.Name = "lblTotalCalculado";
+            this.lblTotalCalculado.Size = new System.Drawing.Size(21, 13);
+            this.lblTotalCalculado.TabIndex = 95;
+            this.lblTotalCalculado.Text = "$0";
+            // 
+            // cmbSurtidor
+            // 
+            this.cmbSurtidor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSurtidor.FormattingEnabled = true;
+            this.cmbSurtidor.Location = new System.Drawing.Point(160, 112);
+            this.cmbSurtidor.Name = "cmbSurtidor";
+            this.cmbSurtidor.Size = new System.Drawing.Size(121, 21);
+            this.cmbSurtidor.TabIndex = 94;
+            // 
+            // cmbEstacion
+            // 
+            this.cmbEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstacion.FormattingEnabled = true;
+            this.cmbEstacion.Location = new System.Drawing.Point(160, 84);
+            this.cmbEstacion.Name = "cmbEstacion";
+            this.cmbEstacion.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstacion.TabIndex = 93;
+            // 
+            // txtBoxNroTicket
+            // 
+            this.txtBoxNroTicket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxNroTicket.Enabled = false;
+            this.txtBoxNroTicket.Location = new System.Drawing.Point(160, 32);
+            this.txtBoxNroTicket.Name = "txtBoxNroTicket";
+            this.txtBoxNroTicket.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxNroTicket.TabIndex = 89;
+            this.txtBoxNroTicket.Text = "1";
+            // 
             // grpObservaciones
             // 
             this.grpObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -372,69 +439,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(640, 75);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            // 
-            // lblSurtidor
-            // 
-            this.lblSurtidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblSurtidor.AutoSize = true;
-            this.lblSurtidor.Location = new System.Drawing.Point(64, 115);
-            this.lblSurtidor.Name = "lblSurtidor";
-            this.lblSurtidor.Size = new System.Drawing.Size(46, 13);
-            this.lblSurtidor.TabIndex = 101;
-            this.lblSurtidor.Text = "Surtidor:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "Unidad de Medida";
-            // 
-            // cmbUnidadMedida
-            // 
-            this.cmbUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnidadMedida.FormattingEnabled = true;
-            this.cmbUnidadMedida.Location = new System.Drawing.Point(160, 139);
-            this.cmbUnidadMedida.Name = "cmbUnidadMedida";
-            this.cmbUnidadMedida.Size = new System.Drawing.Size(121, 21);
-            this.cmbUnidadMedida.TabIndex = 102;
-            // 
-            // numeroTicket
-            // 
-            this.numeroTicket.HeaderText = "Numero de Ticket";
-            this.numeroTicket.Name = "numeroTicket";
-            this.numeroTicket.Visible = false;
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "Producto";
-            this.idProducto.Name = "idProducto";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // precioxcantidad
-            // 
-            this.precioxcantidad.HeaderText = "Precio x Cantidad vendida";
-            this.precioxcantidad.Name = "precioxcantidad";
-            // 
-            // lblPrecioUnitario
-            // 
-            this.lblPrecioUnitario.AutoSize = true;
-            this.lblPrecioUnitario.Enabled = false;
-            this.lblPrecioUnitario.Location = new System.Drawing.Point(16, 58);
-            this.lblPrecioUnitario.Name = "lblPrecioUnitario";
-            this.lblPrecioUnitario.Size = new System.Drawing.Size(13, 13);
-            this.lblPrecioUnitario.TabIndex = 92;
-            this.lblPrecioUnitario.Text = "0";
-            this.lblPrecioUnitario.Visible = false;
             // 
             // frm_Compra
             // 
