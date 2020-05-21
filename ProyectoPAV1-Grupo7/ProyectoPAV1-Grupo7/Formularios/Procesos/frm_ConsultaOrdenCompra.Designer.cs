@@ -126,6 +126,7 @@
             this.dgrDetallesOrden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrDetallesOrden.Size = new System.Drawing.Size(635, 238);
             this.dgrDetallesOrden.TabIndex = 1;
+            this.dgrDetallesOrden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDetallesOrden_CellContentClick);
             // 
             // NumeroOrden
             // 
@@ -202,6 +203,7 @@
             this.btnRegistrarPedido.TabIndex = 4;
             this.btnRegistrarPedido.Text = "registrar pedido";
             this.btnRegistrarPedido.UseVisualStyleBackColor = true;
+            this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
             // 
             // frm_ConsultaOrdenCompra
             // 

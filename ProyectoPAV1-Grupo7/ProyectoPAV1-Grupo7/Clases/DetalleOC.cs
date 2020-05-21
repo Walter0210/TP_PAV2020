@@ -28,6 +28,11 @@ namespace ProyectoPAV1_Grupo7.Clases
 
         }
 
+        public DetalleOC()
+        {
+
+        }
+
         public int NroOC
         {
             get => nroOC;
