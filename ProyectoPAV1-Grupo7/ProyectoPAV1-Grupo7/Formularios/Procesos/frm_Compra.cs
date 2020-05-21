@@ -13,16 +13,23 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 {
     public partial class frm_Compra : Form
     {
+        private Ticket nuevoTicket;
+        private int numeroNuevoTicket;
+        private int indiceActual;
+
         public frm_Compra()
         {
             InitializeComponent();
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void BuscarnroTicket()
         {
-            this.Close();
+            ConexionBD conexion = new ConexionBD();
+            string sql = "Select MAX(T.numTicket) as ultimoTicket" +
+                "From Ticket T";
+          
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            numeroNuevoTicket = (int)tabla.Rows[0]["ultimoTicket"] + 1;
         }
-
         private void CargarComboEstacion()
         {
             ConexionBD conexion = new ConexionBD();
@@ -59,55 +66,253 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             cmbSurtidor.SelectedIndex = -1;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void CargarComboProductos()
         {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Producto";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
 
-        }
-
-        private void lblResponsable_Click(object sender, EventArgs e)
-        {
-
+            cmbProducto.DataSource = tabla;
+            cmbProducto.DisplayMember = "descripcion";
+            cmbProducto.ValueMember = "idProducto";
+            cmbProducto.SelectedIndex = -1;
         }
 
         private void frm_Compra_Load(object sender, EventArgs e)
         {
+            Form form = this.Parent.FindForm();
+            form.Width = this.Width + 300;
+            form.Height = this.Height + 50;
+
+            //BuscarnroTicket();
+            //txtBoxNroTicket.Text = numeroNuevoTicket.ToString();
+
             CargarComboEstacion();
             CargarComboUnidadMedida();
             CargarComboSurtidor();
-
+            CargarComboProductos();
         }
 
-        private Ticket ObtenerDatosTicket()
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-
-            //VARIABLES DE CONTROL
-            int estacion = (int)cmbEstacion.SelectedValue;
-            int surtidor = (int)cmbSurtidor.SelectedValue;
-            int cantVendida = int.Parse(tbCantidad.Text);
-            int uniMedida = (int)cmbUnidadMedida.SelectedValue;
-
-            Ticket ticket = new Ticket();
-
-            return ticket;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (cmbEstacion.SelectedIndex != -1 || cmbSurtidor.SelectedIndex != -1 || cmbUnidadMedida.SelectedIndex != -1)
+            if (cmbSurtidor.SelectedIndex != -1 && cmbEstacion.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1)
             {
-                // Empleado empleado = ObtenerDatosEmpleado();
-                    // GuardarEmpleadoBDbool resultado = (empleado);
-
-                    //if (resultado)
+                nuevoTicket = new Ticket((int)numeroNuevoTicket, dateTimePicker1.Value, (int)cmbEstacion.SelectedValue, (int)cmbSurtidor.SelectedValue,0 , (int)cmbUnidadMedida.SelectedValue, richTextBox1.Text);
+                if (cmbProducto.SelectedIndex != -1)
+                {
+                    if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
                     {
-                        MessageBox.Show("Compra cargada con exito");
+                        grpTicket.Enabled = false;
+                        int nroTicket = numeroNuevoTicket;
+                        int idProducto = (int)cmbProducto.SelectedValue;
+                        int cantidad = int.Parse(txtBoxCantidad.Text);
+                        int precioxcantidad = int.Parse(txtBoxTotal.Text);
+
+                        dgrTicketxProducto.Rows.Add(nroTicket, idProducto, cantidad, precioxcantidad);
+                        //txtBoxCantidad.Focus();
+                        CalcularTotal();
+                        LimpiarCampos(grpDetalle);
                     }
-                
+                }
+                else
+                {
+                    MessageBox.Show("Los datos del producto!");
+                }
             }
             else
             {
-                MessageBox.Show("Todos los campos son requeridos");
+                MessageBox.Show("Primero debe completar los datos generales!");
             }
+
+        }
+
+        private void CalcularTotal()
+        {
+            int total = 0;
+            foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
+            {
+                total += Convert.ToInt32(r.Cells["precioxcantidad"].Value);
+            }
+            lblTotalCalculado.Text = total.ToString();
+        }
+
+        private bool ExisteProducto(int idProducto)
+        {
+            bool resultado = false;
+            if (dgrTicketxProducto.Rows.Count > 1)
+            {
+                foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
+                {
+                    if ((int)r.Cells["idProducto"].Value == idProducto)
+                    {
+                        MessageBox.Show("Ya existe este producto en la lista!");
+                        r.Selected = true;
+                        CompletarCombos(r.Index);
+                        resultado = true;
+                        break;
+                    }
+                    else
+                    {
+                        resultado = false;
+                    }
+                }
+            }
+            return resultado;
+        }
+
+        private void CompletarCombos(int indiceProducto)
+        {
+            DataGridViewRow fila = dgrTicketxProducto.Rows[indiceProducto];
+
+            cmbProducto.SelectedValue = fila.Cells["idProducto"].Value;
+            txtBoxCantidad.Text = fila.Cells["cantidad"].Value.ToString();
+            txtBoxTotal.Text = fila.Cells["precioxcantidad"].Value.ToString();
+        }
+
+        private void cmbProducto_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmbProducto.SelectedIndex != -1)
+            {
+                ConexionBD conexion = new ConexionBD();
+                string sql = "SELECT precioCompra FROM Producto WHERE idProducto = " + cmbProducto.SelectedValue;
+                DataTable tabla = conexion.ejecutar_consulta(sql);
+                lblPrecioUnitario.Text = tabla.Rows[0]["precioCompra"].ToString();
+            }
+        }
+
+        private void LimpiarCampos(GroupBox grupo)
+        {
+            foreach (Control ctr in grupo.Controls)
+            {
+                if (ctr is MaskedTextBox || ctr is TextBox)
+                {
+                    ctr.ResetText();
+                }
+                else if (ctr is ComboBox)
+                {
+                    ((ComboBox)ctr).SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void txtBoxCantidad_Leave(object sender, EventArgs e)
+        {
+            //test
+        }
+
+        private void txtBoxCantidad_TextChanged(object sender, EventArgs e)
+        {
+            int totalVendido;
+            if (txtBoxCantidad.Text != "")
+            {
+                totalVendido = int.Parse(txtBoxCantidad.Text.Trim()) * int.Parse(lblPrecioUnitario.Text);
+                txtBoxTotal.Text = totalVendido.ToString();
+            }
+            else
+            {
+                txtBoxTotal.Text = "0";
+            }
+        }
+
+        private void dgrTicketxProducto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indiceActual = e.RowIndex;
+            if (indiceActual != -1)
+            {
+                LimpiarCampos(grpDetalle);
+                btnModificarProducto.Enabled = true;
+                btnEliminarProducto.Enabled = true;
+                btnAgregarProducto.Enabled = false;
+                CompletarCombos(indiceActual);
+            }
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
+            {
+                int nroTicket = numeroNuevoTicket;
+                int idProducto = (int)cmbProducto.SelectedValue;
+                int cantidad = int.Parse(txtBoxCantidad.Text);
+                int precioxcantidad = int.Parse(txtBoxTotal.Text);
+
+                dgrTicketxProducto.Rows[indiceActual].SetValues(nroTicket, idProducto, cantidad, precioxcantidad);
+
+                //dgrTicketxProducto.Rows[indiceActual].SetValues(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
+
+                CalcularTotal();
+                LimpiarCampos(grpDetalle);
+                btnAgregarProducto.Enabled = true;
+            }
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            if (indiceActual != -1)
+            {
+                dgrTicketxProducto.Rows.RemoveAt(indiceActual);
+                LimpiarCampos(grpDetalle);
+                CalcularTotal();
+                btnAgregarProducto.Enabled = true;
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            DialogResult volver = MessageBox.Show("Desea finalizar el proceso de venta?", "Finalizar Venta", MessageBoxButtons.YesNo);
+            if (volver == DialogResult.Yes)
+            {
+                ConexionBD conexion = new ConexionBD();
+                conexion.iniciar_transaccion();
+                
+                if (InsertarTicket(nuevoTicket, conexion))
+                {
+                    foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
+                    {
+                        int nroticket = (int)r.Cells["numeroTicket"].Value;
+                        int idProducto = (int)r.Cells["idProducto"].Value;
+                        int cantidad = (int)r.Cells["cantidad"].Value;
+                        int precio = (int)r.Cells["precioxcantidad"].Value;
+
+                        TicketProducto nuevoDetalle = new TicketProducto(nroticket, idProducto, cantidad, precio);
+                        InsertarDetalle(nuevoDetalle, conexion);
+                    }
+                    MessageBox.Show("Ticket generado con exito!");
+                    conexion.cerrar_transaccion();
+                }
+
+            }
+        }
+
+        private void InsertarDetalle(TicketProducto nuevoDetalle, ConexionBD conexion)
+        {
+            try
+            {
+                string sql = "INSERT INTO TicketXProducto VALUES ('" + nuevoDetalle.NroTicket + "','" + nuevoDetalle.IdProducto + "','" + nuevoDetalle.Cantidad + "','" + nuevoDetalle.Precio + "')";
+                conexion.insertar(sql);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al insertar los datos del ticket generado");
+            }
+        }
+
+        private bool InsertarTicket(Ticket nuevoTicket, ConexionBD conexion)
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+            bool resultado = false;
+
+            try
+            {
+                string sql = "INSERT INTO Ticket VALUES ( '" + nuevoTicket.Fecha.ToString(format) + "','" + nuevoTicket.Cuit + "','" + nuevoTicket.NroSurtidor + "','" + nuevoTicket.Cantidad + "','" + nuevoTicket.IdUnidadMedida + "','" + nuevoTicket.Observacion + "')";
+                conexion.insertar(sql);
+                resultado = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al insertar detalles de productos");
+            }
+            return resultado;
         }
     }
 }

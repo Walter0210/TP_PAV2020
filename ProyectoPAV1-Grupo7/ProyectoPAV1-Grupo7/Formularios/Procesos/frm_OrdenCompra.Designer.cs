@@ -31,9 +31,21 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.dgrDetalleOC = new System.Windows.Forms.DataGridView();
+            this.numOrdenCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uniMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUrgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBoxProductos = new System.Windows.Forms.GroupBox();
+            this.lblUrgencia = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.cmbUrgencia = new System.Windows.Forms.ComboBox();
+            this.txtBoxPrecio = new System.Windows.Forms.TextBox();
             this.txtBoxCantidad = new System.Windows.Forms.MaskedTextBox();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
@@ -41,26 +53,14 @@
             this.cmbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.groupBoxDatosOC = new System.Windows.Forms.GroupBox();
-            this.cmbEstacion = new System.Windows.Forms.ComboBox();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtBoxPrecio = new System.Windows.Forms.TextBox();
-            this.txtBoxNroOrden = new System.Windows.Forms.TextBox();
-            this.cmbUrgencia = new System.Windows.Forms.ComboBox();
-            this.lblUrgencia = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblProducto = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
             this.lblNroOrden = new System.Windows.Forms.Label();
             this.lblEstacion = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblResponsable = new System.Windows.Forms.Label();
-            this.numOrdenCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uniMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUrgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBoxNroOrden = new System.Windows.Forms.TextBox();
+            this.cmbEstacion = new System.Windows.Forms.ComboBox();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblTotalCalculado = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDetalleOC)).BeginInit();
@@ -112,6 +112,49 @@
             this.dgrDetalleOC.TabIndex = 68;
             this.dgrDetalleOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDetalleOC_CellClick);
             // 
+            // numOrdenCompra
+            // 
+            this.numOrdenCompra.DataPropertyName = "numOrdenCompra";
+            this.numOrdenCompra.HeaderText = "nroOrdenCompra";
+            this.numOrdenCompra.Name = "numOrdenCompra";
+            this.numOrdenCompra.ReadOnly = true;
+            this.numOrdenCompra.Visible = false;
+            // 
+            // producto
+            // 
+            this.producto.DataPropertyName = "idProducto";
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // uniMedida
+            // 
+            this.uniMedida.DataPropertyName = "idUnidadMedida";
+            this.uniMedida.HeaderText = "Unidad Medida";
+            this.uniMedida.Name = "uniMedida";
+            this.uniMedida.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "precio";
+            this.precio.HeaderText = "Precio Unitario";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // idUrgencia
+            // 
+            this.idUrgencia.DataPropertyName = "idUrgencia";
+            this.idUrgencia.HeaderText = "Urgencia";
+            this.idUrgencia.Name = "idUrgencia";
+            this.idUrgencia.ReadOnly = true;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -156,6 +199,77 @@
             this.groupBoxProductos.TabIndex = 83;
             this.groupBoxProductos.TabStop = false;
             this.groupBoxProductos.Text = "Seleccion de Productos";
+            // 
+            // lblUrgencia
+            // 
+            this.lblUrgencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUrgencia.AutoSize = true;
+            this.lblUrgencia.Location = new System.Drawing.Point(28, 108);
+            this.lblUrgencia.Name = "lblUrgencia";
+            this.lblUrgencia.Size = new System.Drawing.Size(95, 13);
+            this.lblUrgencia.TabIndex = 97;
+            this.lblUrgencia.Text = "Nivel de Urgencia:";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(28, 82);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(79, 13);
+            this.lblPrecio.TabIndex = 96;
+            this.lblPrecio.Text = "Precio Unitario:";
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Location = new System.Drawing.Point(28, 28);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(53, 13);
+            this.lblProducto.TabIndex = 95;
+            this.lblProducto.Text = "Producto:";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(28, 55);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(99, 13);
+            this.lblCantidad.TabIndex = 94;
+            this.lblCantidad.Text = "Cantidad solicitada:";
+            // 
+            // cmbUrgencia
+            // 
+            this.cmbUrgencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbUrgencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUrgencia.FormattingEnabled = true;
+            this.cmbUrgencia.Location = new System.Drawing.Point(192, 105);
+            this.cmbUrgencia.Name = "cmbUrgencia";
+            this.cmbUrgencia.Size = new System.Drawing.Size(149, 21);
+            this.cmbUrgencia.TabIndex = 92;
+            // 
+            // txtBoxPrecio
+            // 
+            this.txtBoxPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxPrecio.Enabled = false;
+            this.txtBoxPrecio.Location = new System.Drawing.Point(192, 79);
+            this.txtBoxPrecio.Name = "txtBoxPrecio";
+            this.txtBoxPrecio.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxPrecio.TabIndex = 91;
             // 
             // txtBoxCantidad
             // 
@@ -247,123 +361,6 @@
             this.groupBoxDatosOC.TabStop = false;
             this.groupBoxDatosOC.Text = "Datos de la Orden de Compra";
             // 
-            // cmbEstacion
-            // 
-            this.cmbEstacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstacion.FormattingEnabled = true;
-            this.cmbEstacion.Location = new System.Drawing.Point(203, 74);
-            this.cmbEstacion.Name = "cmbEstacion";
-            this.cmbEstacion.Size = new System.Drawing.Size(138, 21);
-            this.cmbEstacion.TabIndex = 81;
-            // 
-            // cmbEmpleado
-            // 
-            this.cmbEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(203, 47);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(138, 21);
-            this.cmbEmpleado.TabIndex = 79;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(140, 101);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(201, 20);
-            this.dateTimePicker1.TabIndex = 77;
-            // 
-            // txtBoxPrecio
-            // 
-            this.txtBoxPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxPrecio.Enabled = false;
-            this.txtBoxPrecio.Location = new System.Drawing.Point(192, 79);
-            this.txtBoxPrecio.Name = "txtBoxPrecio";
-            this.txtBoxPrecio.Size = new System.Drawing.Size(149, 20);
-            this.txtBoxPrecio.TabIndex = 91;
-            // 
-            // txtBoxNroOrden
-            // 
-            this.txtBoxNroOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxNroOrden.Enabled = false;
-            this.txtBoxNroOrden.Location = new System.Drawing.Point(203, 21);
-            this.txtBoxNroOrden.Name = "txtBoxNroOrden";
-            this.txtBoxNroOrden.Size = new System.Drawing.Size(138, 20);
-            this.txtBoxNroOrden.TabIndex = 83;
-            // 
-            // cmbUrgencia
-            // 
-            this.cmbUrgencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbUrgencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUrgencia.FormattingEnabled = true;
-            this.cmbUrgencia.Location = new System.Drawing.Point(192, 105);
-            this.cmbUrgencia.Name = "cmbUrgencia";
-            this.cmbUrgencia.Size = new System.Drawing.Size(149, 21);
-            this.cmbUrgencia.TabIndex = 92;
-            // 
-            // lblUrgencia
-            // 
-            this.lblUrgencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUrgencia.AutoSize = true;
-            this.lblUrgencia.Location = new System.Drawing.Point(28, 108);
-            this.lblUrgencia.Name = "lblUrgencia";
-            this.lblUrgencia.Size = new System.Drawing.Size(95, 13);
-            this.lblUrgencia.TabIndex = 97;
-            this.lblUrgencia.Text = "Nivel de Urgencia:";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(28, 82);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(79, 13);
-            this.lblPrecio.TabIndex = 96;
-            this.lblPrecio.Text = "Precio Unitario:";
-            // 
-            // lblProducto
-            // 
-            this.lblProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(28, 28);
-            this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(53, 13);
-            this.lblProducto.TabIndex = 95;
-            this.lblProducto.Text = "Producto:";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(28, 55);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(99, 13);
-            this.lblCantidad.TabIndex = 94;
-            this.lblCantidad.Text = "Cantidad solicitada:";
-            // 
             // lblNroOrden
             // 
             this.lblNroOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -412,48 +409,51 @@
             this.lblResponsable.TabIndex = 84;
             this.lblResponsable.Text = "Responsable:";
             // 
-            // numOrdenCompra
+            // txtBoxNroOrden
             // 
-            this.numOrdenCompra.DataPropertyName = "numOrdenCompra";
-            this.numOrdenCompra.HeaderText = "nroOrdenCompra";
-            this.numOrdenCompra.Name = "numOrdenCompra";
-            this.numOrdenCompra.ReadOnly = true;
-            this.numOrdenCompra.Visible = false;
+            this.txtBoxNroOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxNroOrden.Enabled = false;
+            this.txtBoxNroOrden.Location = new System.Drawing.Point(203, 21);
+            this.txtBoxNroOrden.Name = "txtBoxNroOrden";
+            this.txtBoxNroOrden.Size = new System.Drawing.Size(138, 20);
+            this.txtBoxNroOrden.TabIndex = 83;
             // 
-            // producto
+            // cmbEstacion
             // 
-            this.producto.DataPropertyName = "idProducto";
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
+            this.cmbEstacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstacion.FormattingEnabled = true;
+            this.cmbEstacion.Location = new System.Drawing.Point(203, 74);
+            this.cmbEstacion.Name = "cmbEstacion";
+            this.cmbEstacion.Size = new System.Drawing.Size(138, 21);
+            this.cmbEstacion.TabIndex = 81;
             // 
-            // cantidad
+            // cmbEmpleado
             // 
-            this.cantidad.DataPropertyName = "cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
+            this.cmbEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(203, 47);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(138, 21);
+            this.cmbEmpleado.TabIndex = 79;
             // 
-            // uniMedida
+            // dateTimePicker1
             // 
-            this.uniMedida.DataPropertyName = "idUnidadMedida";
-            this.uniMedida.HeaderText = "Unidad Medida";
-            this.uniMedida.Name = "uniMedida";
-            this.uniMedida.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.DataPropertyName = "precio";
-            this.precio.HeaderText = "Precio Unitario";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // idUrgencia
-            // 
-            this.idUrgencia.DataPropertyName = "idUrgencia";
-            this.idUrgencia.HeaderText = "Urgencia";
-            this.idUrgencia.Name = "idUrgencia";
-            this.idUrgencia.ReadOnly = true;
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(203, 101);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
+            this.dateTimePicker1.TabIndex = 77;
             // 
             // lblTotalCalculado
             // 

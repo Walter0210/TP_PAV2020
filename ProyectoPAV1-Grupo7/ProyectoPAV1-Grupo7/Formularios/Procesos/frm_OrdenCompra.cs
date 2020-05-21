@@ -31,10 +31,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             nroUltimaOC = (int)tabla.Rows[0]["ultimaOC"] + 1;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void LimpiarCampos(GroupBox grupo)
         {
             foreach (Control ctr in grupo.Controls)
@@ -133,8 +129,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             CargarComboUrgencia();
 
             BuscarNroOrden();
-
             txtBoxNroOrden.Text = nroUltimaOC.ToString();
+
             btnEliminarProducto.Enabled = false;
             btnModificarProducto.Enabled = false;
         }
@@ -242,6 +238,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 dgrDetalleOC.Rows[indice2].SetValues(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
 
                 CalcularTotal();
+                LimpiarCampos(groupBoxProductos);
             }
         }
 
