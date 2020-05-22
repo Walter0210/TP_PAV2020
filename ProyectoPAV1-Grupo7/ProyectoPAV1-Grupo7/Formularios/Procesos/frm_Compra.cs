@@ -98,16 +98,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             if (cmbSurtidor.SelectedIndex != -1 && cmbEstacion.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1)
-            {
-                int nro = numeroNuevoTicket;
-                DateTime fecha = dateTimePicker1.Value;
-                int cuit = (int)cmbEstacion.SelectedValue;
-                int surtidor = (int)cmbSurtidor.SelectedValue;
-                int cantidadComb = int.Parse(txtBoxCantidadCombustible.Text);
-                int unidadMedida = (int)cmbUnidadMedida.SelectedValue;
-                string observaciones = txtBoxObvs.Text.ToString();
-
-                nuevoTicket = new Ticket(nro, fecha, cuit, surtidor, cantidadComb, unidadMedida, observaciones);
+            {   
+                //Valida que primero complete los datos del ticket
                 if (cmbProducto.SelectedIndex != -1)
                 {
                     if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
@@ -133,7 +125,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             }
             else
             {
-                MessageBox.Show("Primero debe completar los datos generales!");
+                MessageBox.Show("Primero debe completar los datos generales de la venta!");
             }
 
         }
@@ -147,7 +139,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 total += Convert.ToInt32(r.Cells["precioxcantidad"].Value);
                 //cantidad += Convert.ToInt32(r.Cells["cantidad"].Value);
             }
-            lblTotalCalculado.Text = total.ToString();
+            lblTotalCalculado.Text = "$" + total.ToString();
             //lblCantidadVendida.Text = cantidad.ToString();
         }
 
@@ -267,38 +259,74 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 CalcularTotal();
                 btnAgregarProducto.Enabled = true;
             }
+            if (dgrTicketxProducto.Rows.Count == 0)
+            {
+                grpTicket.Enabled = true;
+            }
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            DialogResult volver = MessageBox.Show("Desea finalizar el proceso de venta?", "Finalizar Venta", MessageBoxButtons.YesNo);
-            if (volver == DialogResult.Yes)
+            if (cmbEstacion.SelectedIndex != -1 && cmbSurtidor.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1 && txtBoxCantidadCombustible.Text != "")
             {
-                ConexionBD conexion = new ConexionBD();
-                conexion.iniciar_transaccion();
-                //nuevoTicket.Cantidad = int.Parse(lblCantidadVendida.Text);
-                if (InsertarTicket(nuevoTicket, conexion))
+                DialogResult volver = MessageBox.Show("Desea finalizar el proceso de venta?", "Finalizar Venta", MessageBoxButtons.YesNo);
+                if (volver == DialogResult.Yes)
                 {
-                    foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
-                    {
-                        int nroticket = (int)r.Cells["numeroTicket"].Value;
-                        int idProducto = (int)r.Cells["idProducto"].Value;
-                        string cantidad = r.Cells["cantidad"].Value.ToString();
-                        float precio = (float)r.Cells["precioxcantidad"].Value;
+                    int nro = numeroNuevoTicket;
+                    DateTime fecha = dateTimePicker1.Value;
+                    int cuit = (int)cmbEstacion.SelectedValue;
+                    int surtidor = (int)cmbSurtidor.SelectedValue;
+                    int cantidadComb = int.Parse(txtBoxCantidadCombustible.Text);
+                    int unidadMedida = (int)cmbUnidadMedida.SelectedValue;
+                    string observaciones = txtBoxObvs.Text.ToString();
+                    nuevoTicket = new Ticket(nro, fecha, cuit, surtidor, cantidadComb, unidadMedida, observaciones);
 
-                        TicketProducto nuevoDetalle = new TicketProducto(nroticket, idProducto, cantidad, precio);
-                        InsertarDetalle(nuevoDetalle, conexion);
+                    ConexionBD conexion = new ConexionBD();
+                    conexion.iniciar_transaccion();
+
+                    InsertarTicket(nuevoTicket, conexion);
+
+                    if (dgrTicketxProducto.Rows.Count != 0) //Valida que hayan detalles a insertar
+                    {
+                        foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
+                        {
+                            int nroticket = (int)r.Cells["numeroTicket"].Value;
+                            int idProducto = (int)r.Cells["idProducto"].Value;
+                            string cantidad = r.Cells["cantidad"].Value.ToString();
+                            float precio = (float)r.Cells["precioxcantidad"].Value;
+
+                            TicketProducto nuevoDetalle = new TicketProducto(nroticket, idProducto, cantidad, precio);
+                            InsertarDetalle(nuevoDetalle, conexion);
+                        }
+                        //MessageBox.Show("La venta de productos se registró correctamente!");
+                        //conexion.cerrar_transaccion();
                     }
-                    MessageBox.Show("Ticket generado con exito!");
+                    MessageBox.Show("La venta de combustible se registró correctamente!");
                     conexion.cerrar_transaccion();
+
+                    LimpiarCampos(grpDetalle);
+                    LimpiarCampos(grpTicket);
+                    txtBoxObvs.Clear();
+                    grpTicket.Enabled = true;
+                    VaciarGrilla(dgrTicketxProducto);
+                    BuscarnroTicket();
+                    cmbEstacion.Enabled = true;
+                    lblTotalCalculado.Text = "0";
                 }
+
             }
-            LimpiarCampos(grpDetalle);
-            LimpiarCampos(grpTicket);
-            txtBoxObvs.Clear();
-            grpTicket.Enabled = true;
-            dgrTicketxProducto.DataSource = new DataTable();
-            BuscarnroTicket();
+            else
+            {
+                MessageBox.Show("La informacion de la venta están vacios");
+            }
+        }
+
+        private void VaciarGrilla(DataGridView dgrTicketxProducto)
+        {
+            foreach (DataGridViewRow row in dgrTicketxProducto.Rows)
+            {
+                dgrTicketxProducto.Rows.Remove(row);
+            }
         }
 
         private void InsertarDetalle(TicketProducto nuevoDetalle, ConexionBD conexion)
@@ -314,22 +342,22 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             }
         }
 
-        private bool InsertarTicket(Ticket nuevoTicket, ConexionBD conexion)
+        private void InsertarTicket(Ticket nuevoTicket, ConexionBD conexion)
         {
             string format = "yyyy-MM-dd HH:mm:ss";
-            bool resultado = false;
+            //bool resultado = false;
 
             try
             {
                 string sql = "INSERT INTO Ticket VALUES ( '" + nuevoTicket.Fecha.ToString(format) + "', " + nuevoTicket.Cuit + ", " + nuevoTicket.NroSurtidor + ", " + nuevoTicket.Cantidad + ", " + nuevoTicket.IdUnidadMedida + ", '" + nuevoTicket.Observacion.ToString() + "')";
                 conexion.insertar(sql);
-                resultado = true;
+                //resultado = true;
             }
             catch (Exception)
             {
                 MessageBox.Show("Error al insertar detalles de productos");
             }
-            return resultado;
+            //return resultado;
         }
 
         private void cmbEstacion_DropDownClosed(object sender, EventArgs e)
