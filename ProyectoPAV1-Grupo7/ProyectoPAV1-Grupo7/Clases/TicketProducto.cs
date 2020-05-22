@@ -10,10 +10,10 @@ namespace ProyectoPAV1_Grupo7.Clases
     {
         private int nroTicket;
         private int idProducto;
-        private int cantidad;
+        private string cantidad;
         private float precio;
 
-        public TicketProducto(int nroTicket, int idProducto, int cantidad, float precio)
+        public TicketProducto(int nroTicket, int idProducto, string cantidad, float precio)
         {
             NroTicket = nroTicket;
             IdProducto = idProducto;
@@ -32,7 +32,7 @@ namespace ProyectoPAV1_Grupo7.Clases
             set => idProducto = value;
         }
 
-        public int Cantidad
+        public string Cantidad
         {
             get => cantidad;
             set => cantidad = value;

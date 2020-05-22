@@ -29,6 +29,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
           
             DataTable tabla = conexion.ejecutar_consulta(sql);
             numeroNuevoTicket = (int)tabla.Rows[0]["ultimoTicket"] + 1;
+
+            txtBoxNroTicket.Text = numeroNuevoTicket.ToString();
         }
         private void CargarComboEstacion()
         {
@@ -62,7 +64,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
             cmbSurtidor.DataSource = tabla;
             cmbSurtidor.DisplayMember = "numeroSurtidor";
-            cmbSurtidor.ValueMember = "CUIT";
+            cmbSurtidor.ValueMember = "numeroSurtidor";
             cmbSurtidor.SelectedIndex = -1;
         }
 
@@ -85,7 +87,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             form.Height = this.Height + 50;
 
             BuscarnroTicket();
-            txtBoxNroTicket.Text = numeroNuevoTicket.ToString();
+            
 
             CargarComboEstacion();
             CargarComboUnidadMedida();
@@ -97,7 +99,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             if (cmbSurtidor.SelectedIndex != -1 && cmbEstacion.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1)
             {
-                nuevoTicket = new Ticket((int)numeroNuevoTicket, dateTimePicker1.Value, (int)cmbEstacion.SelectedValue, (int)cmbSurtidor.SelectedValue, int.Parse(txtBoxCantidadCombustible.Text), (int)cmbUnidadMedida.SelectedValue, txtBoxObvs.Text.ToString());
+                int nro = numeroNuevoTicket;
+                DateTime fecha = dateTimePicker1.Value;
+                int cuit = (int)cmbEstacion.SelectedValue;
+                int surtidor = (int)cmbSurtidor.SelectedValue;
+                int cantidadComb = int.Parse(txtBoxCantidadCombustible.Text);
+                int unidadMedida = (int)cmbUnidadMedida.SelectedValue;
+                string observaciones = txtBoxObvs.Text.ToString();
+
+                nuevoTicket = new Ticket(nro, fecha, cuit, surtidor, cantidadComb, unidadMedida, observaciones);
                 if (cmbProducto.SelectedIndex != -1)
                 {
                     if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
@@ -107,8 +117,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
                         int nroTicket = numeroNuevoTicket;
                         int idProducto = (int)cmbProducto.SelectedValue;
-                        int cantidad = int.Parse(txtBoxCantidad.Text);
-                        int precioxcantidad = int.Parse(txtBoxTotal.Text);
+                        string cantidad = txtBoxCantidad.Text;
+                        float precioxcantidad = float.Parse(txtBoxTotal.Text);
 
                         dgrTicketxProducto.Rows.Add(nroTicket, idProducto, cantidad, precioxcantidad);
                         
@@ -273,8 +283,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                     {
                         int nroticket = (int)r.Cells["numeroTicket"].Value;
                         int idProducto = (int)r.Cells["idProducto"].Value;
-                        int cantidad = (int)r.Cells["cantidad"].Value;
-                        int precio = (int)r.Cells["precioxcantidad"].Value;
+                        string cantidad = r.Cells["cantidad"].Value.ToString();
+                        float precio = (float)r.Cells["precioxcantidad"].Value;
 
                         TicketProducto nuevoDetalle = new TicketProducto(nroticket, idProducto, cantidad, precio);
                         InsertarDetalle(nuevoDetalle, conexion);
@@ -288,6 +298,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             txtBoxObvs.Clear();
             grpTicket.Enabled = true;
             dgrTicketxProducto.DataSource = new DataTable();
+            BuscarnroTicket();
         }
 
         private void InsertarDetalle(TicketProducto nuevoDetalle, ConexionBD conexion)
