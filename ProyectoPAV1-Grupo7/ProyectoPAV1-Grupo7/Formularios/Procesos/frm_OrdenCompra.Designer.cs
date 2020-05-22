@@ -53,6 +53,8 @@
             this.cmbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.groupBoxDatosOC = new System.Windows.Forms.GroupBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalCalculado = new System.Windows.Forms.Label();
             this.lblNroOrden = new System.Windows.Forms.Label();
             this.lblEstacion = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.cmbEstacion = new System.Windows.Forms.ComboBox();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblTotalCalculado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrDetalleOC)).BeginInit();
             this.groupBoxProductos.SuspendLayout();
             this.groupBoxDatosOC.SuspendLayout();
@@ -158,7 +158,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.Location = new System.Drawing.Point(275, 426);
+            this.btnGuardar.Location = new System.Drawing.Point(141, 427);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(108, 25);
@@ -177,6 +177,7 @@
             this.btnCancelar.TabIndex = 82;
             this.btnCancelar.Text = "Volver";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // groupBoxProductos
@@ -363,6 +364,29 @@
             this.groupBoxDatosOC.TabStop = false;
             this.groupBoxDatosOC.Text = "Datos de la Orden de Compra";
             // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(17, 138);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(110, 13);
+            this.lblTotal.TabIndex = 89;
+            this.lblTotal.Text = "Total de la Orden:";
+            // 
+            // lblTotalCalculado
+            // 
+            this.lblTotalCalculado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalCalculado.AutoSize = true;
+            this.lblTotalCalculado.Location = new System.Drawing.Point(200, 138);
+            this.lblTotalCalculado.Name = "lblTotalCalculado";
+            this.lblTotalCalculado.Size = new System.Drawing.Size(19, 13);
+            this.lblTotalCalculado.TabIndex = 88;
+            this.lblTotalCalculado.Text = "$0";
+            // 
             // lblNroOrden
             // 
             this.lblNroOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -456,29 +480,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 77;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(17, 138);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(110, 13);
-            this.lblTotal.TabIndex = 89;
-            this.lblTotal.Text = "Total de la Orden:";
-            // 
-            // lblTotalCalculado
-            // 
-            this.lblTotalCalculado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalCalculado.AutoSize = true;
-            this.lblTotalCalculado.Location = new System.Drawing.Point(200, 138);
-            this.lblTotalCalculado.Name = "lblTotalCalculado";
-            this.lblTotalCalculado.Size = new System.Drawing.Size(19, 13);
-            this.lblTotalCalculado.TabIndex = 88;
-            this.lblTotalCalculado.Text = "$0";
             // 
             // frm_OrdenCompra
             // 
