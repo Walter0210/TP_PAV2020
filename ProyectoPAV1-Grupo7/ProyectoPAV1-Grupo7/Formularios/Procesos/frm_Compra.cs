@@ -97,10 +97,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            if (cmbSurtidor.SelectedIndex != -1 && cmbEstacion.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1)
+            if (cmbSurtidor.SelectedIndex != -1 && cmbEstacion.SelectedIndex != -1 && cmbUnidadMedida.SelectedIndex != -1 && txtBoxCantidadCombustible.Text != "")//Valida que primero complete los datos del ticket
             {   
-                //Valida que primero complete los datos del ticket
-                if (cmbProducto.SelectedIndex != -1)
+                if (cmbProducto.SelectedIndex != -1 && txtBoxCantidad.Text != "")//Valida los datos del detalle
                 {
                     if (ExisteProducto((int)cmbProducto.SelectedValue) == false)
                     {
@@ -139,7 +138,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 total += Convert.ToInt32(r.Cells["precioxcantidad"].Value);
                 //cantidad += Convert.ToInt32(r.Cells["cantidad"].Value);
             }
-            lblTotalCalculado.Text = "$" + total.ToString();
+            lblTotalCalculado.Text = total.ToString();
             //lblCantidadVendida.Text = cantidad.ToString();
         }
 
@@ -150,10 +149,11 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             {
                 foreach (DataGridViewRow r in dgrTicketxProducto.Rows)
                 {
-                    if ((int)r.Cells["idProducto"].Value == idProducto)
+                    if ((int)r.Cells["idProducto"].Value == idProducto && r.Index != indiceActual)
                     {
                         MessageBox.Show("Ya existe este producto en la lista!");
                         r.Selected = true;
+                        //indiceActual = r.Index;
                         CompletarCombos(r.Index);
                         resultado = true;
                         break;
