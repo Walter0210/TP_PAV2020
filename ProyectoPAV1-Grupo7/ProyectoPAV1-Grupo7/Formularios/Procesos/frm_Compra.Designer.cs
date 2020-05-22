@@ -60,7 +60,10 @@
             this.cmbEstacion = new System.Windows.Forms.ComboBox();
             this.txtBoxNroTicket = new System.Windows.Forms.TextBox();
             this.grpObservaciones = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lblCantidadVendida = new System.Windows.Forms.Label();
+            this.txtBoxCantidadCombustible = new System.Windows.Forms.MaskedTextBox();
+            this.lbCantidadVendida = new System.Windows.Forms.Label();
+            this.txtBoxObvs = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrTicketxProducto)).BeginInit();
             this.grpDetalle.SuspendLayout();
             this.grpTicket.SuspendLayout();
@@ -92,7 +95,7 @@
             this.idProducto,
             this.cantidad,
             this.precioxcantidad});
-            this.dgrTicketxProducto.Location = new System.Drawing.Point(383, 12);
+            this.dgrTicketxProducto.Location = new System.Drawing.Point(366, 12);
             this.dgrTicketxProducto.MultiSelect = false;
             this.dgrTicketxProducto.Name = "dgrTicketxProducto";
             this.dgrTicketxProducto.ReadOnly = true;
@@ -132,7 +135,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(160, 28);
+            this.cmbProducto.Location = new System.Drawing.Point(172, 28);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(121, 21);
             this.cmbProducto.TabIndex = 81;
@@ -143,7 +146,7 @@
             this.lblProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(57, 31);
+            this.lblProducto.Location = new System.Drawing.Point(67, 31);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(53, 13);
             this.lblProducto.TabIndex = 82;
@@ -154,7 +157,7 @@
             this.lblCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(58, 58);
+            this.lblCantidad.Location = new System.Drawing.Point(68, 58);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(52, 13);
             this.lblCantidad.TabIndex = 83;
@@ -164,7 +167,7 @@
             // 
             this.txtBoxCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxCantidad.Location = new System.Drawing.Point(160, 55);
+            this.txtBoxCantidad.Location = new System.Drawing.Point(172, 55);
             this.txtBoxCantidad.Mask = "00000";
             this.txtBoxCantidad.Name = "txtBoxCantidad";
             this.txtBoxCantidad.PromptChar = '#';
@@ -172,14 +175,13 @@
             this.txtBoxCantidad.TabIndex = 84;
             this.txtBoxCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBoxCantidad.TextChanged += new System.EventHandler(this.txtBoxCantidad_TextChanged);
-            this.txtBoxCantidad.Leave += new System.EventHandler(this.txtBoxCantidad_Leave);
             // 
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(71, 84);
+            this.lblTotal.Location = new System.Drawing.Point(86, 84);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(34, 13);
             this.lblTotal.TabIndex = 85;
@@ -190,7 +192,7 @@
             this.txtBoxTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxTotal.Enabled = false;
-            this.txtBoxTotal.Location = new System.Drawing.Point(160, 81);
+            this.txtBoxTotal.Location = new System.Drawing.Point(172, 81);
             this.txtBoxTotal.Name = "txtBoxTotal";
             this.txtBoxTotal.Size = new System.Drawing.Size(100, 20);
             this.txtBoxTotal.TabIndex = 86;
@@ -210,6 +212,7 @@
             // grpDetalle
             // 
             this.grpDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.grpDetalle.Controls.Add(this.lblCantidadVendida);
             this.grpDetalle.Controls.Add(this.lblPrecioUnitario);
             this.grpDetalle.Controls.Add(this.btnModificarProducto);
             this.grpDetalle.Controls.Add(this.btnEliminarProducto);
@@ -220,9 +223,9 @@
             this.grpDetalle.Controls.Add(this.lblCantidad);
             this.grpDetalle.Controls.Add(this.lblTotal);
             this.grpDetalle.Controls.Add(this.txtBoxCantidad);
-            this.grpDetalle.Location = new System.Drawing.Point(44, 267);
+            this.grpDetalle.Location = new System.Drawing.Point(32, 274);
             this.grpDetalle.Name = "grpDetalle";
-            this.grpDetalle.Size = new System.Drawing.Size(291, 156);
+            this.grpDetalle.Size = new System.Drawing.Size(303, 149);
             this.grpDetalle.TabIndex = 89;
             this.grpDetalle.TabStop = false;
             this.grpDetalle.Text = "Datos del Producto";
@@ -241,7 +244,7 @@
             // btnModificarProducto
             // 
             this.btnModificarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarProducto.Location = new System.Drawing.Point(110, 118);
+            this.btnModificarProducto.Location = new System.Drawing.Point(122, 111);
             this.btnModificarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(73, 24);
@@ -253,7 +256,7 @@
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(32, 118);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(44, 111);
             this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(73, 24);
@@ -265,7 +268,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarProducto.Location = new System.Drawing.Point(187, 118);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(199, 111);
             this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(73, 24);
@@ -276,6 +279,8 @@
             // 
             // grpTicket
             // 
+            this.grpTicket.Controls.Add(this.lbCantidadVendida);
+            this.grpTicket.Controls.Add(this.txtBoxCantidadCombustible);
             this.grpTicket.Controls.Add(this.label3);
             this.grpTicket.Controls.Add(this.cmbUnidadMedida);
             this.grpTicket.Controls.Add(this.lblSurtidor);
@@ -288,9 +293,9 @@
             this.grpTicket.Controls.Add(this.cmbSurtidor);
             this.grpTicket.Controls.Add(this.cmbEstacion);
             this.grpTicket.Controls.Add(this.txtBoxNroTicket);
-            this.grpTicket.Location = new System.Drawing.Point(44, 56);
+            this.grpTicket.Location = new System.Drawing.Point(23, 40);
             this.grpTicket.Name = "grpTicket";
-            this.grpTicket.Size = new System.Drawing.Size(291, 194);
+            this.grpTicket.Size = new System.Drawing.Size(312, 228);
             this.grpTicket.TabIndex = 90;
             this.grpTicket.TabStop = false;
             this.grpTicket.Text = "Datos generales";
@@ -300,7 +305,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 142);
+            this.label3.Location = new System.Drawing.Point(35, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 103;
@@ -320,7 +325,7 @@
             this.lblSurtidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSurtidor.AutoSize = true;
-            this.lblSurtidor.Location = new System.Drawing.Point(64, 115);
+            this.lblSurtidor.Location = new System.Drawing.Point(83, 115);
             this.lblSurtidor.Name = "lblSurtidor";
             this.lblSurtidor.Size = new System.Drawing.Size(46, 13);
             this.lblSurtidor.TabIndex = 101;
@@ -332,7 +337,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotalTicket.AutoSize = true;
             this.lblTotalTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTicket.Location = new System.Drawing.Point(46, 172);
+            this.lblTotalTicket.Location = new System.Drawing.Point(46, 198);
             this.lblTotalTicket.Name = "lblTotalTicket";
             this.lblTotalTicket.Size = new System.Drawing.Size(51, 13);
             this.lblTotalTicket.TabIndex = 100;
@@ -343,7 +348,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 87);
+            this.label1.Location = new System.Drawing.Point(78, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 99;
@@ -354,7 +359,7 @@
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(32, 64);
+            this.lblFecha.Location = new System.Drawing.Point(51, 64);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(78, 13);
             this.lblFecha.TabIndex = 98;
@@ -365,7 +370,7 @@
             this.lblNroTicket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNroTicket.AutoSize = true;
-            this.lblNroTicket.Location = new System.Drawing.Point(47, 35);
+            this.lblNroTicket.Location = new System.Drawing.Point(66, 35);
             this.lblNroTicket.Name = "lblNroTicket";
             this.lblNroTicket.Size = new System.Drawing.Size(63, 13);
             this.lblNroTicket.TabIndex = 97;
@@ -383,7 +388,7 @@
             // 
             this.lblTotalCalculado.AutoSize = true;
             this.lblTotalCalculado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCalculado.Location = new System.Drawing.Point(157, 172);
+            this.lblTotalCalculado.Location = new System.Drawing.Point(157, 198);
             this.lblTotalCalculado.Name = "lblTotalCalculado";
             this.lblTotalCalculado.Size = new System.Drawing.Size(21, 13);
             this.lblTotalCalculado.TabIndex = 95;
@@ -392,6 +397,7 @@
             // cmbSurtidor
             // 
             this.cmbSurtidor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSurtidor.Enabled = false;
             this.cmbSurtidor.FormattingEnabled = true;
             this.cmbSurtidor.Location = new System.Drawing.Point(160, 112);
             this.cmbSurtidor.Name = "cmbSurtidor";
@@ -406,6 +412,7 @@
             this.cmbEstacion.Name = "cmbEstacion";
             this.cmbEstacion.Size = new System.Drawing.Size(121, 21);
             this.cmbEstacion.TabIndex = 93;
+            this.cmbEstacion.DropDownClosed += new System.EventHandler(this.cmbEstacion_DropDownClosed);
             // 
             // txtBoxNroTicket
             // 
@@ -416,29 +423,60 @@
             this.txtBoxNroTicket.Name = "txtBoxNroTicket";
             this.txtBoxNroTicket.Size = new System.Drawing.Size(121, 20);
             this.txtBoxNroTicket.TabIndex = 89;
-            this.txtBoxNroTicket.Text = "1";
             // 
             // grpObservaciones
             // 
             this.grpObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpObservaciones.Controls.Add(this.richTextBox1);
-            this.grpObservaciones.Location = new System.Drawing.Point(44, 429);
+            this.grpObservaciones.Controls.Add(this.txtBoxObvs);
+            this.grpObservaciones.Location = new System.Drawing.Point(32, 429);
             this.grpObservaciones.Name = "grpObservaciones";
-            this.grpObservaciones.Size = new System.Drawing.Size(652, 100);
+            this.grpObservaciones.Size = new System.Drawing.Size(647, 100);
             this.grpObservaciones.TabIndex = 91;
             this.grpObservaciones.TabStop = false;
             this.grpObservaciones.Text = "Observaciones";
             // 
-            // richTextBox1
+            // lblCantidadVendida
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCantidadVendida.AutoSize = true;
+            this.lblCantidadVendida.Location = new System.Drawing.Point(19, 84);
+            this.lblCantidadVendida.Name = "lblCantidadVendida";
+            this.lblCantidadVendida.Size = new System.Drawing.Size(13, 13);
+            this.lblCantidadVendida.TabIndex = 93;
+            this.lblCantidadVendida.Text = "0";
+            this.lblCantidadVendida.Visible = false;
+            // 
+            // txtBoxCantidadCombustible
+            // 
+            this.txtBoxCantidadCombustible.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(6, 19);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(640, 75);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.txtBoxCantidadCombustible.Location = new System.Drawing.Point(160, 166);
+            this.txtBoxCantidadCombustible.Mask = "00000";
+            this.txtBoxCantidadCombustible.Name = "txtBoxCantidadCombustible";
+            this.txtBoxCantidadCombustible.PromptChar = '#';
+            this.txtBoxCantidadCombustible.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxCantidadCombustible.TabIndex = 94;
+            this.txtBoxCantidadCombustible.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBoxCantidadCombustible.TextChanged += new System.EventHandler(this.txtBoxCantidadCombustible_TextChanged);
+            // 
+            // lbCantidadVendida
+            // 
+            this.lbCantidadVendida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbCantidadVendida.AutoSize = true;
+            this.lbCantidadVendida.Location = new System.Drawing.Point(5, 169);
+            this.lbCantidadVendida.Name = "lbCantidadVendida";
+            this.lbCantidadVendida.Size = new System.Drawing.Size(127, 13);
+            this.lbCantidadVendida.TabIndex = 104;
+            this.lbCantidadVendida.Text = "Cantidad de Combustible:";
+            // 
+            // txtBoxObvs
+            // 
+            this.txtBoxObvs.Location = new System.Drawing.Point(6, 19);
+            this.txtBoxObvs.Name = "txtBoxObvs";
+            this.txtBoxObvs.Size = new System.Drawing.Size(635, 75);
+            this.txtBoxObvs.TabIndex = 0;
+            this.txtBoxObvs.Text = "";
             // 
             // frm_Compra
             // 
@@ -491,7 +529,6 @@
         private System.Windows.Forms.ComboBox cmbSurtidor;
         private System.Windows.Forms.ComboBox cmbEstacion;
         private System.Windows.Forms.GroupBox grpObservaciones;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbUnidadMedida;
         private System.Windows.Forms.Label lblSurtidor;
@@ -500,5 +537,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioxcantidad;
         private System.Windows.Forms.Label lblPrecioUnitario;
+        private System.Windows.Forms.Label lblCantidadVendida;
+        private System.Windows.Forms.Label lbCantidadVendida;
+        private System.Windows.Forms.MaskedTextBox txtBoxCantidadCombustible;
+        private System.Windows.Forms.RichTextBox txtBoxObvs;
     }
 }
