@@ -34,7 +34,7 @@
             this.Cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroSurtidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Unid_Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBoxLabelTicket = new System.Windows.Forms.Label();
             this.dgrTicketProducto = new System.Windows.Forms.DataGridView();
@@ -51,7 +51,8 @@
             // 
             this.dgrTicket.AllowUserToAddRows = false;
             this.dgrTicket.AllowUserToDeleteRows = false;
-            this.dgrTicket.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgrTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgrTicket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -61,16 +62,19 @@
             this.Cuit,
             this.NumeroSurtidor,
             this.Cantidad,
-            this.ID_Unid_Medida,
+            this.UnidadMedida,
             this.Observacion});
             this.dgrTicket.Location = new System.Drawing.Point(9, 33);
             this.dgrTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.dgrTicket.MultiSelect = false;
             this.dgrTicket.Name = "dgrTicket";
             this.dgrTicket.ReadOnly = true;
             this.dgrTicket.RowHeadersWidth = 51;
             this.dgrTicket.RowTemplate.Height = 24;
-            this.dgrTicket.Size = new System.Drawing.Size(699, 197);
+            this.dgrTicket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrTicket.Size = new System.Drawing.Size(699, 301);
             this.dgrTicket.TabIndex = 0;
+            this.dgrTicket.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrTicket_CellClick);
             // 
             // NumeroTicket
             // 
@@ -90,8 +94,8 @@
             // 
             // Cuit
             // 
-            this.Cuit.DataPropertyName = "cuit";
-            this.Cuit.HeaderText = "Cuit";
+            this.Cuit.DataPropertyName = "razonSocial";
+            this.Cuit.HeaderText = "Estacion Solicitante";
             this.Cuit.MinimumWidth = 6;
             this.Cuit.Name = "Cuit";
             this.Cuit.ReadOnly = true;
@@ -112,37 +116,41 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
-            // ID_Unid_Medida
+            // UnidadMedida
             // 
-            this.ID_Unid_Medida.DataPropertyName = "idUnidadMedida";
-            this.ID_Unid_Medida.HeaderText = "ID_Unid_Medida";
-            this.ID_Unid_Medida.MinimumWidth = 6;
-            this.ID_Unid_Medida.Name = "ID_Unid_Medida";
-            this.ID_Unid_Medida.ReadOnly = true;
+            this.UnidadMedida.DataPropertyName = "nombre";
+            this.UnidadMedida.HeaderText = "Unidad de Medida";
+            this.UnidadMedida.MinimumWidth = 6;
+            this.UnidadMedida.Name = "UnidadMedida";
+            this.UnidadMedida.ReadOnly = true;
             // 
             // Observacion
             // 
             this.Observacion.DataPropertyName = "observacion";
-            this.Observacion.HeaderText = "Observacion";
+            this.Observacion.HeaderText = "Observaciones";
             this.Observacion.MinimumWidth = 6;
             this.Observacion.Name = "Observacion";
             this.Observacion.ReadOnly = true;
             // 
             // txtBoxLabelTicket
             // 
+            this.txtBoxLabelTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxLabelTicket.AutoSize = true;
             this.txtBoxLabelTicket.Location = new System.Drawing.Point(9, 17);
             this.txtBoxLabelTicket.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtBoxLabelTicket.Name = "txtBoxLabelTicket";
-            this.txtBoxLabelTicket.Size = new System.Drawing.Size(37, 13);
+            this.txtBoxLabelTicket.Size = new System.Drawing.Size(84, 13);
             this.txtBoxLabelTicket.TabIndex = 1;
-            this.txtBoxLabelTicket.Text = "Ticket";
+            this.txtBoxLabelTicket.Text = "Tickets Emitidos";
             // 
             // dgrTicketProducto
             // 
             this.dgrTicketProducto.AllowUserToAddRows = false;
             this.dgrTicketProducto.AllowUserToDeleteRows = false;
-            this.dgrTicketProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgrTicketProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgrTicketProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrTicketProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrTicketProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -150,13 +158,15 @@
             this.ID_Producto,
             this.CantidadProducto,
             this.Precio});
-            this.dgrTicketProducto.Location = new System.Drawing.Point(9, 269);
+            this.dgrTicketProducto.Location = new System.Drawing.Point(9, 386);
             this.dgrTicketProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.dgrTicketProducto.MultiSelect = false;
             this.dgrTicketProducto.Name = "dgrTicketProducto";
             this.dgrTicketProducto.ReadOnly = true;
             this.dgrTicketProducto.RowHeadersWidth = 51;
             this.dgrTicketProducto.RowTemplate.Height = 24;
-            this.dgrTicketProducto.Size = new System.Drawing.Size(575, 213);
+            this.dgrTicketProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrTicketProducto.Size = new System.Drawing.Size(571, 200);
             this.dgrTicketProducto.TabIndex = 2;
             // 
             // NumeroTicketProducto
@@ -169,8 +179,8 @@
             // 
             // ID_Producto
             // 
-            this.ID_Producto.DataPropertyName = "idProducto";
-            this.ID_Producto.HeaderText = "ID_Producto";
+            this.ID_Producto.DataPropertyName = "descripcion";
+            this.ID_Producto.HeaderText = "Producto";
             this.ID_Producto.MinimumWidth = 6;
             this.ID_Producto.Name = "ID_Producto";
             this.ID_Producto.ReadOnly = true;
@@ -178,7 +188,7 @@
             // CantidadProducto
             // 
             this.CantidadProducto.DataPropertyName = "cantidad";
-            this.CantidadProducto.HeaderText = "CantidadProducto";
+            this.CantidadProducto.HeaderText = "Cantidad Solicitada";
             this.CantidadProducto.MinimumWidth = 6;
             this.CantidadProducto.Name = "CantidadProducto";
             this.CantidadProducto.ReadOnly = true;
@@ -193,19 +203,21 @@
             // 
             // txtBoxLabelTicketProd
             // 
+            this.txtBoxLabelTicketProd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxLabelTicketProd.AutoSize = true;
-            this.txtBoxLabelTicketProd.Location = new System.Drawing.Point(9, 253);
+            this.txtBoxLabelTicketProd.Location = new System.Drawing.Point(6, 371);
             this.txtBoxLabelTicketProd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtBoxLabelTicketProd.Name = "txtBoxLabelTicketProd";
             this.txtBoxLabelTicketProd.Size = new System.Drawing.Size(100, 13);
             this.txtBoxLabelTicketProd.TabIndex = 3;
-            this.txtBoxLabelTicketProd.Text = "Ticket por producto";
+            this.txtBoxLabelTicketProd.Text = "Lista de productos: ";
             // 
             // frm_ConsultaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 490);
+            this.ClientSize = new System.Drawing.Size(717, 594);
             this.Controls.Add(this.txtBoxLabelTicketProd);
             this.Controls.Add(this.dgrTicketProducto);
             this.Controls.Add(this.txtBoxLabelTicket);
@@ -225,18 +237,18 @@
 
         private System.Windows.Forms.DataGridView dgrTicket;
         private System.Windows.Forms.Label txtBoxLabelTicket;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTicket;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroSurtidor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Unid_Medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
         private System.Windows.Forms.DataGridView dgrTicketProducto;
         private System.Windows.Forms.Label txtBoxLabelTicketProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTicketProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTicket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroSurtidor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnidadMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
     }
 }

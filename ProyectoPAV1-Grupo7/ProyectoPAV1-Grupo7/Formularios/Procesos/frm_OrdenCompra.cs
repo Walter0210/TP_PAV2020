@@ -29,12 +29,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             "From OrdenCompra OC";
             DataTable tabla = conexion.ejecutar_consulta(sql);
             nroUltimaOC = (int)tabla.Rows[0]["ultimaOC"] + 1;
+            txtBoxNroOrden.Text = nroUltimaOC.ToString();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void LimpiarCampos(GroupBox grupo)
         {
             foreach (Control ctr in grupo.Controls)
@@ -133,8 +130,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             CargarComboUrgencia();
 
             BuscarNroOrden();
+            
 
-            txtBoxNroOrden.Text = nroUltimaOC.ToString();
             btnEliminarProducto.Enabled = false;
             btnModificarProducto.Enabled = false;
         }
@@ -242,6 +239,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                 dgrDetalleOC.Rows[indice2].SetValues(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
 
                 CalcularTotal();
+                LimpiarCampos(groupBoxProductos);
             }
         }
 
@@ -252,33 +250,47 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
             DialogResult volver = MessageBox.Show("Esta seguro que desea emitir esta orden de compra?", "Guardar Orden de Compra", MessageBoxButtons.YesNo);
             if (volver == DialogResult.Yes)
             {
-                ConexionBD conexion = new ConexionBD();
-                conexion.iniciar_transaccion();
-                nuevaOrden.Total = float.Parse(lblTotalCalculado.Text);
-                if (InsertarOC(nuevaOrden, conexion))
+                if (dgrDetalleOC.Rows.Count > 0)
                 {
-                    foreach (DataGridViewRow r in dgrDetalleOC.Rows)
+                    ConexionBD conexion = new ConexionBD();
+                    conexion.iniciar_transaccion();
+                    nuevaOrden.Total = float.Parse(lblTotalCalculado.Text);
+                    if (InsertarOC(nuevaOrden, conexion))
                     {
-                        int nroOrdenCompra = (int)r.Cells["numOrdenCompra"].Value;
-                        int idProducto = (int)r.Cells["producto"].Value;
-                        int cantidad = (int)r.Cells["cantidad"].Value;
-                        int idUnidadMedida = (int)r.Cells["uniMedida"].Value;
-                        float precio = (float)r.Cells["precio"].Value;
-                        int idUrgencia = (int)r.Cells["idUrgencia"].Value;
+                        foreach (DataGridViewRow r in dgrDetalleOC.Rows)
+                        {
+                            int nroOrdenCompra = (int)r.Cells["numOrdenCompra"].Value;
+                            int idProducto = (int)r.Cells["producto"].Value;
+                            int cantidad = (int)r.Cells["cantidad"].Value;
+                            int idUnidadMedida = (int)r.Cells["uniMedida"].Value;
+                            float precio = (float)r.Cells["precio"].Value;
+                            int idUrgencia = (int)r.Cells["idUrgencia"].Value;
 
-                        DetalleOC nuevoDetalle = new DetalleOC(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
-                        InsertarDetalle(nuevoDetalle, conexion);
+                            DetalleOC nuevoDetalle = new DetalleOC(nroOrdenCompra, idProducto, cantidad, idUnidadMedida, precio, idUrgencia);
+                            InsertarDetalle(nuevoDetalle, conexion);
+                        }
+                        MessageBox.Show("Orden de Compra creada con exito!");
+                        conexion.cerrar_transaccion();
                     }
-                    MessageBox.Show("Orden de Compra creada con exito!");
-                    conexion.cerrar_transaccion();
+                    LimpiarGrilla();
+                    LimpiarCampos(groupBoxDatosOC);
+                    BuscarNroOrden();
+                    groupBoxDatosOC.Enabled = true;
+                    lblTotalCalculado.Text = "$0";
                 }
-
+                else
+                {
+                    MessageBox.Show("Debe agregar productos a la orden de compra");
+                }
             }
-            else
+        }
+
+        private void LimpiarGrilla()
+        {
+            foreach (DataGridViewRow row in dgrDetalleOC.Rows)
             {
-                //Codigo
+                dgrDetalleOC.Rows.Remove(row);
             }
-
         }
 
         private bool InsertarOC(OrdenCompra orden, ConexionBD conexion)
