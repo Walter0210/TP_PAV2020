@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ConexionBD.cs" />
-    <Compile Include="Clases\ConexionTest.cs" />
     <Compile Include="Clases\DetalleOC.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Estacion.cs" />

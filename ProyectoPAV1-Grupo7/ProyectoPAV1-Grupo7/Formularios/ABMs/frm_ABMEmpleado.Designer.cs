@@ -404,6 +404,7 @@
             this.btnBuscar.TabIndex = 69;
             this.btnBuscar.Text = "buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frm_ABMEmpleado
             // 
