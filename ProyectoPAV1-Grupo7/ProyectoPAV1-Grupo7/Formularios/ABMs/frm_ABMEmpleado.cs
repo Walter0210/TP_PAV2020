@@ -130,7 +130,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //BOTON GUARDAR
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            if (cmbTipoDoc.SelectedIndex != -1 && tbxDocumento.Text != "" && dtpFechaAlta.Value != dtpFechaNac.Value && checkSupervisor.Checked == false && tbxLegSup.SelectedIndex != -1)
+            if (cmbTipoDoc.SelectedIndex != -1 && tbxDocumento.Text != "" && dtpFechaAlta.Value > dtpFechaNac.Value && checkSupervisor.Checked || checkSupervisor.Checked == false && tbxLegSup.SelectedIndex != -1)
             {
                 Empleado empleado = ArmarObjeto();
                 if (ExisteEmpleado(empleado.Legajo).Equals(false))
@@ -142,6 +142,9 @@ namespace ProyectoPAV1_Grupo7.Formularios
                         LimpiarCampos();
                         CargarGrilla();
                         tbxNombre.Focus();
+                        cmbTipoDoc.SelectedIndex = -1;
+                        tbxLegSup.SelectedIndex = -1;
+                        checkSupervisor.Checked = false;
                     }
                 }
             }
