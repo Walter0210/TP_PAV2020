@@ -264,10 +264,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Producto producto = ObtenerDatosProducto();
-            bool vendido = ProductoVendido(producto);
-            if (vendido)
+            
+            if (ProductoVendido(producto) || ProductoPedido(producto))
             {
-                MessageBox.Show("No es posible eliminar el producto por que ya esta vendido.");
+                MessageBox.Show("No es posible eliminar el producto. Fue utilizado en otra operacion");
             }
 
             else
@@ -289,7 +289,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         }
         private bool ProductoVendido(Producto p)
         {
-
             bool resultado = true;
             ConexionBD conexion = new ConexionBD();
             int cod = int.Parse(txtBoxCodigo.Text);
@@ -307,11 +306,37 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 
                 throw;
             }
+            return resultado;
+        }
+
+        private bool ProductoPedido(Producto p)
+        {
+
+            bool resultado = true;
+            ConexionBD conexion = new ConexionBD();
+            int cod = int.Parse(txtBoxCodigo.Text);
+            try
+            {
+                string sql = "SELECT * FROM DetalleOrdenCompra WHERE idProducto = ' " + cod + "'";
+                DataTable table = conexion.ejecutar_consulta(sql);
+                if (table.Rows.Count.Equals(0))
+                {
+                    resultado = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
 
 
             return resultado;
         }
 
-        
+
+
     }
 }
