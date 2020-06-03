@@ -329,14 +329,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
 
                 throw;
             }
-
-
-
-
             return resultado;
         }
-
-
-
     }
 }
