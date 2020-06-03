@@ -130,9 +130,9 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //BOTON GUARDAR
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            if (cmbTipoDoc.SelectedIndex != -1 && tbxDocumento.Text != "" && dtpFechaAlta.Value != dtpFechaNac.Value)
+            if (cmbTipoDoc.SelectedIndex != -1 && tbxDocumento.Text != "" && dtpFechaAlta.Value != dtpFechaNac.Value && checkSupervisor.Checked == false && tbxLegSup.SelectedIndex != -1)
             {
-                Empleado empleado = ObtenerDatosEmpleado();
+                Empleado empleado = ArmarObjeto();
                 if (ExisteEmpleado(empleado.Legajo).Equals(false))
                 {
                     bool resultado = GuardarEmpleadoBD(empleado);
@@ -152,7 +152,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         }
 
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO
-        private Empleado ObtenerDatosEmpleado()
+        private Empleado ArmarObjeto()
         {
             
             //VARIABLES DE CONTROL
@@ -201,12 +201,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
                 DataGridViewRow fila = dgrEmpleado.Rows[indice];
                 string leg = fila.Cells["Legajo"].Value.ToString();
-                Empleado empleado = ObtenerEmpleado(int.Parse(leg));
+                Empleado empleado = ObtenerDatosEmpleado(int.Parse(leg));
                 CargarCampos(empleado);
             }
         }
 
-        private Empleado ObtenerEmpleado(int legajo)
+        private Empleado ObtenerDatosEmpleado(int legajo)
         {
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT * FROM Empleado WHERE Legajo like '" + legajo + "'";
@@ -284,7 +284,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
         
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Empleado empleado = ObtenerDatosEmpleado();
+            Empleado empleado = ArmarObjeto();
             string leg = tbxLegajo.Text.Trim();
 
             if (CargoCampos(empleado))
@@ -329,7 +329,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Empleado empleado = ObtenerDatosEmpleado();
+            Empleado empleado = ArmarObjeto();
             string leg = tbxLegajo.Text.Trim();
 
             if (CargoCampos(empleado))
@@ -348,25 +348,24 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             VaciarGrilla(dgrEmpleado);
-
+            Empleado empBuscado = new Empleado();
             ConexionBD conexion = new ConexionBD();
+
             string sql = "exec paBuscar '" + txtBoxBuscar.Text + "'";
             DataTable tabla = conexion.ejecutar_consulta(sql);
             dgrEmpleado.DataSource = tabla;
-
-            /*
-            tbxLegajo.Visible = true;
-            tbxLegajo.Text = tabla[0]["legajo"].ToString();
-            tbxNombre.Text = empleado.Nombre;
-            tbxApellido.Text = empleado.Apellido;
-            cmbTipoDoc.SelectedValue = empleado.TipoDoc.ToString();
-            tbxDocumento.Text = empleado.NroDoc.ToString();
-            dtpFechaNac.Text = empleado.FechaNacimiento.ToString();
-            dtpFechaAlta.Text = empleado.FechaAlta.ToString();
-            tbxLegSup.SelectedValue = empleado.LegajoSuperior.ToString();
-            */
-
-
+            if (dgrEmpleado.Rows.Count > 0)
+            {
+                empBuscado = ObtenerDatosEmpleado((int)dgrEmpleado.Rows[0].Cells["Legajo"].Value);
+                CargarCampos(empBuscado);
+                btnModificar.Enabled = true;
+                btnEliminarEmpleado.Enabled = true;
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("La busqueda no obtuvo resultados");
+            }
         }
 
         private void VaciarGrilla(DataGridView dataGridView)
@@ -389,6 +388,28 @@ namespace ProyectoPAV1_Grupo7.Formularios
             {
                 tbxLegSup.Enabled = true;
             }
+        }
+
+        private void txtBoxBuscar_Click(object sender, EventArgs e)
+        {
+            txtBoxBuscar.Clear();
+        }
+
+        private void txtBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {   
+            /*
+            VaciarGrilla(dgrEmpleado);
+            Empleado empBuscado = new Empleado();
+            ConexionBD conexion = new ConexionBD();
+            string sql = "exec paBuscar '" + txtBoxBuscar.Text + "'";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            dgrEmpleado.DataSource = tabla;
+            if (dgrEmpleado.Rows.Count > 0)
+            {
+                empBuscado = ObtenerDatosEmpleado((int)dgrEmpleado.Rows[0].Cells["Legajo"].Value);
+                CargarCampos(empBuscado);
+            }
+            */
         }
     }
 }

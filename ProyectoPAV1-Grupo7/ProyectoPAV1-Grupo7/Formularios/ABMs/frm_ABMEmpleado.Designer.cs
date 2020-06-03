@@ -377,6 +377,8 @@
             this.txtBoxBuscar.Size = new System.Drawing.Size(127, 20);
             this.txtBoxBuscar.TabIndex = 68;
             this.txtBoxBuscar.Text = "Buscar...";
+            this.txtBoxBuscar.Click += new System.EventHandler(this.txtBoxBuscar_Click);
+            this.txtBoxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxBuscar_KeyPress);
             // 
             // btnBuscar
             // 
