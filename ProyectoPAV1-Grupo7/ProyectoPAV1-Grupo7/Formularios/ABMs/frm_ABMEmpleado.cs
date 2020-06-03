@@ -82,21 +82,17 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
-
+            string format = "yyyy-MM-dd HH:mm:ss";
             try
             {
-                string sql =  "" ;
+                string sql = "";
+                string legSup = empleado.LegajoSuperior.ToString();
                 if (empleado.LegajoSuperior.Equals(0))
                 {
-                    sql = "INSERT INTO Empleado VALUES ('" + empleado.Nombre + "','" + empleado.Apellido + "','" + empleado.TipoDoc + "','" + empleado.NroDoc + "','" 
-                        + empleado.FechaNacimiento + "','" + empleado.FechaAlta + "', NULL)";
+                    legSup = "NULL";
                 }
-                else
-                {
-                    sql = "INSERT INTO Empleado VALUES ('" + empleado.Nombre + "','" + empleado.Apellido + "','" + empleado.TipoDoc + "','" + empleado.NroDoc + "','"
-                        + empleado.FechaNacimiento + "','" + empleado.FechaAlta + "','" + empleado.LegajoSuperior + "' )";
-                }
-
+                sql = "INSERT INTO Empleado VALUES ('" + empleado.Nombre + "','" + empleado.Apellido + "','" + empleado.TipoDoc + "','" + empleado.NroDoc + "','"
+                        + empleado.FechaNacimiento.ToString(format) + "','" + empleado.FechaAlta.ToString(format) + "'," + legSup + ")";
                 conexion.insertar(sql);
 
                 resultado = true;
@@ -122,10 +118,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
         private void cargarComboSupervisor()
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Empleado";
+            string sql = "SELECT E.nombre + ' ' + E.apellido as apeNom, E.legajo" +
+                " FROM Empleado E";
             DataTable tabla = conexion.ejecutar_consulta(sql);
             tbxLegSup.DataSource = tabla;
-            tbxLegSup.DisplayMember = "legajo";
+            tbxLegSup.DisplayMember = "apeNom";
             tbxLegSup.ValueMember = "legajo";
             tbxLegSup.SelectedIndex = -1;
         }
@@ -133,15 +130,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
         //BOTON GUARDAR
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            if (cmbTipoDoc.SelectedIndex != -1)
+            if (cmbTipoDoc.SelectedIndex != -1 && tbxDocumento.Text != "" && dtpFechaAlta.Value != dtpFechaNac.Value)
             {
                 Empleado empleado = ObtenerDatosEmpleado();
-                if (CargoCampos(empleado) && ExisteEmpleado(empleado.Legajo).Equals(false))
-
+                if (ExisteEmpleado(empleado.Legajo).Equals(false))
                 {
-
                     bool resultado = GuardarEmpleadoBD(empleado);
-
                     if (resultado)
                     {
                         MessageBox.Show("Empleado cargado con exito");
@@ -153,28 +147,30 @@ namespace ProyectoPAV1_Grupo7.Formularios
             }
             else
             {
-                MessageBox.Show("Tipo de documento obligatorio");
+                MessageBox.Show("Por favor complete los datos del nuevo empleado");
             }
         }
 
         //OBTENER DATOS DE LOS CAMPOS DE TEXTO
         private Empleado ObtenerDatosEmpleado()
         {
-            int t = 0;
-            if (tbxLegSup.SelectedIndex != -1)
-            {
-                t = (int) tbxLegSup.SelectedValue ;
-            }
+            
             //VARIABLES DE CONTROL
             string nombre = tbxNombre.Text.Trim();
             string apellido = tbxApellido.Text.Trim();
             int tipoDoc = (int)cmbTipoDoc.SelectedValue;
             string documento = tbxDocumento.Text.Trim();
-            string fechaNacimiento = dtpFechaNac.Text;
-            string fechaAlta = dtpFechaAlta.Text; 
-            int legajoSuperior = t;
+            DateTime fechaNacimiento = dtpFechaNac.Value;
+            DateTime fechaAlta = dtpFechaAlta.Value;
+            int legajoSuperior = 0;
+
+            //Asiganacion de Supervisor
+            if (tbxLegSup.SelectedIndex != -1)
+            {
+                legajoSuperior = (int)tbxLegSup.SelectedValue;
+            }
             
-            Empleado emp = new Empleado(nombre, apellido, tipoDoc, int.Parse(documento), DateTime.Parse(fechaNacimiento), DateTime.Parse(fechaAlta), legajoSuperior);
+            Empleado emp = new Empleado(nombre, apellido, tipoDoc, int.Parse(documento), fechaNacimiento, fechaAlta, legajoSuperior);
 
             return emp;
         }
@@ -228,10 +224,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
             if(legajoSuperior.HasValue)
             {
                 legajoSup = legajoSuperior.Value;
+                checkSupervisor.Checked = false;
             }
             else
             {
                 legajoSup = 0;
+                checkSupervisor.Checked = true;
             }
 
             Empleado empleado = new Empleado(legajo, nombre, apellido, tipoDoc, nrodoc, DateTime.Parse(fechaNacimiento), DateTime.Parse(fechaAlta), legajoSup);
@@ -258,19 +256,28 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             bool resultado = false;
             ConexionBD conexion = new ConexionBD();
+            string format = "yyyy-MM-dd HH:mm:ss";
+            string legSup;
             try
             {
+                if (checkSupervisor.Checked)
+                {
+                    legSup = "NULL";
+                }
+                else
+                {
+                    legSup = empleado.LegajoSuperior.ToString();
+                }
                 string sql = "UPDATE Empleado SET Nombre = '" + empleado.Nombre + "', Apellido = '" + empleado.Apellido +
-                    "', TipoDoc ='" + empleado.TipoDoc + "', NroDoc ='" + empleado.NroDoc + "', FechaNacimiento ='" + empleado.FechaNacimiento + "', FechaAlta ='" + empleado.FechaAlta +
-                    "', LegajoSuperior ='" + empleado.LegajoSuperior + "' WHERE Legajo like '" + legajo + "'";
+                    "', TipoDoc ='" + empleado.TipoDoc + "', NroDoc ='" + empleado.NroDoc + "', FechaNacimiento ='" + empleado.FechaNacimiento.ToString(format) + "', FechaAlta ='" + empleado.FechaAlta.ToString(format) +
+                    "', LegajoSuperior = " + legSup + " WHERE Legajo like '" + legajo + "'";
 
                 conexion.modificar(sql);
-
                 resultado = true;
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en cargar datos de persona: Base de datos corrompida");
+                MessageBox.Show("Error en cargar datos de persona");
             }
             return resultado;
         }
@@ -282,13 +289,20 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
             if (CargoCampos(empleado))
             {
-                bool resultado = ActualizarEmpleadoBD(empleado, int.Parse(leg));
-                if (resultado)
+                if (checkSupervisor.Checked == false && tbxLegSup.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Empleado modificado con exito");
-                    LimpiarCampos();
-                    CargarGrilla();
-                    tbxNombre.Focus();
+                    MessageBox.Show("Debe elejir un supervisor");
+                }
+                else
+                {
+                    bool resultado = ActualizarEmpleadoBD(empleado, int.Parse(leg));
+                    if (resultado)
+                    {
+                        MessageBox.Show("Empleado modificado con exito");
+                        LimpiarCampos();
+                        CargarGrilla();
+                        tbxNombre.Focus();
+                    }
                 }
             }
         }
@@ -333,7 +347,48 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            VaciarGrilla(dgrEmpleado);
 
+            ConexionBD conexion = new ConexionBD();
+            string sql = "exec paBuscar '" + txtBoxBuscar.Text + "'";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            dgrEmpleado.DataSource = tabla;
+
+            /*
+            tbxLegajo.Visible = true;
+            tbxLegajo.Text = tabla[0]["legajo"].ToString();
+            tbxNombre.Text = empleado.Nombre;
+            tbxApellido.Text = empleado.Apellido;
+            cmbTipoDoc.SelectedValue = empleado.TipoDoc.ToString();
+            tbxDocumento.Text = empleado.NroDoc.ToString();
+            dtpFechaNac.Text = empleado.FechaNacimiento.ToString();
+            dtpFechaAlta.Text = empleado.FechaAlta.ToString();
+            tbxLegSup.SelectedValue = empleado.LegajoSuperior.ToString();
+            */
+
+
+        }
+
+        private void VaciarGrilla(DataGridView dataGridView)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                dataGridView.Rows.Remove(row);
+
+            }
+        }
+
+        private void checkSupervisor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkSupervisor.Checked)
+            {
+                tbxLegSup.Enabled = false;
+                tbxLegSup.SelectedIndex = -1;
+            }
+            else
+            {
+                tbxLegSup.Enabled = true;
+            }
         }
     }
 }

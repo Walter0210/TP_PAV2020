@@ -53,8 +53,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.tbxNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.dtpFechaNac = new System.Windows.Forms.MaskedTextBox();
-            this.dtpFechaAlta = new System.Windows.Forms.MaskedTextBox();
             this.tbxDocumento = new System.Windows.Forms.MaskedTextBox();
             this.tbxLegajo = new System.Windows.Forms.TextBox();
             this.lblLegajo = new System.Windows.Forms.Label();
@@ -62,6 +60,9 @@
             this.grpDatos = new System.Windows.Forms.GroupBox();
             this.txtBoxBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.checkSupervisor = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrEmpleado)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -303,26 +304,6 @@
             this.lblNombre.TabIndex = 37;
             this.lblNombre.Text = "Nombre";
             // 
-            // dtpFechaNac
-            // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(188, 151);
-            this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaNac.Mask = "00/00/0000";
-            this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(161, 20);
-            this.dtpFechaNac.TabIndex = 61;
-            this.dtpFechaNac.ValidatingType = typeof(System.DateTime);
-            // 
-            // dtpFechaAlta
-            // 
-            this.dtpFechaAlta.Location = new System.Drawing.Point(188, 175);
-            this.dtpFechaAlta.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaAlta.Mask = "00/00/0000";
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(161, 20);
-            this.dtpFechaAlta.TabIndex = 62;
-            this.dtpFechaAlta.ValidatingType = typeof(System.DateTime);
-            // 
             // tbxDocumento
             // 
             this.tbxDocumento.Location = new System.Drawing.Point(188, 127);
@@ -365,6 +346,9 @@
             // 
             // grpDatos
             // 
+            this.grpDatos.Controls.Add(this.checkSupervisor);
+            this.grpDatos.Controls.Add(this.dtpFechaAlta);
+            this.grpDatos.Controls.Add(this.dtpFechaNac);
             this.grpDatos.Controls.Add(this.tbxLegajo);
             this.grpDatos.Controls.Add(this.tbxLegSup);
             this.grpDatos.Controls.Add(this.lblNombre);
@@ -373,9 +357,7 @@
             this.grpDatos.Controls.Add(this.lblApellido);
             this.grpDatos.Controls.Add(this.tbxDocumento);
             this.grpDatos.Controls.Add(this.tbxApellido);
-            this.grpDatos.Controls.Add(this.dtpFechaAlta);
             this.grpDatos.Controls.Add(this.lblDocumento);
-            this.grpDatos.Controls.Add(this.dtpFechaNac);
             this.grpDatos.Controls.Add(this.lblFechaAlta);
             this.grpDatos.Controls.Add(this.lblLegSup);
             this.grpDatos.Controls.Add(this.cmbTipoDoc);
@@ -405,6 +387,32 @@
             this.btnBuscar.Text = "buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // dtpFechaNac
+            // 
+            this.dtpFechaNac.Location = new System.Drawing.Point(188, 153);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(161, 20);
+            this.dtpFechaNac.TabIndex = 67;
+            // 
+            // dtpFechaAlta
+            // 
+            this.dtpFechaAlta.Enabled = false;
+            this.dtpFechaAlta.Location = new System.Drawing.Point(188, 178);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(161, 20);
+            this.dtpFechaAlta.TabIndex = 68;
+            // 
+            // checkSupervisor
+            // 
+            this.checkSupervisor.AutoSize = true;
+            this.checkSupervisor.Location = new System.Drawing.Point(88, 202);
+            this.checkSupervisor.Name = "checkSupervisor";
+            this.checkSupervisor.Size = new System.Drawing.Size(89, 17);
+            this.checkSupervisor.TabIndex = 69;
+            this.checkSupervisor.Text = "Es supervisor";
+            this.checkSupervisor.UseVisualStyleBackColor = true;
+            this.checkSupervisor.CheckedChanged += new System.EventHandler(this.checkSupervisor_CheckedChanged);
             // 
             // frm_ABMEmpleado
             // 
@@ -452,8 +460,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox tbxNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.MaskedTextBox dtpFechaNac;
-        private System.Windows.Forms.MaskedTextBox dtpFechaAlta;
         private System.Windows.Forms.MaskedTextBox tbxDocumento;
         private System.Windows.Forms.TextBox tbxLegajo;
         private System.Windows.Forms.Label lblLegajo;
@@ -469,5 +475,8 @@
         private System.Windows.Forms.GroupBox grpDatos;
         private System.Windows.Forms.TextBox txtBoxBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
+        private System.Windows.Forms.CheckBox checkSupervisor;
     }
 }

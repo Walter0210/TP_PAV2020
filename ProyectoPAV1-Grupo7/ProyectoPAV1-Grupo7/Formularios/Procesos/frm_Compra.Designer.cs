@@ -42,11 +42,14 @@
             this.txtBoxTotal = new System.Windows.Forms.TextBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.grpDetalle = new System.Windows.Forms.GroupBox();
+            this.lblCantidadVendida = new System.Windows.Forms.Label();
             this.lblPrecioUnitario = new System.Windows.Forms.Label();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.grpTicket = new System.Windows.Forms.GroupBox();
+            this.lbCantidadVendida = new System.Windows.Forms.Label();
+            this.txtBoxCantidadCombustible = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbUnidadMedida = new System.Windows.Forms.ComboBox();
             this.lblSurtidor = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.cmbEstacion = new System.Windows.Forms.ComboBox();
             this.txtBoxNroTicket = new System.Windows.Forms.TextBox();
             this.grpObservaciones = new System.Windows.Forms.GroupBox();
-            this.lblCantidadVendida = new System.Windows.Forms.Label();
-            this.txtBoxCantidadCombustible = new System.Windows.Forms.MaskedTextBox();
-            this.lbCantidadVendida = new System.Windows.Forms.Label();
             this.txtBoxObvs = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrTicketxProducto)).BeginInit();
             this.grpDetalle.SuspendLayout();
@@ -230,6 +230,16 @@
             this.grpDetalle.TabStop = false;
             this.grpDetalle.Text = "Datos del Producto";
             // 
+            // lblCantidadVendida
+            // 
+            this.lblCantidadVendida.AutoSize = true;
+            this.lblCantidadVendida.Location = new System.Drawing.Point(19, 84);
+            this.lblCantidadVendida.Name = "lblCantidadVendida";
+            this.lblCantidadVendida.Size = new System.Drawing.Size(13, 13);
+            this.lblCantidadVendida.TabIndex = 93;
+            this.lblCantidadVendida.Text = "0";
+            this.lblCantidadVendida.Visible = false;
+            // 
             // lblPrecioUnitario
             // 
             this.lblPrecioUnitario.AutoSize = true;
@@ -299,6 +309,30 @@
             this.grpTicket.TabIndex = 90;
             this.grpTicket.TabStop = false;
             this.grpTicket.Text = "Datos generales";
+            // 
+            // lbCantidadVendida
+            // 
+            this.lbCantidadVendida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbCantidadVendida.AutoSize = true;
+            this.lbCantidadVendida.Location = new System.Drawing.Point(5, 169);
+            this.lbCantidadVendida.Name = "lbCantidadVendida";
+            this.lbCantidadVendida.Size = new System.Drawing.Size(127, 13);
+            this.lbCantidadVendida.TabIndex = 104;
+            this.lbCantidadVendida.Text = "Cantidad de Combustible:";
+            // 
+            // txtBoxCantidadCombustible
+            // 
+            this.txtBoxCantidadCombustible.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxCantidadCombustible.Location = new System.Drawing.Point(160, 166);
+            this.txtBoxCantidadCombustible.Mask = "00000";
+            this.txtBoxCantidadCombustible.Name = "txtBoxCantidadCombustible";
+            this.txtBoxCantidadCombustible.PromptChar = '#';
+            this.txtBoxCantidadCombustible.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxCantidadCombustible.TabIndex = 94;
+            this.txtBoxCantidadCombustible.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBoxCantidadCombustible.TextChanged += new System.EventHandler(this.txtBoxCantidadCombustible_TextChanged);
             // 
             // label3
             // 
@@ -435,40 +469,6 @@
             this.grpObservaciones.TabIndex = 91;
             this.grpObservaciones.TabStop = false;
             this.grpObservaciones.Text = "Observaciones";
-            // 
-            // lblCantidadVendida
-            // 
-            this.lblCantidadVendida.AutoSize = true;
-            this.lblCantidadVendida.Location = new System.Drawing.Point(19, 84);
-            this.lblCantidadVendida.Name = "lblCantidadVendida";
-            this.lblCantidadVendida.Size = new System.Drawing.Size(13, 13);
-            this.lblCantidadVendida.TabIndex = 93;
-            this.lblCantidadVendida.Text = "0";
-            this.lblCantidadVendida.Visible = false;
-            // 
-            // txtBoxCantidadCombustible
-            // 
-            this.txtBoxCantidadCombustible.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxCantidadCombustible.Location = new System.Drawing.Point(160, 166);
-            this.txtBoxCantidadCombustible.Mask = "00000";
-            this.txtBoxCantidadCombustible.Name = "txtBoxCantidadCombustible";
-            this.txtBoxCantidadCombustible.PromptChar = '#';
-            this.txtBoxCantidadCombustible.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxCantidadCombustible.TabIndex = 94;
-            this.txtBoxCantidadCombustible.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBoxCantidadCombustible.TextChanged += new System.EventHandler(this.txtBoxCantidadCombustible_TextChanged);
-            // 
-            // lbCantidadVendida
-            // 
-            this.lbCantidadVendida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbCantidadVendida.AutoSize = true;
-            this.lbCantidadVendida.Location = new System.Drawing.Point(5, 169);
-            this.lbCantidadVendida.Name = "lbCantidadVendida";
-            this.lbCantidadVendida.Size = new System.Drawing.Size(127, 13);
-            this.lbCantidadVendida.TabIndex = 104;
-            this.lbCantidadVendida.Text = "Cantidad de Combustible:";
             // 
             // txtBoxObvs
             // 
