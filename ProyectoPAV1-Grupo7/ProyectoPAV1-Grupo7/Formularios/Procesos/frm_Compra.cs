@@ -373,5 +373,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
         {
             //Totoal por cantidad de combustible
         }
+
+        private void dgrTicketxProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //NO VA
+        }
     }
 }

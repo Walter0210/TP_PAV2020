@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -263,20 +264,72 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Producto producto = ObtenerDatosProducto();
-            if (CargoCampos(producto))
+            
+            if (ProductoVendido(producto) || ProductoPedido(producto))
             {
-                producto.Codigo = int.Parse(txtBoxCodigo.Text);
-                bool resultado = BorrarProductoBD(producto);
-                if (resultado)
+                MessageBox.Show("No es posible eliminar el producto. Fue utilizado en otra operacion");
+            }
+
+            else
+            {
+
+                if (CargoCampos(producto))
                 {
-                    MessageBox.Show("Producto eliminado con exito");
-                    LimpiarCampos();
-                    CargarGrilla();
-                    txtBoxCodigo.Focus();
+                    producto.Codigo = int.Parse(txtBoxCodigo.Text);
+                    bool resultado = BorrarProductoBD(producto);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Producto eliminado con exito");
+                        LimpiarCampos();
+                        CargarGrilla();
+                        txtBoxCodigo.Focus();
+                    }
                 }
             }
         }
+        private bool ProductoVendido(Producto p)
+        {
+            bool resultado = true;
+            ConexionBD conexion = new ConexionBD();
+            int cod = int.Parse(txtBoxCodigo.Text);
+            try
+            {
+                string sql = "SELECT * FROM TicketXProducto WHERE idProducto = ' " + cod + "'" ;
+                DataTable table = conexion.ejecutar_consulta(sql);
+                if(table.Rows.Count.Equals(0))
+                {
+                    resultado = false;
+                }
+            }
+            catch (Exception)
+            {
 
-        
+                throw;
+            }
+            return resultado;
+        }
+
+        private bool ProductoPedido(Producto p)
+        {
+
+            bool resultado = true;
+            ConexionBD conexion = new ConexionBD();
+            int cod = int.Parse(txtBoxCodigo.Text);
+            try
+            {
+                string sql = "SELECT * FROM DetalleOrdenCompra WHERE idProducto = ' " + cod + "'";
+                DataTable table = conexion.ejecutar_consulta(sql);
+                if (table.Rows.Count.Equals(0))
+                {
+                    resultado = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return resultado;
+        }
     }
 }

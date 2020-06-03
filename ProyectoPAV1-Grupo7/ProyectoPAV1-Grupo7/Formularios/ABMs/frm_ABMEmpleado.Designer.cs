@@ -31,6 +31,14 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.dgrEmpleado = new System.Windows.Forms.DataGridView();
+            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LegSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarEmpleado = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -40,27 +48,23 @@
             this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblLegSup = new System.Windows.Forms.Label();
             this.lblFechaAlta = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblDocumento = new System.Windows.Forms.Label();
             this.tbxApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
             this.tbxNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.dtpFechaNac = new System.Windows.Forms.MaskedTextBox();
-            this.dtpFechaAlta = new System.Windows.Forms.MaskedTextBox();
             this.tbxDocumento = new System.Windows.Forms.MaskedTextBox();
             this.tbxLegajo = new System.Windows.Forms.TextBox();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.tbxLegSup = new System.Windows.Forms.ComboBox();
-            this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LegSuperior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.txtBoxBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
+            this.checkSupervisor = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgrEmpleado)).BeginInit();
+            this.grpDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -97,220 +101,9 @@
             this.dgrEmpleado.Name = "dgrEmpleado";
             this.dgrEmpleado.ReadOnly = true;
             this.dgrEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrEmpleado.Size = new System.Drawing.Size(500, 337);
+            this.dgrEmpleado.Size = new System.Drawing.Size(500, 387);
             this.dgrEmpleado.TabIndex = 59;
             this.dgrEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrEmpleado_CellContentClick);
-            // 
-            // btnEliminarEmpleado
-            // 
-            this.btnEliminarEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(186, 326);
-            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
-            this.btnEliminarEmpleado.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarEmpleado.TabIndex = 58;
-            this.btnEliminarEmpleado.Text = "Eliminar";
-            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
-            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(105, 326);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 57;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 56;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCerrar.Location = new System.Drawing.Point(270, 326);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 55;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
-            // 
-            // lblTipoDoc
-            // 
-            this.lblTipoDoc.AutoSize = true;
-            this.lblTipoDoc.Location = new System.Drawing.Point(24, 129);
-            this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTipoDoc.Name = "lblTipoDoc";
-            this.lblTipoDoc.Size = new System.Drawing.Size(101, 13);
-            this.lblTipoDoc.TabIndex = 53;
-            this.lblTipoDoc.Text = "Tipo de Documento";
-            // 
-            // lblFechaNacimiento
-            // 
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(24, 178);
-            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(108, 13);
-            this.lblFechaNacimiento.TabIndex = 52;
-            this.lblFechaNacimiento.Text = "Fecha de Nacimiento";
-            // 
-            // cmbTipoDoc
-            // 
-            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Location = new System.Drawing.Point(186, 126);
-            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(161, 21);
-            this.cmbTipoDoc.TabIndex = 47;
-            // 
-            // lblLegSup
-            // 
-            this.lblLegSup.AutoSize = true;
-            this.lblLegSup.Location = new System.Drawing.Point(24, 227);
-            this.lblLegSup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLegSup.Name = "lblLegSup";
-            this.lblLegSup.Size = new System.Drawing.Size(57, 13);
-            this.lblLegSup.TabIndex = 45;
-            this.lblLegSup.Text = "Supervisor";
-            // 
-            // lblFechaAlta
-            // 
-            this.lblFechaAlta.AutoSize = true;
-            this.lblFechaAlta.Location = new System.Drawing.Point(24, 202);
-            this.lblFechaAlta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFechaAlta.Name = "lblFechaAlta";
-            this.lblFechaAlta.Size = new System.Drawing.Size(73, 13);
-            this.lblFechaAlta.TabIndex = 44;
-            this.lblFechaAlta.Text = "Fecha de Alta";
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(41, 48);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 19);
-            this.label6.TabIndex = 48;
-            // 
-            // lblDocumento
-            // 
-            this.lblDocumento.AutoSize = true;
-            this.lblDocumento.Location = new System.Drawing.Point(24, 154);
-            this.lblDocumento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDocumento.Name = "lblDocumento";
-            this.lblDocumento.Size = new System.Drawing.Size(62, 13);
-            this.lblDocumento.TabIndex = 41;
-            this.lblDocumento.Text = "Documento";
-            // 
-            // tbxApellido
-            // 
-            this.tbxApellido.Location = new System.Drawing.Point(186, 102);
-            this.tbxApellido.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxApellido.MaxLength = 20;
-            this.tbxApellido.Name = "tbxApellido";
-            this.tbxApellido.Size = new System.Drawing.Size(161, 20);
-            this.tbxApellido.TabIndex = 40;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(24, 105);
-            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lblApellido.TabIndex = 39;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // tbxNombre
-            // 
-            this.tbxNombre.AcceptsReturn = true;
-            this.tbxNombre.Location = new System.Drawing.Point(186, 78);
-            this.tbxNombre.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxNombre.MaxLength = 20;
-            this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(161, 20);
-            this.tbxNombre.TabIndex = 38;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(24, 81);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 37;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // dtpFechaNac
-            // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(186, 175);
-            this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaNac.Mask = "00/00/0000";
-            this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(161, 20);
-            this.dtpFechaNac.TabIndex = 61;
-            this.dtpFechaNac.ValidatingType = typeof(System.DateTime);
-            // 
-            // dtpFechaAlta
-            // 
-            this.dtpFechaAlta.Location = new System.Drawing.Point(186, 199);
-            this.dtpFechaAlta.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaAlta.Mask = "00/00/0000";
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(161, 20);
-            this.dtpFechaAlta.TabIndex = 62;
-            this.dtpFechaAlta.ValidatingType = typeof(System.DateTime);
-            // 
-            // tbxDocumento
-            // 
-            this.tbxDocumento.Location = new System.Drawing.Point(186, 151);
-            this.tbxDocumento.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxDocumento.Mask = "00000000";
-            this.tbxDocumento.Name = "tbxDocumento";
-            this.tbxDocumento.Size = new System.Drawing.Size(161, 20);
-            this.tbxDocumento.TabIndex = 63;
-            this.tbxDocumento.ValidatingType = typeof(int);
-            // 
-            // tbxLegajo
-            // 
-            this.tbxLegajo.AcceptsReturn = true;
-            this.tbxLegajo.Location = new System.Drawing.Point(275, 52);
-            this.tbxLegajo.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxLegajo.MaxLength = 10;
-            this.tbxLegajo.Name = "tbxLegajo";
-            this.tbxLegajo.Size = new System.Drawing.Size(72, 20);
-            this.tbxLegajo.TabIndex = 64;
-            // 
-            // lblLegajo
-            // 
-            this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(24, 55);
-            this.lblLegajo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLegajo.Name = "lblLegajo";
-            this.lblLegajo.Size = new System.Drawing.Size(39, 13);
-            this.lblLegajo.TabIndex = 65;
-            this.lblLegajo.Text = "Legajo";
-            // 
-            // tbxLegSup
-            // 
-            this.tbxLegSup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tbxLegSup.FormattingEnabled = true;
-            this.tbxLegSup.Location = new System.Drawing.Point(186, 224);
-            this.tbxLegSup.Margin = new System.Windows.Forms.Padding(2);
-            this.tbxLegSup.Name = "tbxLegSup";
-            this.tbxLegSup.Size = new System.Drawing.Size(161, 21);
-            this.tbxLegSup.TabIndex = 66;
             // 
             // Legajo
             // 
@@ -368,34 +161,275 @@
             this.LegSuperior.Name = "LegSuperior";
             this.LegSuperior.ReadOnly = true;
             // 
+            // btnEliminarEmpleado
+            // 
+            this.btnEliminarEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(186, 376);
+            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarEmpleado.TabIndex = 58;
+            this.btnEliminarEmpleado.Text = "Eliminar";
+            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Location = new System.Drawing.Point(105, 376);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 57;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.Location = new System.Drawing.Point(24, 376);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 56;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCerrar.Location = new System.Drawing.Point(270, 376);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 55;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            // 
+            // lblTipoDoc
+            // 
+            this.lblTipoDoc.AutoSize = true;
+            this.lblTipoDoc.Location = new System.Drawing.Point(2, 105);
+            this.lblTipoDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(101, 13);
+            this.lblTipoDoc.TabIndex = 53;
+            this.lblTipoDoc.Text = "Tipo de Documento";
+            // 
+            // lblFechaNacimiento
+            // 
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(2, 154);
+            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(108, 13);
+            this.lblFechaNacimiento.TabIndex = 52;
+            this.lblFechaNacimiento.Text = "Fecha de Nacimiento";
+            // 
+            // cmbTipoDoc
+            // 
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.Location = new System.Drawing.Point(188, 102);
+            this.cmbTipoDoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipoDoc.Name = "cmbTipoDoc";
+            this.cmbTipoDoc.Size = new System.Drawing.Size(161, 21);
+            this.cmbTipoDoc.TabIndex = 47;
+            // 
+            // lblLegSup
+            // 
+            this.lblLegSup.AutoSize = true;
+            this.lblLegSup.Location = new System.Drawing.Point(2, 203);
+            this.lblLegSup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLegSup.Name = "lblLegSup";
+            this.lblLegSup.Size = new System.Drawing.Size(57, 13);
+            this.lblLegSup.TabIndex = 45;
+            this.lblLegSup.Text = "Supervisor";
+            // 
+            // lblFechaAlta
+            // 
+            this.lblFechaAlta.AutoSize = true;
+            this.lblFechaAlta.Location = new System.Drawing.Point(2, 178);
+            this.lblFechaAlta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFechaAlta.Name = "lblFechaAlta";
+            this.lblFechaAlta.Size = new System.Drawing.Size(73, 13);
+            this.lblFechaAlta.TabIndex = 44;
+            this.lblFechaAlta.Text = "Fecha de Alta";
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(2, 130);
+            this.lblDocumento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(62, 13);
+            this.lblDocumento.TabIndex = 41;
+            this.lblDocumento.Text = "Documento";
+            // 
+            // tbxApellido
+            // 
+            this.tbxApellido.Location = new System.Drawing.Point(188, 78);
+            this.tbxApellido.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxApellido.MaxLength = 20;
+            this.tbxApellido.Name = "tbxApellido";
+            this.tbxApellido.Size = new System.Drawing.Size(161, 20);
+            this.tbxApellido.TabIndex = 40;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(2, 81);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.TabIndex = 39;
+            this.lblApellido.Text = "Apellido";
+            // 
+            // tbxNombre
+            // 
+            this.tbxNombre.AcceptsReturn = true;
+            this.tbxNombre.Location = new System.Drawing.Point(188, 54);
+            this.tbxNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxNombre.MaxLength = 20;
+            this.tbxNombre.Name = "tbxNombre";
+            this.tbxNombre.Size = new System.Drawing.Size(161, 20);
+            this.tbxNombre.TabIndex = 38;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(2, 57);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 37;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // tbxDocumento
+            // 
+            this.tbxDocumento.Location = new System.Drawing.Point(188, 127);
+            this.tbxDocumento.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxDocumento.Mask = "00000000";
+            this.tbxDocumento.Name = "tbxDocumento";
+            this.tbxDocumento.Size = new System.Drawing.Size(161, 20);
+            this.tbxDocumento.TabIndex = 63;
+            this.tbxDocumento.ValidatingType = typeof(int);
+            // 
+            // tbxLegajo
+            // 
+            this.tbxLegajo.AcceptsReturn = true;
+            this.tbxLegajo.Location = new System.Drawing.Point(277, 28);
+            this.tbxLegajo.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxLegajo.MaxLength = 10;
+            this.tbxLegajo.Name = "tbxLegajo";
+            this.tbxLegajo.Size = new System.Drawing.Size(72, 20);
+            this.tbxLegajo.TabIndex = 64;
+            // 
+            // lblLegajo
+            // 
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.Location = new System.Drawing.Point(2, 31);
+            this.lblLegajo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(39, 13);
+            this.lblLegajo.TabIndex = 65;
+            this.lblLegajo.Text = "Legajo";
+            // 
+            // tbxLegSup
+            // 
+            this.tbxLegSup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tbxLegSup.FormattingEnabled = true;
+            this.tbxLegSup.Location = new System.Drawing.Point(188, 200);
+            this.tbxLegSup.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxLegSup.Name = "tbxLegSup";
+            this.tbxLegSup.Size = new System.Drawing.Size(161, 21);
+            this.tbxLegSup.TabIndex = 66;
+            // 
+            // grpDatos
+            // 
+            this.grpDatos.Controls.Add(this.checkSupervisor);
+            this.grpDatos.Controls.Add(this.dtpFechaAlta);
+            this.grpDatos.Controls.Add(this.dtpFechaNac);
+            this.grpDatos.Controls.Add(this.tbxLegajo);
+            this.grpDatos.Controls.Add(this.tbxLegSup);
+            this.grpDatos.Controls.Add(this.lblNombre);
+            this.grpDatos.Controls.Add(this.lblLegajo);
+            this.grpDatos.Controls.Add(this.tbxNombre);
+            this.grpDatos.Controls.Add(this.lblApellido);
+            this.grpDatos.Controls.Add(this.tbxDocumento);
+            this.grpDatos.Controls.Add(this.tbxApellido);
+            this.grpDatos.Controls.Add(this.lblDocumento);
+            this.grpDatos.Controls.Add(this.lblFechaAlta);
+            this.grpDatos.Controls.Add(this.lblLegSup);
+            this.grpDatos.Controls.Add(this.cmbTipoDoc);
+            this.grpDatos.Controls.Add(this.lblFechaNacimiento);
+            this.grpDatos.Controls.Add(this.lblTipoDoc);
+            this.grpDatos.Location = new System.Drawing.Point(12, 109);
+            this.grpDatos.Name = "grpDatos";
+            this.grpDatos.Size = new System.Drawing.Size(354, 237);
+            this.grpDatos.TabIndex = 67;
+            this.grpDatos.TabStop = false;
+            this.grpDatos.Text = "Datos de Empleados";
+            // 
+            // txtBoxBuscar
+            // 
+            this.txtBoxBuscar.Location = new System.Drawing.Point(153, 82);
+            this.txtBoxBuscar.Name = "txtBoxBuscar";
+            this.txtBoxBuscar.Size = new System.Drawing.Size(127, 20);
+            this.txtBoxBuscar.TabIndex = 68;
+            this.txtBoxBuscar.Text = "Buscar...";
+            this.txtBoxBuscar.Click += new System.EventHandler(this.txtBoxBuscar_Click);
+            this.txtBoxBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxBuscar_KeyPress);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(286, 80);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 69;
+            this.btnBuscar.Text = "buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // dtpFechaNac
+            // 
+            this.dtpFechaNac.Location = new System.Drawing.Point(188, 153);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(161, 20);
+            this.dtpFechaNac.TabIndex = 67;
+            // 
+            // dtpFechaAlta
+            // 
+            this.dtpFechaAlta.Enabled = false;
+            this.dtpFechaAlta.Location = new System.Drawing.Point(188, 178);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(161, 20);
+            this.dtpFechaAlta.TabIndex = 68;
+            // 
+            // checkSupervisor
+            // 
+            this.checkSupervisor.AutoSize = true;
+            this.checkSupervisor.Location = new System.Drawing.Point(88, 202);
+            this.checkSupervisor.Name = "checkSupervisor";
+            this.checkSupervisor.Size = new System.Drawing.Size(89, 17);
+            this.checkSupervisor.TabIndex = 69;
+            this.checkSupervisor.Text = "Es supervisor";
+            this.checkSupervisor.UseVisualStyleBackColor = true;
+            this.checkSupervisor.CheckedChanged += new System.EventHandler(this.checkSupervisor_CheckedChanged);
+            // 
             // frm_ABMEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 361);
-            this.Controls.Add(this.tbxLegSup);
-            this.Controls.Add(this.lblLegajo);
-            this.Controls.Add(this.tbxLegajo);
-            this.Controls.Add(this.tbxDocumento);
-            this.Controls.Add(this.dtpFechaAlta);
-            this.Controls.Add(this.dtpFechaNac);
+            this.ClientSize = new System.Drawing.Size(884, 411);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBoxBuscar);
+            this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgrEmpleado);
             this.Controls.Add(this.btnEliminarEmpleado);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.lblTipoDoc);
-            this.Controls.Add(this.lblFechaNacimiento);
-            this.Controls.Add(this.cmbTipoDoc);
-            this.Controls.Add(this.lblLegSup);
-            this.Controls.Add(this.lblFechaAlta);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblDocumento);
-            this.Controls.Add(this.tbxApellido);
-            this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.tbxNombre);
-            this.Controls.Add(this.lblNombre);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "frm_ABMEmpleado";
@@ -403,6 +437,8 @@
             this.Text = "frm_Empleado";
             this.Load += new System.EventHandler(this.frm_ABMEmpleado_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgrEmpleado)).EndInit();
+            this.grpDatos.ResumeLayout(false);
+            this.grpDatos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,14 +457,11 @@
         private System.Windows.Forms.ComboBox cmbTipoDoc;
         private System.Windows.Forms.Label lblLegSup;
         private System.Windows.Forms.Label lblFechaAlta;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDocumento;
         private System.Windows.Forms.TextBox tbxApellido;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox tbxNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.MaskedTextBox dtpFechaNac;
-        private System.Windows.Forms.MaskedTextBox dtpFechaAlta;
         private System.Windows.Forms.MaskedTextBox tbxDocumento;
         private System.Windows.Forms.TextBox tbxLegajo;
         private System.Windows.Forms.Label lblLegajo;
@@ -441,5 +474,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn LegSuperior;
+        private System.Windows.Forms.GroupBox grpDatos;
+        private System.Windows.Forms.TextBox txtBoxBuscar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
+        private System.Windows.Forms.CheckBox checkSupervisor;
     }
 }
