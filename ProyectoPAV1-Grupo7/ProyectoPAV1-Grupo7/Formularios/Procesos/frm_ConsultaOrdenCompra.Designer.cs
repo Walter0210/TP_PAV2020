@@ -68,7 +68,7 @@
             this.dgrOrdenCompra.Name = "dgrOrdenCompra";
             this.dgrOrdenCompra.ReadOnly = true;
             this.dgrOrdenCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrOrdenCompra.Size = new System.Drawing.Size(760, 269);
+            this.dgrOrdenCompra.Size = new System.Drawing.Size(760, 248);
             this.dgrOrdenCompra.TabIndex = 0;
             this.dgrOrdenCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrOrdenCompra_CellContentClick);
             // 
@@ -122,12 +122,12 @@
             this.UnidadMedida,
             this.Precio,
             this.Urgencia});
-            this.dgrDetallesOrden.Location = new System.Drawing.Point(15, 329);
+            this.dgrDetallesOrden.Location = new System.Drawing.Point(15, 308);
             this.dgrDetallesOrden.MultiSelect = false;
             this.dgrDetallesOrden.Name = "dgrDetallesOrden";
             this.dgrDetallesOrden.ReadOnly = true;
             this.dgrDetallesOrden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrDetallesOrden.Size = new System.Drawing.Size(757, 159);
+            this.dgrDetallesOrden.Size = new System.Drawing.Size(757, 179);
             this.dgrDetallesOrden.TabIndex = 1;
             this.dgrDetallesOrden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDetallesOrden_CellContentClick);
             // 
@@ -176,7 +176,7 @@
             // btnRegistrarPedido
             // 
             this.btnRegistrarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarPedido.Location = new System.Drawing.Point(644, 507);
+            this.btnRegistrarPedido.Location = new System.Drawing.Point(644, 497);
             this.btnRegistrarPedido.Name = "btnRegistrarPedido";
             this.btnRegistrarPedido.Size = new System.Drawing.Size(128, 46);
             this.btnRegistrarPedido.TabIndex = 4;
@@ -190,7 +190,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 311);
+            this.label2.Location = new System.Drawing.Point(12, 290);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 15);
             this.label2.TabIndex = 3;
@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 576);
+            this.ClientSize = new System.Drawing.Size(784, 555);
             this.Controls.Add(this.btnRegistrarPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
