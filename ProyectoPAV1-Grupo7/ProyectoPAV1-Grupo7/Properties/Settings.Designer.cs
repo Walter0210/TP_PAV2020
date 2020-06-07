@@ -22,5 +22,16 @@ namespace ProyectoPAV1_Grupo7.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=grupo7.database.windows.net;User ID=elAleman;Initi" +
+            "al Catalog=PAV2020")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
+            }
+        }
     }
 }

@@ -60,5 +60,52 @@ namespace ProyectoPAV1_Grupo7
             dgrDetallesOrden.DataSource = tabla;
 
         }
-    }
+
+        // duplique la primera funcion para que sea publica y devuelva la tabla de tipo DataTable para usarlo en los reportes
+        // en la otra funcion no permitia que sea static
+
+        public static DataTable ObtenerListadoOrdenesCompra()
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = string.Format("SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT ");
+
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+
+        }
+
+        public static DataTable ObtenerListadoOrdenesCompraConFiltro(int solicitante)
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = string.Format("SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT ");
+
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+
+        }
+
+        public static DataTable ObtenerEstadisticaOrdenesCompra()
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = string.Format("SELECT OC.numeroOrdenCompra as nroOrdenCompra, COUNT(DC.idProducto) as cantidad" +
+                " FROM OrdenCompra OC JOIN DetalleOrdenCompra DC ON OC.numeroOrdenCompra = DC.numOrdenCompra " +
+                "GROUP BY OC.numeroOrdenCompra");
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+
+        }
+    } 
 }
