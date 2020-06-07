@@ -22,8 +22,6 @@ namespace ProyectoPAV1_Grupo7
         public frm_ConsultaOrdenCompra()
         {
             InitializeComponent();
-            //OrdenCompra OrdenSeleccionada = new OrdenCompra();
-            //DetalleOC DetalleSeleccionado = new DetalleOC();
         }
 
         private void frm_ConsultaOrdenCompra_Load(object sender, EventArgs e)
@@ -88,7 +86,7 @@ namespace ProyectoPAV1_Grupo7
 
         private void btnRegistrarPedido_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Usted seleccionó Orden de Compra: " + OrdenSeleccionada + ", Detalle: " + DetalleSeleccionado + ", Cantidad: " + CantidadSeleccionada);
+            //MessageBox.Show("Usted seleccionó Orden de Compra: " + OrdenSeleccionada + ", Detalle: " + DetalleSeleccionado + ", Cantidad: " + CantidadSeleccionada);
             if (OrdenSeleccionada != 0)
             {
                 if (DetalleSeleccionado != 0 || CantidadSeleccionada != 0)
@@ -132,11 +130,6 @@ namespace ProyectoPAV1_Grupo7
             
             
             
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }

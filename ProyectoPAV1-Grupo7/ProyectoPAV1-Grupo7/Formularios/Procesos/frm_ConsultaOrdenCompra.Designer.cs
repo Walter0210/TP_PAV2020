@@ -180,7 +180,7 @@
             this.btnRegistrarPedido.Name = "btnRegistrarPedido";
             this.btnRegistrarPedido.Size = new System.Drawing.Size(128, 46);
             this.btnRegistrarPedido.TabIndex = 4;
-            this.btnRegistrarPedido.Text = "registrar pedido";
+            this.btnRegistrarPedido.Text = "Registrar Pedido";
             this.btnRegistrarPedido.UseVisualStyleBackColor = true;
             this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
             // 
