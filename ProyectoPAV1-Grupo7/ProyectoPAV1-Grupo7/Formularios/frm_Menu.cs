@@ -71,7 +71,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            //codigo
+            openChildForm(new Procesos.frm_Compra());
             hideSubMenu();
         }
 
@@ -176,6 +176,18 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("TipoDocumento");
             frm_ABMSoporte.ShowDialog();
+        }
+
+        private void listadoOrdenesToolStripItem_Click(object sender, EventArgs e)
+        {
+            Formularios.Reportes.frm_ListadoOrdenesCompra frm_ListadoOrdenesCompra = new Reportes.frm_ListadoOrdenesCompra();
+            frm_ListadoOrdenesCompra.ShowDialog();
+        }
+
+        private void estadisticaOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formularios.Reportes.frm_EstadisticaOrdenesCompra frm_EstadisticaOrdenesCompra = new Reportes.frm_EstadisticaOrdenesCompra();
+            frm_EstadisticaOrdenesCompra.ShowDialog();
         }
     }
 }

@@ -8,17 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoPAV1_Grupo7;
 
 namespace ProyectoPAV1_Grupo7
 {
     public partial class frm_ConsultaOrdenCompra : Form
     {
-        // Declaro estas variables para poder ser accedidas
-        private int OrdenSeleccionada = 0;
-        private int DetalleSeleccionado = 0;
-        private int CantidadSeleccionada = 0;
-
         public frm_ConsultaOrdenCompra()
         {
             InitializeComponent();
@@ -47,33 +41,16 @@ namespace ProyectoPAV1_Grupo7
             int indice = e.RowIndex;
             if(indice != -1)
             {
-                
                 DataGridViewRow fila = dgrOrdenCompra.Rows[indice];
                 string numOrden = fila.Cells["Numero"].Value.ToString();
-                OrdenSeleccionada = int.Parse(numOrden);
                 CargarGrilla2(numOrden);
 
             }
         }
-
-        private void dgrDetallesOrden_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Tomo los datos del detalle seleccionado para realizar el Update
-            int indice = e.RowIndex;
-            if (indice != -1)
-            {
-                DataGridViewRow fila = dgrDetallesOrden.Rows[indice];
-                string numDetalle = fila.Cells["idProducto"].Value.ToString();
-                string cantidad = fila.Cells["Cantidad"].Value.ToString();
-                DetalleSeleccionado = int.Parse(numDetalle);
-                CantidadSeleccionada = int.Parse(cantidad);
-            }
-        }
-
         private void CargarGrilla2(string numOrden)
         {
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT DC.numOrdenCompra, P.descripcion, P.idProducto, DC.cantidad, UM.nombre, P.precioCompra * DC.cantidad AS precitotal, UR.nombre"
+            string sql = "SELECT DC.numOrdenCompra, P.descripcion, DC.cantidad, UM.nombre, P.precioCompra * DC.cantidad AS precitotal, UR.nombre"
                 + " FROM DetalleOrdenCompra DC "
                 + "JOIN Producto P ON DC.idProducto = P.idProducto "
                 + "JOIN UnidadMedida UM ON DC.idUnidadMedida = UM.idUnidadMedida "
@@ -84,53 +61,51 @@ namespace ProyectoPAV1_Grupo7
 
         }
 
-        private void btnRegistrarPedido_Click(object sender, EventArgs e)
+        // duplique la primera funcion para que sea publica y devuelva la tabla de tipo DataTable para usarlo en los reportes
+        // en la otra funcion no permitia que sea static
+
+        public static DataTable ObtenerListadoOrdenesCompra()
         {
-            //MessageBox.Show("Usted seleccionó Orden de Compra: " + OrdenSeleccionada + ", Detalle: " + DetalleSeleccionado + ", Cantidad: " + CantidadSeleccionada);
-            if (OrdenSeleccionada != 0)
-            {
-                if (DetalleSeleccionado != 0 || CantidadSeleccionada != 0)
-                {
-                    try
-                    {
-                        ConexionBD conexion = new ConexionBD();
-                        // Consulto el stock actual del producto seleccionado
-                        string consulta = "SELECT P.stockActual FROM Producto P WHERE P.idProducto like '" + DetalleSeleccionado + "'";
-                        DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
-                        int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
-                        int nuevaCantidad = stockActual + CantidadSeleccionada;
-                        // Actualizo el stock del producto
-                        string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + DetalleSeleccionado;
-                        conexion.ejecutar_consulta(sql);
-                        MessageBox.Show("Pedido registrado correctamente!");
-                        OrdenSeleccionada = 0;
-                        DetalleSeleccionado = 0;
-                        CantidadSeleccionada = 0;
-                        this.Dispose();
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Error de consulta a Base de Datos");
-                    }
+            ConexionBD conexion = new ConexionBD();
 
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione producto de la Orden de Compra");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione una Orden de Compra");
-            }
-            
-            
+            string sql = string.Format("SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT ");
 
-            
-            
-            
-            
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
 
         }
-    }
+
+        public static DataTable ObtenerListadoOrdenesCompraConFiltro(int solicitante)
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = string.Format("SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT ");
+
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+
+        }
+
+        public static DataTable ObtenerEstadisticaOrdenesCompra()
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = string.Format("SELECT OC.numeroOrdenCompra as nroOrdenCompra, COUNT(DC.idProducto) as cantidad" +
+                " FROM OrdenCompra OC JOIN DetalleOrdenCompra DC ON OC.numeroOrdenCompra = DC.numOrdenCompra " +
+                "GROUP BY OC.numeroOrdenCompra");
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+
+        }
+    } 
 }

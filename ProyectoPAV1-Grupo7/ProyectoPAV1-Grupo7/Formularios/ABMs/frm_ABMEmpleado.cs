@@ -400,7 +400,7 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void txtBoxBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {   
-            /*
+            
             VaciarGrilla(dgrEmpleado);
             Empleado empBuscado = new Empleado();
             ConexionBD conexion = new ConexionBD();
@@ -412,7 +412,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
                 empBuscado = ObtenerDatosEmpleado((int)dgrEmpleado.Rows[0].Cells["Legajo"].Value);
                 CargarCampos(empBuscado);
             }
-            */
+            
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
