@@ -189,5 +189,10 @@ namespace ProyectoPAV1_Grupo7.Formularios
             Formularios.Reportes.frm_EstadisticaOrdenesCompra frm_EstadisticaOrdenesCompra = new Reportes.frm_EstadisticaOrdenesCompra();
             frm_EstadisticaOrdenesCompra.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Procesos.frm_Compra());
+        }
     }
 }
