@@ -37,19 +37,24 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoScroll = true;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 52);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 51);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(915, 525);
+            this.reportViewer1.Size = new System.Drawing.Size(734, 810);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(599, 12);
+            this.btnCalcular.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCalcular.Location = new System.Drawing.Point(478, 12);
+            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(72, 24);
+            this.btnCalcular.Size = new System.Drawing.Size(71, 21);
             this.btnCalcular.TabIndex = 1;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -57,30 +62,37 @@
             // 
             // cmbSolicitante
             // 
+            this.cmbSolicitante.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(344, 12);
+            this.cmbSolicitante.Location = new System.Drawing.Point(308, 13);
+            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSolicitante.Name = "cmbSolicitante";
-            this.cmbSolicitante.Size = new System.Drawing.Size(220, 24);
+            this.cmbSolicitante.Size = new System.Drawing.Size(166, 21);
             this.cmbSolicitante.TabIndex = 2;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(239, 16);
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label1.Location = new System.Drawing.Point(235, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Solicitante:";
             // 
             // frm_ListadoOrdenesCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 589);
+            this.ClientSize = new System.Drawing.Size(734, 861);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbSolicitante);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_ListadoOrdenesCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Ordenes de Compra";

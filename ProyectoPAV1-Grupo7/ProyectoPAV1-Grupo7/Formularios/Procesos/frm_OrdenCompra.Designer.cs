@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.dgrDetalleOC = new System.Windows.Forms.DataGridView();
             this.numOrdenCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +37,6 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUrgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBoxProductos = new System.Windows.Forms.GroupBox();
             this.lblUrgencia = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -72,20 +70,12 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(136, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(92, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(247, 25);
             this.lblTitulo.TabIndex = 62;
             this.lblTitulo.Text = "Nueva Orden de compra";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(91, 76);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(0, 13);
-            this.lblUsuario.TabIndex = 64;
             // 
             // dgrDetalleOC
             // 
@@ -103,12 +93,12 @@
             this.uniMedida,
             this.precio,
             this.idUrgencia});
-            this.dgrDetalleOC.Location = new System.Drawing.Point(412, 12);
+            this.dgrDetalleOC.Location = new System.Drawing.Point(344, 12);
             this.dgrDetalleOC.MultiSelect = false;
             this.dgrDetalleOC.Name = "dgrDetalleOC";
             this.dgrDetalleOC.ReadOnly = true;
             this.dgrDetalleOC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrDetalleOC.Size = new System.Drawing.Size(527, 398);
+            this.dgrDetalleOC.Size = new System.Drawing.Size(355, 618);
             this.dgrDetalleOC.TabIndex = 68;
             this.dgrDetalleOC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDetalleOC_CellClick);
             // 
@@ -158,30 +148,18 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.Location = new System.Drawing.Point(141, 427);
+            this.btnGuardar.Location = new System.Drawing.Point(107, 596);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(108, 25);
+            this.btnGuardar.Size = new System.Drawing.Size(124, 34);
             this.btnGuardar.TabIndex = 81;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.Location = new System.Drawing.Point(27, 427);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(66, 25);
-            this.btnCancelar.TabIndex = 82;
-            this.btnCancelar.Text = "Volver";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Visible = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // groupBoxProductos
             // 
+            this.groupBoxProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxProductos.Controls.Add(this.lblUrgencia);
             this.groupBoxProductos.Controls.Add(this.lblPrecio);
             this.groupBoxProductos.Controls.Add(this.lblProducto);
@@ -194,9 +172,9 @@
             this.groupBoxProductos.Controls.Add(this.btnAgregarProducto);
             this.groupBoxProductos.Controls.Add(this.cmbUnidadMedida);
             this.groupBoxProductos.Controls.Add(this.cmbProducto);
-            this.groupBoxProductos.Location = new System.Drawing.Point(27, 228);
+            this.groupBoxProductos.Location = new System.Drawing.Point(12, 284);
             this.groupBoxProductos.Name = "groupBoxProductos";
-            this.groupBoxProductos.Size = new System.Drawing.Size(356, 182);
+            this.groupBoxProductos.Size = new System.Drawing.Size(311, 200);
             this.groupBoxProductos.TabIndex = 83;
             this.groupBoxProductos.TabStop = false;
             this.groupBoxProductos.Text = "Seleccion de Productos";
@@ -207,7 +185,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUrgencia.AutoSize = true;
-            this.lblUrgencia.Location = new System.Drawing.Point(28, 108);
+            this.lblUrgencia.Location = new System.Drawing.Point(27, 117);
             this.lblUrgencia.Name = "lblUrgencia";
             this.lblUrgencia.Size = new System.Drawing.Size(95, 13);
             this.lblUrgencia.TabIndex = 97;
@@ -219,7 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(28, 82);
+            this.lblPrecio.Location = new System.Drawing.Point(43, 91);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(79, 13);
             this.lblPrecio.TabIndex = 96;
@@ -231,7 +209,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(28, 28);
+            this.lblProducto.Location = new System.Drawing.Point(69, 37);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(53, 13);
             this.lblProducto.TabIndex = 95;
@@ -243,7 +221,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(28, 55);
+            this.lblCantidad.Location = new System.Drawing.Point(27, 64);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(99, 13);
             this.lblCantidad.TabIndex = 94;
@@ -251,33 +229,27 @@
             // 
             // cmbUrgencia
             // 
-            this.cmbUrgencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbUrgencia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbUrgencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUrgencia.FormattingEnabled = true;
-            this.cmbUrgencia.Location = new System.Drawing.Point(192, 105);
+            this.cmbUrgencia.Location = new System.Drawing.Point(142, 114);
             this.cmbUrgencia.Name = "cmbUrgencia";
             this.cmbUrgencia.Size = new System.Drawing.Size(149, 21);
             this.cmbUrgencia.TabIndex = 92;
             // 
             // txtBoxPrecio
             // 
-            this.txtBoxPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxPrecio.Enabled = false;
-            this.txtBoxPrecio.Location = new System.Drawing.Point(192, 79);
+            this.txtBoxPrecio.Location = new System.Drawing.Point(142, 88);
             this.txtBoxPrecio.Name = "txtBoxPrecio";
             this.txtBoxPrecio.Size = new System.Drawing.Size(149, 20);
             this.txtBoxPrecio.TabIndex = 91;
             // 
             // txtBoxCantidad
             // 
-            this.txtBoxCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxCantidad.Location = new System.Drawing.Point(191, 53);
+            this.txtBoxCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxCantidad.Location = new System.Drawing.Point(141, 62);
             this.txtBoxCantidad.Mask = "000000";
             this.txtBoxCantidad.Name = "txtBoxCantidad";
             this.txtBoxCantidad.Size = new System.Drawing.Size(72, 20);
@@ -287,7 +259,7 @@
             // btnModificarProducto
             // 
             this.btnModificarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarProducto.Location = new System.Drawing.Point(192, 144);
+            this.btnModificarProducto.Location = new System.Drawing.Point(119, 162);
             this.btnModificarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(73, 24);
@@ -299,7 +271,7 @@
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(114, 144);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(41, 162);
             this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(73, 24);
@@ -311,7 +283,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarProducto.Location = new System.Drawing.Point(269, 144);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(196, 162);
             this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(73, 24);
@@ -322,24 +294,20 @@
             // 
             // cmbUnidadMedida
             // 
-            this.cmbUnidadMedida.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbUnidadMedida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnidadMedida.FormattingEnabled = true;
-            this.cmbUnidadMedida.Location = new System.Drawing.Point(270, 52);
+            this.cmbUnidadMedida.Location = new System.Drawing.Point(220, 61);
             this.cmbUnidadMedida.Name = "cmbUnidadMedida";
             this.cmbUnidadMedida.Size = new System.Drawing.Size(72, 21);
             this.cmbUnidadMedida.TabIndex = 82;
             // 
             // cmbProducto
             // 
-            this.cmbProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(191, 25);
+            this.cmbProducto.Location = new System.Drawing.Point(141, 34);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(150, 21);
             this.cmbProducto.TabIndex = 85;
@@ -357,9 +325,9 @@
             this.groupBoxDatosOC.Controls.Add(this.cmbEstacion);
             this.groupBoxDatosOC.Controls.Add(this.cmbEmpleado);
             this.groupBoxDatosOC.Controls.Add(this.dateTimePicker1);
-            this.groupBoxDatosOC.Location = new System.Drawing.Point(27, 37);
+            this.groupBoxDatosOC.Location = new System.Drawing.Point(12, 68);
             this.groupBoxDatosOC.Name = "groupBoxDatosOC";
-            this.groupBoxDatosOC.Size = new System.Drawing.Size(356, 164);
+            this.groupBoxDatosOC.Size = new System.Drawing.Size(311, 190);
             this.groupBoxDatosOC.TabIndex = 84;
             this.groupBoxDatosOC.TabStop = false;
             this.groupBoxDatosOC.Text = "Datos de la Orden de Compra";
@@ -370,7 +338,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(17, 138);
+            this.lblTotal.Location = new System.Drawing.Point(17, 164);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(110, 13);
             this.lblTotal.TabIndex = 89;
@@ -381,7 +349,7 @@
             this.lblTotalCalculado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalCalculado.AutoSize = true;
-            this.lblTotalCalculado.Location = new System.Drawing.Point(200, 138);
+            this.lblTotalCalculado.Location = new System.Drawing.Point(200, 164);
             this.lblTotalCalculado.Name = "lblTotalCalculado";
             this.lblTotalCalculado.Size = new System.Drawing.Size(19, 13);
             this.lblTotalCalculado.TabIndex = 88;
@@ -393,7 +361,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNroOrden.AutoSize = true;
-            this.lblNroOrden.Location = new System.Drawing.Point(28, 24);
+            this.lblNroOrden.Location = new System.Drawing.Point(28, 36);
             this.lblNroOrden.Name = "lblNroOrden";
             this.lblNroOrden.Size = new System.Drawing.Size(94, 13);
             this.lblNroOrden.TabIndex = 87;
@@ -405,7 +373,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstacion.AutoSize = true;
-            this.lblEstacion.Location = new System.Drawing.Point(28, 77);
+            this.lblEstacion.Location = new System.Drawing.Point(64, 89);
             this.lblEstacion.Name = "lblEstacion";
             this.lblEstacion.Size = new System.Drawing.Size(51, 13);
             this.lblEstacion.TabIndex = 86;
@@ -417,7 +385,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(28, 107);
+            this.lblFecha.Location = new System.Drawing.Point(28, 119);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(94, 13);
             this.lblFecha.TabIndex = 85;
@@ -429,7 +397,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(28, 50);
+            this.lblResponsable.Location = new System.Drawing.Point(50, 62);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(72, 13);
             this.lblResponsable.TabIndex = 84;
@@ -441,9 +409,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxNroOrden.Enabled = false;
-            this.txtBoxNroOrden.Location = new System.Drawing.Point(203, 21);
+            this.txtBoxNroOrden.Location = new System.Drawing.Point(167, 33);
             this.txtBoxNroOrden.Name = "txtBoxNroOrden";
-            this.txtBoxNroOrden.Size = new System.Drawing.Size(138, 20);
+            this.txtBoxNroOrden.Size = new System.Drawing.Size(124, 20);
             this.txtBoxNroOrden.TabIndex = 83;
             // 
             // cmbEstacion
@@ -453,9 +421,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstacion.FormattingEnabled = true;
-            this.cmbEstacion.Location = new System.Drawing.Point(203, 74);
+            this.cmbEstacion.Location = new System.Drawing.Point(167, 86);
             this.cmbEstacion.Name = "cmbEstacion";
-            this.cmbEstacion.Size = new System.Drawing.Size(138, 21);
+            this.cmbEstacion.Size = new System.Drawing.Size(124, 21);
             this.cmbEstacion.TabIndex = 81;
             // 
             // cmbEmpleado
@@ -465,9 +433,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(203, 47);
+            this.cmbEmpleado.Location = new System.Drawing.Point(167, 59);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(138, 21);
+            this.cmbEmpleado.Size = new System.Drawing.Size(124, 21);
             this.cmbEmpleado.TabIndex = 79;
             // 
             // dateTimePicker1
@@ -476,23 +444,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(203, 101);
+            this.dateTimePicker1.Location = new System.Drawing.Point(167, 113);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(124, 20);
             this.dateTimePicker1.TabIndex = 77;
             // 
             // frm_OrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 463);
+            this.ClientSize = new System.Drawing.Size(711, 642);
             this.ControlBox = false;
             this.Controls.Add(this.groupBoxDatosOC);
             this.Controls.Add(this.groupBoxProductos);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgrDetalleOC);
-            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_OrdenCompra";
@@ -511,10 +477,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.DataGridView dgrDetalleOC;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBoxProductos;
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.Button btnEliminarProducto;

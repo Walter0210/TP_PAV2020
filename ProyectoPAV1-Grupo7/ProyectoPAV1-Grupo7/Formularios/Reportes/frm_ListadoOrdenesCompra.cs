@@ -53,19 +53,25 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            if (cmbSolicitante.SelectedIndex != -1)
+            {
+                int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
+                
+                ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerSolicitante(solicitante));
 
-            int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
+                //reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
+                ReportParameter[] parametros = new ReportParameter[1];
+                parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: " + solicitante);
+                reportViewer1.LocalReport.SetParameters(parametros);
 
-            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerSolicitante(solicitante));
-
-            //reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-            ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: " + solicitante);
-            reportViewer1.LocalReport.SetParameters(parametros);
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.LocalReport.Refresh();
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(ds);
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una Estacion Solicitante");
+            }
         }
 
         private void cargarComboSolicitante()

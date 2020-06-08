@@ -116,6 +116,28 @@ namespace ProyectoPAV1_Grupo7.Formularios
             childForm.BringToFront();
             childForm.Show();
         }
+        //            Formularios.ABMs.frm_ABMSurtidor frm_ABMSurtidor = new ABMs.frm_ABMSurtidor();
+        //frm_ABMSurtidor.ShowDialog();
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Procesos.frm_Compra());
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            //quien sabe
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void surtidorToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -131,68 +153,44 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void estaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.frm_ABMEstacion frm_ABMEstacion = new frm_ABMEstacion();
-            frm_ABMEstacion.ShowDialog();
-        }
-
-        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formularios.ABMs.frm_ABMSoporte frm_AMBSoporte = new ABMs.frm_ABMSoporte("Estado");
-            frm_AMBSoporte.ShowDialog();
-         
+            Formularios.frm_ABMEstacion frm_ABMestacion = new Formularios.frm_ABMEstacion();
+            frm_ABMestacion.ShowDialog();
         }
 
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.frm_ABMEmpleado frm_Empleado = new frm_ABMEmpleado();
-            frm_Empleado.ShowDialog();
-
+            frm_ABMEmpleado frm_ABMEmpleado = new frm_ABMEmpleado();
+            frm_ABMEmpleado.ShowDialog();
         }
 
-        private void nivelDeUrgeciaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("Urgencia");
-            frm_ABMSoporte.ShowDialog();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            ABMs.frm_ABMSoporte frm_ABMEstado = new ABMs.frm_ABMSoporte("Estado");
+            frm_ABMEstado.ShowDialog();
         }
 
         private void tipoDeCombustibleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("TipoCombustible");
-            frm_ABMSoporte.ShowDialog();
+            ABMs.frm_ABMSoporte frm_ABMTipoCombustible = new ABMs.frm_ABMSoporte("TipoCombustible");
+            frm_ABMTipoCombustible.ShowDialog();
         }
 
         private void unidadDeMedidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("UnidadMedida");
-            frm_ABMSoporte.ShowDialog();
+            ABMs.frm_ABMSoporte frm_ABMUnidadMedida = new ABMs.frm_ABMSoporte("UnidadMedida");
+            frm_ABMUnidadMedida.ShowDialog();
+        }
+
+        private void nivelDeEmergenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABMs.frm_ABMSoporte frm_ABMUrgencia = new ABMs.frm_ABMSoporte("Urgencia");
+            frm_ABMUrgencia.ShowDialog();
         }
 
         private void tipoDeDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.ABMs.frm_ABMSoporte frm_ABMSoporte = new ABMs.frm_ABMSoporte("TipoDocumento");
-            frm_ABMSoporte.ShowDialog();
-        }
-
-        private void listadoOrdenesToolStripItem_Click(object sender, EventArgs e)
-        {
-            Formularios.Reportes.frm_ListadoOrdenesCompra frm_ListadoOrdenesCompra = new Reportes.frm_ListadoOrdenesCompra();
-            frm_ListadoOrdenesCompra.ShowDialog();
-        }
-
-        private void estadisticaOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formularios.Reportes.frm_EstadisticaOrdenesCompra frm_EstadisticaOrdenesCompra = new Reportes.frm_EstadisticaOrdenesCompra();
-            frm_EstadisticaOrdenesCompra.ShowDialog();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Procesos.frm_Compra());
+            ABMs.frm_ABMSoporte frm_ABMTipoDocumento = new ABMs.frm_ABMSoporte("TipoDocumento");
+            frm_ABMTipoDocumento.ShowDialog();
         }
     }
 }

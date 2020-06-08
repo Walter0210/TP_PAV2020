@@ -82,9 +82,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
         private void frm_Compra_Load(object sender, EventArgs e)
         {
-            Form form = this.Parent.FindForm();
-            form.Width = this.Width + 300;
-            form.Height = this.Height + 50;
+            //Form form = this.Parent.FindForm();
+            //form.Width = this.Width + 300;
+            //form.Height = this.Height + 50;
 
             BuscarnroTicket();
             

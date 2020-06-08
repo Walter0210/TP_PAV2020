@@ -28,52 +28,246 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelMenuLateral = new System.Windows.Forms.Panel();
-            this.subPanel_producto = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_nuevo_prod = new System.Windows.Forms.Button();
-            this.btn_producto = new System.Windows.Forms.Button();
-            this.subPanel_empleado = new System.Windows.Forms.Panel();
-            this.btn_nvaVenta = new System.Windows.Forms.Button();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_empleado = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Menu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.btn_empleado = new System.Windows.Forms.Button();
+            this.subPanel_empleado = new System.Windows.Forms.Panel();
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_nvaVenta = new System.Windows.Forms.Button();
+            this.btn_producto = new System.Windows.Forms.Button();
+            this.subPanel_producto = new System.Windows.Forms.Panel();
+            this.btn_nuevo_prod = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCombustibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nivelDeUrgeciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nivelDeEmergenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.surtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoOrdenesToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadisticaOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelMenuLateral.SuspendLayout();
-            this.subPanel_producto.SuspendLayout();
-            this.subPanel_empleado.SuspendLayout();
-            this.panelLogo.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.subPanel_empleado.SuspendLayout();
+            this.subPanel_producto.SuspendLayout();
+            this.panelMenuLateral.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // menuStrip1
             // 
-            this.panel1.Location = new System.Drawing.Point(441, 684);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 136);
-            this.panel1.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.editarToolStripMenuItem,
+            this.reportesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(200, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 20);
+            this.toolStripMenuItem1.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.soporteToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.surtidorToolStripMenuItem,
+            this.productoToolStripMenuItem,
+            this.estaciónToolStripMenuItem,
+            this.empleadoToolStripMenuItem});
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.editarToolStripMenuItem.Text = "Editar";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelChildForm.Location = new System.Drawing.Point(207, 24);
+            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(727, 687);
+            this.panelChildForm.TabIndex = 2;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBoxLogo);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(200, 130);
+            this.panelLogo.TabIndex = 2;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.BackgroundImage")));
+            this.pictureBoxLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, -38);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(200, 174);
+            this.pictureBoxLogo.TabIndex = 4;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
+            // 
+            // btn_empleado
+            // 
+            this.btn_empleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_empleado.FlatAppearance.BorderSize = 0;
+            this.btn_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empleado.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_empleado.Image")));
+            this.btn_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_empleado.Location = new System.Drawing.Point(0, 130);
+            this.btn_empleado.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_empleado.Name = "btn_empleado";
+            this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btn_empleado.Size = new System.Drawing.Size(200, 37);
+            this.btn_empleado.TabIndex = 2;
+            this.btn_empleado.Text = "Venta";
+            this.btn_empleado.UseVisualStyleBackColor = true;
+            this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
+            // 
+            // subPanel_empleado
+            // 
+            this.subPanel_empleado.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.subPanel_empleado.Controls.Add(this.btn_nvaVenta);
+            this.subPanel_empleado.Controls.Add(this.btn_nuevo);
+            this.subPanel_empleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.subPanel_empleado.Location = new System.Drawing.Point(0, 167);
+            this.subPanel_empleado.Margin = new System.Windows.Forms.Padding(2);
+            this.subPanel_empleado.Name = "subPanel_empleado";
+            this.subPanel_empleado.Size = new System.Drawing.Size(200, 67);
+            this.subPanel_empleado.TabIndex = 2;
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Location = new System.Drawing.Point(0, 0);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.btn_nuevo.Size = new System.Drawing.Size(200, 32);
+            this.btn_nuevo.TabIndex = 2;
+            this.btn_nuevo.Text = "Consultar ventas";
+            this.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nuevo.UseVisualStyleBackColor = true;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
+            // 
+            // btn_nvaVenta
+            // 
+            this.btn_nvaVenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_nvaVenta.FlatAppearance.BorderSize = 0;
+            this.btn_nvaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nvaVenta.Location = new System.Drawing.Point(0, 32);
+            this.btn_nvaVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_nvaVenta.Name = "btn_nvaVenta";
+            this.btn_nvaVenta.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.btn_nvaVenta.Size = new System.Drawing.Size(200, 32);
+            this.btn_nvaVenta.TabIndex = 2;
+            this.btn_nvaVenta.Text = "Nueva venta";
+            this.btn_nvaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nvaVenta.UseVisualStyleBackColor = true;
+            this.btn_nvaVenta.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_producto
+            // 
+            this.btn_producto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_producto.FlatAppearance.BorderSize = 0;
+            this.btn_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_producto.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_producto.Image = ((System.Drawing.Image)(resources.GetObject("btn_producto.Image")));
+            this.btn_producto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_producto.Location = new System.Drawing.Point(0, 234);
+            this.btn_producto.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_producto.Name = "btn_producto";
+            this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btn_producto.Size = new System.Drawing.Size(200, 37);
+            this.btn_producto.TabIndex = 2;
+            this.btn_producto.Text = "Orden de Compra";
+            this.btn_producto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_producto.UseVisualStyleBackColor = true;
+            this.btn_producto.Click += new System.EventHandler(this.btn_producto_Click);
+            // 
+            // subPanel_producto
+            // 
+            this.subPanel_producto.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.subPanel_producto.Controls.Add(this.button1);
+            this.subPanel_producto.Controls.Add(this.btn_nuevo_prod);
+            this.subPanel_producto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.subPanel_producto.Location = new System.Drawing.Point(0, 271);
+            this.subPanel_producto.Margin = new System.Windows.Forms.Padding(2);
+            this.subPanel_producto.Name = "subPanel_producto";
+            this.subPanel_producto.Size = new System.Drawing.Size(200, 84);
+            this.subPanel_producto.TabIndex = 3;
+            // 
+            // btn_nuevo_prod
+            // 
+            this.btn_nuevo_prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_nuevo_prod.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo_prod.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_nuevo_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo_prod.Location = new System.Drawing.Point(0, 0);
+            this.btn_nuevo_prod.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_nuevo_prod.Name = "btn_nuevo_prod";
+            this.btn_nuevo_prod.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.btn_nuevo_prod.Size = new System.Drawing.Size(200, 40);
+            this.btn_nuevo_prod.TabIndex = 4;
+            this.btn_nuevo_prod.Text = "Nueva orden de compra";
+            this.btn_nuevo_prod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nuevo_prod.UseVisualStyleBackColor = true;
+            this.btn_nuevo_prod.Click += new System.EventHandler(this.btn_nuevo_prod_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 40);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(200, 42);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Consultar ordenes";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelMenuLateral
             // 
@@ -86,186 +280,10 @@
             this.panelMenuLateral.Controls.Add(this.panelLogo);
             this.panelMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuLateral.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenuLateral.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenuLateral.Name = "panelMenuLateral";
-            this.panelMenuLateral.Size = new System.Drawing.Size(200, 561);
+            this.panelMenuLateral.Size = new System.Drawing.Size(200, 711);
             this.panelMenuLateral.TabIndex = 1;
-            // 
-            // subPanel_producto
-            // 
-            this.subPanel_producto.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.subPanel_producto.Controls.Add(this.button1);
-            this.subPanel_producto.Controls.Add(this.btn_nuevo_prod);
-            this.subPanel_producto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subPanel_producto.Location = new System.Drawing.Point(0, 218);
-            this.subPanel_producto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.subPanel_producto.Name = "subPanel_producto";
-            this.subPanel_producto.Size = new System.Drawing.Size(200, 84);
-            this.subPanel_producto.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Consultar ordenes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_nuevo_prod
-            // 
-            this.btn_nuevo_prod.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_nuevo_prod.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo_prod.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_nuevo_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo_prod.Location = new System.Drawing.Point(0, 0);
-            this.btn_nuevo_prod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_nuevo_prod.Name = "btn_nuevo_prod";
-            this.btn_nuevo_prod.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btn_nuevo_prod.Size = new System.Drawing.Size(200, 40);
-            this.btn_nuevo_prod.TabIndex = 4;
-            this.btn_nuevo_prod.Text = "Nueva orden de compra";
-            this.btn_nuevo_prod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nuevo_prod.UseVisualStyleBackColor = true;
-            this.btn_nuevo_prod.Click += new System.EventHandler(this.btn_nuevo_prod_Click);
-            // 
-            // btn_producto
-            // 
-            this.btn_producto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_producto.FlatAppearance.BorderSize = 0;
-            this.btn_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_producto.Location = new System.Drawing.Point(0, 181);
-            this.btn_producto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_producto.Name = "btn_producto";
-            this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_producto.Size = new System.Drawing.Size(200, 37);
-            this.btn_producto.TabIndex = 2;
-            this.btn_producto.Text = "Pedido";
-            this.btn_producto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_producto.UseVisualStyleBackColor = true;
-            this.btn_producto.Click += new System.EventHandler(this.btn_producto_Click);
-            // 
-            // subPanel_empleado
-            // 
-            this.subPanel_empleado.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.subPanel_empleado.Controls.Add(this.btn_nvaVenta);
-            this.subPanel_empleado.Controls.Add(this.btn_nuevo);
-            this.subPanel_empleado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subPanel_empleado.Location = new System.Drawing.Point(0, 114);
-            this.subPanel_empleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.subPanel_empleado.Name = "subPanel_empleado";
-            this.subPanel_empleado.Size = new System.Drawing.Size(200, 67);
-            this.subPanel_empleado.TabIndex = 2;
-            // 
-            // btn_nvaVenta
-            // 
-            this.btn_nvaVenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_nvaVenta.FlatAppearance.BorderSize = 0;
-            this.btn_nvaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nvaVenta.Location = new System.Drawing.Point(0, 32);
-            this.btn_nvaVenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_nvaVenta.Name = "btn_nvaVenta";
-            this.btn_nvaVenta.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btn_nvaVenta.Size = new System.Drawing.Size(200, 32);
-            this.btn_nvaVenta.TabIndex = 2;
-            this.btn_nvaVenta.Text = "Nueva venta";
-            this.btn_nvaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nvaVenta.UseVisualStyleBackColor = true;
-            this.btn_nvaVenta.Click += new System.EventHandler(this.btn_eliminar_Click);
-            // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Location = new System.Drawing.Point(0, 0);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btn_nuevo.Size = new System.Drawing.Size(200, 32);
-            this.btn_nuevo.TabIndex = 2;
-            this.btn_nuevo.Text = "Consultar ventas";
-            this.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nuevo.UseVisualStyleBackColor = true;
-            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
-            // 
-            // btn_empleado
-            // 
-            this.btn_empleado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_empleado.FlatAppearance.BorderSize = 0;
-            this.btn_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_empleado.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_empleado.Location = new System.Drawing.Point(0, 77);
-            this.btn_empleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_empleado.Name = "btn_empleado";
-            this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_empleado.Size = new System.Drawing.Size(200, 37);
-            this.btn_empleado.TabIndex = 2;
-            this.btn_empleado.Text = "Venta";
-            this.btn_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_empleado.UseVisualStyleBackColor = true;
-            this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Controls.Add(this.menuStrip1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 77);
-            this.panelLogo.TabIndex = 2;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.aBMToolStripMenuItem,
-            this.reportesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(200, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // aBMToolStripMenuItem
-            // 
-            this.aBMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.soporteToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.surtidorToolStripMenuItem,
-            this.productoToolStripMenuItem,
-            this.estaciónToolStripMenuItem,
-            this.empleadoToolStripMenuItem});
-            this.aBMToolStripMenuItem.Name = "aBMToolStripMenuItem";
-            this.aBMToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.aBMToolStripMenuItem.Text = "Editar";
             // 
             // soporteToolStripMenuItem
             // 
@@ -273,10 +291,10 @@
             this.estadoToolStripMenuItem,
             this.tipoDeCombustibleToolStripMenuItem,
             this.unidadDeMedidaToolStripMenuItem,
-            this.nivelDeUrgeciaToolStripMenuItem,
+            this.nivelDeEmergenciaToolStripMenuItem,
             this.tipoDeDocumentoToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // estadoToolStripMenuItem
@@ -300,12 +318,12 @@
             this.unidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida";
             this.unidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadDeMedidaToolStripMenuItem_Click);
             // 
-            // nivelDeUrgeciaToolStripMenuItem
+            // nivelDeEmergenciaToolStripMenuItem
             // 
-            this.nivelDeUrgeciaToolStripMenuItem.Name = "nivelDeUrgeciaToolStripMenuItem";
-            this.nivelDeUrgeciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.nivelDeUrgeciaToolStripMenuItem.Text = "Nivel de Urgencia";
-            this.nivelDeUrgeciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeUrgeciaToolStripMenuItem_Click);
+            this.nivelDeEmergenciaToolStripMenuItem.Name = "nivelDeEmergenciaToolStripMenuItem";
+            this.nivelDeEmergenciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.nivelDeEmergenciaToolStripMenuItem.Text = "Nivel de Emergencia";
+            this.nivelDeEmergenciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeEmergenciaToolStripMenuItem_Click);
             // 
             // tipoDeDocumentoToolStripMenuItem
             // 
@@ -314,143 +332,95 @@
             this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
             this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // toolStripMenuItem2
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // surtidorToolStripMenuItem
             // 
             this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
-            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.surtidorToolStripMenuItem.Text = "Surtidor";
             this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // estaciónToolStripMenuItem
             // 
             this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
-            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estaciónToolStripMenuItem.Text = "Estación";
             this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
             // 
             // empleadoToolStripMenuItem
             // 
             this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.empleadoToolStripMenuItem.Text = "Empleado";
             this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadoOrdenesToolStripItem,
-            this.estadisticaOrdenesToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // listadoOrdenesToolStripItem
-            // 
-            this.listadoOrdenesToolStripItem.Name = "listadoOrdenesToolStripItem";
-            this.listadoOrdenesToolStripItem.Size = new System.Drawing.Size(254, 22);
-            this.listadoOrdenesToolStripItem.Text = "Listado de Ordenes de Compra";
-            this.listadoOrdenesToolStripItem.Click += new System.EventHandler(this.listadoOrdenesToolStripItem_Click);
-            // 
-            // estadisticaOrdenesToolStripMenuItem
-            // 
-            this.estadisticaOrdenesToolStripMenuItem.Name = "estadisticaOrdenesToolStripMenuItem";
-            this.estadisticaOrdenesToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.estadisticaOrdenesToolStripMenuItem.Text = "Estadistica de Ordenes de Compra";
-            this.estadisticaOrdenesToolStripMenuItem.Click += new System.EventHandler(this.estadisticaOrdenesToolStripMenuItem_Click);
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelChildForm.Location = new System.Drawing.Point(202, 0);
-            this.panelChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(580, 561);
-            this.panelChildForm.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::ProyectoPAV1_Grupo7.Properties.Resources.boton_inicio;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panelChildForm);
+            this.ClientSize = new System.Drawing.Size(934, 711);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelMenuLateral);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelChildForm);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(950, 750);
             this.Name = "frm_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.frm_Menu_Load);
-            this.panelMenuLateral.ResumeLayout(false);
-            this.subPanel_producto.ResumeLayout(false);
-            this.subPanel_empleado.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.subPanel_empleado.ResumeLayout(false);
+            this.subPanel_producto.ResumeLayout(false);
+            this.panelMenuLateral.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelMenuLateral;
-        private System.Windows.Forms.Panel subPanel_empleado;
-        private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button btn_empleado;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel subPanel_producto;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_nuevo_prod;
-        private System.Windows.Forms.Button btn_producto;
-        private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aBMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeCombustibleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unidadDeMedidaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nivelDeUrgeciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nivelDeEmergenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeDocumentoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem surtidorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Button btn_empleado;
+        private System.Windows.Forms.Panel subPanel_empleado;
         private System.Windows.Forms.Button btn_nvaVenta;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoOrdenesToolStripItem;
-        private System.Windows.Forms.ToolStripMenuItem estadisticaOrdenesToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_nuevo;
+        private System.Windows.Forms.Button btn_producto;
+        private System.Windows.Forms.Panel subPanel_producto;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_nuevo_prod;
+        private System.Windows.Forms.Panel panelMenuLateral;
     }
 }
