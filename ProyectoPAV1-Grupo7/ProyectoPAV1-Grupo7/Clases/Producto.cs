@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Windows.Forms;
 
 namespace ProyectoPAV1_Grupo7.Clases
 {
@@ -23,7 +25,11 @@ namespace ProyectoPAV1_Grupo7.Clases
             PrecioCompra = precioCompra;
             PrecioVenta = precioVenta;
             UltimaFechaActStock = ultimaFechaActStock;
+        }
 
+        public Producto(int codigo)
+        {
+            Codigo = codigo;
         }
 
         public int Codigo
@@ -56,6 +62,24 @@ namespace ProyectoPAV1_Grupo7.Clases
         {
             get => ultimaFechaActStock;
             set => ultimaFechaActStock = value;
+        }
+
+        public int consultarStockActualProducto(int idProducto, ConexionBD conexion)
+        {
+            string consulta = "SELECT stockActual FROM Producto WHERE idProducto = " + Codigo;
+            DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
+            int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
+            return stockActual;
+        }
+
+        public void actualizarStockActualProducto(int CantidadSeleccionada)
+        {
+            ConexionBD conexion = new ConexionBD();
+            int stockActual = consultarStockActualProducto(Codigo, conexion);
+            int nuevaCantidad = stockActual + CantidadSeleccionada;
+            string fechaActualizacion = DateTime.Today.ToString("yyyy-MM-dd");
+            string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + ", fechaUltimaActualizacion = '" + fechaActualizacion + "' WHERE idProducto = " + Codigo;
+            conexion.ejecutar_consulta(sql);
         }
     }
 }

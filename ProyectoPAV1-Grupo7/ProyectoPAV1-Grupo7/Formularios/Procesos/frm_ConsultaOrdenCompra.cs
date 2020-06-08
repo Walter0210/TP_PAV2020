@@ -101,6 +101,23 @@ namespace ProyectoPAV1_Grupo7
 
         }
 
+        private int consultarStockActualProducto(int idProducto, ConexionBD conexion)
+        {
+            string consulta = "SELECT stockActual FROM Producto WHERE idProducto = " + idProducto;
+            DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
+            int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
+            return stockActual;
+        }
+
+        private void actualizarStockActualProducto(int idProducto)
+        {
+            ConexionBD conexion = new ConexionBD();
+            int stockActual = consultarStockActualProducto(idProducto, conexion);
+            int nuevaCantidad = stockActual + CantidadSeleccionada;
+            string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + idProducto;
+            conexion.ejecutar_consulta(sql);
+        }
+
         private void btnRegistrarPedido_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Usted seleccionó Orden de Compra: " + OrdenSeleccionada + ", Detalle: " + DetalleSeleccionado + ", Cantidad: " + CantidadSeleccionada);
@@ -110,16 +127,10 @@ namespace ProyectoPAV1_Grupo7
                 {
                     try
                     {
-                        ConexionBD conexion = new ConexionBD();
-                        // Consulto el stock actual del producto seleccionado
-                        string consulta = "SELECT P.stockActual FROM Producto P WHERE P.idProducto like '" + DetalleSeleccionado + "'";
-                        DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
-                        int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
-                        int nuevaCantidad = stockActual + CantidadSeleccionada;
-                        // Actualizo el stock del producto
-                        string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + DetalleSeleccionado;
-                        conexion.ejecutar_consulta(sql);
+                        Producto productoSeleccionado = new Producto(DetalleSeleccionado);
+                        productoSeleccionado.actualizarStockActualProducto(CantidadSeleccionada);
                         MessageBox.Show("Pedido registrado correctamente!");
+                        // Seteo en 0 las referencias para que no pueda registrar de nuevo el producto
                         OrdenSeleccionada = 0;
                         DetalleSeleccionado = 0;
                         CantidadSeleccionada = 0;

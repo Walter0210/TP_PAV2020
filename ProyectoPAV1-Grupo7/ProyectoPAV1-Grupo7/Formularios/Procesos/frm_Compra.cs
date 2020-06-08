@@ -297,6 +297,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
 
                             TicketProducto nuevoDetalle = new TicketProducto(nroticket, idProducto, cantidad, precio);
                             InsertarDetalle(nuevoDetalle, conexion);
+                            Producto productoSeleccionado = new Producto(idProducto);
+                            int nuevaCantidad = int.Parse(cantidad);
+                            productoSeleccionado.actualizarStockActualProducto(-nuevaCantidad);
                         }
                         //MessageBox.Show("La venta de productos se registró correctamente!");
                         //conexion.cerrar_transaccion();
