@@ -1,4 +1,6 @@
-﻿namespace ProyectoPAV1_Grupo7.Formularios.Reportes
+﻿using Microsoft.Reporting.WinForms;
+
+namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     partial class frm_EstadisticaOrdenesCompra
     {

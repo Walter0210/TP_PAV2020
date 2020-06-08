@@ -13,6 +13,11 @@ namespace ProyectoPAV1_Grupo7
 {
     public partial class frm_ConsultaOrdenCompra : Form
     {
+        // Declaro estas variables para poder ser accedidas
+        private int OrdenSeleccionada = 0;
+        private int DetalleSeleccionado = 0;
+        private int CantidadSeleccionada = 0;
+
         public frm_ConsultaOrdenCompra()
         {
             InitializeComponent();
@@ -43,10 +48,45 @@ namespace ProyectoPAV1_Grupo7
             {
                 DataGridViewRow fila = dgrOrdenCompra.Rows[indice];
                 string numOrden = fila.Cells["Numero"].Value.ToString();
+                OrdenSeleccionada = int.Parse(numOrden);
                 CargarGrilla2(numOrden);
 
             }
         }
+
+        private void dgrDetallesOrden_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Tomo los datos del detalle seleccionado para realizar el Update
+            int indice = e.RowIndex;
+            if (indice != -1)
+            {
+                DataGridViewRow fila = dgrDetallesOrden.Rows[indice];
+                string descripcion = fila.Cells["Producto"].Value.ToString();
+                int numDetalle = consultarIdProducto(descripcion);
+                string cantidad = fila.Cells["Cantidad"].Value.ToString();
+                DetalleSeleccionado = numDetalle;
+                CantidadSeleccionada = int.Parse(cantidad);
+            }
+        }
+
+        private int consultarIdProducto(string descripcion)
+        {
+            try
+            {
+                ConexionBD conexion = new ConexionBD();
+                string consulta = @"select idProducto from Producto where descripcion like '" + descripcion + "'";
+                DataTable idProductoTable = conexion.ejecutar_consulta(consulta);
+                int idProducto = int.Parse(idProductoTable.Rows[0][0].ToString());
+                return idProducto;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error de consulta a Base de Datos");
+                return 0;
+            }
+        }
+
+
         private void CargarGrilla2(string numOrden)
         {
             ConexionBD conexion = new ConexionBD();
@@ -61,8 +101,49 @@ namespace ProyectoPAV1_Grupo7
 
         }
 
-        // duplique la primera funcion para que sea publica y devuelva la tabla de tipo DataTable para usarlo en los reportes
-        // en la otra funcion no permitia que sea static
+        private void btnRegistrarPedido_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Usted seleccionó Orden de Compra: " + OrdenSeleccionada + ", Detalle: " + DetalleSeleccionado + ", Cantidad: " + CantidadSeleccionada);
+            if (OrdenSeleccionada != 0)
+            {
+                if (DetalleSeleccionado != 0 || CantidadSeleccionada != 0)
+                {
+                    try
+                    {
+                        ConexionBD conexion = new ConexionBD();
+                        // Consulto el stock actual del producto seleccionado
+                        string consulta = "SELECT P.stockActual FROM Producto P WHERE P.idProducto like '" + DetalleSeleccionado + "'";
+                        DataTable stockActualProducto = conexion.ejecutar_consulta(consulta);
+                        int stockActual = int.Parse(stockActualProducto.Rows[0][0].ToString());
+                        int nuevaCantidad = stockActual + CantidadSeleccionada;
+                        // Actualizo el stock del producto
+                        string sql = "UPDATE Producto SET stockActual = " + nuevaCantidad + " WHERE idProducto = " + DetalleSeleccionado;
+                        conexion.ejecutar_consulta(sql);
+                        MessageBox.Show("Pedido registrado correctamente!");
+                        OrdenSeleccionada = 0;
+                        DetalleSeleccionado = 0;
+                        CantidadSeleccionada = 0;
+                        this.Dispose();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error de consulta a Base de Datos");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione producto de la Orden de Compra");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una Orden de Compra");
+            }
+        }
+
+            // duplique la primera funcion para que sea publica y devuelva la tabla de tipo DataTable para usarlo en los reportes
+            // en la otra funcion no permitia que sea static
 
         public static DataTable ObtenerListadoOrdenesCompra()
         {
