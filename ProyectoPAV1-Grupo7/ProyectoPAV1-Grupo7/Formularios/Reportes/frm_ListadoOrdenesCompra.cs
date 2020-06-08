@@ -54,8 +54,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void btnCalcular_Click(object sender, EventArgs e)
         {
 
-
-            int solicitante = (int)cmbSolicitante.SelectedValue;
+            int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
 
             ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerSolicitante(solicitante));
 
