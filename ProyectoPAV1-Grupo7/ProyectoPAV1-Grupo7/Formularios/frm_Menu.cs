@@ -192,5 +192,22 @@ namespace ProyectoPAV1_Grupo7.Formularios
             ABMs.frm_ABMSoporte frm_ABMTipoDocumento = new ABMs.frm_ABMSoporte("TipoDocumento");
             frm_ABMTipoDocumento.ShowDialog();
         }
+
+        private void listadoDeOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ordenesDeCompraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_ListadoOrdenesCompra frm_ListadoOrdenesCompra = new Reportes.frm_ListadoOrdenesCompra();
+            frm_ListadoOrdenesCompra.ShowDialog();
+        }
+
+        private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_EstadisticaOrdenesCompra frm_EstaditicaOrdenesCompra = new Reportes.frm_EstadisticaOrdenesCompra();
+            frm_EstaditicaOrdenesCompra.ShowDialog();
+        }
     }
 }
