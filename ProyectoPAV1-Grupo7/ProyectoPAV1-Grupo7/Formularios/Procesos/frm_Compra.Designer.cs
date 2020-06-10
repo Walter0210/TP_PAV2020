@@ -197,7 +197,7 @@
             // 
             this.btnFinalizar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFinalizar.Location = new System.Drawing.Point(228, 595);
+            this.btnFinalizar.Location = new System.Drawing.Point(240, 595);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(283, 34);
             this.btnFinalizar.TabIndex = 88;
@@ -253,7 +253,7 @@
             this.btnModificarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificarProducto.AutoSize = true;
-            this.btnModificarProducto.Location = new System.Drawing.Point(149, 129);
+            this.btnModificarProducto.Location = new System.Drawing.Point(129, 129);
             this.btnModificarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(73, 26);
@@ -267,7 +267,7 @@
             this.btnEliminarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarProducto.AutoSize = true;
-            this.btnEliminarProducto.Location = new System.Drawing.Point(72, 129);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(46, 129);
             this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(73, 26);
@@ -281,7 +281,7 @@
             this.btnAgregarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarProducto.AutoSize = true;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(226, 129);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(212, 129);
             this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(73, 26);
@@ -317,7 +317,7 @@
             // 
             this.lbCantidadVendida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCantidadVendida.AutoSize = true;
-            this.lbCantidadVendida.Location = new System.Drawing.Point(2, 173);
+            this.lbCantidadVendida.Location = new System.Drawing.Point(2, 172);
             this.lbCantidadVendida.Name = "lbCantidadVendida";
             this.lbCantidadVendida.Size = new System.Drawing.Size(127, 13);
             this.lbCantidadVendida.TabIndex = 104;
@@ -326,7 +326,7 @@
             // txtBoxCantidadCombustible
             // 
             this.txtBoxCantidadCombustible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxCantidadCombustible.Location = new System.Drawing.Point(181, 170);
+            this.txtBoxCantidadCombustible.Location = new System.Drawing.Point(181, 169);
             this.txtBoxCantidadCombustible.Mask = "00000";
             this.txtBoxCantidadCombustible.Name = "txtBoxCantidadCombustible";
             this.txtBoxCantidadCombustible.PromptChar = '#';
@@ -339,7 +339,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 146);
+            this.label3.Location = new System.Drawing.Point(35, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 103;
@@ -350,7 +350,7 @@
             this.cmbUnidadMedida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbUnidadMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnidadMedida.FormattingEnabled = true;
-            this.cmbUnidadMedida.Location = new System.Drawing.Point(181, 143);
+            this.cmbUnidadMedida.Location = new System.Drawing.Point(181, 142);
             this.cmbUnidadMedida.Name = "cmbUnidadMedida";
             this.cmbUnidadMedida.Size = new System.Drawing.Size(121, 21);
             this.cmbUnidadMedida.TabIndex = 102;
@@ -359,7 +359,7 @@
             // 
             this.lblSurtidor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSurtidor.AutoSize = true;
-            this.lblSurtidor.Location = new System.Drawing.Point(83, 119);
+            this.lblSurtidor.Location = new System.Drawing.Point(83, 118);
             this.lblSurtidor.Name = "lblSurtidor";
             this.lblSurtidor.Size = new System.Drawing.Size(46, 13);
             this.lblSurtidor.TabIndex = 101;
@@ -410,7 +410,7 @@
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(181, 61);
+            this.dateTimePicker1.Location = new System.Drawing.Point(181, 62);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker1.TabIndex = 96;
@@ -432,7 +432,7 @@
             this.cmbSurtidor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSurtidor.Enabled = false;
             this.cmbSurtidor.FormattingEnabled = true;
-            this.cmbSurtidor.Location = new System.Drawing.Point(181, 116);
+            this.cmbSurtidor.Location = new System.Drawing.Point(181, 115);
             this.cmbSurtidor.Name = "cmbSurtidor";
             this.cmbSurtidor.Size = new System.Drawing.Size(121, 21);
             this.cmbSurtidor.TabIndex = 94;

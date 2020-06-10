@@ -54,6 +54,7 @@
             // 
             // lblCuit
             // 
+            this.lblCuit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCuit.AutoSize = true;
             this.lblCuit.Location = new System.Drawing.Point(24, 55);
             this.lblCuit.Name = "lblCuit";
@@ -63,6 +64,7 @@
             // 
             // lblRazonSocial
             // 
+            this.lblRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.Location = new System.Drawing.Point(24, 81);
             this.lblRazonSocial.Name = "lblRazonSocial";
@@ -72,6 +74,7 @@
             // 
             // lblCalle
             // 
+            this.lblCalle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCalle.AutoSize = true;
             this.lblCalle.Location = new System.Drawing.Point(24, 107);
             this.lblCalle.Name = "lblCalle";
@@ -81,6 +84,7 @@
             // 
             // lblFechaHabilitacion
             // 
+            this.lblFechaHabilitacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFechaHabilitacion.AutoSize = true;
             this.lblFechaHabilitacion.Location = new System.Drawing.Point(24, 159);
             this.lblFechaHabilitacion.Name = "lblFechaHabilitacion";
@@ -90,6 +94,7 @@
             // 
             // txtBoxRazonSocial
             // 
+            this.txtBoxRazonSocial.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxRazonSocial.Location = new System.Drawing.Point(186, 78);
             this.txtBoxRazonSocial.MaxLength = 15;
             this.txtBoxRazonSocial.Name = "txtBoxRazonSocial";
@@ -98,6 +103,7 @@
             // 
             // txtBoxCalle
             // 
+            this.txtBoxCalle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxCalle.Location = new System.Drawing.Point(186, 104);
             this.txtBoxCalle.MaxLength = 20;
             this.txtBoxCalle.Name = "txtBoxCalle";
@@ -117,6 +123,7 @@
             // 
             // lblNumero
             // 
+            this.lblNumero.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNumero.AutoSize = true;
             this.lblNumero.Location = new System.Drawing.Point(24, 133);
             this.lblNumero.Name = "lblNumero";
@@ -197,7 +204,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(105, 326);
+            this.btnModificar.Location = new System.Drawing.Point(106, 326);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 6;
@@ -208,7 +215,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
+            this.btnEliminar.Location = new System.Drawing.Point(188, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -218,6 +225,7 @@
             // 
             // txtBoxCuit
             // 
+            this.txtBoxCuit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxCuit.Location = new System.Drawing.Point(186, 52);
             this.txtBoxCuit.Mask = "99999999999";
             this.txtBoxCuit.Name = "txtBoxCuit";
@@ -226,6 +234,7 @@
             // 
             // txtBoxNumero
             // 
+            this.txtBoxNumero.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxNumero.Location = new System.Drawing.Point(186, 130);
             this.txtBoxNumero.Mask = "00000";
             this.txtBoxNumero.Name = "txtBoxNumero";
@@ -234,6 +243,7 @@
             // 
             // txtFechaHab
             // 
+            this.txtFechaHab.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtFechaHab.Enabled = false;
             this.txtFechaHab.Location = new System.Drawing.Point(186, 156);
             this.txtFechaHab.Mask = "00/00/0000";

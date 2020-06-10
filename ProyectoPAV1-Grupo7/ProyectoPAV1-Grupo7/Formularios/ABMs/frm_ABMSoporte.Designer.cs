@@ -58,7 +58,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             this.dgrSoporte.Location = new System.Drawing.Point(374, 12);
             this.dgrSoporte.Name = "dgrSoporte";
             this.dgrSoporte.ReadOnly = true;
-            this.dgrSoporte.Size = new System.Drawing.Size(398, 187);
+            this.dgrSoporte.Size = new System.Drawing.Size(298, 187);
             this.dgrSoporte.TabIndex = 0;
             this.dgrSoporte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSoporte_CellClick);
             // 
@@ -71,6 +71,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // lblNombre
             // 
+            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(20, 47);
             this.lblNombre.Name = "lblNombre";
@@ -81,6 +82,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // txtBoxNombre
             // 
+            this.txtBoxNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxNombre.Location = new System.Drawing.Point(104, 44);
             this.txtBoxNombre.MaxLength = 15;
             this.txtBoxNombre.Name = "txtBoxNombre";
@@ -89,6 +91,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCerrar.Location = new System.Drawing.Point(266, 176);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -99,6 +102,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // btnModificar
             // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnModificar.Location = new System.Drawing.Point(104, 176);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
@@ -109,6 +113,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGuardar.Location = new System.Drawing.Point(23, 176);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
@@ -119,6 +124,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEliminar.Location = new System.Drawing.Point(185, 176);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
@@ -129,8 +135,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 84);
+            this.label1.Location = new System.Drawing.Point(20, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 30;
@@ -138,7 +145,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(104, 81);
+            this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCodigo.Location = new System.Drawing.Point(104, 77);
             this.txtCodigo.MaxLength = 5;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(237, 20);
@@ -158,7 +166,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 211);
+            this.ClientSize = new System.Drawing.Size(684, 211);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);

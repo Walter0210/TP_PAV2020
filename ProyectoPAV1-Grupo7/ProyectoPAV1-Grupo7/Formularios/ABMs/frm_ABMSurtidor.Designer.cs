@@ -53,6 +53,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 55);
             this.label1.Name = "label1";
@@ -62,6 +63,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(24, 81);
             this.label2.Name = "label2";
@@ -71,8 +73,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 108);
+            this.label3.Location = new System.Drawing.Point(24, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 2;
@@ -80,8 +83,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 135);
+            this.label4.Location = new System.Drawing.Point(24, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 3;
@@ -89,6 +93,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // cmbCuilEstacion
             // 
+            this.cmbCuilEstacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbCuilEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCuilEstacion.FormattingEnabled = true;
             this.cmbCuilEstacion.Location = new System.Drawing.Point(186, 78);
@@ -98,6 +103,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // cmbEstado
             // 
+            this.cmbEstado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(186, 105);
@@ -107,6 +113,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // cmbTipoCombustible
             // 
+            this.cmbTipoCombustible.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCombustible.FormattingEnabled = true;
             this.cmbTipoCombustible.Location = new System.Drawing.Point(186, 132);
@@ -128,7 +135,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
+            this.btnEliminar.Location = new System.Drawing.Point(188, 326);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 32;
@@ -139,7 +146,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(105, 326);
+            this.btnModificar.Location = new System.Drawing.Point(106, 326);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 31;
@@ -212,6 +219,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.ABMs
             // 
             // txtBoxNroSurtidor
             // 
+            this.txtBoxNroSurtidor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxNroSurtidor.Enabled = false;
             this.txtBoxNroSurtidor.Location = new System.Drawing.Point(186, 52);
             this.txtBoxNroSurtidor.Name = "txtBoxNroSurtidor";

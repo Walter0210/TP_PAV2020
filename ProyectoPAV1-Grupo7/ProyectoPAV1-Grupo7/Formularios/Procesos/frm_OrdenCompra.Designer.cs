@@ -271,7 +271,7 @@
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarProducto.Location = new System.Drawing.Point(41, 162);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(42, 162);
             this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(73, 24);

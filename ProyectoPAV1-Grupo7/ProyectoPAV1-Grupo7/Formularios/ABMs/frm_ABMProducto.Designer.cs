@@ -57,6 +57,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 55);
             this.label1.Name = "label1";
@@ -66,8 +67,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 81);
+            this.label2.Location = new System.Drawing.Point(24, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -75,8 +77,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 107);
+            this.label3.Location = new System.Drawing.Point(24, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 2;
@@ -84,8 +87,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 133);
+            this.label4.Location = new System.Drawing.Point(24, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 3;
@@ -93,8 +97,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 159);
+            this.label5.Location = new System.Drawing.Point(24, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 4;
@@ -102,8 +107,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 184);
+            this.label6.Location = new System.Drawing.Point(24, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 5;
@@ -111,7 +117,8 @@
             // 
             // txtBoxDescripcion
             // 
-            this.txtBoxDescripcion.Location = new System.Drawing.Point(186, 78);
+            this.txtBoxDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBoxDescripcion.Location = new System.Drawing.Point(186, 85);
             this.txtBoxDescripcion.MaxLength = 140;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
             this.txtBoxDescripcion.Size = new System.Drawing.Size(159, 20);
@@ -120,7 +127,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCerrar.Location = new System.Drawing.Point(270, 326);
+            this.btnCerrar.Location = new System.Drawing.Point(270, 324);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 7;
@@ -131,7 +138,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(105, 326);
+            this.btnModificar.Location = new System.Drawing.Point(106, 324);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 21;
@@ -142,7 +149,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.Location = new System.Drawing.Point(24, 326);
+            this.btnGuardar.Location = new System.Drawing.Point(24, 324);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 20;
@@ -226,6 +233,7 @@
             // 
             // txtBoxCodigo
             // 
+            this.txtBoxCodigo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtBoxCodigo.Enabled = false;
             this.txtBoxCodigo.Location = new System.Drawing.Point(186, 52);
             this.txtBoxCodigo.MaxLength = 6;
@@ -235,7 +243,8 @@
             // 
             // txtBoxStockActual
             // 
-            this.txtBoxStockActual.Location = new System.Drawing.Point(186, 104);
+            this.txtBoxStockActual.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBoxStockActual.Location = new System.Drawing.Point(186, 118);
             this.txtBoxStockActual.MaxLength = 9;
             this.txtBoxStockActual.Name = "txtBoxStockActual";
             this.txtBoxStockActual.Size = new System.Drawing.Size(159, 20);
@@ -243,7 +252,8 @@
             // 
             // txtBoxPrecioCompra
             // 
-            this.txtBoxPrecioCompra.Location = new System.Drawing.Point(186, 130);
+            this.txtBoxPrecioCompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBoxPrecioCompra.Location = new System.Drawing.Point(186, 151);
             this.txtBoxPrecioCompra.MaxLength = 9;
             this.txtBoxPrecioCompra.Name = "txtBoxPrecioCompra";
             this.txtBoxPrecioCompra.Size = new System.Drawing.Size(159, 20);
@@ -251,7 +261,8 @@
             // 
             // txtBoxPrecioVenta
             // 
-            this.txtBoxPrecioVenta.Location = new System.Drawing.Point(186, 156);
+            this.txtBoxPrecioVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtBoxPrecioVenta.Location = new System.Drawing.Point(186, 184);
             this.txtBoxPrecioVenta.MaxLength = 9;
             this.txtBoxPrecioVenta.Name = "txtBoxPrecioVenta";
             this.txtBoxPrecioVenta.Size = new System.Drawing.Size(159, 20);
@@ -260,7 +271,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(186, 326);
+            this.btnEliminar.Location = new System.Drawing.Point(188, 324);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 28;
@@ -270,8 +281,9 @@
             // 
             // txtFechaUltimaActualizacion
             // 
-            this.txtFechaUltimaActualizacion.Location = new System.Drawing.Point(186, 181);
-            this.txtFechaUltimaActualizacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFechaUltimaActualizacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtFechaUltimaActualizacion.Location = new System.Drawing.Point(186, 217);
+            this.txtFechaUltimaActualizacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtFechaUltimaActualizacion.Mask = "00/00/0000";
             this.txtFechaUltimaActualizacion.Name = "txtFechaUltimaActualizacion";
             this.txtFechaUltimaActualizacion.Size = new System.Drawing.Size(159, 20);
@@ -282,7 +294,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(22, 12);
+            this.lblTitulo.Location = new System.Drawing.Point(19, 12);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(109, 25);
@@ -293,7 +305,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 361);
+            this.ClientSize = new System.Drawing.Size(884, 359);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtFechaUltimaActualizacion);
             this.Controls.Add(this.btnEliminar);
