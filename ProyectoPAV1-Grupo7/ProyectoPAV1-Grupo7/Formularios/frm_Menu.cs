@@ -1,4 +1,5 @@
 ﻿using ProyectoPAV1_Grupo7.Clases;
+using ProyectoPAV1_Grupo7.Formularios.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -208,6 +209,10 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             Reportes.frm_EstadisticaOrdenesCompra frm_EstaditicaOrdenesCompra = new Reportes.frm_EstadisticaOrdenesCompra();
             frm_EstaditicaOrdenesCompra.ShowDialog();
+        private void productosMasVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_EstadisticaProductosVendidos frm_EstadisticaProductosVendidos = new frm_EstadisticaProductosVendidos();
+            frm_EstadisticaProductosVendidos.ShowDialog();
         }
 
         private void estadisticaOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)

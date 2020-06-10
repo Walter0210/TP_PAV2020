@@ -63,6 +63,7 @@
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCompraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosMasVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -199,6 +200,7 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listadoDeOrdenesDeCompraToolStripMenuItem,
             this.estadisticaDeOrdenesDeComoraToolStripMenuItem});
+            this.productosMasVendidosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -421,6 +423,12 @@
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
             this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(217, 26);
             this.ventasToolStripMenuItem1.Text = "Ventas";
+            // productosMasVendidosToolStripMenuItem
+            // 
+            this.productosMasVendidosToolStripMenuItem.Name = "productosMasVendidosToolStripMenuItem";
+            this.productosMasVendidosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.productosMasVendidosToolStripMenuItem.Text = "Productos Mas Vendidos";
+            this.productosMasVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMasVendidosToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
@@ -485,5 +493,6 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ordenesDeCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosMasVendidosToolStripMenuItem;
     }
 }
