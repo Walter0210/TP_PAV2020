@@ -33,19 +33,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btn_empleado = new System.Windows.Forms.Button();
-            this.subPanel_empleado = new System.Windows.Forms.Panel();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_nvaVenta = new System.Windows.Forms.Button();
-            this.btn_producto = new System.Windows.Forms.Button();
-            this.subPanel_producto = new System.Windows.Forms.Panel();
-            this.btn_nuevo_prod = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCombustibleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +44,20 @@
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.btn_empleado = new System.Windows.Forms.Button();
+            this.subPanel_empleado = new System.Windows.Forms.Panel();
+            this.btn_nvaVenta = new System.Windows.Forms.Button();
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_producto = new System.Windows.Forms.Button();
+            this.subPanel_producto = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_nuevo_prod = new System.Windows.Forms.Button();
+            this.panelMenuLateral = new System.Windows.Forms.Panel();
+            this.productosMasVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -89,7 +90,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -106,8 +107,90 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
             // 
+            // soporteToolStripMenuItem
+            // 
+            this.soporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estadoToolStripMenuItem,
+            this.tipoDeCombustibleToolStripMenuItem,
+            this.unidadDeMedidaToolStripMenuItem,
+            this.nivelDeEmergenciaToolStripMenuItem,
+            this.tipoDeDocumentoToolStripMenuItem});
+            this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.soporteToolStripMenuItem.Text = "Soporte";
+            // 
+            // estadoToolStripMenuItem
+            // 
+            this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
+            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.estadoToolStripMenuItem.Text = "Estado";
+            this.estadoToolStripMenuItem.Click += new System.EventHandler(this.estadoToolStripMenuItem_Click);
+            // 
+            // tipoDeCombustibleToolStripMenuItem
+            // 
+            this.tipoDeCombustibleToolStripMenuItem.Name = "tipoDeCombustibleToolStripMenuItem";
+            this.tipoDeCombustibleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.tipoDeCombustibleToolStripMenuItem.Text = "Tipo de Combustible";
+            this.tipoDeCombustibleToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCombustibleToolStripMenuItem_Click);
+            // 
+            // unidadDeMedidaToolStripMenuItem
+            // 
+            this.unidadDeMedidaToolStripMenuItem.Name = "unidadDeMedidaToolStripMenuItem";
+            this.unidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.unidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida";
+            this.unidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadDeMedidaToolStripMenuItem_Click);
+            // 
+            // nivelDeEmergenciaToolStripMenuItem
+            // 
+            this.nivelDeEmergenciaToolStripMenuItem.Name = "nivelDeEmergenciaToolStripMenuItem";
+            this.nivelDeEmergenciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.nivelDeEmergenciaToolStripMenuItem.Text = "Nivel de Emergencia";
+            this.nivelDeEmergenciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeEmergenciaToolStripMenuItem_Click);
+            // 
+            // tipoDeDocumentoToolStripMenuItem
+            // 
+            this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
+            this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
+            this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
+            // 
+            // surtidorToolStripMenuItem
+            // 
+            this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
+            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.surtidorToolStripMenuItem.Text = "Surtidor";
+            this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
+            // 
+            // productoToolStripMenuItem
+            // 
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.productoToolStripMenuItem.Text = "Producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
+            // 
+            // estaciónToolStripMenuItem
+            // 
+            this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
+            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.estaciónToolStripMenuItem.Text = "Estación";
+            this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
+            // 
+            // empleadoToolStripMenuItem
+            // 
+            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
+            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.empleadoToolStripMenuItem.Text = "Empleado";
+            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosMasVendidosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -172,6 +255,22 @@
             this.subPanel_empleado.Size = new System.Drawing.Size(200, 67);
             this.subPanel_empleado.TabIndex = 2;
             // 
+            // btn_nvaVenta
+            // 
+            this.btn_nvaVenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_nvaVenta.FlatAppearance.BorderSize = 0;
+            this.btn_nvaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nvaVenta.Location = new System.Drawing.Point(0, 32);
+            this.btn_nvaVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_nvaVenta.Name = "btn_nvaVenta";
+            this.btn_nvaVenta.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.btn_nvaVenta.Size = new System.Drawing.Size(200, 32);
+            this.btn_nvaVenta.TabIndex = 2;
+            this.btn_nvaVenta.Text = "Nueva venta";
+            this.btn_nvaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nvaVenta.UseVisualStyleBackColor = true;
+            this.btn_nvaVenta.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
             // btn_nuevo
             // 
             this.btn_nuevo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -188,22 +287,6 @@
             this.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nuevo.UseVisualStyleBackColor = true;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
-            // 
-            // btn_nvaVenta
-            // 
-            this.btn_nvaVenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_nvaVenta.FlatAppearance.BorderSize = 0;
-            this.btn_nvaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nvaVenta.Location = new System.Drawing.Point(0, 32);
-            this.btn_nvaVenta.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_nvaVenta.Name = "btn_nvaVenta";
-            this.btn_nvaVenta.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.btn_nvaVenta.Size = new System.Drawing.Size(200, 32);
-            this.btn_nvaVenta.TabIndex = 2;
-            this.btn_nvaVenta.Text = "Nueva venta";
-            this.btn_nvaVenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nvaVenta.UseVisualStyleBackColor = true;
-            this.btn_nvaVenta.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_producto
             // 
@@ -236,6 +319,22 @@
             this.subPanel_producto.Size = new System.Drawing.Size(200, 84);
             this.subPanel_producto.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 40);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(200, 42);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Consultar ordenes";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btn_nuevo_prod
             // 
             this.btn_nuevo_prod.Dock = System.Windows.Forms.DockStyle.Top;
@@ -253,22 +352,6 @@
             this.btn_nuevo_prod.UseVisualStyleBackColor = true;
             this.btn_nuevo_prod.Click += new System.EventHandler(this.btn_nuevo_prod_Click);
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Consultar ordenes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panelMenuLateral
             // 
             this.panelMenuLateral.AutoScroll = true;
@@ -285,85 +368,12 @@
             this.panelMenuLateral.Size = new System.Drawing.Size(200, 711);
             this.panelMenuLateral.TabIndex = 1;
             // 
-            // soporteToolStripMenuItem
+            // productosMasVendidosToolStripMenuItem
             // 
-            this.soporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.estadoToolStripMenuItem,
-            this.tipoDeCombustibleToolStripMenuItem,
-            this.unidadDeMedidaToolStripMenuItem,
-            this.nivelDeEmergenciaToolStripMenuItem,
-            this.tipoDeDocumentoToolStripMenuItem});
-            this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.soporteToolStripMenuItem.Text = "Soporte";
-            // 
-            // estadoToolStripMenuItem
-            // 
-            this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.estadoToolStripMenuItem.Text = "Estado";
-            this.estadoToolStripMenuItem.Click += new System.EventHandler(this.estadoToolStripMenuItem_Click);
-            // 
-            // tipoDeCombustibleToolStripMenuItem
-            // 
-            this.tipoDeCombustibleToolStripMenuItem.Name = "tipoDeCombustibleToolStripMenuItem";
-            this.tipoDeCombustibleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.tipoDeCombustibleToolStripMenuItem.Text = "Tipo de Combustible";
-            this.tipoDeCombustibleToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCombustibleToolStripMenuItem_Click);
-            // 
-            // unidadDeMedidaToolStripMenuItem
-            // 
-            this.unidadDeMedidaToolStripMenuItem.Name = "unidadDeMedidaToolStripMenuItem";
-            this.unidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.unidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida";
-            this.unidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadDeMedidaToolStripMenuItem_Click);
-            // 
-            // nivelDeEmergenciaToolStripMenuItem
-            // 
-            this.nivelDeEmergenciaToolStripMenuItem.Name = "nivelDeEmergenciaToolStripMenuItem";
-            this.nivelDeEmergenciaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.nivelDeEmergenciaToolStripMenuItem.Text = "Nivel de Emergencia";
-            this.nivelDeEmergenciaToolStripMenuItem.Click += new System.EventHandler(this.nivelDeEmergenciaToolStripMenuItem_Click);
-            // 
-            // tipoDeDocumentoToolStripMenuItem
-            // 
-            this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
-            this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
-            this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
-            // 
-            // surtidorToolStripMenuItem
-            // 
-            this.surtidorToolStripMenuItem.Name = "surtidorToolStripMenuItem";
-            this.surtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.surtidorToolStripMenuItem.Text = "Surtidor";
-            this.surtidorToolStripMenuItem.Click += new System.EventHandler(this.surtidorToolStripMenuItem_Click);
-            // 
-            // productoToolStripMenuItem
-            // 
-            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.productoToolStripMenuItem.Text = "Producto";
-            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
-            // 
-            // estaciónToolStripMenuItem
-            // 
-            this.estaciónToolStripMenuItem.Name = "estaciónToolStripMenuItem";
-            this.estaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.estaciónToolStripMenuItem.Text = "Estación";
-            this.estaciónToolStripMenuItem.Click += new System.EventHandler(this.estaciónToolStripMenuItem_Click);
-            // 
-            // empleadoToolStripMenuItem
-            // 
-            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empleadoToolStripMenuItem.Text = "Empleado";
-            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
+            this.productosMasVendidosToolStripMenuItem.Name = "productosMasVendidosToolStripMenuItem";
+            this.productosMasVendidosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.productosMasVendidosToolStripMenuItem.Text = "Productos Mas Vendidos";
+            this.productosMasVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMasVendidosToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
@@ -422,5 +432,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_nuevo_prod;
         private System.Windows.Forms.Panel panelMenuLateral;
+        private System.Windows.Forms.ToolStripMenuItem productosMasVendidosToolStripMenuItem;
     }
 }

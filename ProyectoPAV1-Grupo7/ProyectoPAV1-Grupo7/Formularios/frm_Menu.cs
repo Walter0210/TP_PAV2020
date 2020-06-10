@@ -1,4 +1,5 @@
 ﻿using ProyectoPAV1_Grupo7.Clases;
+using ProyectoPAV1_Grupo7.Formularios.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -191,6 +192,12 @@ namespace ProyectoPAV1_Grupo7.Formularios
         {
             ABMs.frm_ABMSoporte frm_ABMTipoDocumento = new ABMs.frm_ABMSoporte("TipoDocumento");
             frm_ABMTipoDocumento.ShowDialog();
+        }
+
+        private void productosMasVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_EstadisticaProductosVendidos frm_EstadisticaProductosVendidos = new frm_EstadisticaProductosVendidos();
+            frm_EstadisticaProductosVendidos.ShowDialog();
         }
     }
 }
