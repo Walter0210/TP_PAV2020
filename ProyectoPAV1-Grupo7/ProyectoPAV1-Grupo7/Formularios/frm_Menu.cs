@@ -124,11 +124,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             openChildForm(new Procesos.frm_Compra());
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            //quien sabe
-        }
-
         private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
         {
 
