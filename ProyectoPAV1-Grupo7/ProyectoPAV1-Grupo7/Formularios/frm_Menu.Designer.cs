@@ -45,6 +45,7 @@
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosMasVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -57,7 +58,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btn_nuevo_prod = new System.Windows.Forms.Button();
             this.panelMenuLateral = new System.Windows.Forms.Panel();
-            this.productosMasVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticaOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -190,10 +192,19 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosMasVendidosToolStripMenuItem});
+            this.productosMasVendidosToolStripMenuItem,
+            this.estadisticaOrdenDeCompraToolStripMenuItem,
+            this.listadoOrdenDeCompraToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // productosMasVendidosToolStripMenuItem
+            // 
+            this.productosMasVendidosToolStripMenuItem.Name = "productosMasVendidosToolStripMenuItem";
+            this.productosMasVendidosToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.productosMasVendidosToolStripMenuItem.Text = "Productos Mas Vendidos";
+            this.productosMasVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMasVendidosToolStripMenuItem_Click);
             // 
             // panelChildForm
             // 
@@ -368,12 +379,19 @@
             this.panelMenuLateral.Size = new System.Drawing.Size(200, 711);
             this.panelMenuLateral.TabIndex = 1;
             // 
-            // productosMasVendidosToolStripMenuItem
+            // estadisticaOrdenDeCompraToolStripMenuItem
             // 
-            this.productosMasVendidosToolStripMenuItem.Name = "productosMasVendidosToolStripMenuItem";
-            this.productosMasVendidosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.productosMasVendidosToolStripMenuItem.Text = "Productos Mas Vendidos";
-            this.productosMasVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMasVendidosToolStripMenuItem_Click);
+            this.estadisticaOrdenDeCompraToolStripMenuItem.Name = "estadisticaOrdenDeCompraToolStripMenuItem";
+            this.estadisticaOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.estadisticaOrdenDeCompraToolStripMenuItem.Text = "Estadistica Orden de Compra";
+            this.estadisticaOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.estadisticaOrdenDeCompraToolStripMenuItem_Click);
+            // 
+            // listadoOrdenDeCompraToolStripMenuItem
+            // 
+            this.listadoOrdenDeCompraToolStripMenuItem.Name = "listadoOrdenDeCompraToolStripMenuItem";
+            this.listadoOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.listadoOrdenDeCompraToolStripMenuItem.Text = "Listado Orden de Compra";
+            this.listadoOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.listadoOrdenDeCompraToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
@@ -433,5 +451,7 @@
         private System.Windows.Forms.Button btn_nuevo_prod;
         private System.Windows.Forms.Panel panelMenuLateral;
         private System.Windows.Forms.ToolStripMenuItem productosMasVendidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticaOrdenDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoOrdenDeCompraToolStripMenuItem;
     }
 }
