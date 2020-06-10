@@ -93,23 +93,10 @@
     <Compile Include="Clases\TipoCombustible.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\UnidadMedida.cs" />
-    <Compile Include="ConjuntosDeDatos\DatosEstadisticaProducto.cs">
-      <DependentUpon>DatosEstadisticaProducto.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ConjuntosDeDatos\DatosEstadisticaProducto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatosEstadisticaProducto.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConjuntosDeDatos\DatosEstadistica.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetTablasBD.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -188,12 +175,6 @@
     <Compile Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.Designer.cs">
       <DependentUpon>frm_EstadisticaOrdenesCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.Designer.cs">
-      <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Reportes\frm_ListadoOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,12 +217,8 @@
     <EmbeddedResource Include="Formularios\Procesos\frm_ConsultaOrdenCompra.resx">
       <DependentUpon>frm_ConsultaOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\EstadisticaProductosVendidos.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.resx">
       <DependentUpon>frm_EstadisticaOrdenesCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.resx">
-      <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoOrdenesCompra.resx">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
@@ -258,17 +235,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ConjuntosDeDatos\DatosEstadisticaProducto.xsc">
-      <DependentUpon>DatosEstadisticaProducto.xsd</DependentUpon>
-    </None>
-    <None Include="ConjuntosDeDatos\DatosEstadisticaProducto.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatosEstadisticaProducto.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ConjuntosDeDatos\DatosEstadisticaProducto.xss">
-      <DependentUpon>DatosEstadisticaProducto.xsd</DependentUpon>
-    </None>
     <None Include="ConjuntosDeDatos\DatosEstadistica.xsc">
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </None>
@@ -279,17 +245,6 @@
     </None>
     <None Include="ConjuntosDeDatos\DatosEstadistica.xss">
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="DataSetTablasBD.xsc">
       <DependentUpon>DataSetTablasBD.xsd</DependentUpon>
