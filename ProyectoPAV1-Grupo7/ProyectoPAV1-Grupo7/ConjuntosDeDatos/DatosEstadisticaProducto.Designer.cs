@@ -24,7 +24,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private TablaProductosMasVendidosDataTable tableTablaProductosMasVendidos;
+        private TablaProductosVendidosDataTable tableTablaProductosVendidos;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["TablaProductosMasVendidos"] != null)) {
-                    base.Tables.Add(new TablaProductosMasVendidosDataTable(ds.Tables["TablaProductosMasVendidos"]));
+                if ((ds.Tables["TablaProductosVendidos"] != null)) {
+                    base.Tables.Add(new TablaProductosVendidosDataTable(ds.Tables["TablaProductosVendidos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TablaProductosMasVendidosDataTable TablaProductosMasVendidos {
+        public TablaProductosVendidosDataTable TablaProductosVendidos {
             get {
-                return this.tableTablaProductosMasVendidos;
+                return this.tableTablaProductosVendidos;
             }
         }
         
@@ -152,8 +152,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["TablaProductosMasVendidos"] != null)) {
-                    base.Tables.Add(new TablaProductosMasVendidosDataTable(ds.Tables["TablaProductosMasVendidos"]));
+                if ((ds.Tables["TablaProductosVendidos"] != null)) {
+                    base.Tables.Add(new TablaProductosVendidosDataTable(ds.Tables["TablaProductosVendidos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTablaProductosMasVendidos = ((TablaProductosMasVendidosDataTable)(base.Tables["TablaProductosMasVendidos"]));
+            this.tableTablaProductosVendidos = ((TablaProductosVendidosDataTable)(base.Tables["TablaProductosVendidos"]));
             if ((initTable == true)) {
-                if ((this.tableTablaProductosMasVendidos != null)) {
-                    this.tableTablaProductosMasVendidos.InitVars();
+                if ((this.tableTablaProductosVendidos != null)) {
+                    this.tableTablaProductosVendidos.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTablaProductosMasVendidos = new TablaProductosMasVendidosDataTable();
-            base.Tables.Add(this.tableTablaProductosMasVendidos);
+            this.tableTablaProductosVendidos = new TablaProductosVendidosDataTable();
+            base.Tables.Add(this.tableTablaProductosVendidos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeTablaProductosMasVendidos() {
+        private bool ShouldSerializeTablaProductosVendidos() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void TablaProductosMasVendidosRowChangeEventHandler(object sender, TablaProductosMasVendidosRowChangeEvent e);
+        public delegate void TablaProductosVendidosRowChangeEventHandler(object sender, TablaProductosVendidosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TablaProductosMasVendidosDataTable : global::System.Data.TypedTableBase<TablaProductosMasVendidosRow> {
+        public partial class TablaProductosVendidosDataTable : global::System.Data.TypedTableBase<TablaProductosVendidosRow> {
             
             private global::System.Data.DataColumn columnproducto;
             
@@ -285,8 +285,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaProductosMasVendidosDataTable() {
-                this.TableName = "TablaProductosMasVendidos";
+            public TablaProductosVendidosDataTable() {
+                this.TableName = "TablaProductosVendidos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +294,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal TablaProductosMasVendidosDataTable(global::System.Data.DataTable table) {
+            internal TablaProductosVendidosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,7 +311,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected TablaProductosMasVendidosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TablaProductosVendidosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -343,46 +343,46 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaProductosMasVendidosRow this[int index] {
+            public TablaProductosVendidosRow this[int index] {
                 get {
-                    return ((TablaProductosMasVendidosRow)(this.Rows[index]));
+                    return ((TablaProductosVendidosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TablaProductosMasVendidosRowChangeEventHandler TablaProductosMasVendidosRowChanging;
+            public event TablaProductosVendidosRowChangeEventHandler TablaProductosVendidosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TablaProductosMasVendidosRowChangeEventHandler TablaProductosMasVendidosRowChanged;
+            public event TablaProductosVendidosRowChangeEventHandler TablaProductosVendidosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TablaProductosMasVendidosRowChangeEventHandler TablaProductosMasVendidosRowDeleting;
+            public event TablaProductosVendidosRowChangeEventHandler TablaProductosVendidosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event TablaProductosMasVendidosRowChangeEventHandler TablaProductosMasVendidosRowDeleted;
+            public event TablaProductosVendidosRowChangeEventHandler TablaProductosVendidosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddTablaProductosMasVendidosRow(TablaProductosMasVendidosRow row) {
+            public void AddTablaProductosVendidosRow(TablaProductosVendidosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaProductosMasVendidosRow AddTablaProductosMasVendidosRow(string producto, int cantidad) {
-                TablaProductosMasVendidosRow rowTablaProductosMasVendidosRow = ((TablaProductosMasVendidosRow)(this.NewRow()));
+            public TablaProductosVendidosRow AddTablaProductosVendidosRow(string producto, int cantidad) {
+                TablaProductosVendidosRow rowTablaProductosVendidosRow = ((TablaProductosVendidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         producto,
                         cantidad};
-                rowTablaProductosMasVendidosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTablaProductosMasVendidosRow);
-                return rowTablaProductosMasVendidosRow;
+                rowTablaProductosVendidosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTablaProductosVendidosRow);
+                return rowTablaProductosVendidosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TablaProductosMasVendidosDataTable cln = ((TablaProductosMasVendidosDataTable)(base.Clone()));
+                TablaProductosVendidosDataTable cln = ((TablaProductosVendidosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,7 +390,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TablaProductosMasVendidosDataTable();
+                return new TablaProductosVendidosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -411,28 +411,28 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaProductosMasVendidosRow NewTablaProductosMasVendidosRow() {
-                return ((TablaProductosMasVendidosRow)(this.NewRow()));
+            public TablaProductosVendidosRow NewTablaProductosVendidosRow() {
+                return ((TablaProductosVendidosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TablaProductosMasVendidosRow(builder);
+                return new TablaProductosVendidosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TablaProductosMasVendidosRow);
+                return typeof(TablaProductosVendidosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TablaProductosMasVendidosRowChanged != null)) {
-                    this.TablaProductosMasVendidosRowChanged(this, new TablaProductosMasVendidosRowChangeEvent(((TablaProductosMasVendidosRow)(e.Row)), e.Action));
+                if ((this.TablaProductosVendidosRowChanged != null)) {
+                    this.TablaProductosVendidosRowChanged(this, new TablaProductosVendidosRowChangeEvent(((TablaProductosVendidosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -440,8 +440,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TablaProductosMasVendidosRowChanging != null)) {
-                    this.TablaProductosMasVendidosRowChanging(this, new TablaProductosMasVendidosRowChangeEvent(((TablaProductosMasVendidosRow)(e.Row)), e.Action));
+                if ((this.TablaProductosVendidosRowChanging != null)) {
+                    this.TablaProductosVendidosRowChanging(this, new TablaProductosVendidosRowChangeEvent(((TablaProductosVendidosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -449,8 +449,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TablaProductosMasVendidosRowDeleted != null)) {
-                    this.TablaProductosMasVendidosRowDeleted(this, new TablaProductosMasVendidosRowChangeEvent(((TablaProductosMasVendidosRow)(e.Row)), e.Action));
+                if ((this.TablaProductosVendidosRowDeleted != null)) {
+                    this.TablaProductosVendidosRowDeleted(this, new TablaProductosVendidosRowChangeEvent(((TablaProductosVendidosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -458,14 +458,14 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TablaProductosMasVendidosRowDeleting != null)) {
-                    this.TablaProductosMasVendidosRowDeleting(this, new TablaProductosMasVendidosRowChangeEvent(((TablaProductosMasVendidosRow)(e.Row)), e.Action));
+                if ((this.TablaProductosVendidosRowDeleting != null)) {
+                    this.TablaProductosVendidosRowDeleting(this, new TablaProductosVendidosRowChangeEvent(((TablaProductosVendidosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveTablaProductosMasVendidosRow(TablaProductosMasVendidosRow row) {
+            public void RemoveTablaProductosVendidosRow(TablaProductosVendidosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -492,7 +492,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TablaProductosMasVendidosDataTable";
+                attribute2.FixedValue = "TablaProductosVendidosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -536,15 +536,15 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TablaProductosMasVendidosRow : global::System.Data.DataRow {
+        public partial class TablaProductosVendidosRow : global::System.Data.DataRow {
             
-            private TablaProductosMasVendidosDataTable tableTablaProductosMasVendidos;
+            private TablaProductosVendidosDataTable tableTablaProductosVendidos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal TablaProductosMasVendidosRow(global::System.Data.DataRowBuilder rb) : 
+            internal TablaProductosVendidosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTablaProductosMasVendidos = ((TablaProductosMasVendidosDataTable)(this.Table));
+                this.tableTablaProductosVendidos = ((TablaProductosVendidosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -552,14 +552,14 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             public string producto {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaProductosMasVendidos.productoColumn]));
+                        return ((string)(this[this.tableTablaProductosVendidos.productoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'producto\' in table \'TablaProductosMasVendidos\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'producto\' in table \'TablaProductosVendidos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaProductosMasVendidos.productoColumn] = value;
+                    this[this.tableTablaProductosVendidos.productoColumn] = value;
                 }
             }
             
@@ -568,39 +568,39 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             public int cantidad {
                 get {
                     try {
-                        return ((int)(this[this.tableTablaProductosMasVendidos.cantidadColumn]));
+                        return ((int)(this[this.tableTablaProductosVendidos.cantidadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'TablaProductosMasVendidos\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'TablaProductosVendidos\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaProductosMasVendidos.cantidadColumn] = value;
+                    this[this.tableTablaProductosVendidos.cantidadColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsproductoNull() {
-                return this.IsNull(this.tableTablaProductosMasVendidos.productoColumn);
+                return this.IsNull(this.tableTablaProductosVendidos.productoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetproductoNull() {
-                this[this.tableTablaProductosMasVendidos.productoColumn] = global::System.Convert.DBNull;
+                this[this.tableTablaProductosVendidos.productoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IscantidadNull() {
-                return this.IsNull(this.tableTablaProductosMasVendidos.cantidadColumn);
+                return this.IsNull(this.tableTablaProductosVendidos.cantidadColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcantidadNull() {
-                this[this.tableTablaProductosMasVendidos.cantidadColumn] = global::System.Convert.DBNull;
+                this[this.tableTablaProductosVendidos.cantidadColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -608,22 +608,22 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class TablaProductosMasVendidosRowChangeEvent : global::System.EventArgs {
+        public class TablaProductosVendidosRowChangeEvent : global::System.EventArgs {
             
-            private TablaProductosMasVendidosRow eventRow;
+            private TablaProductosVendidosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaProductosMasVendidosRowChangeEvent(TablaProductosMasVendidosRow row, global::System.Data.DataRowAction action) {
+            public TablaProductosVendidosRowChangeEvent(TablaProductosVendidosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaProductosMasVendidosRow Row {
+            public TablaProductosVendidosRow Row {
                 get {
                     return this.eventRow;
                 }

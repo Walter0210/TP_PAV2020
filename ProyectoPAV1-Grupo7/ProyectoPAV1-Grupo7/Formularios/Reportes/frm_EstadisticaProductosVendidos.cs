@@ -34,7 +34,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                                    + " FROM TicketXProducto TP JOIN Producto P on TP.idProducto = P.idProducto"
                                     + " GROUP BY P.descripcion";
                 DataTable tablaProductosMasVendidos = conexion.ejecutar_consulta(consulta);
-                ReportDataSource ds = new ReportDataSource("DatosProductosMasVendidos", tablaProductosMasVendidos);
+                ReportDataSource ds = new ReportDataSource("DatosProductosVendidos", tablaProductosMasVendidos);
                 reportViewerProductos.LocalReport.DataSources.Clear();
                 reportViewerProductos.LocalReport.DataSources.Add(ds);
                 reportViewerProductos.LocalReport.Refresh();
