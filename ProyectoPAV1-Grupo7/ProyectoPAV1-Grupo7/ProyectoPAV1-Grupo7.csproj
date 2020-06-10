@@ -155,7 +155,9 @@
     <Compile Include="Formularios\frm_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frm_Menu.Designer.cs" />
+    <Compile Include="Formularios\frm_Menu.Designer.cs">
+      <DependentUpon>frm_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Procesos\frm_ConsultaCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,7 +221,9 @@
     <EmbeddedResource Include="Formularios\ABMs\frm_ABMEmpleado.resx">
       <DependentUpon>frm_ABMEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frm_Menu.resx" />
+    <EmbeddedResource Include="Formularios\frm_Menu.resx">
+      <DependentUpon>frm_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Procesos\frm_Compra.resx">
       <DependentUpon>frm_Compra.cs</DependentUpon>
     </EmbeddedResource>
