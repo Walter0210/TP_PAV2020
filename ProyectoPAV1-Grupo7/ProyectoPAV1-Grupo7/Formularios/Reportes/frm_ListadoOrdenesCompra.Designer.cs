@@ -38,22 +38,24 @@
             // reportViewer1
             // 
             this.reportViewer1.AutoScroll = true;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-1, 84);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 51);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(978, 996);
+            this.reportViewer1.Size = new System.Drawing.Size(734, 810);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(638, 32);
-            this.btnCalcular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCalcular.Location = new System.Drawing.Point(478, 26);
+            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(95, 26);
+            this.btnCalcular.Size = new System.Drawing.Size(71, 21);
             this.btnCalcular.TabIndex = 1;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -63,40 +65,43 @@
             // 
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(394, 32);
-            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSolicitante.Location = new System.Drawing.Point(296, 26);
+            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSolicitante.Name = "cmbSolicitante";
-            this.cmbSolicitante.Size = new System.Drawing.Size(220, 24);
+            this.cmbSolicitante.Size = new System.Drawing.Size(166, 21);
             this.cmbSolicitante.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Location = new System.Drawing.Point(293, 35);
+            this.label1.Location = new System.Drawing.Point(220, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Solicitante:";
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(-1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 24);
+            this.panel1.Size = new System.Drawing.Size(734, 20);
             this.panel1.TabIndex = 4;
             // 
             // frm_ListadoOrdenesCompra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 1055);
+            this.ClientSize = new System.Drawing.Size(734, 861);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbSolicitante);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.reportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(750, 900);
             this.Name = "frm_ListadoOrdenesCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Ordenes de Compra";
