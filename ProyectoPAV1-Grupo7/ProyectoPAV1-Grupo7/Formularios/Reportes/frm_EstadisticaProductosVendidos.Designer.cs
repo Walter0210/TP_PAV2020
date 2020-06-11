@@ -37,10 +37,9 @@
             this.reportViewerProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewerProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.EstadisticaProductosVendidos.rdlc";
             this.reportViewerProductos.Location = new System.Drawing.Point(0, 0);
-            this.reportViewerProductos.MaximumSize = new System.Drawing.Size(1600, 800);
             this.reportViewerProductos.Name = "reportViewerProductos";
             this.reportViewerProductos.ServerReport.BearerToken = null;
-            this.reportViewerProductos.Size = new System.Drawing.Size(1134, 561);
+            this.reportViewerProductos.Size = new System.Drawing.Size(1268, 725);
             this.reportViewerProductos.TabIndex = 0;
             this.reportViewerProductos.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -49,7 +48,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1134, 561);
+            this.ClientSize = new System.Drawing.Size(1268, 725);
             this.Controls.Add(this.reportViewerProductos);
             this.Name = "frm_EstadisticaProductosVendidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

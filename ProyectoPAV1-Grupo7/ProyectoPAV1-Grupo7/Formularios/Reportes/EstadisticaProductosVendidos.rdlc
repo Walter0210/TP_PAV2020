@@ -402,8 +402,8 @@
             <DataSetName>DatosProductosVendidos</DataSetName>
             <Top>0.905in</Top>
             <Left>0.29042in</Left>
-            <Height>3.72917in</Height>
-            <Width>5.72in</Width>
+            <Height>4.65625in</Height>
+            <Width>11.66661in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -793,10 +793,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <Top>0.905in</Top>
-            <Left>6.4675in</Left>
-            <Height>3.72917in</Height>
-            <Width>4.5625in</Width>
+            <Top>5.80409in</Top>
+            <Left>0.29042in</Left>
+            <Height>9.26302in</Height>
+            <Width>11.66661in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -808,7 +808,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>5.87375in</Height>
+        <Height>15.87375in</Height>
         <Style />
       </Body>
       <Width>12.96875in</Width>
