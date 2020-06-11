@@ -492,7 +492,6 @@
             this.Controls.Add(this.grpDetalle);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.dgrTicketxProducto);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frm_Compra";
             this.Text = "frm_Compra";

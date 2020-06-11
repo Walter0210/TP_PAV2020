@@ -44,28 +44,32 @@
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productosMasVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.btn_empleado = new System.Windows.Forms.Button();
             this.subPanel_empleado = new System.Windows.Forms.Panel();
             this.btn_nvaVenta = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_producto = new System.Windows.Forms.Button();
             this.subPanel_producto = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_nuevo_prod = new System.Windows.Forms.Button();
             this.panelMenuLateral = new System.Windows.Forms.Panel();
-            this.estadisticaOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDeCompraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_producto = new System.Windows.Forms.Button();
+            this.btn_empleado = new System.Windows.Forms.Button();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.subPanel_empleado.SuspendLayout();
             this.subPanel_producto.SuspendLayout();
             this.panelMenuLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -189,25 +193,11 @@
             this.empleadoToolStripMenuItem.Text = "Empleado";
             this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
             // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productosMasVendidosToolStripMenuItem,
-            this.estadisticaOrdenDeCompraToolStripMenuItem,
-            this.listadoOrdenDeCompraToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // productosMasVendidosToolStripMenuItem
-            // 
-            this.productosMasVendidosToolStripMenuItem.Name = "productosMasVendidosToolStripMenuItem";
-            this.productosMasVendidosToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.productosMasVendidosToolStripMenuItem.Text = "Productos Mas Vendidos";
-            this.productosMasVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMasVendidosToolStripMenuItem_Click);
-            // 
             // panelChildForm
             // 
+            this.panelChildForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChildForm.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panelChildForm.Location = new System.Drawing.Point(207, 24);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(2);
@@ -224,35 +214,6 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(200, 130);
             this.panelLogo.TabIndex = 2;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.BackgroundImage")));
-            this.pictureBoxLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(0, -38);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(200, 174);
-            this.pictureBoxLogo.TabIndex = 4;
-            this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
-            // 
-            // btn_empleado
-            // 
-            this.btn_empleado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_empleado.FlatAppearance.BorderSize = 0;
-            this.btn_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_empleado.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_empleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_empleado.Image")));
-            this.btn_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_empleado.Location = new System.Drawing.Point(0, 130);
-            this.btn_empleado.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_empleado.Name = "btn_empleado";
-            this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_empleado.Size = new System.Drawing.Size(200, 37);
-            this.btn_empleado.TabIndex = 2;
-            this.btn_empleado.Text = "Venta";
-            this.btn_empleado.UseVisualStyleBackColor = true;
-            this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
             // 
             // subPanel_empleado
             // 
@@ -298,25 +259,6 @@
             this.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nuevo.UseVisualStyleBackColor = true;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
-            // 
-            // btn_producto
-            // 
-            this.btn_producto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_producto.FlatAppearance.BorderSize = 0;
-            this.btn_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_producto.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_producto.Image = ((System.Drawing.Image)(resources.GetObject("btn_producto.Image")));
-            this.btn_producto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_producto.Location = new System.Drawing.Point(0, 234);
-            this.btn_producto.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_producto.Name = "btn_producto";
-            this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_producto.Size = new System.Drawing.Size(200, 37);
-            this.btn_producto.TabIndex = 2;
-            this.btn_producto.Text = "Orden de Compra";
-            this.btn_producto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_producto.UseVisualStyleBackColor = true;
-            this.btn_producto.Click += new System.EventHandler(this.btn_producto_Click);
             // 
             // subPanel_producto
             // 
@@ -379,19 +321,115 @@
             this.panelMenuLateral.Size = new System.Drawing.Size(200, 711);
             this.panelMenuLateral.TabIndex = 1;
             // 
-            // estadisticaOrdenDeCompraToolStripMenuItem
+            // reportesToolStripMenuItem
             // 
-            this.estadisticaOrdenDeCompraToolStripMenuItem.Name = "estadisticaOrdenDeCompraToolStripMenuItem";
-            this.estadisticaOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.estadisticaOrdenDeCompraToolStripMenuItem.Text = "Estadistica Orden de Compra";
-            this.estadisticaOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.estadisticaOrdenDeCompraToolStripMenuItem_Click);
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estadisticasToolStripMenuItem,
+            this.listadosToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // listadoOrdenDeCompraToolStripMenuItem
+            // estadisticasToolStripMenuItem
             // 
-            this.listadoOrdenDeCompraToolStripMenuItem.Name = "listadoOrdenDeCompraToolStripMenuItem";
-            this.listadoOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.listadoOrdenDeCompraToolStripMenuItem.Text = "Listado Orden de Compra";
-            this.listadoOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.listadoOrdenDeCompraToolStripMenuItem_Click);
+            this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenesDeCompraToolStripMenuItem1,
+            this.ventasToolStripMenuItem1,
+            this.productosToolStripMenuItem});
+            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            // 
+            // listadosToolStripMenuItem
+            // 
+            this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenesDeCompraToolStripMenuItem,
+            this.ventasToolStripMenuItem});
+            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadosToolStripMenuItem.Text = "Listados";
+            // 
+            // ordenesDeCompraToolStripMenuItem
+            // 
+            this.ordenesDeCompraToolStripMenuItem.Name = "ordenesDeCompraToolStripMenuItem";
+            this.ordenesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.ordenesDeCompraToolStripMenuItem.Text = "Ordenes de compra";
+            this.ordenesDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenesDeCompraToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // ordenesDeCompraToolStripMenuItem1
+            // 
+            this.ordenesDeCompraToolStripMenuItem1.Name = "ordenesDeCompraToolStripMenuItem1";
+            this.ordenesDeCompraToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ordenesDeCompraToolStripMenuItem1.Text = "Ordenes de compra";
+            this.ordenesDeCompraToolStripMenuItem1.Click += new System.EventHandler(this.ordenesDeCompraToolStripMenuItem1_Click);
+            // 
+            // ventasToolStripMenuItem1
+            // 
+            this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem1.Text = "Ventas";
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // btn_producto
+            // 
+            this.btn_producto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_producto.FlatAppearance.BorderSize = 0;
+            this.btn_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_producto.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_producto.Image = ((System.Drawing.Image)(resources.GetObject("btn_producto.Image")));
+            this.btn_producto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_producto.Location = new System.Drawing.Point(0, 234);
+            this.btn_producto.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_producto.Name = "btn_producto";
+            this.btn_producto.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btn_producto.Size = new System.Drawing.Size(200, 37);
+            this.btn_producto.TabIndex = 2;
+            this.btn_producto.Text = "Orden de Compra";
+            this.btn_producto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_producto.UseVisualStyleBackColor = true;
+            this.btn_producto.Click += new System.EventHandler(this.btn_producto_Click);
+            // 
+            // btn_empleado
+            // 
+            this.btn_empleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_empleado.FlatAppearance.BorderSize = 0;
+            this.btn_empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empleado.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empleado.Image = ((System.Drawing.Image)(resources.GetObject("btn_empleado.Image")));
+            this.btn_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_empleado.Location = new System.Drawing.Point(0, 130);
+            this.btn_empleado.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_empleado.Name = "btn_empleado";
+            this.btn_empleado.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btn_empleado.Size = new System.Drawing.Size(200, 37);
+            this.btn_empleado.TabIndex = 2;
+            this.btn_empleado.Text = "Venta";
+            this.btn_empleado.UseVisualStyleBackColor = true;
+            this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.BackgroundImage")));
+            this.pictureBoxLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, -38);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(200, 174);
+            this.pictureBoxLogo.TabIndex = 4;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // frm_Menu
             // 
@@ -412,10 +450,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.subPanel_empleado.ResumeLayout(false);
             this.subPanel_producto.ResumeLayout(false);
             this.panelMenuLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,7 +464,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeCombustibleToolStripMenuItem;
@@ -450,8 +487,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_nuevo_prod;
         private System.Windows.Forms.Panel panelMenuLateral;
-        private System.Windows.Forms.ToolStripMenuItem productosMasVendidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadisticaOrdenDeCompraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoOrdenDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDeCompraToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
     }
 }
