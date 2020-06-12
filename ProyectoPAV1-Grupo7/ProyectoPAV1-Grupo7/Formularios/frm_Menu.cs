@@ -22,11 +22,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             openChildForm(new Procesos.frm_Compra());
         }
 
-        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frm_Menu_Load(object sender, EventArgs e)
         {
             subPanel_empleado.Visible = false;
@@ -64,12 +59,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             hideSubMenu();
         }
 
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            //codigo
-            hideSubMenu();
-        }
-
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             openChildForm(new Procesos.frm_Compra());
@@ -94,12 +83,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             hideSubMenu();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //codigo
-            hideSubMenu();
-        }
-
         private Form activeForm = null;
 
         public void openChildForm(Form childForm)
@@ -117,8 +100,6 @@ namespace ProyectoPAV1_Grupo7.Formularios
             childForm.BringToFront();
             childForm.Show();
         }
-        //            Formularios.ABMs.frm_ABMSurtidor frm_ABMSurtidor = new ABMs.frm_ABMSurtidor();
-        //frm_ABMSurtidor.ShowDialog();
 
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
@@ -189,28 +170,28 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_ABMTipoDocumento.ShowDialog();
         }
 
-        private void productosMasVendidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_EstadisticaProductosVendidos frm_EstadisticaProductosVendidos = new frm_EstadisticaProductosVendidos();
-            frm_EstadisticaProductosVendidos.ShowDialog();
-        }
-
-        private void estadisticaOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_EstadisticaOrdenesCompra frm_EstadisticaOrdenesCompra = new frm_EstadisticaOrdenesCompra();
-            frm_EstadisticaOrdenesCompra.ShowDialog();
-        }
-
-        private void listadoOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_ListadoOrdenesCompra frm_ListadoOrdenesCompra = new frm_ListadoOrdenesCompra();
             frm_ListadoOrdenesCompra.ShowDialog();
         }
 
-        private void listadoTicketsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ListadoTickets frm_ListadoTickets = new frm_ListadoTickets();
-            frm_ListadoTickets.ShowDialog();
+            Formularios.Reportes.frm_ListadoVentaProductos frm_ListadoVentas = new Formularios.Reportes.frm_ListadoVentaProductos();
+            frm_ListadoVentas.ShowDialog();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_EstadisticaProductosVendidos frm_EstadisticaProductosVendidos = new frm_EstadisticaProductosVendidos();
+            frm_EstadisticaProductosVendidos.ShowDialog();
+        }
+
+        private void ordenesDeCompraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_EstadisticaOrdenesCompra frm_EstadisticaOrdenesCompra = new frm_EstadisticaOrdenesCompra();
+            frm_EstadisticaOrdenesCompra.ShowDialog();
         }
     }
 }

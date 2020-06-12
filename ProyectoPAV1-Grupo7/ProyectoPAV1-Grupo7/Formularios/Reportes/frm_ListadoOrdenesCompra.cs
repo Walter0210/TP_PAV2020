@@ -17,6 +17,20 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         public frm_ListadoOrdenesCompra()
         {
             InitializeComponent();
+            cargarComboSolicitante();
+            cargarComboResponsable();
+        }
+
+        private void cargarComboResponsable()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT  E.nombre + ' ' + E.apellido as 'ApeNom', E.legajo FROM Empleado E";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            cmbResponsable.DataSource = tabla;
+            cmbResponsable.DisplayMember = "ApeNom";
+            cmbResponsable.ValueMember = "legajo";
+            cmbResponsable.SelectedIndex = -1;
         }
 
         private void frm_ListadoOrdenesCompra_Load(object sender, EventArgs e)
@@ -27,7 +41,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            cargarComboSolicitante();
+            
             /*DataTable table = new DataTable();
             table = frm_ConsultaOrdenCompra.ObtenerListadoOrdenesCompra();
 
@@ -53,7 +67,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (cmbSolicitante.SelectedIndex != -1)
+            if (cmbSolicitante.SelectedIndex != -1 && cmbResponsable.SelectedIndex != -1 && dtpDesde.Value != dtpHasta.Value)
             {
                 int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
                 
@@ -70,7 +84,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una Estacion Solicitante");
+                MessageBox.Show("Debe seleccionar por lo menos un filtro!");
             }
         }
 
