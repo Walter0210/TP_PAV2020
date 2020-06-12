@@ -178,8 +178,8 @@ namespace ProyectoPAV1_Grupo7.Formularios
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Formularios.Reportes.frm_ListadoVentaProductos frm_ListadoVentas = new Formularios.Reportes.frm_ListadoVentaProductos();
-            //frm_ListadoVentas.ShowDialog();
+            Formularios.Reportes.frm_ListadoVentaProductos frm_ListadoVentas = new Formularios.Reportes.frm_ListadoVentaProductos();
+            frm_ListadoVentas.ShowDialog();
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
