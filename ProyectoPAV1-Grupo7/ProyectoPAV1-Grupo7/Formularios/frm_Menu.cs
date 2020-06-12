@@ -206,5 +206,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_ListadoOrdenesCompra frm_ListadoOrdenesCompra = new frm_ListadoOrdenesCompra();
             frm_ListadoOrdenesCompra.ShowDialog();
         }
+
+        private void listadoTicketsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ListadoTickets frm_ListadoTickets = new frm_ListadoTickets();
+            frm_ListadoTickets.ShowDialog();
+        }
     }
 }

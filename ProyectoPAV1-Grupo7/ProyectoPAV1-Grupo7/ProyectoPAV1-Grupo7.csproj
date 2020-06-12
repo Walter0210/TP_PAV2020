@@ -200,6 +200,12 @@
     <Compile Include="Formularios\Reportes\frm_ListadoOrdenesCompra.Designer.cs">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\frm_ListadoTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_ListadoTickets.Designer.cs">
+      <DependentUpon>frm_ListadoTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -246,8 +252,12 @@
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoOrdenesCompra.resx">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoTickets.resx">
+      <DependentUpon>frm_ListadoTickets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\ListadoTickets.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
