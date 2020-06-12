@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPAV1_Grupo7.Formularios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ProyectoPAV1_Grupo7
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(new frm_Menu());
         }
     }
 }

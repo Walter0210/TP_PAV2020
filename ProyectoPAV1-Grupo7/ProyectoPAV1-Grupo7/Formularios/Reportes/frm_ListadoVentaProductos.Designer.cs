@@ -1,6 +1,6 @@
 ﻿namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
-    partial class frm_listadoCompra
+    partial class frm_ListadoVentaProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbResponsable = new System.Windows.Forms.ComboBox();
@@ -39,21 +38,9 @@
             this.cmbSolicitante = new System.Windows.Forms.ComboBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.AutoScroll = true;
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 134);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(731, 674);
-            this.reportViewer1.TabIndex = 1;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // groupBox1
             // 
@@ -68,8 +55,8 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(707, 117);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.Size = new System.Drawing.Size(508, 117);
+            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
@@ -135,7 +122,7 @@
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(631, 91);
+            this.btnCalcular.Location = new System.Drawing.Point(411, 82);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(71, 21);
@@ -154,15 +141,29 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Estacion:";
             // 
-            // frm_listadoCompra
+            // reportViewer1
+            // 
+            this.reportViewer1.AutoScroll = true;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoVentaProductos.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 140);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(654, 649);
+            this.reportViewer1.TabIndex = 5;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // frm_ListadoVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 808);
+            this.ClientSize = new System.Drawing.Size(654, 789);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frm_listadoCompra";
-            this.Text = "frm_listadoCompra";
+            this.Name = "frm_ListadoVentaProductos";
+            this.Text = "frm_ListadoVentaProductos";
+            this.Load += new System.EventHandler(this.frm_ListadoVentaProductos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,7 +172,6 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbResponsable;
@@ -182,5 +182,6 @@
         private System.Windows.Forms.ComboBox cmbSolicitante;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
