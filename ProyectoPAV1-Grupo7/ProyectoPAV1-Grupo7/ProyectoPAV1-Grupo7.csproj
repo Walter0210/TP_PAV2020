@@ -106,13 +106,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ConjuntosDeDatos\DatosListadoVentas.Designer.cs">
+    <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatosListadoVentas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetTablasBD.cs">
-      <DependentUpon>DataSetTablasBD.xsd</DependentUpon>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetTablasBD.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -208,11 +205,6 @@
     </Compile>
     <Compile Include="Formularios\Reportes\frm_ListadoTickets.Designer.cs">
       <DependentUpon>frm_ListadoTickets.cs</DependentUpon>
-    <Compile Include="Formularios\Reportes\frm_ListadoVentaProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoVentaProductos.Designer.cs">
-      <DependentUpon>frm_ListadoVentaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,12 +258,6 @@
     <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoTickets.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoVentaProductos.resx">
-      <DependentUpon>frm_ListadoVentaProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\ListadoVentaProductos.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -304,16 +290,16 @@
     <None Include="ConjuntosDeDatos\DatosEstadistica.xss">
       <DependentUpon>DatosEstadistica.xsd</DependentUpon>
     </None>
-    <None Include="ConjuntosDeDatos\DatosListadoVentas.xsc">
-      <DependentUpon>DatosListadoVentas.xsd</DependentUpon>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="ConjuntosDeDatos\DatosListadoVentas.xsd">
-      <SubType>Designer</SubType>
+    <None Include="DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatosListadoVentas.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="ConjuntosDeDatos\DatosListadoVentas.xss">
-      <DependentUpon>DatosListadoVentas.xsd</DependentUpon>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="DataSetTablasBD.xsc">
       <DependentUpon>DataSetTablasBD.xsd</DependentUpon>
@@ -341,6 +327,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Formularios\boton_inicio.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
