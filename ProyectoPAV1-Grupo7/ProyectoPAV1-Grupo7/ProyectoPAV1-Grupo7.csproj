@@ -260,7 +260,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\ListadoVentaProductos.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listado_VentaProductos.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

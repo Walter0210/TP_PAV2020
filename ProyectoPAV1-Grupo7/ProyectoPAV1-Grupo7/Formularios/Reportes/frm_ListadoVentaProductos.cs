@@ -19,28 +19,42 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             InitializeComponent();
         }
 
+        private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
+        {
+            this.reportViewer1.RefreshReport();
+        }
+
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            ConexionBD conexion = new ConexionBD();
-            string sql = @"SELECT        Ticket.numTicket, Ticket.fecha, Estacion.razonSocial, TicketXProducto.precio, TicketXProducto.cantidad, Producto.descripcion, Surtidor.numeroSurtidor, Ticket.cantidad AS CantComb, TipoCombustible.nombre
-                           FROM            Producto INNER JOIN
-                         TicketXProducto ON Producto.idProducto = TicketXProducto.idProducto CROSS JOIN
-                         Ticket INNER JOIN
-                         Surtidor ON Ticket.numeroSurtidor = Surtidor.numeroSurtidor AND Ticket.cuit = Surtidor.cuit INNER JOIN
-                         Estacion ON Surtidor.cuit = Estacion.CUIT INNER JOIN
-                         TipoCombustible ON Surtidor.idTipoCombustible = TipoCombustible.idTipoCombustible";
+            DataTable table = new DataTable();
+            table = ObtenerListadoTickets();
 
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-            ReportDataSource ds = new ReportDataSource("DatosTicket", tabla);
+            ReportDataSource ds = new ReportDataSource("DatosTickets", table);
 
+            //ReportParameter[] parametros = new ReportParameter[1];
+            //parametros[0] = new ReportParameter("restriccion", "");
+            //reportViewer1.LocalReport.SetParameters(parametros);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.LocalReport.Refresh();
         }
 
-        private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
+        private DataTable ObtenerListadoTickets()
         {
-            this.reportViewer1.RefreshReport();
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = string.Format(@"SELECT        Ticket.numTicket, Ticket.fecha, Estacion.razonSocial, TicketXProducto.precio, TicketXProducto.cantidad, Producto.descripcion, Surtidor.numeroSurtidor, Ticket.cantidad AS CantComb, TipoCombustible.nombre
+                            FROM            Producto INNER JOIN
+                            TicketXProducto ON Producto.idProducto = TicketXProducto.idProducto CROSS JOIN
+                            Ticket INNER JOIN
+                            Surtidor ON Ticket.numeroSurtidor = Surtidor.numeroSurtidor AND Ticket.cuit = Surtidor.cuit INNER JOIN
+                            Estacion ON Surtidor.cuit = Estacion.CUIT INNER JOIN
+                            TipoCombustible ON Surtidor.idTipoCombustible = TipoCombustible.idTipoCombustible");
+
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
         }
     }
 }

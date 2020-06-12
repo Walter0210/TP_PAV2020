@@ -28,6 +28,11 @@ namespace ProyectoPAV1_Grupo7
             CargarGrilla();
         }
 
+        internal static DataTable ObtenerListadoTickets()
+        {
+            throw new NotImplementedException();
+        }
+
         private void CargarGrilla()
         {
             ConexionBD conexion = new ConexionBD();
