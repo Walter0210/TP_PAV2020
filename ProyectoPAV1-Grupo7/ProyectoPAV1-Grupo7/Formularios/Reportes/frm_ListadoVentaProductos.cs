@@ -82,7 +82,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (cmbSolicitante.SelectedIndex != -1 && cmbResponsable.SelectedIndex != -1 && dtpDesde.Value != dtpHasta.Value)
+            if (cmbSolicitante.SelectedIndex != -1 || cmbResponsable.SelectedIndex != -1)
             {
                 int cuitEstacion = int.Parse(cmbSolicitante.SelectedValue.ToString());
 
@@ -90,7 +90,19 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
                 //reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: " + cuitEstacion);
+                parametros[0] = new ReportParameter("restriccion", "Filtrando por CUIT = " + cuitEstacion);
+                reportViewer1.LocalReport.SetParameters(parametros);
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(ds);
+                reportViewer1.RefreshReport();
+            }
+            else if (dtpDesde.Value != dtpHasta.Value)
+            {
+                ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEntre(dtpDesde.Value, dtpHasta.Value));
+
+                ReportParameter[] parametros = new ReportParameter[1];
+                parametros[0] = new ReportParameter("restriccion", "Filtrando por fecha desde: " + dtpDesde.Value.ToString() + " hasta: " + dtpHasta.Value.ToString());
                 reportViewer1.LocalReport.SetParameters(parametros);
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -103,7 +115,22 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             }
         }
 
-        private object BuscarVentasEstacion(int cuitEstacion)
+        private DataTable BuscarVentasEntre(DateTime desde, DateTime hasta)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
+                "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
+                " WHERE T.fecha BETWEEN " + "'" + desde.ToString() + "'" + " AND " + "'" + hasta.ToString() + "' " +
+                "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
+                "ORDER BY T.numTicket";
+
+            //string sql = "SELECT * FROM Estacion WHERE CUIT = " + solicitante;
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
+        private DataTable BuscarVentasEstacion(int cuitEstacion)
         {
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +

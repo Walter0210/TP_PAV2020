@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dataSetTablasBDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetTablasBD = new ProyectoPAV1_Grupo7.DataSetTablasBD();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grb_filtros = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbResponsable = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBD)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grb_filtros.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSetTablasBDBindingSource
@@ -60,10 +60,12 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            reportDataSource2.Name = "DatosTickets";
-            reportDataSource2.Value = this.dataSetTablasBDBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "DatosTickets";
+            reportDataSource1.Value = this.dataSetTablasBDBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listado_VentaProductos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 104);
             this.reportViewer1.Name = "reportViewer1";
@@ -73,23 +75,25 @@
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // groupBox1
+            // grb_filtros
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbResponsable);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dtpHasta);
-            this.groupBox1.Controls.Add(this.dtpDesde);
-            this.groupBox1.Controls.Add(this.cmbSolicitante);
-            this.groupBox1.Controls.Add(this.btnCalcular);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 86);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
+            this.grb_filtros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grb_filtros.Controls.Add(this.label4);
+            this.grb_filtros.Controls.Add(this.cmbResponsable);
+            this.grb_filtros.Controls.Add(this.label3);
+            this.grb_filtros.Controls.Add(this.label2);
+            this.grb_filtros.Controls.Add(this.dtpHasta);
+            this.grb_filtros.Controls.Add(this.dtpDesde);
+            this.grb_filtros.Controls.Add(this.cmbSolicitante);
+            this.grb_filtros.Controls.Add(this.btnCalcular);
+            this.grb_filtros.Controls.Add(this.label1);
+            this.grb_filtros.Location = new System.Drawing.Point(12, 12);
+            this.grb_filtros.Name = "grb_filtros";
+            this.grb_filtros.Size = new System.Drawing.Size(594, 86);
+            this.grb_filtros.TabIndex = 5;
+            this.grb_filtros.TabStop = false;
+            this.grb_filtros.Text = "Filtros";
             // 
             // label4
             // 
@@ -178,15 +182,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grb_filtros);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frm_ListadoVentaProductos";
             this.Text = "frm_ListadoVentaProductos";
             this.Load += new System.EventHandler(this.frm_ListadoVentaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBD)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grb_filtros.ResumeLayout(false);
+            this.grb_filtros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,7 +200,7 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource dataSetTablasBDBindingSource;
         private DataSetTablasBD dataSetTablasBD;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grb_filtros;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbResponsable;
         private System.Windows.Forms.Label label3;
