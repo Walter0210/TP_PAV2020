@@ -22,6 +22,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
+            cargarComboResponsable();
+            cargarComboSolicitante();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
@@ -31,9 +33,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
             ReportDataSource ds = new ReportDataSource("DatosTickets", table);
 
-            //ReportParameter[] parametros = new ReportParameter[1];
-            //parametros[0] = new ReportParameter("restriccion", "");
-            //reportViewer1.LocalReport.SetParameters(parametros);
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", "");
+            reportViewer1.LocalReport.SetParameters(parametros);
+
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.LocalReport.Refresh();
@@ -43,15 +46,73 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             ConexionBD conexion = new ConexionBD();
 
-            string sql = string.Format(@"SELECT        Ticket.numTicket, Ticket.fecha, Estacion.razonSocial, TicketXProducto.precio, TicketXProducto.cantidad, Producto.descripcion, Surtidor.numeroSurtidor, Ticket.cantidad AS CantComb, TipoCombustible.nombre
-                            FROM            Producto INNER JOIN
-                            TicketXProducto ON Producto.idProducto = TicketXProducto.idProducto CROSS JOIN
-                            Ticket INNER JOIN
-                            Surtidor ON Ticket.numeroSurtidor = Surtidor.numeroSurtidor AND Ticket.cuit = Surtidor.cuit INNER JOIN
-                            Estacion ON Surtidor.cuit = Estacion.CUIT INNER JOIN
-                            TipoCombustible ON Surtidor.idTipoCombustible = TipoCombustible.idTipoCombustible");
+            string sql = string.Format("SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
+                "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
+                "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
+                "ORDER BY T.numTicket");
 
 
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
+        private void cargarComboResponsable()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT  E.nombre + ' ' + E.apellido as 'ApeNom', E.legajo FROM Empleado E";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            cmbResponsable.DataSource = tabla;
+            cmbResponsable.DisplayMember = "ApeNom";
+            cmbResponsable.ValueMember = "legajo";
+            cmbResponsable.SelectedIndex = -1;
+        }
+
+        private void cargarComboSolicitante()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT * FROM Estacion";
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            cmbSolicitante.DataSource = tabla;
+            cmbSolicitante.DisplayMember = "razonSocial";
+            cmbSolicitante.ValueMember = "CUIT";
+            cmbSolicitante.SelectedIndex = -1;
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            if (cmbSolicitante.SelectedIndex != -1 && cmbResponsable.SelectedIndex != -1 && dtpDesde.Value != dtpHasta.Value)
+            {
+                int cuitEstacion = int.Parse(cmbSolicitante.SelectedValue.ToString());
+
+                ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion(cuitEstacion));
+
+                //reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
+                ReportParameter[] parametros = new ReportParameter[1];
+                parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: " + cuitEstacion);
+                reportViewer1.LocalReport.SetParameters(parametros);
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(ds);
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar por lo menos un filtro!");
+            }
+        }
+
+        private object BuscarVentasEstacion(int cuitEstacion)
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
+                "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
+                " WHERE E.CUIT = " + cuitEstacion +
+                "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
+                "ORDER BY T.numTicket";
+
+            //string sql = "SELECT * FROM Estacion WHERE CUIT = " + solicitante;
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             return tabla;
