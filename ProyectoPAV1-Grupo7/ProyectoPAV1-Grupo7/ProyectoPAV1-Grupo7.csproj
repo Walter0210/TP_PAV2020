@@ -189,6 +189,12 @@
     <Compile Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.Designer.cs">
       <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\frm_ListadoEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_ListadoEmpleados.Designer.cs">
+      <DependentUpon>frm_ListadoEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reportes\frm_ListadoOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.resx">
       <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoEmpleados.resx">
+      <DependentUpon>frm_ListadoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoOrdenesCompra.resx">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +268,7 @@
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoVentaProductos.resx">
       <DependentUpon>frm_ListadoVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ListadoEmpleados.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoTickets.rdlc" />

@@ -193,5 +193,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_EstadisticaOrdenesCompra frm_EstadisticaOrdenesCompra = new frm_EstadisticaOrdenesCompra();
             frm_EstadisticaOrdenesCompra.ShowDialog();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ListadoEmpleados frm_ListadoEmpleados = new frm_ListadoEmpleados();
+            frm_ListadoEmpleados.ShowDialog();
+        }
     }
 }
