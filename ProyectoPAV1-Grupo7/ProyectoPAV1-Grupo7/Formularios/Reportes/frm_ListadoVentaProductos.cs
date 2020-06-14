@@ -14,6 +14,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_ListadoVentaProductos : Form
     {
+        private string stringWhere;
         public frm_ListadoVentaProductos()
         {
             InitializeComponent();
@@ -22,7 +23,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
-            cargarComboResponsable();
             cargarComboSolicitante();
         }
 
@@ -57,18 +57,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             return tabla;
         }
 
-        private void cargarComboResponsable()
-        {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT  E.nombre + ' ' + E.apellido as 'ApeNom', E.legajo FROM Empleado E";
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-
-            cmbResponsable.DataSource = tabla;
-            cmbResponsable.DisplayMember = "ApeNom";
-            cmbResponsable.ValueMember = "legajo";
-            cmbResponsable.SelectedIndex = -1;
-        }
-
         private void cargarComboSolicitante()
         {
             ConexionBD conexion = new ConexionBD();
@@ -82,27 +70,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (cmbSolicitante.SelectedIndex != -1 || cmbResponsable.SelectedIndex != -1)
+            if (stringWhere != string.Empty)
             {
-                int cuitEstacion = int.Parse(cmbSolicitante.SelectedValue.ToString());
-
-                ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion(cuitEstacion));
-
-                //reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-                ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("restriccion", "Filtrando por CUIT = " + cuitEstacion);
-                reportViewer1.LocalReport.SetParameters(parametros);
-
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(ds);
-                reportViewer1.RefreshReport();
-            }
-            else if (dtpDesde.Value != dtpHasta.Value)
-            {
-                ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEntre(dtpDesde.Value, dtpHasta.Value));
+                ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion());
 
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("restriccion", "Filtrando por fecha desde: " + dtpDesde.Value.ToString() + " hasta: " + dtpHasta.Value.ToString());
+                parametros[0] = new ReportParameter("restriccion", "Filtrando por CUIT = " + cmbSolicitante.SelectedValue);
                 reportViewer1.LocalReport.SetParameters(parametros);
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -111,39 +84,81 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             }
             else
             {
-                MessageBox.Show("Debe seleccionar por lo menos un filtro!");
+                MessageBox.Show("Seleccione un parametro para filtrar");
             }
         }
 
-        private DataTable BuscarVentasEntre(DateTime desde, DateTime hasta)
+        private DataTable BuscarVentasEstacion()
         {
-            string format = "yyyy-MM-dd HH:mm:ss";
             ConexionBD conexion = new ConexionBD();
+           
             string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
                 "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
-                " WHERE T.fecha BETWEEN " + "'" + desde.ToString(format) + "'" + " AND " + "'" + hasta.ToString(format) + "' " +
+                stringWhere +
                 "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
                 "ORDER BY T.numTicket";
 
-            //string sql = "SELECT * FROM Estacion WHERE CUIT = " + solicitante;
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             return tabla;
         }
 
-        private DataTable BuscarVentasEstacion(int cuitEstacion)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
-                "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
-                " WHERE E.CUIT = " + cuitEstacion +
-                "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
-                "ORDER BY T.numTicket";
+            cmbSolicitante.SelectedIndex = -1;
+            dtpDesde.Value = DateTime.Now;
+            dtpHasta.Value = DateTime.Now;
+            stringWhere = "";
+        }
 
-            //string sql = "SELECT * FROM Estacion WHERE CUIT = " + solicitante;
-            DataTable tabla = conexion.ejecutar_consulta(sql);
+        private void cmbSolicitante_DropDownClosed(object sender, EventArgs e)
+        {
+            if (txtWhere.Text.Contains("WHERE E.CUIT = "))
+            {
+                stringWhere = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
+            }
+            else if (txtWhere.Text.Contains("T.fecha BETWEEN "))
+            {
+                stringWhere += " AND E.CUIT = " + cmbSolicitante.SelectedValue;
+            }
+            else
+            {
+                stringWhere = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
+            }
+        }
 
-            return tabla;
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+            if (txtWhere.Text.Contains("T.fecha BETWEEN "))
+            {
+                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+            }
+            else if (txtWhere.Text.Contains("WHERE E.CUIT = "))
+            {
+                stringWhere += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+            }
+            else
+            {
+                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+            }
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+            if (txtWhere.Text.Contains("T.fecha BETWEEN "))
+            {
+                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+            }
+            else if (txtWhere.Text.Contains("WHERE E.CUIT = "))
+            {
+                stringWhere += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+            }
+            else
+            {
+                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+            }
         }
     }
 }
