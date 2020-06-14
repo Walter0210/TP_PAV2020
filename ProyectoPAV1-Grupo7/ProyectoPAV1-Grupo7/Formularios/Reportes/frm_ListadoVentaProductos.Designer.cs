@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.dataSetTablasBDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetTablasBD = new ProyectoPAV1_Grupo7.DataSetTablasBD();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grb_filtros = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -63,14 +63,14 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource7.Name = "DatosTickets";
-            reportDataSource7.Value = this.dataSetTablasBDBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource1.Name = "DatosTickets";
+            reportDataSource1.Value = this.dataSetTablasBDBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listado_VentaProductos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 162);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 139);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 288);
+            this.reportViewer1.Size = new System.Drawing.Size(884, 772);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -79,7 +79,7 @@
             // 
             this.grb_filtros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grb_filtros.Controls.Add(this.button1);
+            this.grb_filtros.Controls.Add(this.btnLimpiarFiltros);
             this.grb_filtros.Controls.Add(this.label3);
             this.grb_filtros.Controls.Add(this.label2);
             this.grb_filtros.Controls.Add(this.dtpHasta);
@@ -89,22 +89,22 @@
             this.grb_filtros.Controls.Add(this.label1);
             this.grb_filtros.Location = new System.Drawing.Point(12, 12);
             this.grb_filtros.Name = "grb_filtros";
-            this.grb_filtros.Size = new System.Drawing.Size(594, 86);
+            this.grb_filtros.Size = new System.Drawing.Size(678, 86);
             this.grb_filtros.TabIndex = 5;
             this.grb_filtros.TabStop = false;
             this.grb_filtros.Text = "Filtros";
             // 
-            // button1
+            // btnLimpiarFiltros
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(504, 49);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 20);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(504, 49);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
+            this.btnLimpiarFiltros.TabIndex = 8;
+            this.btnLimpiarFiltros.Text = "Limpiar";
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -149,7 +149,6 @@
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
             this.cmbSolicitante.TabIndex = 2;
-            this.cmbSolicitante.DropDownClosed += new System.EventHandler(this.cmbSolicitante_DropDownClosed);
             // 
             // btnCalcular
             // 
@@ -177,7 +176,7 @@
             // txtWhere
             // 
             this.txtWhere.AutoSize = true;
-            this.txtWhere.Location = new System.Drawing.Point(155, 119);
+            this.txtWhere.Location = new System.Drawing.Point(12, 123);
             this.txtWhere.Name = "txtWhere";
             this.txtWhere.Size = new System.Drawing.Size(0, 13);
             this.txtWhere.TabIndex = 6;
@@ -186,11 +185,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 911);
             this.Controls.Add(this.txtWhere);
             this.Controls.Add(this.grb_filtros);
             this.Controls.Add(this.reportViewer1);
+            this.MinimumSize = new System.Drawing.Size(900, 950);
             this.Name = "frm_ListadoVentaProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ListadoVentaProductos";
             this.Load += new System.EventHandler(this.frm_ListadoVentaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).EndInit();
@@ -215,7 +216,7 @@
         private System.Windows.Forms.ComboBox cmbSolicitante;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpiarFiltros;
         private System.Windows.Forms.Label txtWhere;
     }
 }

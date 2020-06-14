@@ -14,7 +14,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_ListadoVentaProductos : Form
     {
-        private string stringWhere;
+        //private string stringWhere;
+        private bool eligioFechaDesde = false;
+        private bool eligioFechaHasta = false;
+
         public frm_ListadoVentaProductos()
         {
             InitializeComponent();
@@ -24,6 +27,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             this.reportViewer1.RefreshReport();
             cargarComboSolicitante();
+            txtWhere.Text = string.Empty;
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
@@ -70,10 +74,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (stringWhere != string.Empty)
-            {
+            //if (txtWhere.Text == "")
+            //{ 
+                ArmarStringFiltros();
                 ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion());
-
                 ReportParameter[] parametros = new ReportParameter[1];
                 parametros[0] = new ReportParameter("restriccion", "Filtrando por CUIT = " + cmbSolicitante.SelectedValue);
                 reportViewer1.LocalReport.SetParameters(parametros);
@@ -81,10 +85,31 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(ds);
                 reportViewer1.RefreshReport();
-            }
-            else
+            //}
+            //else
+            //{
+            //    MessageBox.Show("deberias limpiar los filtros");
+            //}
+        }
+
+        private void ArmarStringFiltros()
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+            if (cmbSolicitante.SelectedIndex != -1)
             {
-                MessageBox.Show("Seleccione un parametro para filtrar");
+                txtWhere.Text = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
+                if (txtWhere.Text.Contains("WHERE E.CUIT = ") && eligioFechaDesde || eligioFechaHasta)
+                {
+                    txtWhere.Text += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                }
+            }
+            else if (txtWhere.Text == string.Empty && eligioFechaDesde || eligioFechaHasta)
+            {
+                txtWhere.Text = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                if (txtWhere.Text.Contains("WHERE E.CUIT = "))
+                {
+                    txtWhere.Text += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                }
             }
         }
 
@@ -94,7 +119,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
            
             string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
                 "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
-                stringWhere +
+                txtWhere.Text +
                 "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
                 "ORDER BY T.numTicket";
 
@@ -108,57 +133,28 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbSolicitante.SelectedIndex = -1;
             dtpDesde.Value = DateTime.Now;
             dtpHasta.Value = DateTime.Now;
-            stringWhere = "";
-        }
+            eligioFechaDesde = false;
+            eligioFechaHasta = false;
+            txtWhere.Text = "";
 
-        private void cmbSolicitante_DropDownClosed(object sender, EventArgs e)
-        {
-            if (txtWhere.Text.Contains("WHERE E.CUIT = "))
-            {
-                stringWhere = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
-            }
-            else if (txtWhere.Text.Contains("T.fecha BETWEEN "))
-            {
-                stringWhere += " AND E.CUIT = " + cmbSolicitante.SelectedValue;
-            }
-            else
-            {
-                stringWhere = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
-            }
+            DataTable table = new DataTable();
+            table = ObtenerListadoTickets();
+
+            ReportDataSource ds = new ReportDataSource("DatosTickets", table);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(ds);
+            reportViewer1.RefreshReport();
         }
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
         {
-            string format = "yyyy-MM-dd HH:mm:ss";
-            if (txtWhere.Text.Contains("T.fecha BETWEEN "))
-            {
-                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-            }
-            else if (txtWhere.Text.Contains("WHERE E.CUIT = "))
-            {
-                stringWhere += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-            }
-            else
-            {
-                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-            }
+            eligioFechaDesde = true;
         }
 
         private void dtpHasta_ValueChanged(object sender, EventArgs e)
         {
-            string format = "yyyy-MM-dd HH:mm:ss";
-            if (txtWhere.Text.Contains("T.fecha BETWEEN "))
-            {
-                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-            }
-            else if (txtWhere.Text.Contains("WHERE E.CUIT = "))
-            {
-                stringWhere += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-            }
-            else
-            {
-                stringWhere = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-            }
+            eligioFechaHasta = true;
         }
+         
     }
 }

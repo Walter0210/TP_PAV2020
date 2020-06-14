@@ -75,28 +75,28 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.41457cm</Width>
+                  <Width>2.28559cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.90276cm</Width>
+                  <Width>4.77378cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.74585cm</Width>
+                  <Width>2.61687cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.91432cm</Width>
+                  <Width>2.78534cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.09108cm</Width>
+                  <Width>1.9621cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.64544cm</Width>
+                  <Width>3.51646cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.47647cm</Width>
+                  <Width>6.34749cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.04231cm</Width>
+                  <Width>3.91333cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -650,7 +650,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -681,9 +680,9 @@
             </TablixRowHierarchy>
             <DataSetName>DatosTickets</DataSetName>
             <Top>0.67737cm</Top>
-            <Left>1.19062cm</Left>
+            <Left>1.11125cm</Left>
             <Height>1.41167cm</Height>
-            <Width>29.2328cm</Width>
+            <Width>28.20092cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -694,10 +693,10 @@
         <Height>1.07872in</Height>
         <Style />
       </Body>
-      <Width>12.11744in</Width>
+      <Width>11.97772in</Width>
       <Page>
         <PageHeader>
-          <Height>2.54cm</Height>
+          <Height>2.59292cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -723,7 +722,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
               <Top>0.34079cm</Top>
-              <Left>10.36689cm</Left>
+              <Left>10.18944cm</Left>
               <Height>0.89104cm</Height>
               <Width>10.04453cm</Width>
               <Style>
@@ -753,9 +752,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.63724cm</Top>
-              <Left>1.64042cm</Left>
+              <Left>1.19062cm</Left>
               <Height>0.6cm</Height>
-              <Width>12.52771cm</Width>
+              <Width>10.49042cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
