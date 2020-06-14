@@ -2438,17 +2438,15 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             private global::System.Data.DataColumn columnrazonSocial;
             
-            private global::System.Data.DataColumn columnprecio;
+            private global::System.Data.DataColumn columnnumeroSurtidor;
             
             private global::System.Data.DataColumn columncantidad;
             
-            private global::System.Data.DataColumn columndescripcion;
-            
-            private global::System.Data.DataColumn columnnumeroSurtidor;
-            
-            private global::System.Data.DataColumn columnCantiComb;
-            
             private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnobservacion;
+            
+            private global::System.Data.DataColumn columnCantDetalles;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2509,9 +2507,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn precioColumn {
+            public global::System.Data.DataColumn numeroSurtidorColumn {
                 get {
-                    return this.columnprecio;
+                    return this.columnnumeroSurtidor;
                 }
             }
             
@@ -2525,33 +2523,25 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descripcionColumn {
-                get {
-                    return this.columndescripcion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn numeroSurtidorColumn {
-                get {
-                    return this.columnnumeroSurtidor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CantiCombColumn {
-                get {
-                    return this.columnCantiComb;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn nombreColumn {
                 get {
                     return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn observacionColumn {
+                get {
+                    return this.columnobservacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CantDetallesColumn {
+                get {
+                    return this.columnCantDetalles;
                 }
             }
             
@@ -2592,18 +2582,17 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DatosListadoVentasRow AddDatosListadoVentasRow(int numTicket, System.DateTime fecha, string razonSocial, double precio, int cantidad, string descripcion, int numeroSurtidor, int CantiComb, string nombre) {
+            public DatosListadoVentasRow AddDatosListadoVentasRow(int numTicket, System.DateTime fecha, string razonSocial, int numeroSurtidor, int cantidad, string nombre, string observacion, int CantDetalles) {
                 DatosListadoVentasRow rowDatosListadoVentasRow = ((DatosListadoVentasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numTicket,
                         fecha,
                         razonSocial,
-                        precio,
-                        cantidad,
-                        descripcion,
                         numeroSurtidor,
-                        CantiComb,
-                        nombre};
+                        cantidad,
+                        nombre,
+                        observacion,
+                        CantDetalles};
                 rowDatosListadoVentasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDatosListadoVentasRow);
                 return rowDatosListadoVentasRow;
@@ -2629,12 +2618,11 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 this.columnnumTicket = base.Columns["numTicket"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnrazonSocial = base.Columns["razonSocial"];
-                this.columnprecio = base.Columns["precio"];
-                this.columncantidad = base.Columns["cantidad"];
-                this.columndescripcion = base.Columns["descripcion"];
                 this.columnnumeroSurtidor = base.Columns["numeroSurtidor"];
-                this.columnCantiComb = base.Columns["CantiComb"];
+                this.columncantidad = base.Columns["cantidad"];
                 this.columnnombre = base.Columns["nombre"];
+                this.columnobservacion = base.Columns["observacion"];
+                this.columnCantDetalles = base.Columns["CantDetalles"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2646,18 +2634,16 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 base.Columns.Add(this.columnfecha);
                 this.columnrazonSocial = new global::System.Data.DataColumn("razonSocial", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrazonSocial);
-                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprecio);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
-                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescripcion);
                 this.columnnumeroSurtidor = new global::System.Data.DataColumn("numeroSurtidor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumeroSurtidor);
-                this.columnCantiComb = new global::System.Data.DataColumn("CantiComb", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantiComb);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
                 this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre);
+                this.columnobservacion = new global::System.Data.DataColumn("observacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobservacion);
+                this.columnCantDetalles = new global::System.Data.DataColumn("CantDetalles", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantDetalles);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_DatosListadoVentas");
                 this.ExtendedProperties.Add("Generator_UserTableName", "DatosListadoVentas");
             }
@@ -3686,17 +3672,17 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double precio {
+            public int numeroSurtidor {
                 get {
                     try {
-                        return ((double)(this[this.tableDatosListadoVentas.precioColumn]));
+                        return ((int)(this[this.tableDatosListadoVentas.numeroSurtidorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'precio\' in table \'DatosListadoVentas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'numeroSurtidor\' in table \'DatosListadoVentas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDatosListadoVentas.precioColumn] = value;
+                    this[this.tableDatosListadoVentas.numeroSurtidorColumn] = value;
                 }
             }
             
@@ -3718,54 +3704,6 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string descripcion {
-                get {
-                    try {
-                        return ((string)(this[this.tableDatosListadoVentas.descripcionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'descripcion\' in table \'DatosListadoVentas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDatosListadoVentas.descripcionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int numeroSurtidor {
-                get {
-                    try {
-                        return ((int)(this[this.tableDatosListadoVentas.numeroSurtidorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'numeroSurtidor\' in table \'DatosListadoVentas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDatosListadoVentas.numeroSurtidorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CantiComb {
-                get {
-                    try {
-                        return ((int)(this[this.tableDatosListadoVentas.CantiCombColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CantiComb\' in table \'DatosListadoVentas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDatosListadoVentas.CantiCombColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string nombre {
                 get {
                     try {
@@ -3777,6 +3715,38 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 }
                 set {
                     this[this.tableDatosListadoVentas.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string observacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosListadoVentas.observacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'observacion\' in table \'DatosListadoVentas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosListadoVentas.observacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CantDetalles {
+                get {
+                    try {
+                        return ((int)(this[this.tableDatosListadoVentas.CantDetallesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CantDetalles\' in table \'DatosListadoVentas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosListadoVentas.CantDetallesColumn] = value;
                 }
             }
             
@@ -3818,14 +3788,14 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsprecioNull() {
-                return this.IsNull(this.tableDatosListadoVentas.precioColumn);
+            public bool IsnumeroSurtidorNull() {
+                return this.IsNull(this.tableDatosListadoVentas.numeroSurtidorColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetprecioNull() {
-                this[this.tableDatosListadoVentas.precioColumn] = global::System.Convert.DBNull;
+            public void SetnumeroSurtidorNull() {
+                this[this.tableDatosListadoVentas.numeroSurtidorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3842,42 +3812,6 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescripcionNull() {
-                return this.IsNull(this.tableDatosListadoVentas.descripcionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescripcionNull() {
-                this[this.tableDatosListadoVentas.descripcionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsnumeroSurtidorNull() {
-                return this.IsNull(this.tableDatosListadoVentas.numeroSurtidorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetnumeroSurtidorNull() {
-                this[this.tableDatosListadoVentas.numeroSurtidorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCantiCombNull() {
-                return this.IsNull(this.tableDatosListadoVentas.CantiCombColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCantiCombNull() {
-                this[this.tableDatosListadoVentas.CantiCombColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnombreNull() {
                 return this.IsNull(this.tableDatosListadoVentas.nombreColumn);
             }
@@ -3886,6 +3820,30 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetnombreNull() {
                 this[this.tableDatosListadoVentas.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsobservacionNull() {
+                return this.IsNull(this.tableDatosListadoVentas.observacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetobservacionNull() {
+                this[this.tableDatosListadoVentas.observacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCantDetallesNull() {
+                return this.IsNull(this.tableDatosListadoVentas.CantDetallesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCantDetallesNull() {
+                this[this.tableDatosListadoVentas.CantDetallesColumn] = global::System.Convert.DBNull;
             }
         }
         

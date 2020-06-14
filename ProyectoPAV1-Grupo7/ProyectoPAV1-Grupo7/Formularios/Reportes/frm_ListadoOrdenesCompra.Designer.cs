@@ -33,12 +33,12 @@
             this.cmbSolicitante = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbResponsable = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cmbResponsable = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,28 +107,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // dtpDesde
+            // label4
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(357, 17);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(121, 20);
-            this.dtpDesde.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(22, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Responsable";
             // 
-            // dtpHasta
+            // cmbResponsable
             // 
-            this.dtpHasta.Location = new System.Drawing.Point(357, 49);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(121, 20);
-            this.dtpHasta.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(279, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Fecha desde:";
+            this.cmbResponsable.FormattingEnabled = true;
+            this.cmbResponsable.Location = new System.Drawing.Point(106, 50);
+            this.cmbResponsable.Name = "cmbResponsable";
+            this.cmbResponsable.Size = new System.Drawing.Size(121, 21);
+            this.cmbResponsable.TabIndex = 8;
             // 
             // label3
             // 
@@ -139,22 +133,28 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Fecha hasta:";
             // 
-            // cmbResponsable
+            // label2
             // 
-            this.cmbResponsable.FormattingEnabled = true;
-            this.cmbResponsable.Location = new System.Drawing.Point(106, 50);
-            this.cmbResponsable.Name = "cmbResponsable";
-            this.cmbResponsable.Size = new System.Drawing.Size(121, 21);
-            this.cmbResponsable.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(279, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Fecha desde:";
             // 
-            // label4
+            // dtpHasta
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Responsable";
+            this.dtpHasta.Location = new System.Drawing.Point(357, 49);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(121, 20);
+            this.dtpHasta.TabIndex = 5;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Location = new System.Drawing.Point(357, 17);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(121, 20);
+            this.dtpDesde.TabIndex = 4;
             // 
             // frm_ListadoOrdenesCompra
             // 

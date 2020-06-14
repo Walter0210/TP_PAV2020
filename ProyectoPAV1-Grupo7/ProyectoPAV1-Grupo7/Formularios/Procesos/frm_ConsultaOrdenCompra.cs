@@ -28,6 +28,11 @@ namespace ProyectoPAV1_Grupo7
             CargarGrilla();
         }
 
+        internal static DataTable ObtenerListadoTickets()
+        {
+            throw new NotImplementedException();
+        }
+
         private void CargarGrilla()
         {
             ConexionBD conexion = new ConexionBD();
@@ -74,7 +79,7 @@ namespace ProyectoPAV1_Grupo7
             try
             {
                 ConexionBD conexion = new ConexionBD();
-                string consulta = @"select idProducto from Producto where descripcion like '" + descripcion + "'";
+                string consulta = @"select idProducto from Producto stringWhere descripcion like '" + descripcion + "'";
                 DataTable idProductoTable = conexion.ejecutar_consulta(consulta);
                 int idProducto = int.Parse(idProductoTable.Rows[0][0].ToString());
                 return idProducto;

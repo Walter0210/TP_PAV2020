@@ -35,7 +35,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void frm_ListadoOrdenesCompra_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 
