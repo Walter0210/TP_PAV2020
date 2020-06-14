@@ -271,8 +271,12 @@
     <EmbeddedResource Include="Formularios\Reportes\ListadoEmpleados.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
+<<<<<<< HEAD
     <EmbeddedResource Include="Formularios\Reportes\ListadoTickets.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoVentaProductos.rdlc" />
+=======
+    <EmbeddedResource Include="Formularios\Reportes\Listado_VentaProductos.rdlc" />
+>>>>>>> master
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
