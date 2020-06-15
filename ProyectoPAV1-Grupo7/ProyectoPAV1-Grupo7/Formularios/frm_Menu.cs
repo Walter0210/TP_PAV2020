@@ -199,5 +199,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_ListadoEmpleados frm_ListadoEmpleados = new frm_ListadoEmpleados();
             frm_ListadoEmpleados.ShowDialog();
         }
+
+        private void surtidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ListadoSurtidores frm_ListadoSurtidores = new frm_ListadoSurtidores();
+            frm_ListadoSurtidores.ShowDialog();
+        }
     }
 }

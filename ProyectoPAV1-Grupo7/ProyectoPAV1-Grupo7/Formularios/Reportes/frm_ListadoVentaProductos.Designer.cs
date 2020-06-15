@@ -144,7 +144,7 @@
             // 
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(115, 17);
+            this.cmbSolicitante.Location = new System.Drawing.Point(95, 17);
             this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);

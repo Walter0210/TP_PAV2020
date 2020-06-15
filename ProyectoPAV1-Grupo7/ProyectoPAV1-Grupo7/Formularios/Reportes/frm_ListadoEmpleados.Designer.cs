@@ -52,7 +52,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(1, 124);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1016, 489);
+            this.reportViewer1.Size = new System.Drawing.Size(1138, 576);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -137,7 +137,7 @@
             // 
             // btn_filtrar
             // 
-            this.btn_filtrar.Location = new System.Drawing.Point(733, 37);
+            this.btn_filtrar.Location = new System.Drawing.Point(813, 37);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(75, 23);
             this.btn_filtrar.TabIndex = 6;
@@ -147,7 +147,7 @@
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(733, 74);
+            this.btn_limpiar.Location = new System.Drawing.Point(813, 74);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
             this.btn_limpiar.TabIndex = 8;
@@ -161,7 +161,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dateTime_hasta);
             this.groupBox2.Controls.Add(this.dateTime_desde);
-            this.groupBox2.Location = new System.Drawing.Point(383, 16);
+            this.groupBox2.Location = new System.Drawing.Point(424, 16);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(307, 92);
             this.groupBox2.TabIndex = 9;
@@ -172,7 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 613);
+            this.ClientSize = new System.Drawing.Size(1137, 700);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_filtrar);

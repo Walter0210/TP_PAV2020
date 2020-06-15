@@ -93,6 +93,9 @@
     <Compile Include="Clases\TipoCombustible.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\UnidadMedida.cs" />
+    <Compile Include="ConjuntosDeDatos\DatosEstadistica.cs">
+      <DependentUpon>DatosEstadistica.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConjuntosDeDatos\DatosEstadisticaProducto.cs">
       <DependentUpon>DatosEstadisticaProducto.xsd</DependentUpon>
     </Compile>
@@ -201,6 +204,12 @@
     <Compile Include="Formularios\Reportes\frm_ListadoOrdenesCompra.Designer.cs">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\frm_ListadoSurtidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_ListadoSurtidores.Designer.cs">
+      <DependentUpon>frm_ListadoSurtidores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reportes\frm_ListadoVentaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,12 +265,16 @@
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoOrdenesCompra.resx">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoSurtidores.resx">
+      <DependentUpon>frm_ListadoSurtidores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoVentaProductos.resx">
       <DependentUpon>frm_ListadoVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\ListadoEmpleados.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\ListadoSurtidores.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listado_VentaProductos.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
