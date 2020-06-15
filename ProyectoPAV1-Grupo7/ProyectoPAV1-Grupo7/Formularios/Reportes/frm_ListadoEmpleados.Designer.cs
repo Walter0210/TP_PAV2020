@@ -39,17 +39,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_filtrar = new System.Windows.Forms.Button();
-            this.chk_habilitarFechas = new System.Windows.Forms.CheckBox();
+            this.btn_limpiar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            this.reportViewer1.AutoSize = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoEmpleados.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(1, 138);
+            this.reportViewer1.Location = new System.Drawing.Point(1, 124);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(936, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(1016, 489);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -59,16 +62,16 @@
             this.groupBox1.Controls.Add(this.dni);
             this.groupBox1.Controls.Add(this.txt_legajo);
             this.groupBox1.Controls.Add(this.legajo);
-            this.groupBox1.Location = new System.Drawing.Point(22, 22);
+            this.groupBox1.Location = new System.Drawing.Point(171, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(356, 74);
+            this.groupBox1.Size = new System.Drawing.Size(184, 92);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por:";
             // 
             // txt_dni
             // 
-            this.txt_dni.Location = new System.Drawing.Point(231, 26);
+            this.txt_dni.Location = new System.Drawing.Point(68, 60);
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.Size = new System.Drawing.Size(100, 20);
             this.txt_dni.TabIndex = 3;
@@ -76,7 +79,7 @@
             // dni
             // 
             this.dni.AutoSize = true;
-            this.dni.Location = new System.Drawing.Point(186, 29);
+            this.dni.Location = new System.Drawing.Point(36, 60);
             this.dni.Name = "dni";
             this.dni.Size = new System.Drawing.Size(26, 13);
             this.dni.TabIndex = 2;
@@ -92,7 +95,7 @@
             // legajo
             // 
             this.legajo.AutoSize = true;
-            this.legajo.Location = new System.Drawing.Point(23, 29);
+            this.legajo.Location = new System.Drawing.Point(23, 26);
             this.legajo.Name = "legajo";
             this.legajo.Size = new System.Drawing.Size(39, 13);
             this.legajo.TabIndex = 0;
@@ -100,22 +103,24 @@
             // 
             // dateTime_desde
             // 
-            this.dateTime_desde.Location = new System.Drawing.Point(709, 16);
+            this.dateTime_desde.Location = new System.Drawing.Point(70, 26);
             this.dateTime_desde.Name = "dateTime_desde";
-            this.dateTime_desde.Size = new System.Drawing.Size(200, 20);
+            this.dateTime_desde.Size = new System.Drawing.Size(197, 20);
             this.dateTime_desde.TabIndex = 2;
+            this.dateTime_desde.ValueChanged += new System.EventHandler(this.dateTime_desde_ValueChanged);
             // 
             // dateTime_hasta
             // 
-            this.dateTime_hasta.Location = new System.Drawing.Point(709, 51);
+            this.dateTime_hasta.Location = new System.Drawing.Point(70, 58);
             this.dateTime_hasta.Name = "dateTime_hasta";
-            this.dateTime_hasta.Size = new System.Drawing.Size(200, 20);
+            this.dateTime_hasta.Size = new System.Drawing.Size(197, 20);
             this.dateTime_hasta.TabIndex = 3;
+            this.dateTime_hasta.ValueChanged += new System.EventHandler(this.dateTime_hasta_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(665, 22);
+            this.label1.Location = new System.Drawing.Point(26, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 4;
@@ -124,7 +129,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(665, 55);
+            this.label2.Location = new System.Drawing.Point(29, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -132,7 +137,7 @@
             // 
             // btn_filtrar
             // 
-            this.btn_filtrar.Location = new System.Drawing.Point(482, 99);
+            this.btn_filtrar.Location = new System.Drawing.Point(733, 37);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(75, 23);
             this.btn_filtrar.TabIndex = 6;
@@ -140,36 +145,47 @@
             this.btn_filtrar.UseVisualStyleBackColor = true;
             this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
-            // chk_habilitarFechas
+            // btn_limpiar
             // 
-            this.chk_habilitarFechas.AutoSize = true;
-            this.chk_habilitarFechas.Location = new System.Drawing.Point(807, 89);
-            this.chk_habilitarFechas.Name = "chk_habilitarFechas";
-            this.chk_habilitarFechas.Size = new System.Drawing.Size(102, 17);
-            this.chk_habilitarFechas.TabIndex = 7;
-            this.chk_habilitarFechas.Text = "Habilitar Fechas";
-            this.chk_habilitarFechas.UseVisualStyleBackColor = true;
-            this.chk_habilitarFechas.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            this.chk_habilitarFechas.Click += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.btn_limpiar.Location = new System.Drawing.Point(733, 74);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
+            this.btn_limpiar.TabIndex = 8;
+            this.btn_limpiar.Text = "Limpiar";
+            this.btn_limpiar.UseVisualStyleBackColor = true;
+            this.btn_limpiar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.dateTime_hasta);
+            this.groupBox2.Controls.Add(this.dateTime_desde);
+            this.groupBox2.Location = new System.Drawing.Point(383, 16);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(307, 92);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Fecha de Alta";
             // 
             // frm_ListadoEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 587);
-            this.Controls.Add(this.chk_habilitarFechas);
+            this.ClientSize = new System.Drawing.Size(1017, 613);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_filtrar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTime_hasta);
-            this.Controls.Add(this.dateTime_desde);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frm_ListadoEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ListadoEmpleados";
             this.Load += new System.EventHandler(this.frm_ListadoEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +204,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_filtrar;
-        private System.Windows.Forms.CheckBox chk_habilitarFechas;
+        private System.Windows.Forms.Button btn_limpiar;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

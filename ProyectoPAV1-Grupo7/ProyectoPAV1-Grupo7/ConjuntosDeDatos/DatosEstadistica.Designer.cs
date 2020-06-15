@@ -3299,7 +3299,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TablaListadoEmpleadosRow AddTablaListadoEmpleadosRow(string legajo, string nombre, string apellido, string tipodni, string dni, string fechaNacimiento, string fechaAlta, string jefe) {
+            public TablaListadoEmpleadosRow AddTablaListadoEmpleadosRow(string legajo, string nombre, string apellido, string tipodni, string dni, char fechaNacimiento, char fechaAlta, string jefe) {
                 TablaListadoEmpleadosRow rowTablaListadoEmpleadosRow = ((TablaListadoEmpleadosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         legajo,
@@ -3355,9 +3355,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 base.Columns.Add(this.columntipodni);
                 this.columndni = new global::System.Data.DataColumn("dni", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndni);
-                this.columnfechaNacimiento = new global::System.Data.DataColumn("fechaNacimiento", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfechaNacimiento = new global::System.Data.DataColumn("fechaNacimiento", typeof(char), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaNacimiento);
-                this.columnfechaAlta = new global::System.Data.DataColumn("fechaAlta", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnfechaAlta = new global::System.Data.DataColumn("fechaAlta", typeof(char), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaAlta);
                 this.columnjefe = new global::System.Data.DataColumn("jefe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnjefe);
@@ -4836,10 +4836,10 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string fechaNacimiento {
+            public char fechaNacimiento {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaListadoEmpleados.fechaNacimientoColumn]));
+                        return ((char)(this[this.tableTablaListadoEmpleados.fechaNacimientoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'fechaNacimiento\' in table \'TablaListadoEmpleados\' is DBNull" +
@@ -4853,10 +4853,10 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string fechaAlta {
+            public char fechaAlta {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaListadoEmpleados.fechaAltaColumn]));
+                        return ((char)(this[this.tableTablaListadoEmpleados.fechaAltaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'fechaAlta\' in table \'TablaListadoEmpleados\' is DBNull.", e);

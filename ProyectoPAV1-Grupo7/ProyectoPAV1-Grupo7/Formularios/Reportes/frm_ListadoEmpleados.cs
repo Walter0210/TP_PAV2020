@@ -14,7 +14,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_ListadoEmpleados : Form
     {
-        private bool fechas = false;
+        //private bool fechas = false;
+        private bool eligioFechaDesde = false;
+        private bool eligioFechaHasta = false;
+        private string where = string.Empty;
 
         public frm_ListadoEmpleados()
         {
@@ -23,19 +26,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void frm_ListadoEmpleados_Load(object sender, EventArgs e)
         {
-            LimpiarCampos();
             this.reportViewer1.RefreshReport();
         }
 
-        private void LimpiarCampos()
-        {
-            txt_legajo.Text = "";
-            txt_legajo.Text = "";
-            dateTime_desde.Text = "";
-            dateTime_hasta.Text = "";
-            chk_habilitarFechas.Checked = fechas;
-            chk_habilitarFechas.CheckState = CheckState.Unchecked;
-        }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
@@ -44,37 +37,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
-            int legajo = 0;
-            int dni = 0;
-
-            if (txt_legajo.Text.ToString().Trim() != "" || txt_dni.Text.ToString().Trim() != "")
-            {
-                if (txt_legajo.Text.ToString().Trim() != "")
-                {
-                    legajo = int.Parse(txt_legajo.Text.ToString());
-                }
-
-                if (txt_dni.Text.ToString().Trim() != "")
-                {
-                    dni = int.Parse(txt_dni.Text.ToString());
-                }  
-            
-            MessageBox.Show("Legajo: " + legajo + "DNI: " +  dni);
-
-            DataTable tablaEmpleados = FiltrarTabla(legajo, dni);
-
-            ReportDataSource ds = new ReportDataSource("DatosEmpleados", tablaEmpleados);
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.LocalReport.Refresh();
-            reportViewer1.RefreshReport();
-            }
-            else
-            {
-                MessageBox.Show("Debe ingresar al menos un legajo o DNI");
-                buscarEmpleados();
-            }
-            
+            ArmarStringFiltros();
+            buscarEmpleados();
         }
 
         private void buscarEmpleados()
@@ -87,11 +51,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                                     + ", E.apellido"
                                     + ", TD.nombre as 'tipodni'"
                                     + ", E.nroDoc as 'dni'"
-                                    + ", E.fechaNacimiento"
-                                    + ", E.fechaAlta"
+                                    + ", CONVERT (char, E.fechaNacimiento, 103) as 'fechaNacimiento'"
+                                    + ", CONVERT (char, E.fechaAlta, 103) as 'fechaAlta'"
                                     + ", J.nombre + ' ' + J.apellido as 'Jefe'"
                                     + "from Empleado E left join TipoDocumento TD on E.tipoDoc = TD.idTipoDocumento "
-                                                     + "left join Empleado J on E.legajoSuperior = J.legajo";
+                                                     + "left join Empleado J on E.legajoSuperior = J.legajo "
+                                    + where;
 
                 DataTable tablaEmpleados = conexion.ejecutar_consulta(consulta);
                 ReportDataSource ds = new ReportDataSource("DatosEmpleados", tablaEmpleados);
@@ -100,15 +65,16 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 reportViewer1.LocalReport.DataSources.Add(ds);
                 reportViewer1.LocalReport.Refresh();
                 reportViewer1.RefreshReport();
+                where = string.Empty;
             }
             catch
             {
                 MessageBox.Show("Error de Base de Datos");
-                this.Dispose();
+                //this.Dispose();
             }
         }
 
-        private DataTable FiltrarTabla(int legajo, int dni)
+        /*private DataTable FiltrarTabla(int legajo, int dni)
         {
             DataTable vacio = new DataTable();
             string legajoEmpleado = "";
@@ -131,45 +97,70 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             {
                 dniEmpleado = "E.nroDoc = " + dni.ToString();
             }
-           
-            try
-            {
-                ConexionBD conexion = new ConexionBD();
-                string consulta = @"select E.legajo"
-                                    + ", E.nombre"
-                                    + ", E.apellido"
-                                    + ", TD.nombre as 'tipodni'"
-                                    + ", E.nroDoc as 'dni'"
-                                    + ", E.fechaNacimiento"
-                                    + ", E.fechaAlta"
-                                    + ", J.nombre + ' ' + J.apellido as 'Jefe'"
-                                    + "from Empleado E left join TipoDocumento TD on E.tipoDoc = TD.idTipoDocumento "
-                                                     + "left join Empleado J on E.legajoSuperior = J.legajo "
-                                    + "where " + legajoEmpleado + dniEmpleado;
 
-                DataTable tablaEmpleados = conexion.ejecutar_consulta(consulta);
-                return tablaEmpleados;
-            }
-            catch
-            {
-                MessageBox.Show("Error de Base de Datos");
-                
-                this.Dispose();
-                
-            }
-            return vacio;
+
+            buscarEmpleados();
+        }*/
+
+        private void dateTime_desde_ValueChanged(object sender, EventArgs e)
+        {
+            eligioFechaDesde = true;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void dateTime_hasta_ValueChanged(object sender, EventArgs e)
         {
-            if (chk_habilitarFechas.Checked == false)
+            eligioFechaHasta = true;
+        }
+
+        private void ArmarStringFiltros()
+        {
+            string format = "yyyy-MM-dd";
+            
+            if (txt_legajo.Text.ToString().Trim() != "" || txt_dni.Text.ToString().Trim() != "")
             {
-                chk_habilitarFechas.Checked = true; 
+                if (txt_legajo.Text.ToString().Trim() != "")
+                {
+                    if (txt_dni.Text.ToString().Trim() == "")
+                    {
+                        where = "WHERE E.legajo = " + txt_legajo.Text.ToString();
+                    }
+                    else
+                    {
+                        where = "WHERE E.legajo = " + txt_legajo.Text.ToString() + " OR E.nroDoc = " + txt_dni.Text.ToString();
+                    }
+                }
+
+                if (txt_dni.Text.ToString().Trim() != "")
+                {
+                    where = "WHERE E.nroDoc = " + txt_dni.Text.ToString();
+                }
+              
+                if ((where.Contains("WHERE E.legajo = ") || where.Contains("WHERE E.nroDoc = ")) && eligioFechaDesde || eligioFechaHasta)
+                {
+                    where += " AND E.fechaAlta BETWEEN " + "'" + dateTime_desde.Value.ToString(format) + "'" + " AND " + "'" + dateTime_hasta.Value.ToString(format) + "'";
+                }
             }
-            else
+            else if (where == string.Empty && eligioFechaDesde || eligioFechaHasta)
             {
-                chk_habilitarFechas.Checked = false;
+                where = "WHERE E.fechaAlta BETWEEN " + "'" + dateTime_desde.Value.ToString(format) + "'" + " AND " + "'" + dateTime_hasta.Value.ToString(format) + "'";
+                if ((where.Contains("WHERE E.legajo = ") || where.Contains("WHERE E.nroDoc = ")))
+                {
+                    where += " AND E.fechaAlta BETWEEN " + "'" + dateTime_desde.Value.ToString(format) + "'" + " AND " + "'" + dateTime_hasta.Value.ToString(format) + "'";
+                }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txt_legajo.Text = "";
+            txt_dni.Text = "";
+            dateTime_desde.Value = DateTime.Now;
+            dateTime_hasta.Value = DateTime.Now;
+            eligioFechaDesde = false;
+            eligioFechaHasta = false;
+            where = string.Empty;
+
+            buscarEmpleados();
         }
     }
 }

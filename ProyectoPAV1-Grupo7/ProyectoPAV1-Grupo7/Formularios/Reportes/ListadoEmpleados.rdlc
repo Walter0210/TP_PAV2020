@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Empleados</Value>
+                <Value>Empleados </Value>
                 <Style>
                   <FontSize>22pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -21,9 +21,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.22792in</Top>
-        <Left>4.13417in</Left>
+        <Left>4.29042in</Left>
         <Height>0.4375in</Height>
-        <Width>1.67708in</Width>
+        <Width>1.75in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -41,30 +41,30 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.09375in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.15625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>0.85417in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.04167in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.27083in</Width>
+              <Width>1.625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.26042in</Width>
+              <Width>1.45834in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.125in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.38542in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -76,7 +76,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Legajo</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -109,7 +111,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -142,7 +146,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Apellido</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -174,8 +180,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tipo DNI</Value>
-                              <Style />
+                              <Value>Tipo Documento</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -207,8 +215,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DNI</Value>
-                              <Style />
+                              <Value>Nro Documento</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -241,7 +251,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha Nacimiento</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -274,7 +286,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha Alta</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -307,7 +321,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Jefe</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -620,8 +636,8 @@
         <DataSetName>DatosEmpleados</DataSetName>
         <Top>0.99875in</Top>
         <Left>0.44667in</Left>
-        <Height>0.5in</Height>
-        <Width>8.53125in</Width>
+        <Height>0.63542in</Height>
+        <Width>9.35416in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
