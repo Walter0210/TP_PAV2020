@@ -39,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.txtWhere = new System.Windows.Forms.Label();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +49,11 @@
             this.reportViewer1.AutoScroll = true;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 134);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 119);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(734, 727);
+            this.reportViewer1.Size = new System.Drawing.Size(734, 742);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -59,10 +61,10 @@
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(411, 82);
+            this.btnCalcular.Location = new System.Drawing.Point(519, 17);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(71, 21);
+            this.btnCalcular.Size = new System.Drawing.Size(71, 20);
             this.btnCalcular.TabIndex = 1;
             this.btnCalcular.Text = "Filtrar";
             this.btnCalcular.UseVisualStyleBackColor = true;
@@ -70,6 +72,7 @@
             // 
             // cmbSolicitante
             // 
+            this.cmbSolicitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
             this.cmbSolicitante.Location = new System.Drawing.Point(106, 17);
@@ -91,6 +94,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbResponsable);
             this.groupBox1.Controls.Add(this.label3);
@@ -102,7 +106,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(508, 117);
+            this.groupBox1.Size = new System.Drawing.Size(614, 89);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -118,6 +122,7 @@
             // 
             // cmbResponsable
             // 
+            this.cmbResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbResponsable.FormattingEnabled = true;
             this.cmbResponsable.Location = new System.Drawing.Point(106, 50);
             this.cmbResponsable.Name = "cmbResponsable";
@@ -148,6 +153,7 @@
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(121, 20);
             this.dtpHasta.TabIndex = 5;
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
             // dtpDesde
             // 
@@ -155,12 +161,35 @@
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(121, 20);
             this.dtpDesde.TabIndex = 4;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
+            // 
+            // txtWhere
+            // 
+            this.txtWhere.AutoSize = true;
+            this.txtWhere.Location = new System.Drawing.Point(22, 104);
+            this.txtWhere.Name = "txtWhere";
+            this.txtWhere.Size = new System.Drawing.Size(0, 13);
+            this.txtWhere.TabIndex = 5;
+            this.txtWhere.Visible = false;
+            // 
+            // btnLimpiarFiltros
+            // 
+            this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(519, 51);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
+            this.btnLimpiarFiltros.TabIndex = 9;
+            this.btnLimpiarFiltros.Text = "Limpiar";
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
             // 
             // frm_ListadoOrdenesCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 861);
+            this.Controls.Add(this.txtWhere);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -172,6 +201,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -188,5 +218,7 @@
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbResponsable;
+        private System.Windows.Forms.Label txtWhere;
+        private System.Windows.Forms.Button btnLimpiarFiltros;
     }
 }

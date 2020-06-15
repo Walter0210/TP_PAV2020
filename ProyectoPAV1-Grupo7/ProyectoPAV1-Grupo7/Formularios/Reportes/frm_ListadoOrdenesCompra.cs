@@ -14,6 +14,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_ListadoOrdenesCompra : Form
     {
+        private bool eligioFechaDesde = false;
+        private bool eligioFechaHasta = false;
         public frm_ListadoOrdenesCompra()
         {
             InitializeComponent();
@@ -36,21 +38,11 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void frm_ListadoOrdenesCompra_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
+            txtWhere.Text = string.Empty;
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            
-            /*DataTable table = new DataTable();
-            table = frm_ConsultaOrdenCompra.ObtenerListadoOrdenesCompra();
-
-            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.LocalReport.Refresh(); */
-
-
             DataTable table = new DataTable();
             table = frm_ConsultaOrdenCompra.ObtenerListadoOrdenesCompra();
 
@@ -66,25 +58,19 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (cmbSolicitante.SelectedIndex != -1 && cmbResponsable.SelectedIndex != -1 && dtpDesde.Value != dtpHasta.Value)
-            {
-                int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
-                
-                ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerSolicitante(solicitante));
+            txtWhere.Text = string.Empty;
+            ArmarStringFiltros();
+            //int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
 
-                //reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-                ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: " + solicitante);
-                reportViewer1.LocalReport.SetParameters(parametros);
+            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerListado());
 
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(ds);
-                reportViewer1.RefreshReport();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar por lo menos un filtro!");
-            }
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: ");
+            reportViewer1.LocalReport.SetParameters(parametros);
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(ds);
+            reportViewer1.RefreshReport();
         }
 
         private void cargarComboSolicitante()
@@ -98,18 +84,84 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbSolicitante.SelectedIndex = -1;
         }
 
-        private DataTable ObtenerSolicitante(int solicitante)
+        private DataTable ObtenerListado()
         {
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
                 " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
                 "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT " +
-                "WHERE S.CUIT = '" + solicitante + "'";
+                txtWhere.Text;
 
-            //string sql = "SELECT * FROM Estacion WHERE CUIT = " + solicitante;
             DataTable tabla = conexion.ejecutar_consulta(sql);
-
             return tabla;
+        }
+        private void ArmarStringFiltros()
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+
+            if (cmbSolicitante.SelectedIndex != -1)
+            {
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE OC.cuitSolicitante = " + cmbSolicitante.SelectedValue;
+                }
+                else
+                {
+                    txtWhere.Text += " AND OC.cuitSolicitante = " + cmbSolicitante.SelectedValue;
+                }
+            }
+            if (cmbResponsable.SelectedIndex != -1)
+            {
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE OC.legajo = " + cmbResponsable.SelectedValue;
+                }
+                else
+                {
+                    txtWhere.Text += " AND OC.legajo = " + cmbResponsable.SelectedValue;
+                }
+            }
+            
+            if (eligioFechaDesde || eligioFechaHasta)
+            {
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE OC.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                }
+                else
+                {
+                    txtWhere.Text += " AND OC.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                }
+            }
+        }
+
+        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            cmbSolicitante.SelectedIndex = -1;
+            cmbResponsable.SelectedIndex = -1;
+            dtpDesde.Value = DateTime.Now;
+            dtpHasta.Value = DateTime.Now;
+            eligioFechaDesde = false;
+            eligioFechaHasta = false;
+            txtWhere.Text = "";
+
+            DataTable table = new DataTable();
+            table = ObtenerListado();
+
+            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(ds);
+            reportViewer1.RefreshReport();
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+            eligioFechaDesde = true;
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+            eligioFechaHasta = true;
         }
     }
 }

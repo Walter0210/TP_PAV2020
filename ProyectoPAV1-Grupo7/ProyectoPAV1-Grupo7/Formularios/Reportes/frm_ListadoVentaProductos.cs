@@ -74,8 +74,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            //if (txtWhere.Text == "")
-            //{ 
                 ArmarStringFiltros();
                 ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion());
                 ReportParameter[] parametros = new ReportParameter[1];
@@ -85,11 +83,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(ds);
                 reportViewer1.RefreshReport();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("deberias limpiar los filtros");
-            //}
         }
 
         private void ArmarStringFiltros()
