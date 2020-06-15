@@ -42,6 +42,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         
         private TablaListadoSurtidoresDataTable tableTablaListadoSurtidores;
         
+        private TablaEstadisticaGananciaDataTable tableTablaEstadisticaGanancia;
+        
         private global::System.Data.DataRelation relationFK_DetalleOrdenCompra_OrdenCompra;
         
         private global::System.Data.DataRelation relationFK_DetalleOrdenCompra_Producto;
@@ -106,6 +108,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 }
                 if ((ds.Tables["TablaListadoSurtidores"] != null)) {
                     base.Tables.Add(new TablaListadoSurtidoresDataTable(ds.Tables["TablaListadoSurtidores"]));
+                }
+                if ((ds.Tables["TablaEstadisticaGanancia"] != null)) {
+                    base.Tables.Add(new TablaEstadisticaGananciaDataTable(ds.Tables["TablaEstadisticaGanancia"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -217,6 +222,16 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TablaEstadisticaGananciaDataTable TablaEstadisticaGanancia {
+            get {
+                return this.tableTablaEstadisticaGanancia;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -309,6 +324,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 if ((ds.Tables["TablaListadoSurtidores"] != null)) {
                     base.Tables.Add(new TablaListadoSurtidoresDataTable(ds.Tables["TablaListadoSurtidores"]));
                 }
+                if ((ds.Tables["TablaEstadisticaGanancia"] != null)) {
+                    base.Tables.Add(new TablaEstadisticaGananciaDataTable(ds.Tables["TablaEstadisticaGanancia"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -396,6 +414,12 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                     this.tableTablaListadoSurtidores.InitVars();
                 }
             }
+            this.tableTablaEstadisticaGanancia = ((TablaEstadisticaGananciaDataTable)(base.Tables["TablaEstadisticaGanancia"]));
+            if ((initTable == true)) {
+                if ((this.tableTablaEstadisticaGanancia != null)) {
+                    this.tableTablaEstadisticaGanancia.InitVars();
+                }
+            }
             this.relationFK_DetalleOrdenCompra_OrdenCompra = this.Relations["FK_DetalleOrdenCompra_OrdenCompra"];
             this.relationFK_DetalleOrdenCompra_Producto = this.Relations["FK_DetalleOrdenCompra_Producto"];
             this.relationFK_OrdenCompra_Estacion = this.Relations["FK_OrdenCompra_Estacion"];
@@ -429,6 +453,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             base.Tables.Add(this.tableTablaListadoEmpleados);
             this.tableTablaListadoSurtidores = new TablaListadoSurtidoresDataTable();
             base.Tables.Add(this.tableTablaListadoSurtidores);
+            this.tableTablaEstadisticaGanancia = new TablaEstadisticaGananciaDataTable();
+            base.Tables.Add(this.tableTablaEstadisticaGanancia);
             this.relationFK_DetalleOrdenCompra_OrdenCompra = new global::System.Data.DataRelation("FK_DetalleOrdenCompra_OrdenCompra", new global::System.Data.DataColumn[] {
                         this.tableOrdenCompra.numeroOrdenCompraColumn}, new global::System.Data.DataColumn[] {
                         this.tableDetalleOrdenCompra.numOrdenCompraColumn}, false);
@@ -502,6 +528,12 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeTablaListadoSurtidores() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeTablaEstadisticaGanancia() {
             return false;
         }
         
@@ -586,6 +618,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void TablaListadoSurtidoresRowChangeEventHandler(object sender, TablaListadoSurtidoresRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void TablaEstadisticaGananciaRowChangeEventHandler(object sender, TablaEstadisticaGananciaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3446,6 +3481,309 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TablaEstadisticaGananciaDataTable : global::System.Data.TypedTableBase<TablaEstadisticaGananciaRow> {
+            
+            private global::System.Data.DataColumn columnproducto;
+            
+            private global::System.Data.DataColumn columnprecioCompra;
+            
+            private global::System.Data.DataColumn columnprecioVenta;
+            
+            private global::System.Data.DataColumn columnganancia;
+            
+            private global::System.Data.DataColumn columnporcentajeGanancia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TablaEstadisticaGananciaDataTable() {
+                this.TableName = "TablaEstadisticaGanancia";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal TablaEstadisticaGananciaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected TablaEstadisticaGananciaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn productoColumn {
+                get {
+                    return this.columnproducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn precioCompraColumn {
+                get {
+                    return this.columnprecioCompra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn precioVentaColumn {
+                get {
+                    return this.columnprecioVenta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn gananciaColumn {
+                get {
+                    return this.columnganancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn porcentajeGananciaColumn {
+                get {
+                    return this.columnporcentajeGanancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TablaEstadisticaGananciaRow this[int index] {
+                get {
+                    return ((TablaEstadisticaGananciaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event TablaEstadisticaGananciaRowChangeEventHandler TablaEstadisticaGananciaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event TablaEstadisticaGananciaRowChangeEventHandler TablaEstadisticaGananciaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event TablaEstadisticaGananciaRowChangeEventHandler TablaEstadisticaGananciaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event TablaEstadisticaGananciaRowChangeEventHandler TablaEstadisticaGananciaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddTablaEstadisticaGananciaRow(TablaEstadisticaGananciaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TablaEstadisticaGananciaRow AddTablaEstadisticaGananciaRow(string producto, decimal precioCompra, decimal precioVenta, decimal ganancia, int porcentajeGanancia) {
+                TablaEstadisticaGananciaRow rowTablaEstadisticaGananciaRow = ((TablaEstadisticaGananciaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        producto,
+                        precioCompra,
+                        precioVenta,
+                        ganancia,
+                        porcentajeGanancia};
+                rowTablaEstadisticaGananciaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTablaEstadisticaGananciaRow);
+                return rowTablaEstadisticaGananciaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TablaEstadisticaGananciaDataTable cln = ((TablaEstadisticaGananciaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TablaEstadisticaGananciaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnproducto = base.Columns["producto"];
+                this.columnprecioCompra = base.Columns["precioCompra"];
+                this.columnprecioVenta = base.Columns["precioVenta"];
+                this.columnganancia = base.Columns["ganancia"];
+                this.columnporcentajeGanancia = base.Columns["porcentajeGanancia"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproducto);
+                this.columnprecioCompra = new global::System.Data.DataColumn("precioCompra", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecioCompra);
+                this.columnprecioVenta = new global::System.Data.DataColumn("precioVenta", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecioVenta);
+                this.columnganancia = new global::System.Data.DataColumn("ganancia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnganancia);
+                this.columnporcentajeGanancia = new global::System.Data.DataColumn("porcentajeGanancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnporcentajeGanancia);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TablaEstadisticaGananciaRow NewTablaEstadisticaGananciaRow() {
+                return ((TablaEstadisticaGananciaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TablaEstadisticaGananciaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TablaEstadisticaGananciaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TablaEstadisticaGananciaRowChanged != null)) {
+                    this.TablaEstadisticaGananciaRowChanged(this, new TablaEstadisticaGananciaRowChangeEvent(((TablaEstadisticaGananciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TablaEstadisticaGananciaRowChanging != null)) {
+                    this.TablaEstadisticaGananciaRowChanging(this, new TablaEstadisticaGananciaRowChangeEvent(((TablaEstadisticaGananciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TablaEstadisticaGananciaRowDeleted != null)) {
+                    this.TablaEstadisticaGananciaRowDeleted(this, new TablaEstadisticaGananciaRowChangeEvent(((TablaEstadisticaGananciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TablaEstadisticaGananciaRowDeleting != null)) {
+                    this.TablaEstadisticaGananciaRowDeleting(this, new TablaEstadisticaGananciaRowChangeEvent(((TablaEstadisticaGananciaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveTablaEstadisticaGananciaRow(TablaEstadisticaGananciaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatosEstadistica ds = new DatosEstadistica();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TablaEstadisticaGananciaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DetalleOrdenCompraRow : global::System.Data.DataRow {
@@ -4856,6 +5194,164 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TablaEstadisticaGananciaRow : global::System.Data.DataRow {
+            
+            private TablaEstadisticaGananciaDataTable tableTablaEstadisticaGanancia;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal TablaEstadisticaGananciaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTablaEstadisticaGanancia = ((TablaEstadisticaGananciaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string producto {
+                get {
+                    try {
+                        return ((string)(this[this.tableTablaEstadisticaGanancia.productoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'producto\' in table \'TablaEstadisticaGanancia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaEstadisticaGanancia.productoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal precioCompra {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableTablaEstadisticaGanancia.precioCompraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'precioCompra\' in table \'TablaEstadisticaGanancia\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaEstadisticaGanancia.precioCompraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal precioVenta {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableTablaEstadisticaGanancia.precioVentaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'precioVenta\' in table \'TablaEstadisticaGanancia\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaEstadisticaGanancia.precioVentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal ganancia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableTablaEstadisticaGanancia.gananciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ganancia\' in table \'TablaEstadisticaGanancia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaEstadisticaGanancia.gananciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int porcentajeGanancia {
+                get {
+                    try {
+                        return ((int)(this[this.tableTablaEstadisticaGanancia.porcentajeGananciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'porcentajeGanancia\' in table \'TablaEstadisticaGanancia\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaEstadisticaGanancia.porcentajeGananciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsproductoNull() {
+                return this.IsNull(this.tableTablaEstadisticaGanancia.productoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetproductoNull() {
+                this[this.tableTablaEstadisticaGanancia.productoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsprecioCompraNull() {
+                return this.IsNull(this.tableTablaEstadisticaGanancia.precioCompraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetprecioCompraNull() {
+                this[this.tableTablaEstadisticaGanancia.precioCompraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsprecioVentaNull() {
+                return this.IsNull(this.tableTablaEstadisticaGanancia.precioVentaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetprecioVentaNull() {
+                this[this.tableTablaEstadisticaGanancia.precioVentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsgananciaNull() {
+                return this.IsNull(this.tableTablaEstadisticaGanancia.gananciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetgananciaNull() {
+                this[this.tableTablaEstadisticaGanancia.gananciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsporcentajeGananciaNull() {
+                return this.IsNull(this.tableTablaEstadisticaGanancia.porcentajeGananciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetporcentajeGananciaNull() {
+                this[this.tableTablaEstadisticaGanancia.porcentajeGananciaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -5147,6 +5643,40 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public TablaListadoSurtidoresRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class TablaEstadisticaGananciaRowChangeEvent : global::System.EventArgs {
+            
+            private TablaEstadisticaGananciaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TablaEstadisticaGananciaRowChangeEvent(TablaEstadisticaGananciaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TablaEstadisticaGananciaRow Row {
                 get {
                     return this.eventRow;
                 }
