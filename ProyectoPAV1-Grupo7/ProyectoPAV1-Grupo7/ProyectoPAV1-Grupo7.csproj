@@ -180,6 +180,12 @@
     <Compile Include="Formularios\Procesos\frm_ConsultaOrdenCompra.Designer.cs">
       <DependentUpon>frm_ConsultaOrdenCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\frm_EstadisticaGananciaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_EstadisticaGananciaProducto.Designer.cs">
+      <DependentUpon>frm_EstadisticaGananciaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,7 +258,11 @@
     <EmbeddedResource Include="Formularios\Procesos\frm_ConsultaOrdenCompra.resx">
       <DependentUpon>frm_ConsultaOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\EstadisticaGananciaProductos.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaProductosVendidos.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaGananciaProducto.resx">
+      <DependentUpon>frm_EstadisticaGananciaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.resx">
       <DependentUpon>frm_EstadisticaOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
