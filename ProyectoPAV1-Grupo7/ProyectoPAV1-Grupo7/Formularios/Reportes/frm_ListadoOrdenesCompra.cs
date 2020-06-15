@@ -16,6 +16,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
     {
         private bool eligioFechaDesde = false;
         private bool eligioFechaHasta = false;
+        private string stringRestriccion = string.Empty;
         public frm_ListadoOrdenesCompra()
         {
             InitializeComponent();
@@ -59,13 +60,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
             ArmarStringFiltros();
             //int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
 
             ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerListado());
 
             ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("restriccion", "Restringido por el solicitante con cuit: ");
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
             reportViewer1.LocalReport.SetParameters(parametros);
 
             reportViewer1.LocalReport.DataSources.Clear();
@@ -98,16 +100,19 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void ArmarStringFiltros()
         {
             string format = "yyyy-MM-dd HH:mm:ss";
+            string shortFormat = "dd-MM-yyyy";
 
             if (cmbSolicitante.SelectedIndex != -1)
             {
                 if (txtWhere.Text == string.Empty)
                 {
                     txtWhere.Text = "WHERE OC.cuitSolicitante = " + cmbSolicitante.SelectedValue;
+                    stringRestriccion = "Estación: " + cmbSolicitante.Text;
                 }
                 else
                 {
                     txtWhere.Text += " AND OC.cuitSolicitante = " + cmbSolicitante.SelectedValue;
+                    stringRestriccion += " | Estación: " + cmbSolicitante.Text;
                 }
             }
             if (cmbResponsable.SelectedIndex != -1)
@@ -115,10 +120,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 if (txtWhere.Text == string.Empty)
                 {
                     txtWhere.Text = "WHERE OC.legajo = " + cmbResponsable.SelectedValue;
+                    stringRestriccion = "Responsable: " + cmbResponsable.Text;
                 }
                 else
                 {
                     txtWhere.Text += " AND OC.legajo = " + cmbResponsable.SelectedValue;
+                    stringRestriccion += " | Responsable: " + cmbResponsable.Text;
                 }
             }
             
@@ -127,10 +134,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 if (txtWhere.Text == string.Empty)
                 {
                     txtWhere.Text = "WHERE OC.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                    stringRestriccion = "Entre: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
                 }
                 else
                 {
                     txtWhere.Text += " AND OC.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                    stringRestriccion += " | Entre: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
                 }
             }
         }
@@ -143,10 +152,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             dtpHasta.Value = DateTime.Now;
             eligioFechaDesde = false;
             eligioFechaHasta = false;
-            txtWhere.Text = "";
+            txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
 
             DataTable table = new DataTable();
             table = ObtenerListado();
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            reportViewer1.LocalReport.SetParameters(parametros);
 
             ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
             reportViewer1.LocalReport.DataSources.Clear();

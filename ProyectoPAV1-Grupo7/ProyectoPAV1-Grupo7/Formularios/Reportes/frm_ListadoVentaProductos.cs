@@ -17,6 +17,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         //private string stringWhere;
         private bool eligioFechaDesde = false;
         private bool eligioFechaHasta = false;
+        string stringRestriccion = string.Empty;
 
         public frm_ListadoVentaProductos()
         {
@@ -33,12 +34,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
-            table = ObtenerListadoTickets();
+            table = ObtenerListado();
 
             ReportDataSource ds = new ReportDataSource("DatosTickets", table);
 
             ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("restriccion", "");
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
             reportViewer1.LocalReport.SetParameters(parametros);
 
             reportViewer1.LocalReport.DataSources.Clear();
@@ -46,7 +47,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             reportViewer1.LocalReport.Refresh();
         }
 
-        private DataTable ObtenerListadoTickets()
+        private DataTable ObtenerListado()
         {
             ConexionBD conexion = new ConexionBD();
 
@@ -77,7 +78,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 ArmarStringFiltros();
                 ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion());
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("restriccion", "Filtrando por CUIT = " + cmbSolicitante.SelectedValue);
+                parametros[0] = new ReportParameter("restriccion", stringRestriccion);
                 reportViewer1.LocalReport.SetParameters(parametros);
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -87,21 +88,36 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void ArmarStringFiltros()
         {
+            txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
+
             string format = "yyyy-MM-dd HH:mm:ss";
+            string shortFormat = "dd-MM-yyyy";
+
             if (cmbSolicitante.SelectedIndex != -1)
             {
-                txtWhere.Text = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
-                if (txtWhere.Text.Contains("WHERE E.CUIT = ") && eligioFechaDesde || eligioFechaHasta)
+                if (stringRestriccion == string.Empty)
                 {
-                    txtWhere.Text += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                    txtWhere.Text = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
+                    stringRestriccion = "Listado limitado a: Estacion: " + cmbSolicitante.Text;
+                }
+                else
+                {
+                    txtWhere.Text += " AND E.CUIT = " + cmbSolicitante.SelectedValue;
+                    stringRestriccion += " | Estacion : " + cmbSolicitante.Text;
                 }
             }
-            else if (txtWhere.Text == string.Empty && eligioFechaDesde || eligioFechaHasta)
+            if (eligioFechaDesde || eligioFechaHasta)
             {
-                txtWhere.Text = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-                if (txtWhere.Text.Contains("WHERE E.CUIT = "))
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                    stringRestriccion = "Listado limitado a las Fechas: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " AND " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
+                }
+                else
                 {
                     txtWhere.Text += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
+                    stringRestriccion += " | Fecha: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " AND " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
                 }
             }
         }
@@ -128,10 +144,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             dtpHasta.Value = DateTime.Now;
             eligioFechaDesde = false;
             eligioFechaHasta = false;
-            txtWhere.Text = "";
+            stringRestriccion = string.Empty;
+            txtWhere.Text = string.Empty;
 
             DataTable table = new DataTable();
-            table = ObtenerListadoTickets();
+            table = ObtenerListado();
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            reportViewer1.LocalReport.SetParameters(parametros);
 
             ReportDataSource ds = new ReportDataSource("DatosTickets", table);
             reportViewer1.LocalReport.DataSources.Clear();

@@ -56,19 +56,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.96814cm</Width>
+                  <Width>3.66664cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.19973cm</Width>
+                  <Width>3.89823cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.06181cm</Width>
+                  <Width>3.76031cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.06181cm</Width>
+                  <Width>3.76031cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.26642cm</Width>
+                  <Width>3.96492cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -156,7 +156,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Legajo</Value>
+                                  <Value>Responsable</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -450,9 +450,9 @@
             </TablixRowHierarchy>
             <DataSetName>DatosOrdenesCompra</DataSetName>
             <Top>3.10303cm</Top>
-            <Left>0.56303cm</Left>
+            <Left>1.94936cm</Left>
             <Height>1.327cm</Height>
-            <Width>15.55789cm</Width>
+            <Width>19.05041cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -480,7 +480,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>0.41487cm</Top>
-            <Left>2.36687cm</Left>
+            <Left>5.3487cm</Left>
             <Height>0.6cm</Height>
             <Width>12.25172cm</Width>
             <ZIndex>1</ZIndex>
@@ -499,7 +499,7 @@
           <Line Name="Line1">
             <Top>1.62137cm</Top>
             <Height>0cm</Height>
-            <Width>16.75788cm</Width>
+            <Width>22.94913cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -525,9 +525,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
             <Top>2.05147cm</Top>
-            <Left>0.56303cm</Left>
+            <Left>1.94936cm</Left>
             <Height>0.6cm</Height>
-            <Width>9.32882cm</Width>
+            <Width>19.05041cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -543,7 +543,7 @@
         <Height>3.025in</Height>
         <Style />
       </Body>
-      <Width>6.59759in</Width>
+      <Width>9.03509in</Width>
       <Page>
         <PageFooter>
           <Height>2.54cm</Height>
@@ -566,7 +566,7 @@
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
               <Top>1.2192cm</Top>
-              <Left>13.37304cm</Left>
+              <Left>19.80241cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <Style>
