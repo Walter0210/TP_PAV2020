@@ -198,6 +198,12 @@
     <Compile Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.Designer.cs">
       <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\frm_EstadisticasVentaSurtidorPorDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\frm_EstadisticasVentaSurtidorPorDia.Designer.cs">
+      <DependentUpon>frm_EstadisticasVentaSurtidorPorDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reportes\frm_ListadoEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.resx">
       <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticasVentaSurtidorPorDia.resx">
+      <DependentUpon>frm_EstadisticasVentaSurtidorPorDia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\frm_ListadoEmpleados.resx">
       <DependentUpon>frm_ListadoEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +295,7 @@
     <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ListadoSurtidores.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listado_VentaProductos.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\EstadisticaVentaPorDia.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

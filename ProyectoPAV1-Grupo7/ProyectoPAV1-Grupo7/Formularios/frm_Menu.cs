@@ -211,5 +211,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_EstadisticaGananciaProducto frm_EstadisticaGananciaProducto = new frm_EstadisticaGananciaProducto();
             frm_EstadisticaGananciaProducto.ShowDialog();
         }
+
+        private void ventaPorSurtidorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_EstadisticasVentaSurtidorPorDia frm_EstadisticasVentaSurtidorPorDia = new frm_EstadisticasVentaSurtidorPorDia();
+            frm_EstadisticasVentaSurtidorPorDia.ShowDialog();
+        }
     }
 }

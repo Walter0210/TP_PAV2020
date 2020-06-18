@@ -49,6 +49,7 @@
             this.ordenesDeCompraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gananciaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,7 @@
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.btn_producto = new System.Windows.Forms.Button();
             this.btn_empleado = new System.Windows.Forms.Button();
-            this.gananciaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventaPorSurtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -211,7 +212,8 @@
             this.ordenesDeCompraToolStripMenuItem1,
             this.ventasToolStripMenuItem1,
             this.productosToolStripMenuItem,
-            this.gananciaProductosToolStripMenuItem});
+            this.gananciaProductosToolStripMenuItem,
+            this.ventaPorSurtidorToolStripMenuItem});
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
             this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.estadisticasToolStripMenuItem.Text = "Estadisticas";
@@ -235,6 +237,13 @@
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // gananciaProductosToolStripMenuItem
+            // 
+            this.gananciaProductosToolStripMenuItem.Name = "gananciaProductosToolStripMenuItem";
+            this.gananciaProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gananciaProductosToolStripMenuItem.Text = "Ganancia Productos";
+            this.gananciaProductosToolStripMenuItem.Click += new System.EventHandler(this.gananciaProductosToolStripMenuItem_Click);
             // 
             // listadosToolStripMenuItem
             // 
@@ -451,12 +460,12 @@
             this.btn_empleado.UseVisualStyleBackColor = true;
             this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
             // 
-            // gananciaProductosToolStripMenuItem
+            // ventaPorSurtidorToolStripMenuItem
             // 
-            this.gananciaProductosToolStripMenuItem.Name = "gananciaProductosToolStripMenuItem";
-            this.gananciaProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gananciaProductosToolStripMenuItem.Text = "Ganancia Productos";
-            this.gananciaProductosToolStripMenuItem.Click += new System.EventHandler(this.gananciaProductosToolStripMenuItem_Click);
+            this.ventaPorSurtidorToolStripMenuItem.Name = "ventaPorSurtidorToolStripMenuItem";
+            this.ventaPorSurtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ventaPorSurtidorToolStripMenuItem.Text = "Venta por Surtidor";
+            this.ventaPorSurtidorToolStripMenuItem.Click += new System.EventHandler(this.ventaPorSurtidorToolStripMenuItem_Click);
             // 
             // frm_Menu
             // 
@@ -525,5 +534,6 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem surtidoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gananciaProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventaPorSurtidorToolStripMenuItem;
     }
 }
