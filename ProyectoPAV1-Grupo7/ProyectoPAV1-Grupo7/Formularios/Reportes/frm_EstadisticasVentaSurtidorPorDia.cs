@@ -109,12 +109,12 @@ from Ticket T RIGHT JOIN Surtidor S on T.numeroSurtidor = S.numeroSurtidor and T
                 if (stringWhere == string.Empty)
                 {
                     stringWhere = "WHERE T.fecha LIKE " + "'" + dtpFecha.Value.ToString(shortFormat) + "'";
-                    stringRestriccion = "Para: " + "'" + dtpFecha.Value.ToString(shortFormat) + "'";
+                    stringRestriccion = "Para el día: " + "'" + dtpFecha.Value.ToString(shortFormat) + "'";
                 }
                 else
                 {
                     stringWhere += " AND T.fecha LIKE " + "'" + dtpFecha.Value.ToString(shortFormat) + "'";
-                    stringRestriccion += " | Para: " + "'" + dtpFecha.Value.ToString(shortFormat) + "'";
+                    stringRestriccion += " | Para el día: " + "'" + dtpFecha.Value.ToString(shortFormat) + "'";
                 }
             }
         }

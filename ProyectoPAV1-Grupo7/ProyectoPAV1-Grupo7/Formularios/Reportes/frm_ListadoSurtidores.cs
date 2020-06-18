@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoPAV1_Grupo7.Clases;
 using Microsoft.Reporting.WinForms;
+using System.Runtime.InteropServices;
 
 namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_ListadoSurtidores : Form
     {
-        private string where = string.Empty;
+        private string stringWhere = string.Empty;
+        private string stringRestriccion = string.Empty;
 
         public frm_ListadoSurtidores()
         {
@@ -32,6 +34,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             ArmarStringFiltros();
             buscarSurtidores();
+
+
         }
 
         private void buscarSurtidores()
@@ -39,20 +43,23 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             try
             {
                 ConexionBD conexion = new ConexionBD();
-                string consulta = @"select S.numeroSurtidor as 'numSurtidor', E.razonSocial as 'estacion' , Estado.nombre as 'estado', TC.nombre as 'tipoCombustible'"
+                string consulta = "select S.numeroSurtidor as 'numSurtidor', E.razonSocial as 'estacion' , Estado.nombre as 'estado', TC.nombre as 'tipoCombustible'"
                                     + "from Surtidor S join Estado on S.idEstado = Estado.idEstado "
                                                     + "join Estacion E on S.cuit = E.CUIT "
                                                     + "join TipoCombustible TC on S.idTipoCombustible = TC.idTipoCombustible "
-                                    + where;
+                                    + stringWhere;
 
                 DataTable tablaSurtidores = conexion.ejecutar_consulta(consulta);
                 ReportDataSource ds = new ReportDataSource("DatosSurtidores", tablaSurtidores);
 
+                ReportParameter[] parametros = new ReportParameter[1];
+                parametros[0] = new ReportParameter("restriccion", "");
+                reportViewer1.LocalReport.SetParameters(parametros);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(ds);
                 reportViewer1.LocalReport.Refresh();
                 reportViewer1.RefreshReport();
-                where = string.Empty;
+                stringWhere = string.Empty;
             }
             catch
             {
@@ -63,59 +70,45 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void ArmarStringFiltros()
         {
-            if (cmb_Estacion.SelectedIndex != -1 || cmb_Estado.SelectedIndex != -1 || cmb_TipoCombustible.SelectedIndex != -1)
+            if (cmb_Estado.SelectedIndex != -1)
             {
-                if (cmb_Estacion.SelectedIndex != -1)
+                if (stringWhere == string.Empty)
                 {
-                    // Si seleccione únicamente Estacion
-                    if (cmb_Estado.SelectedIndex == -1 && cmb_TipoCombustible.SelectedIndex == -1)
-                    {
-                        where = "WHERE E.razonSocial like '" + cmb_Estacion.SelectedValue.ToString() + "'";
-                    }
-                    else
-                    {
-                        // Si seleccione las 3 opciones
-                        if (cmb_Estado.SelectedIndex != -1 && cmb_TipoCombustible.SelectedIndex != -1)
-                        {
-                            where = "WHERE E.razonSocial like '" + cmb_Estacion.SelectedValue.ToString() + "' AND Estado.nombre like '" + cmb_Estado.SelectedValue.ToString() + "' AND TC.nombre like '" + cmb_TipoCombustible.SelectedValue.ToString() + "'";
-                        }
-                        else
-                        {
-                            // Si seleccione Estacion y Estado
-                            if (cmb_Estado.SelectedIndex != -1)
-                            {
-                                where = "WHERE E.razonSocial like '" + cmb_Estacion.SelectedValue.ToString() + "' AND Estado.nombre like '" + cmb_Estado.SelectedValue.ToString() + "'";
-                            }
-                            // Si seleccione Estacion y Tipo Combustible
-                            if (cmb_TipoCombustible.SelectedIndex != -1)
-                            {
-                                where = "WHERE E.razonSocial like '" + cmb_Estacion.SelectedValue.ToString() + "' AND TC.nombre like '" + cmb_TipoCombustible.SelectedValue.ToString() + "'";
-                            }
-                        }
-                    }
+                    stringWhere = "WHERE Estado.idEstado = " + cmb_Estado.SelectedValue;
+                    stringRestriccion = "Estado = " + cmb_Estado.Text;
                 }
-
-                // Si NO SELECCIONE Estacion y seleccione Estado
-                if (cmb_Estacion.SelectedIndex == -1 && cmb_Estado.SelectedIndex != -1)
+                else
                 {
-                    // Si solo seleccione Estado
-                    if (cmb_TipoCombustible.SelectedIndex == -1)
-                    {
-                        where = "WHERE Estado.nombre like '" + cmb_Estado.SelectedValue.ToString() + "'";
-                    }
-                    // Si solo seleccione Estado y Tipo Combustible
-                    else
-                    {
-                        where = "WHERE Estado.nombre like '" + cmb_Estado.SelectedValue.ToString() + "' AND TC.nombre = '" + cmb_TipoCombustible.SelectedValue.ToString() + "'";
-                    }
-                }
-                // Si NO SELECCIONE Estacion ni Estado y solo Tipo Combustible
-                if (cmb_Estacion.SelectedIndex == -1 && cmb_Estado.SelectedIndex == -1 && cmb_TipoCombustible.SelectedIndex != -1)
-                {
-                    where = "WHERE TC.nombre like '" + cmb_TipoCombustible.SelectedValue.ToString() + "'";
+                    //stringWhere += " AND Estado.idEstado = " + cmb_Estado.SelectedValue;
+                    //stringRestriccion += " | Estado = " + cmb_Estado.Text;
                 }
             }
-                
+            if (cmb_Estacion.SelectedIndex != -1)
+            {
+                if (stringWhere == string.Empty)
+                {
+                    stringWhere = "WHERE E.CUIT = " + cmb_Estacion.SelectedValue;
+                    stringRestriccion = "Estacion = " + cmb_Estacion.Text;
+                }
+                else
+                {
+                    stringWhere += " AND E.CUIT = " + cmb_Estacion.SelectedValue;
+                    stringRestriccion += " | Estacion = " + cmb_Estacion.Text;
+                }
+            }
+            if (cmb_TipoCombustible.SelectedIndex != -1)
+            {
+                if (stringWhere == string.Empty)
+                {
+                    stringWhere = "WHERE TC.idTipoCombustible = " + cmb_TipoCombustible.SelectedValue;
+                    stringRestriccion = " Tipo de Combustible = " + cmb_TipoCombustible.Text;
+                }
+                else
+                {
+                    stringWhere += " AND TC.idTipoCombustible = " + cmb_TipoCombustible.SelectedValue;
+                    stringRestriccion += " | Tipo de Combustible = " + cmb_TipoCombustible.Text;
+                }
+            }
         }
 
         private void cargarCombos()
@@ -123,19 +116,19 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // ESTACION
             cmb_Estacion.DataSource = buscarEstaciones();
             cmb_Estacion.DisplayMember = "razonSocial";
-            cmb_Estacion.ValueMember = "razonSocial";
+            cmb_Estacion.ValueMember = "CUIT";
             cmb_Estacion.SelectedIndex = -1;
 
             // ESTADOS
             cmb_Estado.DataSource = buscarEstados();
             cmb_Estado.DisplayMember = "nombre";
-            cmb_Estado.ValueMember = "nombre";
+            cmb_Estado.ValueMember = "idEstado";
             cmb_Estado.SelectedIndex = -1;
 
             // TIPO COMBUSTIBLES
             cmb_TipoCombustible.DataSource = buscarTipoCombustibles();
             cmb_TipoCombustible.DisplayMember = "nombre";
-            cmb_TipoCombustible.ValueMember = "nombre";
+            cmb_TipoCombustible.ValueMember = "idTipoCombustible";
             cmb_TipoCombustible.SelectedIndex = -1;
         }
 
@@ -195,8 +188,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            stringWhere = string.Empty;
+            stringRestriccion = string.Empty;
+
             ArmarStringFiltros();
             buscarSurtidores();
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            reportViewer1.LocalReport.SetParameters(parametros);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -204,7 +203,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmb_Estacion.SelectedIndex = -1;
             cmb_Estado.SelectedIndex = -1;
             cmb_TipoCombustible.SelectedIndex = -1;
-            where = string.Empty;
+            stringWhere = string.Empty;
+            stringRestriccion = string.Empty;
             buscarSurtidores();
         }
     }

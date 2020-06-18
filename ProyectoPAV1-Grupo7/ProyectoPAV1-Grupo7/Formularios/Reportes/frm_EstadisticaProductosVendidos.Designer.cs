@@ -36,12 +36,12 @@
             this.reportViewerProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewerProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.EstadisticaProductosVendidos.rdlc";
             this.reportViewerProductos.Location = new System.Drawing.Point(0, 0);
-            this.reportViewerProductos.MaximumSize = new System.Drawing.Size(1600, 800);
+            this.reportViewerProductos.MinimumSize = new System.Drawing.Size(1100, 550);
             this.reportViewerProductos.Name = "reportViewerProductos";
             this.reportViewerProductos.ServerReport.BearerToken = null;
             this.reportViewerProductos.Size = new System.Drawing.Size(1134, 561);
             this.reportViewerProductos.TabIndex = 0;
-            this.reportViewerProductos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
+            this.reportViewerProductos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerProductos.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // frm_EstadisticaProductosVendidos

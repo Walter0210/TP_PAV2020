@@ -14,7 +14,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_ListadoEmpleados : Form
     {
-        //private bool fechas = false;
         private bool eligioFechaDesde = false;
         private bool eligioFechaHasta = false;
         private string where = string.Empty;
@@ -70,37 +69,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             catch
             {
                 MessageBox.Show("Error de Base de Datos");
-                //this.Dispose();
             }
         }
-
-        /*private DataTable FiltrarTabla(int legajo, int dni)
-        {
-            DataTable vacio = new DataTable();
-            string legajoEmpleado = "";
-            string dniEmpleado = "";
-
-            if (legajo != 0)
-            {
-                if (dni == 0)
-                {
-                    legajoEmpleado = "E.legajo = " + legajo.ToString();
-                }
-                else
-                {
-                    legajoEmpleado = "E.legajo = " + legajo.ToString() + " or ";
-                }
-                
-            }
-
-            if (dni != 0)
-            {
-                dniEmpleado = "E.nroDoc = " + dni.ToString();
-            }
-
-
-            buscarEmpleados();
-        }*/
 
         private void dateTime_desde_ValueChanged(object sender, EventArgs e)
         {

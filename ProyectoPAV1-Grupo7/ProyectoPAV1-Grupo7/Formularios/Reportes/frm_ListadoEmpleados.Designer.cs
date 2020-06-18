@@ -47,12 +47,15 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.AutoSize = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoEmpleados.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(1, 124);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 123);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1138, 576);
+            this.reportViewer1.Size = new System.Drawing.Size(860, 576);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -63,7 +66,7 @@
             this.groupBox1.Controls.Add(this.dni);
             this.groupBox1.Controls.Add(this.txt_legajo);
             this.groupBox1.Controls.Add(this.legajo);
-            this.groupBox1.Location = new System.Drawing.Point(171, 16);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(184, 92);
             this.groupBox1.TabIndex = 1;
@@ -138,7 +141,7 @@
             // 
             // btn_filtrar
             // 
-            this.btn_filtrar.Location = new System.Drawing.Point(813, 37);
+            this.btn_filtrar.Location = new System.Drawing.Point(572, 28);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(75, 23);
             this.btn_filtrar.TabIndex = 6;
@@ -148,7 +151,7 @@
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(813, 74);
+            this.btn_limpiar.Location = new System.Drawing.Point(572, 72);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
             this.btn_limpiar.TabIndex = 8;
@@ -162,7 +165,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dateTime_hasta);
             this.groupBox2.Controls.Add(this.dateTime_desde);
-            this.groupBox2.Location = new System.Drawing.Point(424, 16);
+            this.groupBox2.Location = new System.Drawing.Point(229, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(307, 92);
             this.groupBox2.TabIndex = 9;
@@ -173,12 +176,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 700);
+            this.ClientSize = new System.Drawing.Size(884, 711);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
+            this.MinimumSize = new System.Drawing.Size(700, 750);
             this.Name = "frm_ListadoEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleados";

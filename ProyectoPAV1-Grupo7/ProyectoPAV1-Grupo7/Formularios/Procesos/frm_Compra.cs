@@ -314,6 +314,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Procesos
                     VaciarGrilla(dgrTicketxProducto);
                     BuscarnroTicket();
                     cmbEstacion.Enabled = true;
+                    cmbSurtidor.Enabled = false;
                     lblTotalCalculado.Text = "0";
                 }
 

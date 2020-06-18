@@ -30,12 +30,12 @@
         {
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grb_filtros = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cmbSolicitante = new System.Windows.Forms.ComboBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.grb_filtros.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,10 +45,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.EstadisticaVentaPorDia.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 142);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 106);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(912, 524);
+            this.reportViewer1.Size = new System.Drawing.Size(910, 543);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -61,12 +61,24 @@
             this.grb_filtros.Controls.Add(this.cmbSolicitante);
             this.grb_filtros.Controls.Add(this.btnCalcular);
             this.grb_filtros.Controls.Add(this.label1);
-            this.grb_filtros.Location = new System.Drawing.Point(33, 34);
+            this.grb_filtros.Location = new System.Drawing.Point(12, 12);
             this.grb_filtros.Name = "grb_filtros";
             this.grb_filtros.Size = new System.Drawing.Size(627, 88);
             this.grb_filtros.TabIndex = 6;
             this.grb_filtros.TabStop = false;
             this.grb_filtros.Text = "Filtros";
+            // 
+            // btnLimpiarFiltros
+            // 
+            this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(520, 50);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
+            this.btnLimpiarFiltros.TabIndex = 8;
+            this.btnLimpiarFiltros.Text = "Limpiar";
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click_1);
             // 
             // label2
             // 
@@ -87,6 +99,7 @@
             // 
             // cmbSolicitante
             // 
+            this.cmbSolicitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
             this.cmbSolicitante.Location = new System.Drawing.Point(111, 14);
@@ -118,26 +131,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Estacion:";
             // 
-            // btnLimpiarFiltros
-            // 
-            this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(520, 50);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
-            this.btnLimpiarFiltros.TabIndex = 8;
-            this.btnLimpiarFiltros.Text = "Limpiar";
-            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
-            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click_1);
-            // 
             // frm_EstadisticasVentaSurtidorPorDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 678);
+            this.ClientSize = new System.Drawing.Size(934, 661);
             this.Controls.Add(this.grb_filtros);
             this.Controls.Add(this.reportViewer1);
+            this.MinimumSize = new System.Drawing.Size(950, 700);
             this.Name = "frm_EstadisticasVentaSurtidorPorDia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_EstadisticasVentaSurtidorPorDia";
             this.Load += new System.EventHandler(this.frm_EstadisticasVentaSurtidorPorDia_Load);
             this.grb_filtros.ResumeLayout(false);

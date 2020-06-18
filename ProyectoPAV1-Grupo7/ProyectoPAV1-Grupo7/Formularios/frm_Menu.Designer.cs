@@ -47,9 +47,9 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCompraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gananciaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventaPorSurtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +67,6 @@
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.btn_producto = new System.Windows.Forms.Button();
             this.btn_empleado = new System.Windows.Forms.Button();
-            this.ventaPorSurtidorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -210,7 +209,6 @@
             // 
             this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ordenesDeCompraToolStripMenuItem1,
-            this.ventasToolStripMenuItem1,
             this.productosToolStripMenuItem,
             this.gananciaProductosToolStripMenuItem,
             this.ventaPorSurtidorToolStripMenuItem});
@@ -225,12 +223,6 @@
             this.ordenesDeCompraToolStripMenuItem1.Text = "Ordenes de compra";
             this.ordenesDeCompraToolStripMenuItem1.Click += new System.EventHandler(this.ordenesDeCompraToolStripMenuItem1_Click);
             // 
-            // ventasToolStripMenuItem1
-            // 
-            this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.ventasToolStripMenuItem1.Text = "Ventas";
-            // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
@@ -244,6 +236,13 @@
             this.gananciaProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gananciaProductosToolStripMenuItem.Text = "Ganancia Productos";
             this.gananciaProductosToolStripMenuItem.Click += new System.EventHandler(this.gananciaProductosToolStripMenuItem_Click);
+            // 
+            // ventaPorSurtidorToolStripMenuItem
+            // 
+            this.ventaPorSurtidorToolStripMenuItem.Name = "ventaPorSurtidorToolStripMenuItem";
+            this.ventaPorSurtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ventaPorSurtidorToolStripMenuItem.Text = "Venta por Surtidor";
+            this.ventaPorSurtidorToolStripMenuItem.Click += new System.EventHandler(this.ventaPorSurtidorToolStripMenuItem_Click);
             // 
             // listadosToolStripMenuItem
             // 
@@ -460,13 +459,6 @@
             this.btn_empleado.UseVisualStyleBackColor = true;
             this.btn_empleado.Click += new System.EventHandler(this.btn_empleado_Click);
             // 
-            // ventaPorSurtidorToolStripMenuItem
-            // 
-            this.ventaPorSurtidorToolStripMenuItem.Name = "ventaPorSurtidorToolStripMenuItem";
-            this.ventaPorSurtidorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ventaPorSurtidorToolStripMenuItem.Text = "Venta por Surtidor";
-            this.ventaPorSurtidorToolStripMenuItem.Click += new System.EventHandler(this.ventaPorSurtidorToolStripMenuItem_Click);
-            // 
             // frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,7 +521,6 @@
         private System.Windows.Forms.ToolStripMenuItem ordenesDeCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenesDeCompraToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem surtidoresToolStripMenuItem;

@@ -112,12 +112,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 if (txtWhere.Text == string.Empty)
                 {
                     txtWhere.Text = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-                    stringRestriccion = "Listado limitado a las Fechas: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " AND " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
+                    stringRestriccion = "Listado limitado a las Fechas: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
                 }
                 else
                 {
                     txtWhere.Text += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-                    stringRestriccion += " | Fecha: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " AND " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
+                    stringRestriccion += " | Fecha: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
                 }
             }
         }

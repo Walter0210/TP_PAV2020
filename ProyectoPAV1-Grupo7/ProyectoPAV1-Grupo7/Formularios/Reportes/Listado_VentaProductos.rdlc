@@ -680,7 +680,7 @@
             </TablixRowHierarchy>
             <DataSetName>DatosTickets</DataSetName>
             <Top>0.67737cm</Top>
-            <Left>1.11125cm</Left>
+            <Left>0.55563cm</Left>
             <Height>1.41167cm</Height>
             <Width>28.20096cm</Width>
             <Style>
@@ -693,7 +693,7 @@
         <Height>1.07872in</Height>
         <Style />
       </Body>
-      <Width>11.97772in</Width>
+      <Width>11.54024in</Width>
       <Page>
         <PageHeader>
           <Height>2.59292cm</Height>
@@ -722,7 +722,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
               <Top>0.34079cm</Top>
-              <Left>10.18944cm</Left>
+              <Left>9.63384cm</Left>
               <Height>0.89104cm</Height>
               <Width>10.04453cm</Width>
               <Style>
@@ -744,7 +744,11 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Parameters!restriccion.Value(0)</Value>
-                      <Style />
+                      <Style>
+                        <FontFamily>Arial Narrow</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -752,7 +756,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.40822cm</Top>
-              <Left>3.10757cm</Left>
+              <Left>2.55198cm</Left>
               <Height>0.6cm</Height>
               <Width>24.20826cm</Width>
               <ZIndex>1</ZIndex>
@@ -769,7 +773,7 @@
             <Line Name="Line1">
               <Top>2.34307cm</Top>
               <Height>0cm</Height>
-              <Width>30.42341cm</Width>
+              <Width>29.31221cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
