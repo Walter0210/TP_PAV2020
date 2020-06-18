@@ -400,7 +400,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosCantidadSurtidor</DataSetName>
-            <Height>12.48452cm</Height>
+            <Top>1.85208cm</Top>
+            <Height>10.63244cm</Height>
             <Width>17.06563cm</Width>
             <Style>
               <Border>
@@ -411,6 +412,36 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!restriccion.Value(0)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.65828cm</Top>
+            <Left>9.12495cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.15667cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.91517in</Height>
         <Style />

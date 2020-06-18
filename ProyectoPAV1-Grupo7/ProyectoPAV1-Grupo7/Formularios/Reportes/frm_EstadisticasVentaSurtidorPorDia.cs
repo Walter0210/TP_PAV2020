@@ -36,7 +36,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             cmbSolicitante.DataSource = tabla;
-            cmbSolicitante.DisplayMember = "razonSocial ";
+            cmbSolicitante.DisplayMember = "razonSocial";
             cmbSolicitante.ValueMember = "CUIT";
             cmbSolicitante.SelectedIndex = -1;
         }
