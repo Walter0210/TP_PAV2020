@@ -87,7 +87,7 @@ from Ticket T RIGHT JOIN Surtidor S on T.numeroSurtidor = S.numeroSurtidor and T
 
         private void ArmarStringFiltros()
         {
-            string format = "yyyy-MM-dd HH:mm:ss";
+            //string format = "yyyy-MM-dd HH:mm:ss";
             string shortFormat = "yyyy-MM-dd";
 
             if (cmbSolicitante.SelectedIndex != -1)

@@ -64,7 +64,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             catch
             {
                 MessageBox.Show("Error de Base de Datos");
-                //this.Dispose();
             }
         }
 
