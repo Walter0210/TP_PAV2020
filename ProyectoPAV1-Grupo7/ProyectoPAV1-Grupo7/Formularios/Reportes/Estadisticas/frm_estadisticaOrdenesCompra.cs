@@ -14,7 +14,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 {
     public partial class frm_EstadisticaOrdenesCompra : Form
     {
-        string stringWhereMeses = string.Empty;
+        //string stringWhereMeses = string.Empty;
 
         public frm_EstadisticaOrdenesCompra()
         {
@@ -26,6 +26,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             rv_Meses.RefreshReport();
             rv_EstadisticaGeneral.RefreshReport();
             rv_Sucursal.RefreshReport();
+            dtp_SucursalFechaDesde.Value = DateTime.Today;
+            dtp_SucursalFechaHasta.Value = DateTime.Today;
         }
 
         private void rv_EstadisticaGeneralLoad(object sender, EventArgs e)
@@ -35,9 +37,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void ObtenerEstadisticaOrdenesCompra()
         {
+
+            string stringWhere;
+            stringWhere = stringFiltros(dtpFechaDesde1, dtpFechaHasta1);
+
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT OC.numeroOrdenCompra as nroOrdenCompra, COUNT(DC.idProducto) as cantidad" +
-                " FROM OrdenCompra OC JOIN DetalleOrdenCompra DC ON OC.numeroOrdenCompra = DC.numOrdenCompra" +
+                " FROM OrdenCompra OC JOIN DetalleOrdenCompra DC ON OC.numeroOrdenCompra = DC.numOrdenCompra" + stringWhere +
                 " GROUP BY OC.numeroOrdenCompra";
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
@@ -45,7 +51,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
             rv_EstadisticaGeneral.LocalReport.DataSources.Clear();
             rv_EstadisticaGeneral.LocalReport.DataSources.Add(ds);
-            rv_EstadisticaGeneral.LocalReport.Refresh();
+            rv_EstadisticaGeneral.RefreshReport();
+
         }
 
         private void rv_Meses_Load(object sender, EventArgs e)
@@ -69,57 +76,76 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void rv_Sucursal_Load(object sender, EventArgs e)
         {
-            //DataTable table = new DataTable();
-            //ReportDataSource ds = new ReportDataSource("DatosOCSucursal", ObtenerEstadisticaOrdenesCompraSucursal());
-
-            //rv_Sucursal.LocalReport.DataSources.Clear();
-            //rv_Sucursal.LocalReport.DataSources.Add(ds);
-            //rv_Sucursal.RefreshReport();
             ObtenerEstadisticaOrdenesCompraSucursal();
         }
 
         private void ObtenerEstadisticaOrdenesCompraSucursal()
         {
             ConexionBD conexion = new ConexionBD();
+            string stringWhere;
+
+            stringWhere = stringFiltros(dtp_SucursalFechaDesde, dtp_SucursalFechaHasta);
+
             string sql = @"SELECT E.razonSocial, SUM(OC.total) as totalSuc" +
-                        " FROM OrdenCompra OC JOIN Estacion E on OC.cuitSolicitante = E.CUIT " + 
-                        stringWhereMeses +
+                        " FROM OrdenCompra OC JOIN Estacion E on OC.cuitSolicitante = E.CUIT " +
+                        stringWhere +
                         " GROUP BY E.razonSocial";
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
-            
             ReportDataSource ds = new ReportDataSource("DatosOCSucursal", tabla);
 
             rv_Sucursal.LocalReport.DataSources.Clear();
             rv_Sucursal.LocalReport.DataSources.Add(ds);
             rv_Sucursal.RefreshReport();
+            
         }
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        private void btnFiltrarSucursal_Click(object sender, EventArgs e)
         {
+            ObtenerEstadisticaOrdenesCompraSucursal();
+        }
+
+        private string stringFiltros(DateTimePicker desde, DateTimePicker hasta)
+        {
+            string stringWhere = string.Empty;
             string format = "yyyy-MM-dd HH:mm:ss";
-            stringWhereMeses = string.Empty;
 
-            if (dtp_FechaDesde.Value != DateTime.Today && stringWhereMeses == string.Empty)
+            if (desde.Value != DateTime.Today)
             {
-                stringWhereMeses += " WHERE OC.fecha BETWEEN " + "'" + dtp_FechaDesde.Value.ToString(format) + "'" + " AND " + "'" + dtp_fechaHasta.Value.ToString(format) + "' ";
-                ObtenerEstadisticaOrdenesCompraSucursal();
+                stringWhere += " WHERE OC.fecha BETWEEN " + "'" + dtp_SucursalFechaDesde.Value.ToString(format) + "'" + " AND " + "'" + dtp_SucursalFechaHasta.Value.ToString(format) + "' ";
             }
 
-            if (dtp_fechaHasta.Value != DateTime.Today && stringWhereMeses == string.Empty)
+            else if (hasta.Value != DateTime.Today)
             {
-                stringWhereMeses += " WHERE OC.fecha BETWEEN " + "'" + dtp_FechaDesde.Value.ToString(format) + "'" + " AND " + "'" + dtp_fechaHasta.Value.ToString(format) + "' ";
-                ObtenerEstadisticaOrdenesCompraSucursal();
+                stringWhere += " WHERE OC.fecha BETWEEN " + "'" + dtp_SucursalFechaDesde.Value.ToString(format) + "'" + " AND " + "'" + dtp_SucursalFechaHasta.Value.ToString(format) + "' ";
             }
+            else
+            {
+                stringWhere = string.Empty;
+            }
+
+            return stringWhere;
         }
 
-        private void btn_Limpiar3_Click(object sender, EventArgs e)
+        private void btn_LimpiarFiltrosSucursal_Click(object sender, EventArgs e)
         {
-            dtp_FechaDesde.Value = DateTime.Today;
-            dtp_fechaHasta.Value = DateTime.Today;
-            stringWhereMeses = string.Empty;
+            dtp_SucursalFechaDesde.Value = DateTime.Today;
+            dtp_SucursalFechaHasta.Value = DateTime.Today;
 
             ObtenerEstadisticaOrdenesCompraSucursal();
+        }
+
+        private void btnFiltrarGeneral_Click(object sender, EventArgs e)
+        {
+            ObtenerEstadisticaOrdenesCompra();
+        }
+
+        private void btnLimpiarFiltrosGeneral_Click(object sender, EventArgs e)
+        {
+            dtp_SucursalFechaDesde.Value = DateTime.Today;
+            dtp_SucursalFechaHasta.Value = DateTime.Today;
+
+            ObtenerEstadisticaOrdenesCompra();
         }
     }
 }
