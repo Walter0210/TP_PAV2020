@@ -191,7 +191,7 @@ namespace ProyectoPAV1_Grupo7
 
         }
 
-        public static DataTable ObtenerEstadisticaOrdenesCompra()
+        public static DataTable ObtenerEstadisticaOrdenesCompraMeses()
         {
             ConexionBD conexion = new ConexionBD();
 

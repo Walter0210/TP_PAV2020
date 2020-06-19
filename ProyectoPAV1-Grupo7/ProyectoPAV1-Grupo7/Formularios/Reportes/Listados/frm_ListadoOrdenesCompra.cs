@@ -38,41 +38,30 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void frm_ListadoOrdenesCompra_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.RefreshReport();
+            this.rv_ListadoGeneral.RefreshReport();
             txtWhere.Text = string.Empty;
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
+        private void rv_ListadiGeneral_Load(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            table = frm_ConsultaOrdenCompra.ObtenerListadoOrdenesCompra();
-
-            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
+            //DataTable table = new DataTable();
+            ObtenerListado();
 
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("restriccion", "");
-            reportViewer1.LocalReport.SetParameters(parametros);
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.LocalReport.Refresh(); 
+            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            txtWhere.Text = string.Empty;
-            stringRestriccion = string.Empty;
+            //txtWhere.Text = string.Empty;
+            //stringRestriccion = string.Empty;
             ArmarStringFiltros();
-            //int solicitante = int.Parse(cmbSolicitante.SelectedValue.ToString());
-
-            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerListado());
+            ObtenerListado();
 
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            reportViewer1.LocalReport.SetParameters(parametros);
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.RefreshReport();
+            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
         }
 
         private void cargarComboSolicitante()
@@ -86,16 +75,20 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbSolicitante.SelectedIndex = -1;
         }
 
-        private DataTable ObtenerListado()
+        private void ObtenerListado()
         {
             ConexionBD conexion = new ConexionBD();
+
             string sql = "SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
                 " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
-                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT " +
-                txtWhere.Text;
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT " + txtWhere.Text;
 
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-            return tabla;
+            DataTable table = conexion.ejecutar_consulta(sql);
+            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
+
+            rv_ListadoGeneral.LocalReport.DataSources.Clear();
+            rv_ListadoGeneral.LocalReport.DataSources.Add(ds);
+            rv_ListadoGeneral.LocalReport.Refresh();
         }
         private void ArmarStringFiltros()
         {
@@ -156,16 +149,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             stringRestriccion = string.Empty;
 
             DataTable table = new DataTable();
-            table = ObtenerListado();
+            ObtenerListado();
 
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            reportViewer1.LocalReport.SetParameters(parametros);
+            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
 
-            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.RefreshReport();
         }
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
@@ -176,6 +165,40 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void dtpHasta_ValueChanged(object sender, EventArgs e)
         {
             eligioFechaHasta = true;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            //missclick
+        }
+
+        private void reportViewer2_Load(object sender, EventArgs e)
+        {
+            txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
+
+            ArmarStringFiltros();
+            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerListadoPromedios());
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
+
+            rv_ListadoGeneral.LocalReport.DataSources.Clear();
+            rv_ListadoGeneral.LocalReport.DataSources.Add(ds);
+            rv_ListadoGeneral.RefreshReport();
+        }
+
+        private object ObtenerListadoPromedios()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT " +
+                txtWhere.Text;
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            return tabla;
         }
     }
 }

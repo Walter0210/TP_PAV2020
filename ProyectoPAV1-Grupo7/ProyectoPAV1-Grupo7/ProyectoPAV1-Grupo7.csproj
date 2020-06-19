@@ -180,52 +180,52 @@
     <Compile Include="Formularios\Procesos\frm_ConsultaOrdenCompra.Designer.cs">
       <DependentUpon>frm_ConsultaOrdenCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaGananciaProducto.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticaGananciaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaGananciaProducto.Designer.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticaGananciaProducto.Designer.cs">
       <DependentUpon>frm_EstadisticaGananciaProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticaOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.Designer.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticaOrdenesCompra.Designer.cs">
       <DependentUpon>frm_EstadisticaOrdenesCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticaProductosVendidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.Designer.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticaProductosVendidos.Designer.cs">
       <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticasVentaSurtidorPorDia.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticasVentaSurtidorPorDia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_EstadisticasVentaSurtidorPorDia.Designer.cs">
+    <Compile Include="Formularios\Reportes\Estadisticas\frm_EstadisticasVentaSurtidorPorDia.Designer.cs">
       <DependentUpon>frm_EstadisticasVentaSurtidorPorDia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoEmpleados.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoEmpleados.Designer.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoEmpleados.Designer.cs">
       <DependentUpon>frm_ListadoEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoOrdenesCompra.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoOrdenesCompra.Designer.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoOrdenesCompra.Designer.cs">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoSurtidores.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoSurtidores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoSurtidores.Designer.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoSurtidores.Designer.cs">
       <DependentUpon>frm_ListadoSurtidores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoVentaProductos.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoVentaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Reportes\frm_ListadoVentaProductos.Designer.cs">
+    <Compile Include="Formularios\Reportes\Listados\frm_ListadoVentaProductos.Designer.cs">
       <DependentUpon>frm_ListadoVentaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -264,38 +264,40 @@
     <EmbeddedResource Include="Formularios\Procesos\frm_ConsultaOrdenCompra.resx">
       <DependentUpon>frm_ConsultaOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\EstadisticaGananciaProductos.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\EstadisticaProductosVendidos.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaGananciaProducto.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaGananciaProductos.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaOCSucursal.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaProductosVendidos.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\frm_EstadisticaGananciaProducto.resx">
       <DependentUpon>frm_EstadisticaGananciaProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaOrdenesCompra.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\frm_EstadisticaOrdenesCompra.resx">
       <DependentUpon>frm_EstadisticaOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticaProductosVendidos.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\frm_EstadisticaProductosVendidos.resx">
       <DependentUpon>frm_EstadisticaProductosVendidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_EstadisticasVentaSurtidorPorDia.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\frm_EstadisticasVentaSurtidorPorDia.resx">
       <DependentUpon>frm_EstadisticasVentaSurtidorPorDia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoEmpleados.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaOCMensual.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\frm_ListadoEmpleados.resx">
       <DependentUpon>frm_ListadoEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoOrdenesCompra.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Listados\frm_ListadoOrdenesCompra.resx">
       <DependentUpon>frm_ListadoOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoSurtidores.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Listados\frm_ListadoSurtidores.resx">
       <DependentUpon>frm_ListadoSurtidores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\frm_ListadoVentaProductos.resx">
+    <EmbeddedResource Include="Formularios\Reportes\Listados\frm_ListadoVentaProductos.resx">
       <DependentUpon>frm_ListadoVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Reportes\ListadoEmpleados.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\ListadoOrdenesCompra.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\EstadisticaOrdenesCompra.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\ListadoSurtidores.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\Listado_VentaProductos.rdlc" />
-    <EmbeddedResource Include="Formularios\Reportes\EstadisticaVentaPorDia.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\ListadoEmpleados.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\ListadoOrdenesCompra.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaOrdenesCompra.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\ListadoSurtidores.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\Listado_VentaProductos.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaVentaPorDia.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
