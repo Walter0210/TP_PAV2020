@@ -54,14 +54,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            //txtWhere.Text = string.Empty;
-            //stringRestriccion = string.Empty;
+            txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
             ArmarStringFiltros();
             ObtenerListado();
 
-            ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
+            //ReportParameter[] parametros = new ReportParameter[1];
+            //parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            //rv_ListadoGeneral.LocalReport.SetParameters(parametros);
         }
 
         private void cargarComboSolicitante()
@@ -85,10 +85,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
             DataTable table = conexion.ejecutar_consulta(sql);
             ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", table);
-
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
             rv_ListadoGeneral.LocalReport.DataSources.Clear();
             rv_ListadoGeneral.LocalReport.DataSources.Add(ds);
-            rv_ListadoGeneral.LocalReport.Refresh();
+            rv_ListadoGeneral.RefreshReport();
         }
         private void ArmarStringFiltros()
         {

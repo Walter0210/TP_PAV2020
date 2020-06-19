@@ -45,15 +45,15 @@
             this.rv_ListadoGeneral = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_LimpiarFiltrosPromedios = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbResponsable2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dtp_FechaHasta2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_FechaDesde2 = new System.Windows.Forms.DateTimePicker();
+            this.cmbEstacion2 = new System.Windows.Forms.ComboBox();
+            this.btn_FiltrarPromedios = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.rv_promedios = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl1.SuspendLayout();
@@ -242,15 +242,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_LimpiarFiltrosPromedios);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbResponsable2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.dtp_FechaHasta2);
+            this.groupBox2.Controls.Add(this.dtp_FechaDesde2);
+            this.groupBox2.Controls.Add(this.cmbEstacion2);
+            this.groupBox2.Controls.Add(this.btn_FiltrarPromedios);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(12, 5);
             this.groupBox2.Name = "groupBox2";
@@ -259,16 +259,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtros";
             // 
-            // button1
+            // btn_LimpiarFiltrosPromedios
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(519, 51);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 20);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_LimpiarFiltrosPromedios.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_LimpiarFiltrosPromedios.Location = new System.Drawing.Point(519, 51);
+            this.btn_LimpiarFiltrosPromedios.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_LimpiarFiltrosPromedios.Name = "btn_LimpiarFiltrosPromedios";
+            this.btn_LimpiarFiltrosPromedios.Size = new System.Drawing.Size(71, 20);
+            this.btn_LimpiarFiltrosPromedios.TabIndex = 9;
+            this.btn_LimpiarFiltrosPromedios.Text = "Limpiar";
+            this.btn_LimpiarFiltrosPromedios.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -279,14 +279,14 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Responsable";
             // 
-            // comboBox1
+            // cmbResponsable2
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cmbResponsable2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbResponsable2.FormattingEnabled = true;
+            this.cmbResponsable2.Location = new System.Drawing.Point(106, 50);
+            this.cmbResponsable2.Name = "cmbResponsable2";
+            this.cmbResponsable2.Size = new System.Drawing.Size(121, 21);
+            this.cmbResponsable2.TabIndex = 8;
             // 
             // label6
             // 
@@ -306,41 +306,41 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Fecha desde:";
             // 
-            // dateTimePicker1
+            // dtp_FechaHasta2
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(357, 49);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtp_FechaHasta2.Location = new System.Drawing.Point(357, 49);
+            this.dtp_FechaHasta2.Name = "dtp_FechaHasta2";
+            this.dtp_FechaHasta2.Size = new System.Drawing.Size(121, 20);
+            this.dtp_FechaHasta2.TabIndex = 5;
             // 
-            // dateTimePicker2
+            // dtp_FechaDesde2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(357, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dtp_FechaDesde2.Location = new System.Drawing.Point(357, 17);
+            this.dtp_FechaDesde2.Name = "dtp_FechaDesde2";
+            this.dtp_FechaDesde2.Size = new System.Drawing.Size(121, 20);
+            this.dtp_FechaDesde2.TabIndex = 4;
             // 
-            // comboBox2
+            // cmbEstacion2
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(106, 17);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cmbEstacion2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstacion2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbEstacion2.FormattingEnabled = true;
+            this.cmbEstacion2.Location = new System.Drawing.Point(106, 17);
+            this.cmbEstacion2.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEstacion2.Name = "cmbEstacion2";
+            this.cmbEstacion2.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstacion2.TabIndex = 2;
             // 
-            // button2
+            // btn_FiltrarPromedios
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Location = new System.Drawing.Point(519, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 20);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Filtrar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_FiltrarPromedios.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_FiltrarPromedios.Location = new System.Drawing.Point(519, 17);
+            this.btn_FiltrarPromedios.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_FiltrarPromedios.Name = "btn_FiltrarPromedios";
+            this.btn_FiltrarPromedios.Size = new System.Drawing.Size(71, 20);
+            this.btn_FiltrarPromedios.TabIndex = 1;
+            this.btn_FiltrarPromedios.Text = "Filtrar";
+            this.btn_FiltrarPromedios.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -411,15 +411,15 @@
         private Microsoft.Reporting.WinForms.ReportViewer rv_ListadoGeneral;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_LimpiarFiltrosPromedios;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbResponsable2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtp_FechaHasta2;
+        private System.Windows.Forms.DateTimePicker dtp_FechaDesde2;
+        private System.Windows.Forms.ComboBox cmbEstacion2;
+        private System.Windows.Forms.Button btn_FiltrarPromedios;
         private System.Windows.Forms.Label label8;
         private Microsoft.Reporting.WinForms.ReportViewer rv_promedios;
     }
