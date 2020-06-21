@@ -26,33 +26,44 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             rv_Meses.RefreshReport();
             rv_EstadisticaGeneral.RefreshReport();
             rv_Sucursal.RefreshReport();
-            dtp_SucursalFechaDesde.Value = DateTime.Today;
-            dtp_SucursalFechaHasta.Value = DateTime.Today;
+
+
+            //dtp_SucursalFechaDesde.Value = DateTime.Today;
+            //dtp_SucursalFechaHasta.Value = DateTime.Today;
         }
 
         private void rv_EstadisticaGeneralLoad(object sender, EventArgs e)
         {
+            dtp_GeneralFechaDesde.Value = DateTime.Today;
+            dtp_GeneralFechaHasta.Value = DateTime.Today;
             ObtenerEstadisticaOrdenesCompra();
         }
 
         private void ObtenerEstadisticaOrdenesCompra()
         {
+            string stringWhere = string.Empty;
+            string stringRes = string.Empty;
 
-            string stringWhere;
-            stringWhere = stringFiltros(dtpFechaDesde1, dtpFechaHasta1);
+            stringWhere = stringFiltros(dtp_GeneralFechaDesde.Value, dtp_GeneralFechaHasta.Value);
+            stringRes = stringRestriccion(dtp_GeneralFechaDesde.Value, dtp_GeneralFechaHasta.Value);
 
             ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT OC.numeroOrdenCompra as nroOrdenCompra, COUNT(DC.idProducto) as cantidad" +
-                " FROM OrdenCompra OC JOIN DetalleOrdenCompra DC ON OC.numeroOrdenCompra = DC.numOrdenCompra" + stringWhere +
-                " GROUP BY OC.numeroOrdenCompra";
+
+            string sql = "SELECT(E.nombre + ' ' + E.apellido) AS apeNom, COUNT(OC.numeroOrdenCompra) AS cantidadOC " +
+                "FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                 stringWhere +
+                "GROUP BY E.nombre, E.apellido";
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
             ReportDataSource ds = new ReportDataSource("DatosEstadisticaOrdenesCompra", tabla);
 
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccionResponsables", stringRes);
+            rv_EstadisticaGeneral.LocalReport.SetParameters(parametros);
+
             rv_EstadisticaGeneral.LocalReport.DataSources.Clear();
             rv_EstadisticaGeneral.LocalReport.DataSources.Add(ds);
             rv_EstadisticaGeneral.RefreshReport();
-
         }
 
         private void rv_Meses_Load(object sender, EventArgs e)
@@ -76,6 +87,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void rv_Sucursal_Load(object sender, EventArgs e)
         {
+            dtp_SucursalFechaDesde.Value = DateTime.Today;
+            dtp_SucursalFechaHasta.Value = DateTime.Today;
+
             ObtenerEstadisticaOrdenesCompraSucursal();
         }
 
@@ -83,8 +97,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             ConexionBD conexion = new ConexionBD();
             string stringWhere;
+            string stringRes;
 
-            stringWhere = stringFiltros(dtp_SucursalFechaDesde, dtp_SucursalFechaHasta);
+            stringWhere = stringFiltros(dtp_SucursalFechaDesde.Value, dtp_SucursalFechaHasta.Value);
+            stringRes = stringRestriccion(dtp_SucursalFechaDesde.Value, dtp_SucursalFechaHasta.Value);
 
             string sql = @"SELECT E.razonSocial, SUM(OC.total) as totalSuc" +
                         " FROM OrdenCompra OC JOIN Estacion E on OC.cuitSolicitante = E.CUIT " +
@@ -93,6 +109,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
             ReportDataSource ds = new ReportDataSource("DatosOCSucursal", tabla);
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("RestriccionSucursales", stringRes);
+            rv_Sucursal.LocalReport.SetParameters(parametros);
 
             rv_Sucursal.LocalReport.DataSources.Clear();
             rv_Sucursal.LocalReport.DataSources.Add(ds);
@@ -105,26 +125,38 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             ObtenerEstadisticaOrdenesCompraSucursal();
         }
 
-        private string stringFiltros(DateTimePicker desde, DateTimePicker hasta)
+        private string stringFiltros(DateTime desde, DateTime hasta)
         {
             string stringWhere = string.Empty;
             string format = "yyyy-MM-dd HH:mm:ss";
 
-            if (desde.Value != DateTime.Today)
+            if (desde != DateTime.Today)
             {
-                stringWhere += " WHERE OC.fecha BETWEEN " + "'" + dtp_SucursalFechaDesde.Value.ToString(format) + "'" + " AND " + "'" + dtp_SucursalFechaHasta.Value.ToString(format) + "' ";
+                stringWhere = " WHERE OC.fecha BETWEEN " + "'" + desde.ToString(format) + "'" + " AND " + "'" + hasta.ToString(format) + "' ";
             }
 
-            else if (hasta.Value != DateTime.Today)
+            else if (hasta != DateTime.Today)
             {
-                stringWhere += " WHERE OC.fecha BETWEEN " + "'" + dtp_SucursalFechaDesde.Value.ToString(format) + "'" + " AND " + "'" + dtp_SucursalFechaHasta.Value.ToString(format) + "' ";
+                stringWhere = " WHERE OC.fecha BETWEEN " + "'" + desde.ToString(format) + "'" + " AND " + "'" + hasta.ToString(format) + "' ";
             }
+
             else
             {
                 stringWhere = string.Empty;
             }
 
             return stringWhere;
+        }
+
+
+        private string stringRestriccion(DateTime desde, DateTime hasta)
+        {
+            string stringRestriccion = string.Empty;
+            string shortFormat = "dd-MM-yyyy";
+
+            stringRestriccion = stringRestriccion = "Entre: " + "'" + desde.ToString(shortFormat) + "'" + " Y " + "'" + hasta.ToString(shortFormat) + "'";
+
+            return stringRestriccion;
         }
 
         private void btn_LimpiarFiltrosSucursal_Click(object sender, EventArgs e)
@@ -142,10 +174,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void btnLimpiarFiltrosGeneral_Click(object sender, EventArgs e)
         {
-            dtp_SucursalFechaDesde.Value = DateTime.Today;
-            dtp_SucursalFechaHasta.Value = DateTime.Today;
+            dtp_GeneralFechaDesde.Value = DateTime.Today;
+            dtp_GeneralFechaHasta.Value = DateTime.Today;
 
             ObtenerEstadisticaOrdenesCompra();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

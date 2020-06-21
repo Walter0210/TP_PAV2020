@@ -33,8 +33,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnLimpiarFiltrosGeneral = new System.Windows.Forms.Button();
-            this.dtpFechaHasta1 = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaDesde1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_GeneralFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtp_GeneralFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.btnFiltrarGeneral = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,8 +70,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnLimpiarFiltrosGeneral);
-            this.tabPage1.Controls.Add(this.dtpFechaHasta1);
-            this.tabPage1.Controls.Add(this.dtpFechaDesde1);
+            this.tabPage1.Controls.Add(this.dtp_GeneralFechaHasta);
+            this.tabPage1.Controls.Add(this.dtp_GeneralFechaDesde);
             this.tabPage1.Controls.Add(this.btnFiltrarGeneral);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label4);
@@ -83,6 +83,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Estadistica General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnLimpiarFiltrosGeneral
             // 
@@ -94,19 +95,19 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.btnLimpiarFiltrosGeneral.UseVisualStyleBackColor = true;
             this.btnLimpiarFiltrosGeneral.Click += new System.EventHandler(this.btnLimpiarFiltrosGeneral_Click);
             // 
-            // dtpFechaHasta1
+            // dtp_GeneralFechaHasta
             // 
-            this.dtpFechaHasta1.Location = new System.Drawing.Point(392, 9);
-            this.dtpFechaHasta1.Name = "dtpFechaHasta1";
-            this.dtpFechaHasta1.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaHasta1.TabIndex = 16;
+            this.dtp_GeneralFechaHasta.Location = new System.Drawing.Point(392, 9);
+            this.dtp_GeneralFechaHasta.Name = "dtp_GeneralFechaHasta";
+            this.dtp_GeneralFechaHasta.Size = new System.Drawing.Size(200, 20);
+            this.dtp_GeneralFechaHasta.TabIndex = 16;
             // 
-            // dtpFechaDesde1
+            // dtp_GeneralFechaDesde
             // 
-            this.dtpFechaDesde1.Location = new System.Drawing.Point(101, 9);
-            this.dtpFechaDesde1.Name = "dtpFechaDesde1";
-            this.dtpFechaDesde1.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaDesde1.TabIndex = 15;
+            this.dtp_GeneralFechaDesde.Location = new System.Drawing.Point(101, 9);
+            this.dtp_GeneralFechaDesde.Name = "dtp_GeneralFechaDesde";
+            this.dtp_GeneralFechaDesde.Size = new System.Drawing.Size(200, 20);
+            this.dtp_GeneralFechaDesde.TabIndex = 15;
             // 
             // btnFiltrarGeneral
             // 
@@ -291,8 +292,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private System.Windows.Forms.DateTimePicker dtp_SucursalFechaHasta;
         private System.Windows.Forms.DateTimePicker dtp_SucursalFechaDesde;
         private System.Windows.Forms.Button btnLimpiarFiltrosGeneral;
-        private System.Windows.Forms.DateTimePicker dtpFechaHasta1;
-        private System.Windows.Forms.DateTimePicker dtpFechaDesde1;
+        private System.Windows.Forms.DateTimePicker dtp_GeneralFechaHasta;
+        private System.Windows.Forms.DateTimePicker dtp_GeneralFechaDesde;
         private System.Windows.Forms.Button btnFiltrarGeneral;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -17,19 +17,19 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="nroOrdenCompra">
-          <DataField>nroOrdenCompra</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="apeNom">
+          <DataField>apeNom</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cantidad">
-          <DataField>cantidad</DataField>
+        <Field Name="cantidadOC">
+          <DataField>cantidadOC</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosEstadistica</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Delfina\Source\Repos\TP_PAV2020\ProyectoPAV1-Grupo7\ProyectoPAV1-Grupo7\ConjuntosDeDatos\DatosEstadistica.xsd</rd:SchemaPath>
-        <rd:TableName>TablaEstadistica</rd:TableName>
+        <rd:SchemaPath>C:\Users\Meap\source\repos\TP_PAV2020\ProyectoPAV1-Grupo7\ProyectoPAV1-Grupo7\ConjuntosDeDatos\DatosEstadistica.xsd</rd:SchemaPath>
+        <rd:TableName>OCResponsable</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -47,7 +47,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Cantidad de Productos por Orden de compra</Value>
+                    <Value>Ordenes de Compra por Responsable</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>12pt</FontSize>
@@ -61,8 +61,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.9652cm</Top>
-            <Left>3.6957cm</Left>
+            <Top>0.38312cm</Top>
+            <Left>3.53367cm</Left>
             <Height>0.68467cm</Height>
             <Width>16.99917cm</Width>
             <Style>
@@ -94,32 +94,32 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nroOrdenCompra.Value</GroupExpression>
+                      <GroupExpression>=Fields!apeNom.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nroOrdenCompra.Value</Value>
+                      <Value>=Fields!apeNom.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!nroOrdenCompra.Value</Label>
+                  <Label>=Fields!apeNom.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>cantidad</Label>
+                  <Label>cantidad OC</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="cantidad">
+                <ChartSeries Name="cantidadOC">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!cantidad.Value)</Y>
+                        <Y>=Sum(Fields!cantidadOC.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -164,7 +164,7 @@
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption>n° orden de compra</Caption>
+                      <Caption>Nombre y Apellido del Responsable de la OC.</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
@@ -406,7 +406,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Cantidad de Productos por Orden de compra</Caption>
+                <Caption>Cantidad de Ordenes de Compra por Responsable</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -437,7 +437,7 @@
             </ChartNoDataMessage>
             <DataSetName>DatosEstadisticaOrdenesCompra</DataSetName>
             <Top>2.51037cm</Top>
-            <Left>0.49953cm</Left>
+            <Left>0.55741cm</Left>
             <Height>7.18017cm</Height>
             <Width>22.95167cm</Width>
             <ZIndex>2</ZIndex>
@@ -450,6 +450,66 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Generado el día: " + Now()</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>10.40314cm</Top>
+            <Left>0.55741cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.73875cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!restriccionResponsables.Value(0)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>1.27537cm</Top>
+            <Left>0.84349cm</Left>
+            <Height>0.6cm</Height>
+            <Width>11.31062cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.6985in</Height>
         <Style />
@@ -467,10 +527,25 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="restriccionResponsables">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>restriccionResponsables</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

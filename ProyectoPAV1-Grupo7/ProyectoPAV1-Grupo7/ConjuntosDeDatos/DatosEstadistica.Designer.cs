@@ -36,7 +36,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         
         private TicketXProductoDataTable tableTicketXProducto;
         
-        private TablaEstadisticaDataTable tableTablaEstadistica;
+        private OCResponsableDataTable tableOCResponsable;
         
         private TablaListadoEmpleadosDataTable tableTablaListadoEmpleados;
         
@@ -106,8 +106,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 if ((ds.Tables["TicketXProducto"] != null)) {
                     base.Tables.Add(new TicketXProductoDataTable(ds.Tables["TicketXProducto"]));
                 }
-                if ((ds.Tables["TablaEstadistica"] != null)) {
-                    base.Tables.Add(new TablaEstadisticaDataTable(ds.Tables["TablaEstadistica"]));
+                if ((ds.Tables["OCResponsable"] != null)) {
+                    base.Tables.Add(new OCResponsableDataTable(ds.Tables["OCResponsable"]));
                 }
                 if ((ds.Tables["TablaListadoEmpleados"] != null)) {
                     base.Tables.Add(new TablaListadoEmpleadosDataTable(ds.Tables["TablaListadoEmpleados"]));
@@ -209,9 +209,9 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TablaEstadisticaDataTable TablaEstadistica {
+        public OCResponsableDataTable OCResponsable {
             get {
-                return this.tableTablaEstadistica;
+                return this.tableOCResponsable;
             }
         }
         
@@ -360,8 +360,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 if ((ds.Tables["TicketXProducto"] != null)) {
                     base.Tables.Add(new TicketXProductoDataTable(ds.Tables["TicketXProducto"]));
                 }
-                if ((ds.Tables["TablaEstadistica"] != null)) {
-                    base.Tables.Add(new TablaEstadisticaDataTable(ds.Tables["TablaEstadistica"]));
+                if ((ds.Tables["OCResponsable"] != null)) {
+                    base.Tables.Add(new OCResponsableDataTable(ds.Tables["OCResponsable"]));
                 }
                 if ((ds.Tables["TablaListadoEmpleados"] != null)) {
                     base.Tables.Add(new TablaListadoEmpleadosDataTable(ds.Tables["TablaListadoEmpleados"]));
@@ -450,10 +450,10 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                     this.tableTicketXProducto.InitVars();
                 }
             }
-            this.tableTablaEstadistica = ((TablaEstadisticaDataTable)(base.Tables["TablaEstadistica"]));
+            this.tableOCResponsable = ((OCResponsableDataTable)(base.Tables["OCResponsable"]));
             if ((initTable == true)) {
-                if ((this.tableTablaEstadistica != null)) {
-                    this.tableTablaEstadistica.InitVars();
+                if ((this.tableOCResponsable != null)) {
+                    this.tableOCResponsable.InitVars();
                 }
             }
             this.tableTablaListadoEmpleados = ((TablaListadoEmpleadosDataTable)(base.Tables["TablaListadoEmpleados"]));
@@ -519,8 +519,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             base.Tables.Add(this.tableTicket);
             this.tableTicketXProducto = new TicketXProductoDataTable();
             base.Tables.Add(this.tableTicketXProducto);
-            this.tableTablaEstadistica = new TablaEstadisticaDataTable();
-            base.Tables.Add(this.tableTablaEstadistica);
+            this.tableOCResponsable = new OCResponsableDataTable();
+            base.Tables.Add(this.tableOCResponsable);
             this.tableTablaListadoEmpleados = new TablaListadoEmpleadosDataTable();
             base.Tables.Add(this.tableTablaListadoEmpleados);
             this.tableTablaListadoSurtidores = new TablaListadoSurtidoresDataTable();
@@ -593,7 +593,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeTablaEstadistica() {
+        private bool ShouldSerializeOCResponsable() {
             return false;
         }
         
@@ -707,7 +707,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         public delegate void TicketXProductoRowChangeEventHandler(object sender, TicketXProductoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void TablaEstadisticaRowChangeEventHandler(object sender, TablaEstadisticaRowChangeEvent e);
+        public delegate void OCResponsableRowChangeEventHandler(object sender, OCResponsableRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void TablaListadoEmpleadosRowChangeEventHandler(object sender, TablaListadoEmpleadosRowChangeEvent e);
@@ -2695,16 +2695,16 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TablaEstadisticaDataTable : global::System.Data.TypedTableBase<TablaEstadisticaRow> {
+        public partial class OCResponsableDataTable : global::System.Data.TypedTableBase<OCResponsableRow> {
             
-            private global::System.Data.DataColumn columnnroOrdenCompra;
+            private global::System.Data.DataColumn columnapeNom;
             
-            private global::System.Data.DataColumn columncantidad;
+            private global::System.Data.DataColumn columncantidadOC;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadisticaDataTable() {
-                this.TableName = "TablaEstadistica";
+            public OCResponsableDataTable() {
+                this.TableName = "OCResponsable";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2712,7 +2712,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TablaEstadisticaDataTable(global::System.Data.DataTable table) {
+            internal OCResponsableDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2729,24 +2729,24 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected TablaEstadisticaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected OCResponsableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nroOrdenCompraColumn {
+            public global::System.Data.DataColumn apeNomColumn {
                 get {
-                    return this.columnnroOrdenCompra;
+                    return this.columnapeNom;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cantidadColumn {
+            public global::System.Data.DataColumn cantidadOCColumn {
                 get {
-                    return this.columncantidad;
+                    return this.columncantidadOC;
                 }
             }
             
@@ -2761,46 +2761,46 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadisticaRow this[int index] {
+            public OCResponsableRow this[int index] {
                 get {
-                    return ((TablaEstadisticaRow)(this.Rows[index]));
+                    return ((OCResponsableRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TablaEstadisticaRowChangeEventHandler TablaEstadisticaRowChanging;
+            public event OCResponsableRowChangeEventHandler OCResponsableRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TablaEstadisticaRowChangeEventHandler TablaEstadisticaRowChanged;
+            public event OCResponsableRowChangeEventHandler OCResponsableRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TablaEstadisticaRowChangeEventHandler TablaEstadisticaRowDeleting;
+            public event OCResponsableRowChangeEventHandler OCResponsableRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TablaEstadisticaRowChangeEventHandler TablaEstadisticaRowDeleted;
+            public event OCResponsableRowChangeEventHandler OCResponsableRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddTablaEstadisticaRow(TablaEstadisticaRow row) {
+            public void AddOCResponsableRow(OCResponsableRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadisticaRow AddTablaEstadisticaRow(int nroOrdenCompra, int cantidad) {
-                TablaEstadisticaRow rowTablaEstadisticaRow = ((TablaEstadisticaRow)(this.NewRow()));
+            public OCResponsableRow AddOCResponsableRow(string apeNom, int cantidadOC) {
+                OCResponsableRow rowOCResponsableRow = ((OCResponsableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        nroOrdenCompra,
-                        cantidad};
-                rowTablaEstadisticaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTablaEstadisticaRow);
-                return rowTablaEstadisticaRow;
+                        apeNom,
+                        cantidadOC};
+                rowOCResponsableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOCResponsableRow);
+                return rowOCResponsableRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TablaEstadisticaDataTable cln = ((TablaEstadisticaDataTable)(base.Clone()));
+                OCResponsableDataTable cln = ((OCResponsableDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2808,49 +2808,49 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TablaEstadisticaDataTable();
+                return new OCResponsableDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnnroOrdenCompra = base.Columns["nroOrdenCompra"];
-                this.columncantidad = base.Columns["cantidad"];
+                this.columnapeNom = base.Columns["apeNom"];
+                this.columncantidadOC = base.Columns["cantidadOC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnnroOrdenCompra = new global::System.Data.DataColumn("nroOrdenCompra", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnroOrdenCompra);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
+                this.columnapeNom = new global::System.Data.DataColumn("apeNom", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnapeNom);
+                this.columncantidadOC = new global::System.Data.DataColumn("cantidadOC", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidadOC);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadisticaRow NewTablaEstadisticaRow() {
-                return ((TablaEstadisticaRow)(this.NewRow()));
+            public OCResponsableRow NewOCResponsableRow() {
+                return ((OCResponsableRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TablaEstadisticaRow(builder);
+                return new OCResponsableRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TablaEstadisticaRow);
+                return typeof(OCResponsableRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TablaEstadisticaRowChanged != null)) {
-                    this.TablaEstadisticaRowChanged(this, new TablaEstadisticaRowChangeEvent(((TablaEstadisticaRow)(e.Row)), e.Action));
+                if ((this.OCResponsableRowChanged != null)) {
+                    this.OCResponsableRowChanged(this, new OCResponsableRowChangeEvent(((OCResponsableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2858,8 +2858,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TablaEstadisticaRowChanging != null)) {
-                    this.TablaEstadisticaRowChanging(this, new TablaEstadisticaRowChangeEvent(((TablaEstadisticaRow)(e.Row)), e.Action));
+                if ((this.OCResponsableRowChanging != null)) {
+                    this.OCResponsableRowChanging(this, new OCResponsableRowChangeEvent(((OCResponsableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2867,8 +2867,8 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TablaEstadisticaRowDeleted != null)) {
-                    this.TablaEstadisticaRowDeleted(this, new TablaEstadisticaRowChangeEvent(((TablaEstadisticaRow)(e.Row)), e.Action));
+                if ((this.OCResponsableRowDeleted != null)) {
+                    this.OCResponsableRowDeleted(this, new OCResponsableRowChangeEvent(((OCResponsableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2876,14 +2876,14 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TablaEstadisticaRowDeleting != null)) {
-                    this.TablaEstadisticaRowDeleting(this, new TablaEstadisticaRowChangeEvent(((TablaEstadisticaRow)(e.Row)), e.Action));
+                if ((this.OCResponsableRowDeleting != null)) {
+                    this.OCResponsableRowDeleting(this, new OCResponsableRowChangeEvent(((OCResponsableRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveTablaEstadisticaRow(TablaEstadisticaRow row) {
+            public void RemoveOCResponsableRow(OCResponsableRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2910,7 +2910,7 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TablaEstadisticaDataTable";
+                attribute2.FixedValue = "OCResponsableDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5659,71 +5659,71 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TablaEstadisticaRow : global::System.Data.DataRow {
+        public partial class OCResponsableRow : global::System.Data.DataRow {
             
-            private TablaEstadisticaDataTable tableTablaEstadistica;
+            private OCResponsableDataTable tableOCResponsable;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TablaEstadisticaRow(global::System.Data.DataRowBuilder rb) : 
+            internal OCResponsableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTablaEstadistica = ((TablaEstadisticaDataTable)(this.Table));
+                this.tableOCResponsable = ((OCResponsableDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int nroOrdenCompra {
+            public string apeNom {
                 get {
                     try {
-                        return ((int)(this[this.tableTablaEstadistica.nroOrdenCompraColumn]));
+                        return ((string)(this[this.tableOCResponsable.apeNomColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nroOrdenCompra\' in table \'TablaEstadistica\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'apeNom\' in table \'OCResponsable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaEstadistica.nroOrdenCompraColumn] = value;
+                    this[this.tableOCResponsable.apeNomColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int cantidad {
+            public int cantidadOC {
                 get {
                     try {
-                        return ((int)(this[this.tableTablaEstadistica.cantidadColumn]));
+                        return ((int)(this[this.tableOCResponsable.cantidadOCColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cantidad\' in table \'TablaEstadistica\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cantidadOC\' in table \'OCResponsable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaEstadistica.cantidadColumn] = value;
+                    this[this.tableOCResponsable.cantidadOCColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsnroOrdenCompraNull() {
-                return this.IsNull(this.tableTablaEstadistica.nroOrdenCompraColumn);
+            public bool IsapeNomNull() {
+                return this.IsNull(this.tableOCResponsable.apeNomColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetnroOrdenCompraNull() {
-                this[this.tableTablaEstadistica.nroOrdenCompraColumn] = global::System.Convert.DBNull;
+            public void SetapeNomNull() {
+                this[this.tableOCResponsable.apeNomColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscantidadNull() {
-                return this.IsNull(this.tableTablaEstadistica.cantidadColumn);
+            public bool IscantidadOCNull() {
+                return this.IsNull(this.tableOCResponsable.cantidadOCColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcantidadNull() {
-                this[this.tableTablaEstadistica.cantidadColumn] = global::System.Convert.DBNull;
+            public void SetcantidadOCNull() {
+                this[this.tableOCResponsable.cantidadOCColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6702,22 +6702,22 @@ namespace ProyectoPAV1_Grupo7.ConjuntosDeDatos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class TablaEstadisticaRowChangeEvent : global::System.EventArgs {
+        public class OCResponsableRowChangeEvent : global::System.EventArgs {
             
-            private TablaEstadisticaRow eventRow;
+            private OCResponsableRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadisticaRowChangeEvent(TablaEstadisticaRow row, global::System.Data.DataRowAction action) {
+            public OCResponsableRowChangeEvent(OCResponsableRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TablaEstadisticaRow Row {
+            public OCResponsableRow Row {
                 get {
                     return this.eventRow;
                 }
