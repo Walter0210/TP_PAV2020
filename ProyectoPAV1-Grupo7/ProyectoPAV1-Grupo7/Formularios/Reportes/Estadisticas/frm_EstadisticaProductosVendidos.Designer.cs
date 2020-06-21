@@ -34,7 +34,8 @@
             // reportViewerProductos
             // 
             this.reportViewerProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewerProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.EstadisticaProductosVendidos.rdlc";
+            this.reportViewerProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Estadisticas.EstadisticaProductosVendido" +
+    "s.rdlc";
             this.reportViewerProductos.Location = new System.Drawing.Point(0, 0);
             this.reportViewerProductos.MinimumSize = new System.Drawing.Size(1100, 550);
             this.reportViewerProductos.Name = "reportViewerProductos";
