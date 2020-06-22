@@ -55,7 +55,7 @@
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(492, 12);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(492, 10);
             this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(251, 16);
+            this.label2.Location = new System.Drawing.Point(251, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 13;
@@ -74,17 +74,18 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(348, 12);
+            this.dtpFecha.Location = new System.Drawing.Point(348, 10);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
             this.dtpFecha.TabIndex = 12;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged_1);
             // 
             // cmbSolicitante
             // 
             this.cmbSolicitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(87, 12);
+            this.cmbSolicitante.Location = new System.Drawing.Point(87, 10);
             this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
@@ -93,19 +94,20 @@
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(587, 12);
+            this.btnCalcular.Location = new System.Drawing.Point(587, 10);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(71, 20);
             this.btnCalcular.TabIndex = 9;
             this.btnCalcular.Text = "Filtrar";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Location = new System.Drawing.Point(32, 16);
+            this.label1.Location = new System.Drawing.Point(32, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
