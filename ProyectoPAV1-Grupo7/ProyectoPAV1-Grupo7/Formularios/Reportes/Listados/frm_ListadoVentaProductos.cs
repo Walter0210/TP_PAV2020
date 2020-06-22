@@ -18,6 +18,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private bool eligioFechaDesde = false;
         private bool eligioFechaHasta = false;
         string stringRestriccion = string.Empty;
+        private string where = string.Empty;
 
         public frm_ListadoVentaProductos()
         {
@@ -27,8 +28,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
-            cargarComboSolicitante();
             txtWhere.Text = string.Empty;
+            this.rv_prodXventas.RefreshReport();
+
+            cargarCombos();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
@@ -62,8 +65,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             return tabla;
         }
 
-        private void cargarComboSolicitante()
+        private void cargarCombos()
         {
+            // SOLICITANTE
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT * FROM Estacion";
             DataTable tabla = conexion.ejecutar_consulta(sql);
@@ -71,6 +75,15 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbSolicitante.DisplayMember = "razonSocial";
             cmbSolicitante.ValueMember = "CUIT";
             cmbSolicitante.SelectedIndex = -1;
+
+            // NUMERO TICKET
+            ConexionBD conexion2 = new ConexionBD();
+            string sql2 = "SELECT * FROM Ticket";
+            DataTable tabla2 = conexion2.ejecutar_consulta(sql2);
+            cmb_nroTicket.DataSource = tabla2;
+            cmb_nroTicket.DisplayMember = "numTicket";
+            cmb_nroTicket.ValueMember = "numTicket";
+            cmb_nroTicket.SelectedIndex = -1;
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -169,6 +182,83 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             eligioFechaHasta = true;
         }
-         
+
+        private void btnCalcular_Click_1(object sender, EventArgs e)
+        {
+            ArmarStringFiltros();
+            ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion());
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            reportViewer1.LocalReport.SetParameters(parametros);
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(ds);
+            reportViewer1.RefreshReport();
+        }
+
+        private void rv_prodXventas_Load(object sender, EventArgs e)
+        {
+            ObtenerListadoProductos();
+        }
+
+        private DataTable ObtenerListadoProductos()
+        {
+            object numTicket = cmb_nroTicket.SelectedValue;
+
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = "SELECT TP.numeroTicket, P.descripcion, TP.cantidad, TP.precio " +
+                "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto " +
+                "WHERE numeroTicket = '" + numTicket.ToString() + "'";
+
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
+        private void btn_filtrarVentas_Click(object sender, EventArgs e)
+        {
+            buscarProductosPorVenta();
+        }
+
+        private void buscarProductosPorVenta()
+        {
+
+            object numTicket = cmb_nroTicket.SelectedValue;
+
+            try
+            {
+                ConexionBD conexion = new ConexionBD();
+                string consulta = @"SELECT TP.numeroTicket, P.descripcion as 'idProducto', TP.cantidad, TP.precio " +
+                "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto " +
+                "WHERE numeroTicket = '" + numTicket.ToString() + "'";
+
+                DataTable tablaEmpleados = conexion.ejecutar_consulta(consulta);
+                ReportDataSource ds = new ReportDataSource("productosXventa", tablaEmpleados);
+
+                rv_prodXventas.LocalReport.DataSources.Clear();
+                rv_prodXventas.LocalReport.DataSources.Add(ds);
+                rv_prodXventas.LocalReport.Refresh();
+                rv_prodXventas.RefreshReport();
+                where = string.Empty;
+            }
+            catch
+            {
+                MessageBox.Show("Error de Base de Datos");
+            }
+        }
+
+        private void btn_limpiarVentas_Click(object sender, EventArgs e)
+        {
+            rv_prodXventas.Clear();
+            cmb_nroTicket.SelectedIndex = -1;
+        }
+
+        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            reportViewer1.Clear();
+            cmbSolicitante.SelectedIndex = -1;
+        }
     }
 }
