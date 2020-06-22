@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dataSetTablasBDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.TicketXProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetTablasBD = new ProyectoPAV1_Grupo7.DataSetTablasBD();
+            this.dataSetTablasBDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtWhere = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -57,34 +58,38 @@
             this.label6 = new System.Windows.Forms.Label();
             this.rv_CantidadVendidaProductos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.rv_prodXventas = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.TicketXProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cmb_nroTicket = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btn_LimpiarTab3 = new System.Windows.Forms.Button();
             this.btn_FiltrarTab3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).BeginInit();
+            this.btn_LimpiarTab3 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmb_nroTicket = new System.Windows.Forms.ComboBox();
+            this.rv_prodXventas = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketXProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.grb_filtros.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TicketXProductoBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataSetTablasBDBindingSource
+            // TicketXProductoBindingSource
             // 
-            this.dataSetTablasBDBindingSource.DataSource = this.dataSetTablasBD;
-            this.dataSetTablasBDBindingSource.Position = 0;
+            this.TicketXProductoBindingSource.DataMember = "TicketXProducto";
+            this.TicketXProductoBindingSource.DataSource = this.dataSetTablasBD;
             // 
             // dataSetTablasBD
             // 
             this.dataSetTablasBD.DataSetName = "DataSetTablasBD";
             this.dataSetTablasBD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetTablasBDBindingSource
+            // 
+            this.dataSetTablasBDBindingSource.DataSource = this.dataSetTablasBD;
+            this.dataSetTablasBDBindingSource.Position = 0;
             // 
             // txtWhere
             // 
@@ -103,7 +108,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1179, 1055);
@@ -114,9 +119,9 @@
             this.tabPage1.Controls.Add(this.grb_filtros);
             this.tabPage1.Controls.Add(this.rv_ListadoVentas);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1171, 1026);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado General";
@@ -135,9 +140,9 @@
             this.grb_filtros.Controls.Add(this.btnFiltrar1);
             this.grb_filtros.Controls.Add(this.label1);
             this.grb_filtros.Location = new System.Drawing.Point(11, 7);
-            this.grb_filtros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grb_filtros.Margin = new System.Windows.Forms.Padding(4);
             this.grb_filtros.Name = "grb_filtros";
-            this.grb_filtros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grb_filtros.Padding = new System.Windows.Forms.Padding(4);
             this.grb_filtros.Size = new System.Drawing.Size(815, 110);
             this.grb_filtros.TabIndex = 7;
             this.grb_filtros.TabStop = false;
@@ -178,7 +183,7 @@
             // dtpHasta1
             // 
             this.dtpHasta1.Location = new System.Drawing.Point(496, 62);
-            this.dtpHasta1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpHasta1.Margin = new System.Windows.Forms.Padding(4);
             this.dtpHasta1.Name = "dtpHasta1";
             this.dtpHasta1.Size = new System.Drawing.Size(160, 22);
             this.dtpHasta1.TabIndex = 5;
@@ -187,7 +192,7 @@
             // dtpDesde1
             // 
             this.dtpDesde1.Location = new System.Drawing.Point(496, 22);
-            this.dtpDesde1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDesde1.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDesde1.Name = "dtpDesde1";
             this.dtpDesde1.Size = new System.Drawing.Size(160, 22);
             this.dtpDesde1.TabIndex = 4;
@@ -232,7 +237,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rv_ListadoVentas.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_VentaProductos.rdlc";
             this.rv_ListadoVentas.Location = new System.Drawing.Point(11, 126);
-            this.rv_ListadoVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rv_ListadoVentas.Margin = new System.Windows.Forms.Padding(4);
             this.rv_ListadoVentas.Name = "rv_ListadoVentas";
             this.rv_ListadoVentas.ServerReport.BearerToken = null;
             this.rv_ListadoVentas.Size = new System.Drawing.Size(1146, 898);
@@ -245,9 +250,9 @@
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.rv_CantidadVendidaProductos);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1171, 1026);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cantidad Total Items Vendidos";
@@ -267,9 +272,9 @@
             this.groupBox1.Controls.Add(this.btnFiltrar2);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(11, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(815, 110);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -310,7 +315,7 @@
             // dtp_fechaHasta2
             // 
             this.dtp_fechaHasta2.Location = new System.Drawing.Point(496, 62);
-            this.dtp_fechaHasta2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fechaHasta2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fechaHasta2.Name = "dtp_fechaHasta2";
             this.dtp_fechaHasta2.Size = new System.Drawing.Size(160, 22);
             this.dtp_fechaHasta2.TabIndex = 5;
@@ -319,7 +324,7 @@
             // dtp_fechaDesde2
             // 
             this.dtp_fechaDesde2.Location = new System.Drawing.Point(496, 22);
-            this.dtp_fechaDesde2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fechaDesde2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fechaDesde2.Name = "dtp_fechaDesde2";
             this.dtp_fechaDesde2.Size = new System.Drawing.Size(160, 22);
             this.dtp_fechaDesde2.TabIndex = 4;
@@ -364,7 +369,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rv_CantidadVendidaProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.CantidadTotalProdVendidos.rdlc";
             this.rv_CantidadVendidaProductos.Location = new System.Drawing.Point(11, 121);
-            this.rv_CantidadVendidaProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rv_CantidadVendidaProductos.Margin = new System.Windows.Forms.Padding(4);
             this.rv_CantidadVendidaProductos.Name = "rv_CantidadVendidaProductos";
             this.rv_CantidadVendidaProductos.ServerReport.BearerToken = null;
             this.rv_CantidadVendidaProductos.Size = new System.Drawing.Size(1146, 898);
@@ -384,23 +389,6 @@
             this.tabPage3.Text = "Productos por Venta";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // rv_prodXventas
-            // 
-            reportDataSource2.Name = "productosXventa";
-            reportDataSource2.Value = this.TicketXProductoBindingSource;
-            this.rv_prodXventas.LocalReport.DataSources.Add(reportDataSource2);
-            this.rv_prodXventas.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorVenta.rdlc";
-            this.rv_prodXventas.Location = new System.Drawing.Point(8, 108);
-            this.rv_prodXventas.Name = "rv_prodXventas";
-            this.rv_prodXventas.ServerReport.BearerToken = null;
-            this.rv_prodXventas.Size = new System.Drawing.Size(1141, 857);
-            this.rv_prodXventas.TabIndex = 12;
-            // 
-            // TicketXProductoBindingSource
-            // 
-            this.TicketXProductoBindingSource.DataMember = "TicketXProducto";
-            this.TicketXProductoBindingSource.DataSource = this.dataSetTablasBD;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btn_FiltrarTab3);
@@ -414,22 +402,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filtros";
             // 
-            // cmb_nroTicket
+            // btn_FiltrarTab3
             // 
-            this.cmb_nroTicket.FormattingEnabled = true;
-            this.cmb_nroTicket.Location = new System.Drawing.Point(190, 21);
-            this.cmb_nroTicket.Name = "cmb_nroTicket";
-            this.cmb_nroTicket.Size = new System.Drawing.Size(157, 24);
-            this.cmb_nroTicket.TabIndex = 0;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(64, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 17);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Numero de Ticket";
+            this.btn_FiltrarTab3.Location = new System.Drawing.Point(442, 21);
+            this.btn_FiltrarTab3.Name = "btn_FiltrarTab3";
+            this.btn_FiltrarTab3.Size = new System.Drawing.Size(95, 25);
+            this.btn_FiltrarTab3.TabIndex = 16;
+            this.btn_FiltrarTab3.Text = "Filtrar";
+            this.btn_FiltrarTab3.UseVisualStyleBackColor = true;
+            this.btn_FiltrarTab3.Click += new System.EventHandler(this.btn_FiltrarTab3_Click);
             // 
             // btn_LimpiarTab3
             // 
@@ -441,15 +422,35 @@
             this.btn_LimpiarTab3.UseVisualStyleBackColor = true;
             this.btn_LimpiarTab3.Click += new System.EventHandler(this.btn_LimpiarTab3_Click);
             // 
-            // btn_FiltrarTab3
+            // label13
             // 
-            this.btn_FiltrarTab3.Location = new System.Drawing.Point(442, 21);
-            this.btn_FiltrarTab3.Name = "btn_FiltrarTab3";
-            this.btn_FiltrarTab3.Size = new System.Drawing.Size(95, 25);
-            this.btn_FiltrarTab3.TabIndex = 16;
-            this.btn_FiltrarTab3.Text = "Filtrar";
-            this.btn_FiltrarTab3.UseVisualStyleBackColor = true;
-            this.btn_FiltrarTab3.Click += new System.EventHandler(this.btn_FiltrarTab3_Click);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(64, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 17);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Numero de Ticket";
+            // 
+            // cmb_nroTicket
+            // 
+            this.cmb_nroTicket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_nroTicket.FormattingEnabled = true;
+            this.cmb_nroTicket.Location = new System.Drawing.Point(190, 21);
+            this.cmb_nroTicket.Name = "cmb_nroTicket";
+            this.cmb_nroTicket.Size = new System.Drawing.Size(157, 24);
+            this.cmb_nroTicket.TabIndex = 0;
+            // 
+            // rv_prodXventas
+            // 
+            reportDataSource1.Name = "productosXventa";
+            reportDataSource1.Value = this.TicketXProductoBindingSource;
+            this.rv_prodXventas.LocalReport.DataSources.Add(reportDataSource1);
+            this.rv_prodXventas.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorVenta.rdlc";
+            this.rv_prodXventas.Location = new System.Drawing.Point(8, 108);
+            this.rv_prodXventas.Name = "rv_prodXventas";
+            this.rv_prodXventas.ServerReport.BearerToken = null;
+            this.rv_prodXventas.Size = new System.Drawing.Size(1141, 857);
+            this.rv_prodXventas.TabIndex = 12;
             // 
             // frm_ListadoVentaProductos
             // 
@@ -458,14 +459,15 @@
             this.ClientSize = new System.Drawing.Size(1179, 1055);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtWhere);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1194, 1028);
             this.Name = "frm_ListadoVentaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de ventas";
             this.Load += new System.EventHandler(this.frm_ListadoVentaProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketXProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.grb_filtros.ResumeLayout(false);
@@ -474,7 +476,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TicketXProductoBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
