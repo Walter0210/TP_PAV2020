@@ -26,25 +26,22 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.RefreshReport();
+            this.rv_ListadoVentas.RefreshReport();
             cargarComboSolicitante();
             txtWhere.Text = string.Empty;
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
+        private void rv_ListadoGeneral_Load(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            table = ObtenerListado();
-
-            ReportDataSource ds = new ReportDataSource("DatosTickets", table);
+            ReportDataSource ds = new ReportDataSource("DatosTickets", ObtenerListado());
 
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            reportViewer1.LocalReport.SetParameters(parametros);
+            rv_ListadoVentas.LocalReport.SetParameters(parametros);
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.LocalReport.Refresh();
+            rv_ListadoVentas.LocalReport.DataSources.Clear();
+            rv_ListadoVentas.LocalReport.DataSources.Add(ds);
+            rv_ListadoVentas.LocalReport.Refresh();
         }
 
         private DataTable ObtenerListado()
@@ -67,26 +64,34 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT * FROM Estacion";
             DataTable tabla = conexion.ejecutar_consulta(sql);
-            cmbSolicitante.DataSource = tabla;
-            cmbSolicitante.DisplayMember = "razonSocial";
-            cmbSolicitante.ValueMember = "CUIT";
-            cmbSolicitante.SelectedIndex = -1;
+            cmbSolicitante1.DataSource = tabla;
+            cmbSolicitante1.DisplayMember = "razonSocial";
+            cmbSolicitante1.ValueMember = "CUIT";
+            cmbSolicitante1.SelectedIndex = -1;
+
+            //lo mismos datos para el combo en la otra pestaña
+            cmbEstacion2.DataSource = tabla;
+            cmbEstacion2.DisplayMember = "razonSocial";
+            cmbEstacion2.ValueMember = "CUIT";
+            cmbEstacion2.SelectedIndex = -1;
+            
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private void btnFiltrar1_Click(object sender, EventArgs e)
         {
-                ArmarStringFiltros();
+                ArmarStringFiltros(cmbSolicitante1, dtpDesde1, dtpHasta1);
                 ReportDataSource ds = new ReportDataSource("DatosTickets", BuscarVentasEstacion());
+
                 ReportParameter[] parametros = new ReportParameter[1];
                 parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-                reportViewer1.LocalReport.SetParameters(parametros);
+                rv_ListadoVentas.LocalReport.SetParameters(parametros);
 
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(ds);
-                reportViewer1.RefreshReport();
+                rv_ListadoVentas.LocalReport.DataSources.Clear();
+                rv_ListadoVentas.LocalReport.DataSources.Add(ds);
+                rv_ListadoVentas.RefreshReport();
         }
 
-        private void ArmarStringFiltros()
+        private void ArmarStringFiltros(ComboBox estacion, DateTimePicker desde, DateTimePicker hasta)
         {
             txtWhere.Text = string.Empty;
             stringRestriccion = string.Empty;
@@ -94,30 +99,30 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             string format = "yyyy-MM-dd HH:mm:ss";
             string shortFormat = "dd-MM-yyyy";
 
-            if (cmbSolicitante.SelectedIndex != -1)
+            if (estacion.SelectedIndex != -1)
             {
                 if (stringRestriccion == string.Empty)
                 {
-                    txtWhere.Text = "WHERE E.CUIT = " + cmbSolicitante.SelectedValue;
-                    stringRestriccion = "Listado limitado a: Estacion: " + cmbSolicitante.Text;
+                    txtWhere.Text = " WHERE E.CUIT = " + estacion.SelectedValue;
+                    stringRestriccion = "Listado limitado a: Estacion: " + estacion.Text;
                 }
                 else
                 {
-                    txtWhere.Text += " AND E.CUIT = " + cmbSolicitante.SelectedValue;
-                    stringRestriccion += " | Estacion : " + cmbSolicitante.Text;
+                    //txtWhere.Text += " AND E.CUIT = " + cmbSolicitante1.SelectedValue;
+                    //stringRestriccion += " | Estacion : " + cmbSolicitante1.Text;
                 }
             }
             if (eligioFechaDesde || eligioFechaHasta)
             {
                 if (txtWhere.Text == string.Empty)
                 {
-                    txtWhere.Text = "WHERE T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-                    stringRestriccion = "Listado limitado a las Fechas: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
+                    txtWhere.Text = " WHERE T.fecha BETWEEN " + "'" + desde.Value.ToString(format) + "'" + " AND " + "'" + hasta.Value.ToString(format) + "'";
+                    stringRestriccion = "Listado limitado a las Fechas: " + "'" + desde.Value.ToString(shortFormat) + "'" + " Y " + "'" + hasta.Value.ToString(shortFormat) + "'";
                 }
                 else
                 {
-                    txtWhere.Text += " AND T.fecha BETWEEN " + "'" + dtpDesde.Value.ToString(format) + "'" + " AND " + "'" + dtpHasta.Value.ToString(format) + "'";
-                    stringRestriccion += " | Fecha: " + "'" + dtpDesde.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtpHasta.Value.ToString(shortFormat) + "'";
+                    txtWhere.Text += " AND T.fecha BETWEEN " + "'" + desde.Value.ToString(format) + "'" + " AND " + "'" + hasta.Value.ToString(format) + "'";
+                    stringRestriccion += " | Fecha: " + "'" + desde.Value.ToString(shortFormat) + "'" + " Y " + "'" + hasta.Value.ToString(shortFormat) + "'";
                 }
             }
         }
@@ -127,21 +132,21 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             ConexionBD conexion = new ConexionBD();
            
             string sql = "SELECT T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion, COUNT(TP.numeroTicket) AS 'CantDetalles' " +
-                "FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida LEFT JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
+                " FROM Ticket T JOIN Estacion E on T.cuit = E.CUIT JOIN UnidadMedida UM on T.idUnidadMedida = UM.idUnidadMedida LEFT JOIN TicketXProducto TP on T.numTicket = TP.numeroTicket " +
                 txtWhere.Text +
-                "GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion " +
-                "ORDER BY T.numTicket";
+                " GROUP BY T.numTicket, T.fecha, E.razonSocial, T.numeroSurtidor, T.cantidad, UM.nombre, T.observacion" +
+                " ORDER BY T.numTicket";
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
             return tabla;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLimpiarFiltrosListado1_Click(object sender, EventArgs e)
         {
-            cmbSolicitante.SelectedIndex = -1;
-            dtpDesde.Value = DateTime.Now;
-            dtpHasta.Value = DateTime.Now;
+            cmbSolicitante1.SelectedIndex = -1;
+            dtpDesde1.Value = DateTime.Now;
+            dtpHasta1.Value = DateTime.Now;
             eligioFechaDesde = false;
             eligioFechaHasta = false;
             stringRestriccion = string.Empty;
@@ -152,12 +157,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            reportViewer1.LocalReport.SetParameters(parametros);
+            rv_ListadoVentas.LocalReport.SetParameters(parametros);
 
             ReportDataSource ds = new ReportDataSource("DatosTickets", table);
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.RefreshReport();
+            rv_ListadoVentas.LocalReport.DataSources.Clear();
+            rv_ListadoVentas.LocalReport.DataSources.Add(ds);
+            rv_ListadoVentas.RefreshReport();
         }
 
         private void dtpDesde_ValueChanged(object sender, EventArgs e)
@@ -169,6 +174,70 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             eligioFechaHasta = true;
         }
-         
+
+        private void rv_CantidadVendidaProductos_Load(object sender, EventArgs e)
+        {
+            txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
+
+            ReportDataSource ds = new ReportDataSource("DatosCantProdVendida", ObtenerListadoCantidadVendida());
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_CantidadVendidaProductos.LocalReport.SetParameters(parametros);
+
+            rv_CantidadVendidaProductos.LocalReport.DataSources.Clear();
+            rv_CantidadVendidaProductos.LocalReport.DataSources.Add(ds);
+            rv_CantidadVendidaProductos.RefreshReport();
+        }
+
+        private DataTable ObtenerListadoCantidadVendida()
+        {
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = "SELECT p.descripcion, SUM(tp.cantidad) AS cantVendida " +
+                "FROM Ticket T left join TicketXProducto TP on TP.numeroTicket = T.numTicket JOIN Producto P on TP.idProducto = P.idProducto JOIN Estacion E on T.cuit = E.CUIT " +
+                txtWhere.Text + 
+                " GROUP BY p.descripcion " + 
+                "ORDER BY cantVendida desc";
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
+        private void btnFiltrar2_Click(object sender, EventArgs e)
+        {
+            ArmarStringFiltros(cmbEstacion2, dtp_fechaDesde2, dtp_fechaHasta2);
+            ReportDataSource ds = new ReportDataSource("DatosCantProdVendida", ObtenerListadoCantidadVendida()); 
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_CantidadVendidaProductos.LocalReport.SetParameters(parametros);
+
+            rv_CantidadVendidaProductos.LocalReport.DataSources.Clear();
+            rv_CantidadVendidaProductos.LocalReport.DataSources.Add(ds);
+            rv_CantidadVendidaProductos.RefreshReport();
+        }
+
+        private void btnLimpiarFiltros2_Click(object sender, EventArgs e)
+        {
+            cmbEstacion2.SelectedIndex = -1;
+            dtp_fechaDesde2.Value = DateTime.Now;
+            dtp_fechaHasta2.Value = DateTime.Now;
+            eligioFechaDesde = false;
+            eligioFechaHasta = false;
+            stringRestriccion = string.Empty;
+            txtWhere.Text = string.Empty;
+            
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_CantidadVendidaProductos.LocalReport.SetParameters(parametros);
+
+            ReportDataSource ds = new ReportDataSource("DatosCantProdVendida", ObtenerListadoCantidadVendida());
+            rv_CantidadVendidaProductos.LocalReport.DataSources.Clear();
+            rv_CantidadVendidaProductos.LocalReport.DataSources.Add(ds);
+            rv_CantidadVendidaProductos.RefreshReport();
+        }
     }
 }

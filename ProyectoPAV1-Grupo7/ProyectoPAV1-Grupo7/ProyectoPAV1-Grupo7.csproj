@@ -298,6 +298,7 @@
     <EmbeddedResource Include="Formularios\Reportes\Listados\ListadoSurtidores.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listados\Listado_VentaProductos.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaVentaPorDia.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\CantidadTotalProdVendidos.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
