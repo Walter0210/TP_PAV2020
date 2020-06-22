@@ -27,8 +27,11 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private void frm_ListadoVentaProductos_Load(object sender, EventArgs e)
         {
             this.rv_ListadoVentas.RefreshReport();
-            cargarComboSolicitante();
+            cargarCombos();
             txtWhere.Text = string.Empty;
+            this.rv_prodXventas.RefreshReport();
+            this.rv_prodXventas.RefreshReport();
+            rv_prodXventas.Clear();
         }
 
         private void rv_ListadoGeneral_Load(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             return tabla;
         }
 
-        private void cargarComboSolicitante()
+        private void cargarCombos()
         {
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT * FROM Estacion";
@@ -74,7 +77,16 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbEstacion2.DisplayMember = "razonSocial";
             cmbEstacion2.ValueMember = "CUIT";
             cmbEstacion2.SelectedIndex = -1;
-            
+
+            // NUMERO TICKET
+            ConexionBD conexion2 = new ConexionBD();
+            string sql2 = "SELECT * FROM Ticket";
+            DataTable tabla2 = conexion2.ejecutar_consulta(sql2);
+            cmb_nroTicket.DataSource = tabla2;
+            cmb_nroTicket.DisplayMember = "numTicket";
+            cmb_nroTicket.ValueMember = "numTicket";
+            cmb_nroTicket.SelectedIndex = -1;
+
         }
 
         private void btnFiltrar1_Click(object sender, EventArgs e)
@@ -238,6 +250,70 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             rv_CantidadVendidaProductos.LocalReport.DataSources.Clear();
             rv_CantidadVendidaProductos.LocalReport.DataSources.Add(ds);
             rv_CantidadVendidaProductos.RefreshReport();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rv_prodXventas_Load(object sender, EventArgs e)
+        {
+            ObtenerListadoProductos();
+        }
+
+        private DataTable ObtenerListadoProductos()
+        {
+            object numTicket = cmb_nroTicket.SelectedValue;
+
+            ConexionBD conexion = new ConexionBD();
+
+            string sql = "SELECT TP.numeroTicket, P.descripcion, TP.cantidad, TP.precio " +
+                "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto " +
+                "WHERE numeroTicket = '" + numTicket.ToString() + "'";
+
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+
+            return tabla;
+        }
+
+        private void btn_FiltrarTab3_Click(object sender, EventArgs e)
+        {
+            buscarProductosPorVenta();
+        }
+
+        private void buscarProductosPorVenta()
+        {
+
+            object numTicket = cmb_nroTicket.SelectedValue;
+
+            try
+            {
+                ConexionBD conexion = new ConexionBD();
+                string consulta = @"SELECT TP.numeroTicket, P.descripcion as 'idProducto', TP.cantidad, TP.precio " +
+                "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto " +
+                "WHERE numeroTicket = '" + numTicket.ToString() + "'";
+
+                DataTable tablaEmpleados = conexion.ejecutar_consulta(consulta);
+                ReportDataSource ds = new ReportDataSource("productosXventa", tablaEmpleados);
+
+                rv_prodXventas.LocalReport.DataSources.Clear();
+                rv_prodXventas.LocalReport.DataSources.Add(ds);
+                rv_prodXventas.LocalReport.Refresh();
+                rv_prodXventas.RefreshReport();
+
+            }
+            catch
+            {
+                MessageBox.Show("Error de Base de Datos");
+            }
+        }
+
+        private void btn_LimpiarTab3_Click(object sender, EventArgs e)
+        {
+            rv_prodXventas.Clear();
+            cmb_nroTicket.SelectedIndex = -1;
         }
     }
 }
