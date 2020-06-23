@@ -29,7 +29,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             Producto prod2 = new Producto("prod2", 500, 50, 100, DateTime.Now);
             listaProductos.Add(prod1);
             listaProductos.Add(prod2);
-            this.checkedListBox1.DataSource = listaProductos.ToList();
+            //this.checkedListBox1.DataSource = listaProductos.ToList();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
