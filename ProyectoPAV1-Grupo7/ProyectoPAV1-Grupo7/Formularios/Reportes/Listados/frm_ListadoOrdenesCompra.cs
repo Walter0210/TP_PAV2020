@@ -20,12 +20,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         public frm_ListadoOrdenesCompra()
         {
             InitializeComponent();
-            cargarComboSolicitante();
-            cargarComboResponsable();
+            cargarCombos();
         }
 
-        private void cargarComboResponsable()
+        private void cargarCombos()
         {
+            // RESPONSABLE
             ConexionBD conexion = new ConexionBD();
             string sql = "SELECT  E.nombre + ' ' + E.apellido as 'ApeNom', E.legajo FROM Empleado E";
             DataTable tabla = conexion.ejecutar_consulta(sql);
@@ -34,12 +34,35 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbResponsable.DisplayMember = "ApeNom";
             cmbResponsable.ValueMember = "legajo";
             cmbResponsable.SelectedIndex = -1;
+
+            //  ESTACION
+            ConexionBD conexion1 = new ConexionBD();
+            string sql1 = "SELECT * FROM Estacion";
+            DataTable tabla1 = conexion1.ejecutar_consulta(sql1);
+            cmbSolicitante.DataSource = tabla1;
+            cmbSolicitante.DisplayMember = "razonSocial";
+            cmbSolicitante.ValueMember = "CUIT";
+            cmbSolicitante.SelectedIndex = -1;
+
+            //  NRO ORDEN COMPRA
+            ConexionBD conexion2 = new ConexionBD();
+            string sql2 = "SELECT * FROM OrdenCompra";
+            DataTable tabla2 = conexion2.ejecutar_consulta(sql2);
+            cmb_nroOrden.DataSource = tabla2;
+            cmb_nroOrden.DisplayMember = "numeroOrdenCompra";
+            cmb_nroOrden.ValueMember = "numeroOrdenCompra";
+            cmb_nroOrden.SelectedIndex = -1;
         }
 
         private void frm_ListadoOrdenesCompra_Load(object sender, EventArgs e)
         {
             this.rv_ListadoGeneral.RefreshReport();
             txtWhere.Text = string.Empty;
+            this.rv_productosPorOC.RefreshReport();
+            this.rv_productosPorOC.RefreshReport();
+
+            txt_Estacion.ReadOnly = true;
+            txt_Responsable.ReadOnly = true;
         }
 
         private void rv_ListadiGeneral_Load(object sender, EventArgs e)
@@ -64,16 +87,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             //rv_ListadoGeneral.LocalReport.SetParameters(parametros);
         }
 
-        private void cargarComboSolicitante()
-        {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT * FROM Estacion";
-            DataTable tabla = conexion.ejecutar_consulta(sql);
-            cmbSolicitante.DataSource = tabla;
-            cmbSolicitante.DisplayMember = "razonSocial";
-            cmbSolicitante.ValueMember = "CUIT";
-            cmbSolicitante.SelectedIndex = -1;
-        }
 
         private void ObtenerListado()
         {
@@ -202,5 +215,66 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             DataTable tabla = conexion.ejecutar_consulta(sql);
             return tabla;
         }
+
+        private void rv_productosPorOC_Load(object sender, EventArgs e)
+        {
+            ObtenerListadoProductosOC();
+        }
+
+        private void ObtenerListadoProductosOC()
+        {
+            object numOrden = cmb_nroOrden.SelectedValue;
+
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT DC.numOrdenCompra, P.descripcion as 'idProducto', DC.cantidad, UM.nombre as 'idUnidadMedida', P.precioCompra * DC.cantidad as 'precio', UR.nombre as 'idUrgencia'"
+                + " FROM DetalleOrdenCompra DC "
+                + "JOIN Producto P ON DC.idProducto = P.idProducto "
+                + "JOIN UnidadMedida UM ON DC.idUnidadMedida = UM.idUnidadMedida "
+                + "JOIN Urgencia UR ON DC.idUrgencia = UR.idUrgencia " +
+                "WHERE DC.numOrdenCompra = '" + numOrden + "'";
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            ReportDataSource ds = new ReportDataSource("productosXoc", tabla);
+
+            rv_productosPorOC.LocalReport.DataSources.Clear();
+            rv_productosPorOC.LocalReport.DataSources.Add(ds);
+            rv_productosPorOC.LocalReport.Refresh();
+            rv_productosPorOC.RefreshReport();
+        }
+
+        private void btn_filtrarTab3_Click(object sender, EventArgs e)
+        {
+            ObtenerListadoProductosOC();
+            obtenerResponsable();
+            obtenerEstacion();
+        }
+
+        private void obtenerResponsable()
+        {
+            if (cmb_nroOrden.SelectedIndex != -1)
+            {
+                ConexionBD conexion = new ConexionBD();
+                string sql = "SELECT E.nombre+ ' ' + E.apellido AS apenom FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo WHERE OC.numeroOrdenCompra = " + cmb_nroOrden.SelectedValue;
+                DataTable tabla = conexion.ejecutar_consulta(sql);
+                txt_Responsable.Text = tabla.Rows[0]["apenom"].ToString();
+            }
+
+        }
+
+        private void obtenerEstacion()
+        {
+            if (cmb_nroOrden.SelectedIndex != -1)
+            {
+
+                ConexionBD conexion = new ConexionBD();
+                string sql = "SELECT S.razonSocial" +
+                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
+                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT WHERE OC.numeroOrdenCompra = " + cmb_nroOrden.SelectedValue;
+                DataTable tabla = conexion.ejecutar_consulta(sql);
+                txt_Estacion.Text = tabla.Rows[0]["razonSocial"].ToString();
+            }
+
+        }
+
     }
 }
