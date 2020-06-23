@@ -23,9 +23,21 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
 
             this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
+            List<Producto> listaProductos = new List<Producto>();
+            Producto prod1 = new Producto("prod1", 500, 50, 100, DateTime.Now);
+            Producto prod2 = new Producto("prod2", 500, 50, 100, DateTime.Now);
+            listaProductos.Add(prod1);
+            listaProductos.Add(prod2);
+            this.checkedListBox1.DataSource = listaProductos.ToList();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
+        {
+            buscarProductos();
+        }
+
+        private void buscarProductos()
         {
             try
             {
@@ -36,8 +48,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 DataTable tablaGananciaProductos = conexion.ejecutar_consulta(consulta);
                 ReportDataSource ds = new ReportDataSource("DatosGananciaProducto", tablaGananciaProductos);
                 reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer2.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(ds);
+                reportViewer2.LocalReport.DataSources.Add(ds);
                 reportViewer1.LocalReport.Refresh();
+                reportViewer2.LocalReport.Refresh();
+                reportViewer1.RefreshReport();
+                reportViewer2.RefreshReport();
 
             }
             catch

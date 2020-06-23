@@ -52,45 +52,11 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Textbox Name="Textbox1">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Ganancia por Producto (en Pesos Argentinos) </Value>
-                    <Style>
-                      <FontSize>22pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.27653in</Top>
-            <Left>2.74875in</Left>
-            <Height>0.42708in</Height>
-            <Width>7.25in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Chart Name="Chart5">
+          <Chart Name="Chart8">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart5_CategoryGroup">
+                  <Group Name="Chart8_CategoryGroup">
                     <GroupExpressions>
                       <GroupExpression>=Fields!producto.Value</GroupExpression>
                     </GroupExpressions>
@@ -107,23 +73,17 @@
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>precio Compra</Label>
-                </ChartMember>
-                <ChartMember>
-                  <Label>precio Venta</Label>
-                </ChartMember>
-                <ChartMember>
-                  <Label>ganancia</Label>
+                  <Label>porcentaje Ganancia</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="precioCompra">
+                <ChartSeries Name="porcentajeGanancia">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Fields!precioCompra.Value</Y>
+                        <Y>=Fields!porcentajeGanancia.Value</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -137,6 +97,7 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Type>Bar</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -148,83 +109,7 @@
                     </ChartDataLabel>
                   </ChartEmptyPoints>
                   <ChartItemInLegend>
-                    <LegendText>Precio de Compra ($)</LegendText>
-                  </ChartItemInLegend>
-                  <ValueAxisName>Primary</ValueAxisName>
-                  <CategoryAxisName>Primary</CategoryAxisName>
-                  <ChartSmartLabel>
-                    <CalloutLineColor>Black</CalloutLineColor>
-                    <MinMovingDistance>0pt</MinMovingDistance>
-                  </ChartSmartLabel>
-                </ChartSeries>
-                <ChartSeries Name="precioVenta">
-                  <ChartDataPoints>
-                    <ChartDataPoint>
-                      <ChartDataPointValues>
-                        <Y>=Fields!precioVenta.Value</Y>
-                      </ChartDataPointValues>
-                      <ChartDataLabel>
-                        <Style />
-                        <UseValueAsLabel>true</UseValueAsLabel>
-                        <Visible>true</Visible>
-                      </ChartDataLabel>
-                      <Style />
-                      <ChartMarker>
-                        <Style />
-                      </ChartMarker>
-                      <DataElementOutput>Output</DataElementOutput>
-                    </ChartDataPoint>
-                  </ChartDataPoints>
-                  <Style />
-                  <ChartEmptyPoints>
-                    <Style />
-                    <ChartMarker>
-                      <Style />
-                    </ChartMarker>
-                    <ChartDataLabel>
-                      <Style />
-                    </ChartDataLabel>
-                  </ChartEmptyPoints>
-                  <ChartItemInLegend>
-                    <LegendText>Precio de Venta ($)</LegendText>
-                  </ChartItemInLegend>
-                  <ValueAxisName>Primary</ValueAxisName>
-                  <CategoryAxisName>Primary</CategoryAxisName>
-                  <ChartSmartLabel>
-                    <CalloutLineColor>Black</CalloutLineColor>
-                    <MinMovingDistance>0pt</MinMovingDistance>
-                  </ChartSmartLabel>
-                </ChartSeries>
-                <ChartSeries Name="ganancia">
-                  <ChartDataPoints>
-                    <ChartDataPoint>
-                      <ChartDataPointValues>
-                        <Y>=Fields!ganancia.Value</Y>
-                      </ChartDataPointValues>
-                      <ChartDataLabel>
-                        <Style />
-                        <UseValueAsLabel>true</UseValueAsLabel>
-                        <Visible>true</Visible>
-                      </ChartDataLabel>
-                      <Style />
-                      <ChartMarker>
-                        <Style />
-                      </ChartMarker>
-                      <DataElementOutput>Output</DataElementOutput>
-                    </ChartDataPoint>
-                  </ChartDataPoints>
-                  <Style />
-                  <ChartEmptyPoints>
-                    <Style />
-                    <ChartMarker>
-                      <Style />
-                    </ChartMarker>
-                    <ChartDataLabel>
-                      <Style />
-                    </ChartDataLabel>
-                  </ChartEmptyPoints>
-                  <ChartItemInLegend>
-                    <LegendText>Ganancia ($)</LegendText>
+                    <LegendText>Porcentaje de Ganancia (%)</LegendText>
                   </ChartItemInLegend>
                   <ValueAxisName>Primary</ValueAxisName>
                   <CategoryAxisName>Primary</CategoryAxisName>
@@ -488,7 +373,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Gráfico de Barras- Ganacia en Pesos ($) por Producto</Caption>
+                <Caption>Gráfico de Barras - Ganancia por Producto en términos porcentuales (%)</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -500,7 +385,7 @@
                 <Position>TopLeft</Position>
               </ChartTitle>
             </ChartTitles>
-            <Palette>BrightPastel</Palette>
+            <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
@@ -518,10 +403,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosGananciaProducto</DataSetName>
-            <Top>1.35986in</Top>
-            <Height>4.87973in</Height>
-            <Width>11.83334in</Width>
-            <ZIndex>1</ZIndex>
+            <Top>1.05034in</Top>
+            <Height>4.94792in</Height>
+            <Width>11.88542in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -538,7 +422,42 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Diferencia entre precio de venta y compra de cada producto, expresados en Pesos Argentinos ($)</Value>
+                    <Value>Ganancia por Producto (en %) </Value>
+                    <Style>
+                      <FontSize>22pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.20313in</Top>
+            <Left>4.30083in</Left>
+            <Height>0.42708in</Height>
+            <Width>4.42709in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Porcentaje de ganancia con respecto al precio de compra de cada producto</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                     </Style>
@@ -549,11 +468,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.74528in</Top>
-            <Left>2.10292in</Left>
-            <Height>0.47917in</Height>
-            <Width>8.38667in</Width>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.68577in</Top>
+            <Left>3.45708in</Left>
+            <Height>0.25in</Height>
+            <Width>6.11458in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -566,10 +485,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>6.57292in</Height>
+        <Height>6.54167in</Height>
         <Style />
       </Body>
-      <Width>12.03125in</Width>
+      <Width>12.08333in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
