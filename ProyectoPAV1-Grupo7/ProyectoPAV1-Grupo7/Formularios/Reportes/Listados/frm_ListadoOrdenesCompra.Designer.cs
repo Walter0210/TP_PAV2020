@@ -352,6 +352,7 @@
             this.btn_limpiarTab3.TabIndex = 9;
             this.btn_limpiarTab3.Text = "Limpiar";
             this.btn_limpiarTab3.UseVisualStyleBackColor = true;
+            this.btn_limpiarTab3.Click += new System.EventHandler(this.btn_limpiarTab3_Click);
             // 
             // cmb_nroOrden
             // 

@@ -276,5 +276,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         }
 
+        private void btn_limpiarTab3_Click(object sender, EventArgs e)
+        {
+            txt_Estacion.Clear();
+            txt_Responsable.Clear();
+            rv_productosPorOC.Clear();
+            cmb_nroOrden.SelectedIndex = -1;
+        }
     }
 }
