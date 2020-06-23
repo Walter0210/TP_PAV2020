@@ -45,8 +45,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             ConexionBD conexion = new ConexionBD();
             string sql = @"select S.numeroSurtidor, S.cuit, SUM(T.cantidad) AS Sumatoria
-from Ticket T RIGHT JOIN Surtidor S on T.numeroSurtidor = S.numeroSurtidor and T.cuit = S.cuit "
- + stringWhere + " group by S.numeroSurtidor, S.cuit ";
+                        from Ticket T RIGHT JOIN Surtidor S on T.numeroSurtidor = S.numeroSurtidor and T.cuit = S.cuit "
+                        + stringWhere 
+                        + " group by S.numeroSurtidor, S.cuit ";
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
             return tabla;
@@ -144,6 +145,11 @@ from Ticket T RIGHT JOIN Surtidor S on T.numeroSurtidor = S.numeroSurtidor and T
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.RefreshReport();
+        }
+
+        private void dtpFecha_ValueChanged_1(object sender, EventArgs e)
+        {
+            eligiofecha = true;
         }
     }
 }

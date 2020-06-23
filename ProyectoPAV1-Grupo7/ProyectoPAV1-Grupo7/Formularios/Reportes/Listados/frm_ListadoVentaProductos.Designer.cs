@@ -29,191 +29,494 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataSetTablasBDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.TicketXProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetTablasBD = new ProyectoPAV1_Grupo7.DataSetTablasBD();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSetTablasBDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtWhere = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grb_filtros = new System.Windows.Forms.GroupBox();
-            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
+            this.btnLimpiarFiltros1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.cmbSolicitante = new System.Windows.Forms.ComboBox();
-            this.btnCalcular = new System.Windows.Forms.Button();
+            this.dtpHasta1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbSolicitante1 = new System.Windows.Forms.ComboBox();
+            this.btnFiltrar1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtWhere = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).BeginInit();
+            this.rv_ListadoVentas = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarFiltros2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtp_fechaHasta2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fechaDesde2 = new System.Windows.Forms.DateTimePicker();
+            this.cmbEstacion2 = new System.Windows.Forms.ComboBox();
+            this.btnFiltrar2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rv_CantidadVendidaProductos = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_FiltrarTab3 = new System.Windows.Forms.Button();
+            this.btn_LimpiarTab3 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmb_nroTicket = new System.Windows.Forms.ComboBox();
+            this.rv_prodXventas = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketXProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.grb_filtros.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataSetTablasBDBindingSource
+            // TicketXProductoBindingSource
             // 
-            this.dataSetTablasBDBindingSource.DataSource = this.dataSetTablasBD;
-            this.dataSetTablasBDBindingSource.Position = 0;
+            this.TicketXProductoBindingSource.DataMember = "TicketXProducto";
+            this.TicketXProductoBindingSource.DataSource = this.dataSetTablasBD;
             // 
             // dataSetTablasBD
             // 
             this.dataSetTablasBD.DataSetName = "DataSetTablasBD";
             this.dataSetTablasBD.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reportViewer1
+            // dataSetTablasBDBindingSource
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_VentaProductos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 107);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(860, 792);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.dataSetTablasBDBindingSource.DataSource = this.dataSetTablasBD;
+            this.dataSetTablasBDBindingSource.Position = 0;
+            // 
+            // txtWhere
+            // 
+            this.txtWhere.AutoSize = true;
+            this.txtWhere.Location = new System.Drawing.Point(29, 133);
+            this.txtWhere.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtWhere.Name = "txtWhere";
+            this.txtWhere.Size = new System.Drawing.Size(0, 17);
+            this.txtWhere.TabIndex = 6;
+            this.txtWhere.Visible = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1179, 1055);
+            this.tabControl1.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.grb_filtros);
+            this.tabPage1.Controls.Add(this.rv_ListadoVentas);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(1171, 1026);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Listado General";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // grb_filtros
             // 
             this.grb_filtros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grb_filtros.Controls.Add(this.btnLimpiarFiltros);
+            this.grb_filtros.Controls.Add(this.btnLimpiarFiltros1);
             this.grb_filtros.Controls.Add(this.label3);
             this.grb_filtros.Controls.Add(this.label2);
-            this.grb_filtros.Controls.Add(this.dtpHasta);
-            this.grb_filtros.Controls.Add(this.dtpDesde);
-            this.grb_filtros.Controls.Add(this.cmbSolicitante);
-            this.grb_filtros.Controls.Add(this.btnCalcular);
+            this.grb_filtros.Controls.Add(this.dtpHasta1);
+            this.grb_filtros.Controls.Add(this.dtpDesde1);
+            this.grb_filtros.Controls.Add(this.cmbSolicitante1);
+            this.grb_filtros.Controls.Add(this.btnFiltrar1);
             this.grb_filtros.Controls.Add(this.label1);
-            this.grb_filtros.Location = new System.Drawing.Point(12, 12);
+            this.grb_filtros.Location = new System.Drawing.Point(11, 7);
+            this.grb_filtros.Margin = new System.Windows.Forms.Padding(4);
             this.grb_filtros.Name = "grb_filtros";
-            this.grb_filtros.Size = new System.Drawing.Size(611, 89);
-            this.grb_filtros.TabIndex = 5;
+            this.grb_filtros.Padding = new System.Windows.Forms.Padding(4);
+            this.grb_filtros.Size = new System.Drawing.Size(815, 110);
+            this.grb_filtros.TabIndex = 7;
             this.grb_filtros.TabStop = false;
             this.grb_filtros.Text = "Filtros";
             // 
-            // btnLimpiarFiltros
+            // btnLimpiarFiltros1
             // 
-            this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(520, 50);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
-            this.btnLimpiarFiltros.TabIndex = 8;
-            this.btnLimpiarFiltros.Text = "Limpiar";
-            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
-            this.btnLimpiarFiltros.Click += new System.EventHandler(this.button1_Click);
+            this.btnLimpiarFiltros1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarFiltros1.Location = new System.Drawing.Point(693, 62);
+            this.btnLimpiarFiltros1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiarFiltros1.Name = "btnLimpiarFiltros1";
+            this.btnLimpiarFiltros1.Size = new System.Drawing.Size(95, 25);
+            this.btnLimpiarFiltros1.TabIndex = 8;
+            this.btnLimpiarFiltros1.Text = "Limpiar";
+            this.btnLimpiarFiltros1.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros1.Click += new System.EventHandler(this.btnLimpiarFiltrosListado1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(278, 54);
+            this.label3.Location = new System.Drawing.Point(371, 66);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Fecha hasta:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(275, 21);
+            this.label2.Location = new System.Drawing.Point(367, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Fecha desde:";
             // 
-            // dtpHasta
+            // dtpHasta1
             // 
-            this.dtpHasta.Location = new System.Drawing.Point(372, 50);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(121, 20);
-            this.dtpHasta.TabIndex = 5;
-            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
+            this.dtpHasta1.Location = new System.Drawing.Point(496, 62);
+            this.dtpHasta1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpHasta1.Name = "dtpHasta1";
+            this.dtpHasta1.Size = new System.Drawing.Size(160, 22);
+            this.dtpHasta1.TabIndex = 5;
+            this.dtpHasta1.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
-            // dtpDesde
+            // dtpDesde1
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(372, 18);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(121, 20);
-            this.dtpDesde.TabIndex = 4;
-            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
+            this.dtpDesde1.Location = new System.Drawing.Point(496, 22);
+            this.dtpDesde1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDesde1.Name = "dtpDesde1";
+            this.dtpDesde1.Size = new System.Drawing.Size(160, 22);
+            this.dtpDesde1.TabIndex = 4;
+            this.dtpDesde1.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
-            // cmbSolicitante
+            // cmbSolicitante1
             // 
-            this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(111, 18);
-            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbSolicitante.Name = "cmbSolicitante";
-            this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
-            this.cmbSolicitante.TabIndex = 2;
+            this.cmbSolicitante1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbSolicitante1.FormattingEnabled = true;
+            this.cmbSolicitante1.Location = new System.Drawing.Point(148, 22);
+            this.cmbSolicitante1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSolicitante1.Name = "cmbSolicitante1";
+            this.cmbSolicitante1.Size = new System.Drawing.Size(160, 24);
+            this.cmbSolicitante1.TabIndex = 2;
             // 
-            // btnCalcular
+            // btnFiltrar1
             // 
-            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(520, 20);
-            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(71, 20);
-            this.btnCalcular.TabIndex = 1;
-            this.btnCalcular.Text = "Filtrar";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            this.btnFiltrar1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFiltrar1.Location = new System.Drawing.Point(693, 25);
+            this.btnFiltrar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar1.Name = "btnFiltrar1";
+            this.btnFiltrar1.Size = new System.Drawing.Size(95, 25);
+            this.btnFiltrar1.TabIndex = 1;
+            this.btnFiltrar1.Text = "Filtrar";
+            this.btnFiltrar1.UseVisualStyleBackColor = true;
+            this.btnFiltrar1.Click += new System.EventHandler(this.btnFiltrar1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Location = new System.Drawing.Point(56, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(75, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Estacion:";
             // 
-            // txtWhere
+            // rv_ListadoVentas
             // 
-            this.txtWhere.AutoSize = true;
-            this.txtWhere.Location = new System.Drawing.Point(22, 108);
-            this.txtWhere.Name = "txtWhere";
-            this.txtWhere.Size = new System.Drawing.Size(0, 13);
-            this.txtWhere.TabIndex = 6;
-            this.txtWhere.Visible = false;
+            this.rv_ListadoVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rv_ListadoVentas.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_VentaProductos.rdlc";
+            this.rv_ListadoVentas.Location = new System.Drawing.Point(11, 126);
+            this.rv_ListadoVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.rv_ListadoVentas.Name = "rv_ListadoVentas";
+            this.rv_ListadoVentas.ServerReport.BearerToken = null;
+            this.rv_ListadoVentas.Size = new System.Drawing.Size(1146, 898);
+            this.rv_ListadoVentas.TabIndex = 6;
+            this.rv_ListadoVentas.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rv_ListadoVentas.Load += new System.EventHandler(this.rv_ListadoGeneral_Load);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.rv_CantidadVendidaProductos);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(1171, 1026);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Cantidad Total Items Vendidos";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnLimpiarFiltros2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.dtp_fechaHasta2);
+            this.groupBox1.Controls.Add(this.dtp_fechaDesde2);
+            this.groupBox1.Controls.Add(this.cmbEstacion2);
+            this.groupBox1.Controls.Add(this.btnFiltrar2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(11, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(815, 110);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            // 
+            // btnLimpiarFiltros2
+            // 
+            this.btnLimpiarFiltros2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiarFiltros2.Location = new System.Drawing.Point(693, 62);
+            this.btnLimpiarFiltros2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiarFiltros2.Name = "btnLimpiarFiltros2";
+            this.btnLimpiarFiltros2.Size = new System.Drawing.Size(95, 25);
+            this.btnLimpiarFiltros2.TabIndex = 8;
+            this.btnLimpiarFiltros2.Text = "Limpiar";
+            this.btnLimpiarFiltros2.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros2.Click += new System.EventHandler(this.btnLimpiarFiltros2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(371, 66);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Fecha hasta:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(367, 26);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 17);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Fecha desde:";
+            // 
+            // dtp_fechaHasta2
+            // 
+            this.dtp_fechaHasta2.Location = new System.Drawing.Point(496, 62);
+            this.dtp_fechaHasta2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_fechaHasta2.Name = "dtp_fechaHasta2";
+            this.dtp_fechaHasta2.Size = new System.Drawing.Size(160, 22);
+            this.dtp_fechaHasta2.TabIndex = 5;
+            this.dtp_fechaHasta2.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
+            // 
+            // dtp_fechaDesde2
+            // 
+            this.dtp_fechaDesde2.Location = new System.Drawing.Point(496, 22);
+            this.dtp_fechaDesde2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_fechaDesde2.Name = "dtp_fechaDesde2";
+            this.dtp_fechaDesde2.Size = new System.Drawing.Size(160, 22);
+            this.dtp_fechaDesde2.TabIndex = 4;
+            this.dtp_fechaDesde2.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
+            // 
+            // cmbEstacion2
+            // 
+            this.cmbEstacion2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbEstacion2.FormattingEnabled = true;
+            this.cmbEstacion2.Location = new System.Drawing.Point(148, 22);
+            this.cmbEstacion2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbEstacion2.Name = "cmbEstacion2";
+            this.cmbEstacion2.Size = new System.Drawing.Size(160, 24);
+            this.cmbEstacion2.TabIndex = 2;
+            // 
+            // btnFiltrar2
+            // 
+            this.btnFiltrar2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFiltrar2.Location = new System.Drawing.Point(693, 25);
+            this.btnFiltrar2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFiltrar2.Name = "btnFiltrar2";
+            this.btnFiltrar2.Size = new System.Drawing.Size(95, 25);
+            this.btnFiltrar2.TabIndex = 1;
+            this.btnFiltrar2.Text = "Filtrar";
+            this.btnFiltrar2.UseVisualStyleBackColor = true;
+            this.btnFiltrar2.Click += new System.EventHandler(this.btnFiltrar2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label6.Location = new System.Drawing.Point(75, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Estacion:";
+            // 
+            // rv_CantidadVendidaProductos
+            // 
+            this.rv_CantidadVendidaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rv_CantidadVendidaProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.CantidadTotalProdVendidos.rdlc";
+            this.rv_CantidadVendidaProductos.Location = new System.Drawing.Point(11, 121);
+            this.rv_CantidadVendidaProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.rv_CantidadVendidaProductos.Name = "rv_CantidadVendidaProductos";
+            this.rv_CantidadVendidaProductos.ServerReport.BearerToken = null;
+            this.rv_CantidadVendidaProductos.Size = new System.Drawing.Size(1146, 898);
+            this.rv_CantidadVendidaProductos.TabIndex = 8;
+            this.rv_CantidadVendidaProductos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rv_CantidadVendidaProductos.Load += new System.EventHandler(this.rv_CantidadVendidaProductos_Load);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.rv_prodXventas);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1171, 1026);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Productos por Venta";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btn_FiltrarTab3);
+            this.groupBox4.Controls.Add(this.btn_LimpiarTab3);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.cmb_nroTicket);
+            this.groupBox4.Location = new System.Drawing.Point(8, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(613, 100);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Filtros";
+            // 
+            // btn_FiltrarTab3
+            // 
+            this.btn_FiltrarTab3.Location = new System.Drawing.Point(442, 21);
+            this.btn_FiltrarTab3.Name = "btn_FiltrarTab3";
+            this.btn_FiltrarTab3.Size = new System.Drawing.Size(95, 25);
+            this.btn_FiltrarTab3.TabIndex = 16;
+            this.btn_FiltrarTab3.Text = "Filtrar";
+            this.btn_FiltrarTab3.UseVisualStyleBackColor = true;
+            this.btn_FiltrarTab3.Click += new System.EventHandler(this.btn_FiltrarTab3_Click);
+            // 
+            // btn_LimpiarTab3
+            // 
+            this.btn_LimpiarTab3.Location = new System.Drawing.Point(442, 52);
+            this.btn_LimpiarTab3.Name = "btn_LimpiarTab3";
+            this.btn_LimpiarTab3.Size = new System.Drawing.Size(95, 25);
+            this.btn_LimpiarTab3.TabIndex = 15;
+            this.btn_LimpiarTab3.Text = "Limpiar";
+            this.btn_LimpiarTab3.UseVisualStyleBackColor = true;
+            this.btn_LimpiarTab3.Click += new System.EventHandler(this.btn_LimpiarTab3_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(64, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 17);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Numero de Ticket";
+            // 
+            // cmb_nroTicket
+            // 
+            this.cmb_nroTicket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_nroTicket.FormattingEnabled = true;
+            this.cmb_nroTicket.Location = new System.Drawing.Point(190, 21);
+            this.cmb_nroTicket.Name = "cmb_nroTicket";
+            this.cmb_nroTicket.Size = new System.Drawing.Size(157, 24);
+            this.cmb_nroTicket.TabIndex = 0;
+            // 
+            // rv_prodXventas
+            // 
+            reportDataSource1.Name = "productosXventa";
+            reportDataSource1.Value = this.TicketXProductoBindingSource;
+            this.rv_prodXventas.LocalReport.DataSources.Add(reportDataSource1);
+            this.rv_prodXventas.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorVenta.rdlc";
+            this.rv_prodXventas.Location = new System.Drawing.Point(8, 108);
+            this.rv_prodXventas.Name = "rv_prodXventas";
+            this.rv_prodXventas.ServerReport.BearerToken = null;
+            this.rv_prodXventas.Size = new System.Drawing.Size(1141, 857);
+            this.rv_prodXventas.TabIndex = 12;
             // 
             // frm_ListadoVentaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 911);
+            this.ClientSize = new System.Drawing.Size(1179, 1055);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtWhere);
-            this.Controls.Add(this.grb_filtros);
-            this.Controls.Add(this.reportViewer1);
-            this.MinimumSize = new System.Drawing.Size(900, 950);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1194, 1028);
             this.Name = "frm_ListadoVentaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de ventas";
             this.Load += new System.EventHandler(this.frm_ListadoVentaProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketXProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTablasBDBindingSource)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.grb_filtros.ResumeLayout(false);
             this.grb_filtros.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource dataSetTablasBDBindingSource;
         private DataSetTablasBD dataSetTablasBD;
+        private System.Windows.Forms.Label txtWhere;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox grb_filtros;
+        private System.Windows.Forms.Button btnLimpiarFiltros1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpHasta;
-        private System.Windows.Forms.DateTimePicker dtpDesde;
-        private System.Windows.Forms.ComboBox cmbSolicitante;
-        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.DateTimePicker dtpHasta1;
+        private System.Windows.Forms.DateTimePicker dtpDesde1;
+        private System.Windows.Forms.ComboBox cmbSolicitante1;
+        private System.Windows.Forms.Button btnFiltrar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLimpiarFiltros;
-        private System.Windows.Forms.Label txtWhere;
+        private Microsoft.Reporting.WinForms.ReportViewer rv_ListadoVentas;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnLimpiarFiltros2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dtp_fechaHasta2;
+        private System.Windows.Forms.DateTimePicker dtp_fechaDesde2;
+        private System.Windows.Forms.ComboBox cmbEstacion2;
+        private System.Windows.Forms.Button btnFiltrar2;
+        private System.Windows.Forms.Label label6;
+        private Microsoft.Reporting.WinForms.ReportViewer rv_CantidadVendidaProductos;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Microsoft.Reporting.WinForms.ReportViewer rv_prodXventas;
+        private System.Windows.Forms.BindingSource TicketXProductoBindingSource;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_FiltrarTab3;
+        private System.Windows.Forms.Button btn_LimpiarTab3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmb_nroTicket;
     }
 }

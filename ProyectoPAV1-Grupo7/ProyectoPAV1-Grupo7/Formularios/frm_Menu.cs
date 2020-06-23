@@ -217,5 +217,11 @@ namespace ProyectoPAV1_Grupo7.Formularios
             frm_EstadisticasVentaSurtidorPorDia frm_EstadisticasVentaSurtidorPorDia = new frm_EstadisticasVentaSurtidorPorDia();
             frm_EstadisticasVentaSurtidorPorDia.ShowDialog();
         }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.Listados.frm_ListadoProductos frm_ListadoProductos = new Reportes.Listados.frm_ListadoProductos();
+            frm_ListadoProductos.ShowDialog();
+        }
     }
 }
