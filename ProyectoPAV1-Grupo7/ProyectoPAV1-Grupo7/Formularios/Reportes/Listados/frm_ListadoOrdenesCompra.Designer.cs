@@ -43,6 +43,18 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.rv_ListadoGeneral = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_Estacion = new System.Windows.Forms.TextBox();
+            this.txt_Responsable = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.rv_productosPorOC = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_limpiarTab3 = new System.Windows.Forms.Button();
+            this.cmb_nroOrden = new System.Windows.Forms.ComboBox();
+            this.btn_filtrarTab3 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_LimpiarFiltrosPromedios = new System.Windows.Forms.Button();
@@ -56,26 +68,14 @@
             this.btn_FiltrarPromedios = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.rv_promedios = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_limpiarTab3 = new System.Windows.Forms.Button();
-            this.cmb_nroOrden = new System.Windows.Forms.ComboBox();
-            this.btn_filtrarTab3 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.rv_productosPorOC = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_Responsable = new System.Windows.Forms.TextBox();
-            this.txt_Estacion = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtWhere
@@ -97,7 +97,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(979, 1060);
@@ -108,10 +108,10 @@
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.rv_ListadoGeneral);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(971, 1026);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(971, 1031);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado General";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -130,9 +130,9 @@
             this.groupBox1.Controls.Add(this.btnFiltrar);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(16, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(831, 107);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -165,7 +165,7 @@
             this.cmbResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbResponsable.FormattingEnabled = true;
             this.cmbResponsable.Location = new System.Drawing.Point(141, 62);
-            this.cmbResponsable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbResponsable.Margin = new System.Windows.Forms.Padding(4);
             this.cmbResponsable.Name = "cmbResponsable";
             this.cmbResponsable.Size = new System.Drawing.Size(160, 24);
             this.cmbResponsable.TabIndex = 8;
@@ -193,7 +193,7 @@
             // dtpHasta
             // 
             this.dtpHasta.Location = new System.Drawing.Point(476, 60);
-            this.dtpHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpHasta.Margin = new System.Windows.Forms.Padding(4);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(160, 22);
             this.dtpHasta.TabIndex = 5;
@@ -202,7 +202,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Location = new System.Drawing.Point(476, 21);
-            this.dtpDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDesde.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(160, 22);
             this.dtpDesde.TabIndex = 4;
@@ -247,7 +247,7 @@
             this.rv_ListadoGeneral.AutoScroll = true;
             this.rv_ListadoGeneral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rv_ListadoGeneral.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.ListadoOrdenesCompra.rdlc";
-            this.rv_ListadoGeneral.Location = new System.Drawing.Point(4, 122);
+            this.rv_ListadoGeneral.Location = new System.Drawing.Point(4, 127);
             this.rv_ListadoGeneral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rv_ListadoGeneral.Name = "rv_ListadoGeneral";
             this.rv_ListadoGeneral.ServerReport.BearerToken = null;
@@ -256,15 +256,146 @@
             this.rv_ListadoGeneral.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rv_ListadoGeneral.Load += new System.EventHandler(this.rv_ListadiGeneral_Load);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.rv_productosPorOC);
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(971, 1031);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "Productos por OC";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txt_Estacion);
+            this.groupBox4.Controls.Add(this.txt_Responsable);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Location = new System.Drawing.Point(8, 123);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(740, 138);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Datos Orden Compra";
+            // 
+            // txt_Estacion
+            // 
+            this.txt_Estacion.Location = new System.Drawing.Point(169, 88);
+            this.txt_Estacion.Name = "txt_Estacion";
+            this.txt_Estacion.Size = new System.Drawing.Size(173, 22);
+            this.txt_Estacion.TabIndex = 3;
+            // 
+            // txt_Responsable
+            // 
+            this.txt_Responsable.Location = new System.Drawing.Point(169, 50);
+            this.txt_Responsable.Name = "txt_Responsable";
+            this.txt_Responsable.Size = new System.Drawing.Size(173, 22);
+            this.txt_Responsable.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(68, 91);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Estacion:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(68, 50);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Responsable:";
+            // 
+            // rv_productosPorOC
+            // 
+            this.rv_productosPorOC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rv_productosPorOC.AutoScroll = true;
+            this.rv_productosPorOC.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorOC.rdlc";
+            this.rv_productosPorOC.Location = new System.Drawing.Point(6, 276);
+            this.rv_productosPorOC.Name = "rv_productosPorOC";
+            this.rv_productosPorOC.ServerReport.BearerToken = null;
+            this.rv_productosPorOC.Size = new System.Drawing.Size(955, 710);
+            this.rv_productosPorOC.TabIndex = 8;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btn_limpiarTab3);
+            this.groupBox3.Controls.Add(this.cmb_nroOrden);
+            this.groupBox3.Controls.Add(this.btn_filtrarTab3);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Location = new System.Drawing.Point(7, 0);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(740, 116);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Filtros";
+            // 
+            // btn_limpiarTab3
+            // 
+            this.btn_limpiarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_limpiarTab3.Location = new System.Drawing.Point(474, 53);
+            this.btn_limpiarTab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_limpiarTab3.Name = "btn_limpiarTab3";
+            this.btn_limpiarTab3.Size = new System.Drawing.Size(95, 25);
+            this.btn_limpiarTab3.TabIndex = 9;
+            this.btn_limpiarTab3.Text = "Limpiar";
+            this.btn_limpiarTab3.UseVisualStyleBackColor = true;
+            // 
+            // cmb_nroOrden
+            // 
+            this.cmb_nroOrden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_nroOrden.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmb_nroOrden.FormattingEnabled = true;
+            this.cmb_nroOrden.Location = new System.Drawing.Point(224, 17);
+            this.cmb_nroOrden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_nroOrden.Name = "cmb_nroOrden";
+            this.cmb_nroOrden.Size = new System.Drawing.Size(160, 24);
+            this.cmb_nroOrden.TabIndex = 2;
+            // 
+            // btn_filtrarTab3
+            // 
+            this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_filtrarTab3.Location = new System.Drawing.Point(474, 11);
+            this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_filtrarTab3.Name = "btn_filtrarTab3";
+            this.btn_filtrarTab3.Size = new System.Drawing.Size(95, 25);
+            this.btn_filtrarTab3.TabIndex = 1;
+            this.btn_filtrarTab3.Text = "Filtrar";
+            this.btn_filtrarTab3.UseVisualStyleBackColor = true;
+            this.btn_filtrarTab3.Click += new System.EventHandler(this.btn_filtrarTab3_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label12.Location = new System.Drawing.Point(69, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 17);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Nro Orden de Compra:";
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.rv_promedios);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage1.Size = new System.Drawing.Size(971, 1026);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(971, 1031);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Promedios";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -282,9 +413,9 @@
             this.groupBox2.Controls.Add(this.btn_FiltrarPromedios);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(16, 6);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(831, 107);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
@@ -316,7 +447,7 @@
             this.cmbResponsable2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbResponsable2.FormattingEnabled = true;
             this.cmbResponsable2.Location = new System.Drawing.Point(141, 62);
-            this.cmbResponsable2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbResponsable2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbResponsable2.Name = "cmbResponsable2";
             this.cmbResponsable2.Size = new System.Drawing.Size(160, 24);
             this.cmbResponsable2.TabIndex = 8;
@@ -344,7 +475,7 @@
             // dtp_FechaHasta2
             // 
             this.dtp_FechaHasta2.Location = new System.Drawing.Point(476, 60);
-            this.dtp_FechaHasta2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_FechaHasta2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_FechaHasta2.Name = "dtp_FechaHasta2";
             this.dtp_FechaHasta2.Size = new System.Drawing.Size(160, 22);
             this.dtp_FechaHasta2.TabIndex = 5;
@@ -352,7 +483,7 @@
             // dtp_FechaDesde2
             // 
             this.dtp_FechaDesde2.Location = new System.Drawing.Point(476, 21);
-            this.dtp_FechaDesde2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_FechaDesde2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_FechaDesde2.Name = "dtp_FechaDesde2";
             this.dtp_FechaDesde2.Size = new System.Drawing.Size(160, 22);
             this.dtp_FechaDesde2.TabIndex = 4;
@@ -395,7 +526,7 @@
             this.rv_promedios.AutoScroll = true;
             this.rv_promedios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rv_promedios.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.ListadoOrdenesCompra.rdlc";
-            this.rv_promedios.Location = new System.Drawing.Point(4, 122);
+            this.rv_promedios.Location = new System.Drawing.Point(4, 127);
             this.rv_promedios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rv_promedios.Name = "rv_promedios";
             this.rv_promedios.ServerReport.BearerToken = null;
@@ -404,137 +535,11 @@
             this.rv_promedios.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rv_promedios.Load += new System.EventHandler(this.reportViewer2_Load);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.rv_productosPorOC);
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(971, 1031);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "Productos por OC";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_limpiarTab3);
-            this.groupBox3.Controls.Add(this.cmb_nroOrden);
-            this.groupBox3.Controls.Add(this.btn_filtrarTab3);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(7, 0);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(615, 107);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Filtros";
-            // 
-            // btn_limpiarTab3
-            // 
-            this.btn_limpiarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_limpiarTab3.Location = new System.Drawing.Point(423, 59);
-            this.btn_limpiarTab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_limpiarTab3.Name = "btn_limpiarTab3";
-            this.btn_limpiarTab3.Size = new System.Drawing.Size(95, 25);
-            this.btn_limpiarTab3.TabIndex = 9;
-            this.btn_limpiarTab3.Text = "Limpiar";
-            this.btn_limpiarTab3.UseVisualStyleBackColor = true;
-            // 
-            // cmb_nroOrden
-            // 
-            this.cmb_nroOrden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_nroOrden.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmb_nroOrden.FormattingEnabled = true;
-            this.cmb_nroOrden.Location = new System.Drawing.Point(173, 23);
-            this.cmb_nroOrden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmb_nroOrden.Name = "cmb_nroOrden";
-            this.cmb_nroOrden.Size = new System.Drawing.Size(160, 24);
-            this.cmb_nroOrden.TabIndex = 2;
-            // 
-            // btn_filtrarTab3
-            // 
-            this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_filtrarTab3.Location = new System.Drawing.Point(423, 17);
-            this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_filtrarTab3.Name = "btn_filtrarTab3";
-            this.btn_filtrarTab3.Size = new System.Drawing.Size(95, 25);
-            this.btn_filtrarTab3.TabIndex = 1;
-            this.btn_filtrarTab3.Text = "Filtrar";
-            this.btn_filtrarTab3.UseVisualStyleBackColor = true;
-            this.btn_filtrarTab3.Click += new System.EventHandler(this.btn_filtrarTab3_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label12.Location = new System.Drawing.Point(18, 25);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(152, 17);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Nro Orden de Compra:";
-            // 
-            // rv_productosPorOC
-            // 
-            this.rv_productosPorOC.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorOC.rdlc";
-            this.rv_productosPorOC.Location = new System.Drawing.Point(6, 222);
-            this.rv_productosPorOC.Name = "rv_productosPorOC";
-            this.rv_productosPorOC.ServerReport.BearerToken = null;
-            this.rv_productosPorOC.Size = new System.Drawing.Size(955, 363);
-            this.rv_productosPorOC.TabIndex = 8;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txt_Estacion);
-            this.groupBox4.Controls.Add(this.txt_Responsable);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(7, 114);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(615, 102);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Datos Orden Compra";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(188, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Responsable:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(188, 66);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 17);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Estacion:";
-            // 
-            // txt_Responsable
-            // 
-            this.txt_Responsable.Location = new System.Drawing.Point(289, 32);
-            this.txt_Responsable.Name = "txt_Responsable";
-            this.txt_Responsable.Size = new System.Drawing.Size(173, 22);
-            this.txt_Responsable.TabIndex = 2;
-            // 
-            // txt_Estacion
-            // 
-            this.txt_Estacion.Location = new System.Drawing.Point(289, 63);
-            this.txt_Estacion.Name = "txt_Estacion";
-            this.txt_Estacion.Size = new System.Drawing.Size(173, 22);
-            this.txt_Estacion.TabIndex = 3;
-            // 
             // frm_ListadoOrdenesCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(979, 1055);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtWhere);
@@ -548,14 +553,14 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
