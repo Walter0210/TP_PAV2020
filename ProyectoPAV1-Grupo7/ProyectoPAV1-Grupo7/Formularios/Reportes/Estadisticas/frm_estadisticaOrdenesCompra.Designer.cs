@@ -102,14 +102,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             // dtp_GeneralFechaHasta
             // 
-            this.dtp_GeneralFechaHasta.Location = new System.Drawing.Point(75, 18);
+            this.dtp_GeneralFechaHasta.Location = new System.Drawing.Point(75, 45);
             this.dtp_GeneralFechaHasta.Name = "dtp_GeneralFechaHasta";
             this.dtp_GeneralFechaHasta.Size = new System.Drawing.Size(200, 20);
             this.dtp_GeneralFechaHasta.TabIndex = 16;
             // 
             // btnLimpiarFiltrosGeneral
             // 
-            this.btnLimpiarFiltrosGeneral.Location = new System.Drawing.Point(327, 15);
+            this.btnLimpiarFiltrosGeneral.Location = new System.Drawing.Point(327, 42);
             this.btnLimpiarFiltrosGeneral.Name = "btnLimpiarFiltrosGeneral";
             this.btnLimpiarFiltrosGeneral.Size = new System.Drawing.Size(85, 23);
             this.btnLimpiarFiltrosGeneral.TabIndex = 17;
@@ -119,7 +119,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             // btnFiltrarGeneral
             // 
-            this.btnFiltrarGeneral.Location = new System.Drawing.Point(327, 42);
+            this.btnFiltrarGeneral.Location = new System.Drawing.Point(327, 15);
             this.btnFiltrarGeneral.Name = "btnFiltrarGeneral";
             this.btnFiltrarGeneral.Size = new System.Drawing.Size(85, 23);
             this.btnFiltrarGeneral.TabIndex = 14;
@@ -130,7 +130,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 47);
+            this.label4.Location = new System.Drawing.Point(10, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 12;
@@ -139,7 +139,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 20);
+            this.label3.Location = new System.Drawing.Point(10, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 13;
@@ -147,7 +147,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             // dtp_GeneralFechaDesde
             // 
-            this.dtp_GeneralFechaDesde.Location = new System.Drawing.Point(75, 45);
+            this.dtp_GeneralFechaDesde.Location = new System.Drawing.Point(75, 18);
             this.dtp_GeneralFechaDesde.Name = "dtp_GeneralFechaDesde";
             this.dtp_GeneralFechaDesde.Size = new System.Drawing.Size(200, 20);
             this.dtp_GeneralFechaDesde.TabIndex = 15;
@@ -224,14 +224,14 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             // dtp_SucursalFechaHasta
             // 
-            this.dtp_SucursalFechaHasta.Location = new System.Drawing.Point(75, 18);
+            this.dtp_SucursalFechaHasta.Location = new System.Drawing.Point(75, 45);
             this.dtp_SucursalFechaHasta.Name = "dtp_SucursalFechaHasta";
             this.dtp_SucursalFechaHasta.Size = new System.Drawing.Size(200, 20);
             this.dtp_SucursalFechaHasta.TabIndex = 10;
             // 
             // btn_LimpiarFiltrosSucursal
             // 
-            this.btn_LimpiarFiltrosSucursal.Location = new System.Drawing.Point(327, 15);
+            this.btn_LimpiarFiltrosSucursal.Location = new System.Drawing.Point(327, 42);
             this.btn_LimpiarFiltrosSucursal.Name = "btn_LimpiarFiltrosSucursal";
             this.btn_LimpiarFiltrosSucursal.Size = new System.Drawing.Size(85, 23);
             this.btn_LimpiarFiltrosSucursal.TabIndex = 11;
@@ -241,7 +241,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             // btnFiltrarSucursal
             // 
-            this.btnFiltrarSucursal.Location = new System.Drawing.Point(327, 42);
+            this.btnFiltrarSucursal.Location = new System.Drawing.Point(327, 15);
             this.btnFiltrarSucursal.Name = "btnFiltrarSucursal";
             this.btnFiltrarSucursal.Size = new System.Drawing.Size(85, 23);
             this.btnFiltrarSucursal.TabIndex = 8;
@@ -252,7 +252,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 47);
+            this.label1.Location = new System.Drawing.Point(10, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 6;
@@ -261,7 +261,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 20);
+            this.label2.Location = new System.Drawing.Point(10, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 7;
@@ -269,7 +269,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             // dtp_SucursalFechaDesde
             // 
-            this.dtp_SucursalFechaDesde.Location = new System.Drawing.Point(75, 45);
+            this.dtp_SucursalFechaDesde.Location = new System.Drawing.Point(75, 18);
             this.dtp_SucursalFechaDesde.Name = "dtp_SucursalFechaDesde";
             this.dtp_SucursalFechaDesde.Size = new System.Drawing.Size(200, 20);
             this.dtp_SucursalFechaDesde.TabIndex = 9;

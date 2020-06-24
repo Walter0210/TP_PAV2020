@@ -57,8 +57,8 @@
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(538, 14);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(538, 43);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(90, 24);
             this.btnLimpiarFiltros.TabIndex = 14;
@@ -88,7 +88,7 @@
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
             this.cmbSolicitante.Location = new System.Drawing.Point(106, 18);
-            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
             this.cmbSolicitante.TabIndex = 10;
@@ -96,8 +96,8 @@
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(538, 44);
-            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalcular.Location = new System.Drawing.Point(538, 15);
+            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(90, 24);
             this.btnCalcular.TabIndex = 9;

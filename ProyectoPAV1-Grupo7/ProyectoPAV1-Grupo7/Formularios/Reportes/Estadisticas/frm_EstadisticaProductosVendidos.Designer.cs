@@ -56,7 +56,7 @@
             this.reportViewerProductos.Location = new System.Drawing.Point(2, 2);
             this.reportViewerProductos.Name = "reportViewerProductos";
             this.reportViewerProductos.ServerReport.BearerToken = null;
-            this.reportViewerProductos.Size = new System.Drawing.Size(912, 550);
+            this.reportViewerProductos.Size = new System.Drawing.Size(898, 576);
             this.reportViewerProductos.TabIndex = 0;
             this.reportViewerProductos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerProductos.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -70,7 +70,7 @@
             this.tab_Barras.Controls.Add(this.tabPage1);
             this.tab_Barras.Controls.Add(this.tabPage2);
             this.tab_Barras.Location = new System.Drawing.Point(11, 94);
-            this.tab_Barras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tab_Barras.Margin = new System.Windows.Forms.Padding(2);
             this.tab_Barras.Name = "tab_Barras";
             this.tab_Barras.SelectedIndex = 0;
             this.tab_Barras.Size = new System.Drawing.Size(910, 606);
@@ -81,10 +81,10 @@
             // 
             this.tabPage1.Controls.Add(this.reportViewerProductos);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(916, 554);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(902, 580);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gráfico de Barras";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // 
             this.tabPage2.Controls.Add(this.reportViewerProductos2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(902, 580);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gráfico de Torta";
@@ -116,8 +116,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(538, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(538, 44);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 24);
             this.button2.TabIndex = 3;
@@ -127,8 +127,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(538, 44);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(538, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 24);
             this.button1.TabIndex = 2;
@@ -149,9 +149,9 @@
             this.groupBox1.Controls.Add(this.cmb_Estacion);
             this.groupBox1.Controls.Add(this.dateTime_hasta);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(643, 75);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
