@@ -33,6 +33,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTime_desde = new System.Windows.Forms.DateTimePicker();
             this.cmb_Comparacion = new System.Windows.Forms.ComboBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -49,6 +51,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +72,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(-3, 66);
             this.tabControl1.Name = "tabControl1";
@@ -84,7 +88,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1265, 601);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Pesos Argentinos";
+            this.tabPage1.Text = "Pesos Argentinos ($)";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -111,9 +115,31 @@
             this.reportViewer2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer2.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.reportViewer3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1265, 601);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Dólares (U$D)";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer3
+            // 
+            this.reportViewer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Estadisticas.EstadisticaGananciaProducto" +
+    "sUSD.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.ServerReport.BearerToken = null;
+            this.reportViewer3.Size = new System.Drawing.Size(1265, 601);
+            this.reportViewer3.TabIndex = 0;
+            this.reportViewer3.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            // 
             // dateTime_desde
             // 
-            this.dateTime_desde.Location = new System.Drawing.Point(536, 21);
+            this.dateTime_desde.Location = new System.Drawing.Point(536, 22);
             this.dateTime_desde.Name = "dateTime_desde";
             this.dateTime_desde.Size = new System.Drawing.Size(200, 20);
             this.dateTime_desde.TabIndex = 2;
@@ -163,7 +189,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1044, 21);
+            this.button1.Location = new System.Drawing.Point(1045, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -173,9 +199,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1136, 20);
+            this.button2.Location = new System.Drawing.Point(1138, 18);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
+            this.button2.Size = new System.Drawing.Size(75, 24);
             this.button2.TabIndex = 11;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
@@ -183,7 +209,7 @@
             // 
             // dateTime_hasta
             // 
-            this.dateTime_hasta.Location = new System.Drawing.Point(795, 22);
+            this.dateTime_hasta.Location = new System.Drawing.Point(795, 21);
             this.dateTime_hasta.Name = "dateTime_hasta";
             this.dateTime_hasta.Size = new System.Drawing.Size(200, 20);
             this.dateTime_hasta.TabIndex = 12;
@@ -253,6 +279,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -279,5 +306,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
     }
 }

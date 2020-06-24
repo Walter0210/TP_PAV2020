@@ -17,6 +17,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         private string where = string.Empty;
         private bool eligioFechaDesde = false;
         private bool eligioFechaHasta = false;
+        private int valorDolar = 127;
 
         public frm_EstadisticaGananciaProducto()
         {
@@ -37,6 +38,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             //this.checkedListBox1.DataSource = listaProductos.ToList();
 
 
+            this.reportViewer3.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
@@ -55,21 +57,31 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                                    + where;
                 DataTable tablaGananciaProductos = conexion.ejecutar_consulta(consulta);
                 ReportDataSource ds = new ReportDataSource("DatosGananciaProducto", tablaGananciaProductos);
+
+                ReportParameter[] parametros = new ReportParameter[1];
+                parametros[0] = new ReportParameter("valorDolar", valorDolar.ToString());
+                reportViewer3.LocalReport.SetParameters(parametros);
+
+
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer2.LocalReport.DataSources.Clear();
+                reportViewer3.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(ds);
                 reportViewer2.LocalReport.DataSources.Add(ds);
+                reportViewer3.LocalReport.DataSources.Add(ds);
                 reportViewer1.LocalReport.Refresh();
                 reportViewer2.LocalReport.Refresh();
+                reportViewer3.LocalReport.Refresh();
                 reportViewer1.RefreshReport();
                 reportViewer2.RefreshReport();
+                reportViewer3.RefreshReport();
                 where = string.Empty;
 
             }
             catch
             {
                 MessageBox.Show("Error de Base de Datos");
-                this.Dispose();
+                //this.Dispose();
             }
         }
         private void cargarCombos()

@@ -270,6 +270,7 @@
     <EmbeddedResource Include="Formularios\Procesos\frm_ConsultaOrdenCompra.resx">
       <DependentUpon>frm_ConsultaOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaGananciaProductosUSD.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaGananciaProductosPorc.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaGananciaProductos.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaOCSucursal.rdlc" />
