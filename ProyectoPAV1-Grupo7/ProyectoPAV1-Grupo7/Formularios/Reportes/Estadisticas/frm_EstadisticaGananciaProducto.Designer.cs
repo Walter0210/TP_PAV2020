@@ -33,9 +33,23 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dateTime_desde = new System.Windows.Forms.DateTimePicker();
+            this.cmb_Comparacion = new System.Windows.Forms.ComboBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_porcentaje = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dateTime_hasta = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -94,13 +108,141 @@
             this.reportViewer2.ServerReport.BearerToken = null;
             this.reportViewer2.Size = new System.Drawing.Size(1259, 595);
             this.reportViewer2.TabIndex = 0;
+            this.reportViewer2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer2.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // dateTime_desde
+            // 
+            this.dateTime_desde.Location = new System.Drawing.Point(536, 21);
+            this.dateTime_desde.Name = "dateTime_desde";
+            this.dateTime_desde.Size = new System.Drawing.Size(200, 20);
+            this.dateTime_desde.TabIndex = 2;
+            this.dateTime_desde.ValueChanged += new System.EventHandler(this.dateTime_desde_ValueChanged);
+            // 
+            // cmb_Comparacion
+            // 
+            this.cmb_Comparacion.FormattingEnabled = true;
+            this.cmb_Comparacion.Location = new System.Drawing.Point(319, 21);
+            this.cmb_Comparacion.Name = "cmb_Comparacion";
+            this.cmb_Comparacion.Size = new System.Drawing.Size(43, 21);
+            this.cmb_Comparacion.TabIndex = 3;
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Location = new System.Drawing.Point(71, 21);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(115, 20);
+            this.txt_nombre.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nombre";
+            // 
+            // txt_porcentaje
+            // 
+            this.txt_porcentaje.Location = new System.Drawing.Point(368, 21);
+            this.txt_porcentaje.Name = "txt_porcentaje";
+            this.txt_porcentaje.Size = new System.Drawing.Size(50, 20);
+            this.txt_porcentaje.TabIndex = 8;
+            this.txt_porcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaracter_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(424, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "%";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1044, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1136, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 25);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dateTime_hasta
+            // 
+            this.dateTime_hasta.Location = new System.Drawing.Point(795, 22);
+            this.dateTime_hasta.Name = "dateTime_hasta";
+            this.dateTime_hasta.Size = new System.Drawing.Size(200, 20);
+            this.dateTime_hasta.TabIndex = 12;
+            this.dateTime_hasta.ValueChanged += new System.EventHandler(this.dateTime_hasta_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(492, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Desde";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(754, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Hasta";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(260, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Ganancia";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmb_Comparacion);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.dateTime_desde);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txt_nombre);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dateTime_hasta);
+            this.groupBox1.Controls.Add(this.txt_porcentaje);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1241, 55);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
             // 
             // frm_EstadisticaGananciaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 689);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frm_EstadisticaGananciaProducto";
@@ -111,6 +253,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +266,18 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.DateTimePicker dateTime_desde;
+        private System.Windows.Forms.ComboBox cmb_Comparacion;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_porcentaje;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dateTime_hasta;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

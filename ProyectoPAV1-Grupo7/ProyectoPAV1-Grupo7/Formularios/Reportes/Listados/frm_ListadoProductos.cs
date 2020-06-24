@@ -96,5 +96,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes.Listados
             txt_stock.Clear();
             rv_stockProductos.Clear();
         }
+
+        private void rv_stockProductos_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

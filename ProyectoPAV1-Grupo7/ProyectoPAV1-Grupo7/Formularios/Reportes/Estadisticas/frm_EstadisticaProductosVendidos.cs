@@ -27,8 +27,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
 
             this.reportViewerProductos.RefreshReport();
-            cargarCombos();
             this.reportViewerProductos2.RefreshReport();
+            cargarCombos();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
