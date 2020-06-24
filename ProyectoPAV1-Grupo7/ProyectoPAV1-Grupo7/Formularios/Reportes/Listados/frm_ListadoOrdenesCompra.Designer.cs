@@ -89,12 +89,10 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -136,29 +134,29 @@
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(601, 51);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(591, 53);
             this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
-            this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(80, 20);
             this.btnLimpiarFiltros.TabIndex = 9;
-            this.btnLimpiarFiltros.Text = "Limpiar";
+            this.btnLimpiarFiltros.Text = "Limpiar filtros";
             this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
             this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 53);
+            this.label4.Location = new System.Drawing.Point(27, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Responsable";
+            this.label4.Text = "Responsable:";
             // 
             // cmbResponsable
             // 
             this.cmbResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbResponsable.FormattingEnabled = true;
-            this.cmbResponsable.Location = new System.Drawing.Point(106, 50);
+            this.cmbResponsable.Location = new System.Drawing.Point(103, 53);
             this.cmbResponsable.Name = "cmbResponsable";
             this.cmbResponsable.Size = new System.Drawing.Size(121, 21);
             this.cmbResponsable.TabIndex = 8;
@@ -166,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 53);
+            this.label3.Location = new System.Drawing.Point(282, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 7;
@@ -175,7 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(279, 20);
+            this.label2.Location = new System.Drawing.Point(279, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 6;
@@ -183,18 +181,22 @@
             // 
             // dtpHasta
             // 
-            this.dtpHasta.Location = new System.Drawing.Point(357, 49);
+            this.dtpHasta.Location = new System.Drawing.Point(357, 53);
+            this.dtpHasta.MaxDate = new System.DateTime(2020, 6, 24, 10, 30, 39, 0);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(197, 20);
             this.dtpHasta.TabIndex = 5;
+            this.dtpHasta.Value = new System.DateTime(2020, 6, 24, 0, 0, 0, 0);
             this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
             // dtpDesde
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(357, 17);
+            this.dtpDesde.Location = new System.Drawing.Point(357, 24);
+            this.dtpDesde.MaxDate = new System.DateTime(2020, 6, 24, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(197, 20);
             this.dtpDesde.TabIndex = 4;
+            this.dtpDesde.Value = new System.DateTime(2020, 6, 24, 0, 0, 0, 0);
             this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // cmbSolicitante
@@ -202,7 +204,7 @@
             this.cmbSolicitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(106, 17);
+            this.cmbSolicitante.Location = new System.Drawing.Point(103, 24);
             this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
@@ -211,10 +213,10 @@
             // btnFiltrar
             // 
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFiltrar.Location = new System.Drawing.Point(601, 20);
+            this.btnFiltrar.Location = new System.Drawing.Point(591, 24);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(71, 20);
+            this.btnFiltrar.Size = new System.Drawing.Size(80, 20);
             this.btnFiltrar.TabIndex = 1;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -225,7 +227,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Location = new System.Drawing.Point(40, 20);
+            this.label1.Location = new System.Drawing.Point(48, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
@@ -266,18 +268,18 @@
             this.groupBox4.Controls.Add(this.txt_Responsable);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(6, 100);
+            this.groupBox4.Location = new System.Drawing.Point(12, 6);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(555, 112);
+            this.groupBox4.Size = new System.Drawing.Size(288, 87);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos Orden Compra";
             // 
             // txt_Estacion
             // 
-            this.txt_Estacion.Location = new System.Drawing.Point(127, 72);
+            this.txt_Estacion.Location = new System.Drawing.Point(103, 24);
             this.txt_Estacion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Estacion.Name = "txt_Estacion";
             this.txt_Estacion.Size = new System.Drawing.Size(131, 20);
@@ -285,7 +287,7 @@
             // 
             // txt_Responsable
             // 
-            this.txt_Responsable.Location = new System.Drawing.Point(127, 41);
+            this.txt_Responsable.Location = new System.Drawing.Point(103, 53);
             this.txt_Responsable.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Responsable.Name = "txt_Responsable";
             this.txt_Responsable.Size = new System.Drawing.Size(131, 20);
@@ -294,7 +296,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(51, 74);
+            this.label13.Location = new System.Drawing.Point(45, 27);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 13);
@@ -304,7 +306,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(51, 41);
+            this.label9.Location = new System.Drawing.Point(27, 57);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 13);
@@ -319,11 +321,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rv_productosPorOC.AutoScroll = true;
             this.rv_productosPorOC.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorOC.rdlc";
-            this.rv_productosPorOC.Location = new System.Drawing.Point(4, 224);
+            this.rv_productosPorOC.Location = new System.Drawing.Point(4, 104);
             this.rv_productosPorOC.Margin = new System.Windows.Forms.Padding(2);
             this.rv_productosPorOC.Name = "rv_productosPorOC";
             this.rv_productosPorOC.ServerReport.BearerToken = null;
-            this.rv_productosPorOC.Size = new System.Drawing.Size(717, 577);
+            this.rv_productosPorOC.Size = new System.Drawing.Size(717, 727);
             this.rv_productosPorOC.TabIndex = 8;
             this.rv_productosPorOC.Load += new System.EventHandler(this.rv_productosPorOC_Load);
             // 
@@ -331,11 +333,11 @@
             // 
             this.groupBox3.Controls.Add(this.btn_limpiarTab3);
             this.groupBox3.Controls.Add(this.cmb_nroOrden);
-            this.groupBox3.Controls.Add(this.btn_filtrarTab3);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(5, 0);
+            this.groupBox3.Controls.Add(this.btn_filtrarTab3);
+            this.groupBox3.Location = new System.Drawing.Point(309, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(555, 94);
+            this.groupBox3.Size = new System.Drawing.Size(409, 87);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtros";
@@ -343,12 +345,12 @@
             // btn_limpiarTab3
             // 
             this.btn_limpiarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_limpiarTab3.Location = new System.Drawing.Point(356, 43);
+            this.btn_limpiarTab3.Location = new System.Drawing.Point(294, 53);
             this.btn_limpiarTab3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_limpiarTab3.Name = "btn_limpiarTab3";
-            this.btn_limpiarTab3.Size = new System.Drawing.Size(71, 20);
+            this.btn_limpiarTab3.Size = new System.Drawing.Size(80, 20);
             this.btn_limpiarTab3.TabIndex = 9;
-            this.btn_limpiarTab3.Text = "Limpiar";
+            this.btn_limpiarTab3.Text = "Limpiar filtros";
             this.btn_limpiarTab3.UseVisualStyleBackColor = true;
             this.btn_limpiarTab3.Click += new System.EventHandler(this.btn_limpiarTab3_Click);
             // 
@@ -357,7 +359,7 @@
             this.cmb_nroOrden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_nroOrden.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmb_nroOrden.FormattingEnabled = true;
-            this.cmb_nroOrden.Location = new System.Drawing.Point(168, 14);
+            this.cmb_nroOrden.Location = new System.Drawing.Point(130, 23);
             this.cmb_nroOrden.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_nroOrden.Name = "cmb_nroOrden";
             this.cmb_nroOrden.Size = new System.Drawing.Size(121, 21);
@@ -366,10 +368,10 @@
             // btn_filtrarTab3
             // 
             this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_filtrarTab3.Location = new System.Drawing.Point(356, 9);
+            this.btn_filtrarTab3.Location = new System.Drawing.Point(294, 24);
             this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_filtrarTab3.Name = "btn_filtrarTab3";
-            this.btn_filtrarTab3.Size = new System.Drawing.Size(71, 20);
+            this.btn_filtrarTab3.Size = new System.Drawing.Size(80, 20);
             this.btn_filtrarTab3.TabIndex = 1;
             this.btn_filtrarTab3.Text = "Filtrar";
             this.btn_filtrarTab3.UseVisualStyleBackColor = true;
@@ -380,7 +382,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label12.Location = new System.Drawing.Point(52, 15);
+            this.label12.Location = new System.Drawing.Point(14, 27);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(113, 13);
@@ -411,9 +413,9 @@
             this.groupBox2.Controls.Add(this.cmbEstacion2);
             this.groupBox2.Controls.Add(this.btn_FiltrarUrgencia);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(12, 5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(623, 87);
+            this.groupBox2.Size = new System.Drawing.Size(706, 87);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtros";
@@ -421,19 +423,19 @@
             // btn_LimpiarFiltrosUrgencia
             // 
             this.btn_LimpiarFiltrosUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_LimpiarFiltrosUrgencia.Location = new System.Drawing.Point(519, 51);
+            this.btn_LimpiarFiltrosUrgencia.Location = new System.Drawing.Point(591, 53);
             this.btn_LimpiarFiltrosUrgencia.Margin = new System.Windows.Forms.Padding(2);
             this.btn_LimpiarFiltrosUrgencia.Name = "btn_LimpiarFiltrosUrgencia";
-            this.btn_LimpiarFiltrosUrgencia.Size = new System.Drawing.Size(71, 20);
+            this.btn_LimpiarFiltrosUrgencia.Size = new System.Drawing.Size(80, 20);
             this.btn_LimpiarFiltrosUrgencia.TabIndex = 9;
-            this.btn_LimpiarFiltrosUrgencia.Text = "Limpiar";
+            this.btn_LimpiarFiltrosUrgencia.Text = "Limpiar filtros";
             this.btn_LimpiarFiltrosUrgencia.UseVisualStyleBackColor = true;
             this.btn_LimpiarFiltrosUrgencia.Click += new System.EventHandler(this.btn_LimpiarFiltrosUrgencia_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 53);
+            this.label5.Location = new System.Drawing.Point(2, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 9;
@@ -443,9 +445,9 @@
             // 
             this.cmbUrgencia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUrgencia2.FormattingEnabled = true;
-            this.cmbUrgencia2.Location = new System.Drawing.Point(117, 50);
+            this.cmbUrgencia2.Location = new System.Drawing.Point(103, 53);
             this.cmbUrgencia2.Name = "cmbUrgencia2";
-            this.cmbUrgencia2.Size = new System.Drawing.Size(122, 21);
+            this.cmbUrgencia2.Size = new System.Drawing.Size(121, 21);
             this.cmbUrgencia2.TabIndex = 8;
             // 
             // label6
@@ -460,7 +462,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(279, 20);
+            this.label7.Location = new System.Drawing.Point(279, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 6;
@@ -468,17 +470,17 @@
             // 
             // dtp_FechaHasta2
             // 
-            this.dtp_FechaHasta2.Location = new System.Drawing.Point(357, 49);
+            this.dtp_FechaHasta2.Location = new System.Drawing.Point(357, 53);
             this.dtp_FechaHasta2.Name = "dtp_FechaHasta2";
-            this.dtp_FechaHasta2.Size = new System.Drawing.Size(121, 20);
+            this.dtp_FechaHasta2.Size = new System.Drawing.Size(197, 20);
             this.dtp_FechaHasta2.TabIndex = 5;
             this.dtp_FechaHasta2.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
             // dtp_FechaDesde2
             // 
-            this.dtp_FechaDesde2.Location = new System.Drawing.Point(357, 17);
+            this.dtp_FechaDesde2.Location = new System.Drawing.Point(357, 24);
             this.dtp_FechaDesde2.Name = "dtp_FechaDesde2";
-            this.dtp_FechaDesde2.Size = new System.Drawing.Size(121, 20);
+            this.dtp_FechaDesde2.Size = new System.Drawing.Size(197, 20);
             this.dtp_FechaDesde2.TabIndex = 4;
             this.dtp_FechaDesde2.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
@@ -487,7 +489,7 @@
             this.cmbEstacion2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstacion2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbEstacion2.FormattingEnabled = true;
-            this.cmbEstacion2.Location = new System.Drawing.Point(117, 17);
+            this.cmbEstacion2.Location = new System.Drawing.Point(103, 24);
             this.cmbEstacion2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstacion2.Name = "cmbEstacion2";
             this.cmbEstacion2.Size = new System.Drawing.Size(121, 21);
@@ -496,10 +498,10 @@
             // btn_FiltrarUrgencia
             // 
             this.btn_FiltrarUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_FiltrarUrgencia.Location = new System.Drawing.Point(519, 17);
+            this.btn_FiltrarUrgencia.Location = new System.Drawing.Point(591, 24);
             this.btn_FiltrarUrgencia.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FiltrarUrgencia.Name = "btn_FiltrarUrgencia";
-            this.btn_FiltrarUrgencia.Size = new System.Drawing.Size(71, 20);
+            this.btn_FiltrarUrgencia.Size = new System.Drawing.Size(80, 20);
             this.btn_FiltrarUrgencia.TabIndex = 1;
             this.btn_FiltrarUrgencia.Text = "Filtrar";
             this.btn_FiltrarUrgencia.UseVisualStyleBackColor = true;
@@ -510,7 +512,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label8.Location = new System.Drawing.Point(40, 20);
+            this.label8.Location = new System.Drawing.Point(49, 27);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 13);
@@ -536,11 +538,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(734, 857);
+            this.ClientSize = new System.Drawing.Size(734, 861);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtWhere);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(750, 843);
+            this.MinimumSize = new System.Drawing.Size(750, 900);
             this.Name = "frm_ListadoOrdenesCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Ordenes de Compra";

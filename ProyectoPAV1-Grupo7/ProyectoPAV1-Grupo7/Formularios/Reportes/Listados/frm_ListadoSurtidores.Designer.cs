@@ -48,10 +48,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.AutoSize = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.ListadoSurtidores.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 85);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 121);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(958, 614);
+            this.reportViewer1.Size = new System.Drawing.Size(710, 728);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -60,7 +60,7 @@
             // 
             this.cmb_Estacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Estacion.FormattingEnabled = true;
-            this.cmb_Estacion.Location = new System.Drawing.Point(274, 26);
+            this.cmb_Estacion.Location = new System.Drawing.Point(106, 17);
             this.cmb_Estacion.Name = "cmb_Estacion";
             this.cmb_Estacion.Size = new System.Drawing.Size(142, 21);
             this.cmb_Estacion.TabIndex = 1;
@@ -69,16 +69,16 @@
             // 
             this.cmb_Estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Estado.FormattingEnabled = true;
-            this.cmb_Estado.Location = new System.Drawing.Point(54, 26);
+            this.cmb_Estado.Location = new System.Drawing.Point(106, 57);
             this.cmb_Estado.Name = "cmb_Estado";
-            this.cmb_Estado.Size = new System.Drawing.Size(140, 21);
+            this.cmb_Estado.Size = new System.Drawing.Size(142, 21);
             this.cmb_Estado.TabIndex = 2;
             // 
             // cmb_TipoCombustible
             // 
             this.cmb_TipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoCombustible.FormattingEnabled = true;
-            this.cmb_TipoCombustible.Location = new System.Drawing.Point(534, 28);
+            this.cmb_TipoCombustible.Location = new System.Drawing.Point(357, 17);
             this.cmb_TipoCombustible.Name = "cmb_TipoCombustible";
             this.cmb_TipoCombustible.Size = new System.Drawing.Size(156, 21);
             this.cmb_TipoCombustible.TabIndex = 3;
@@ -86,33 +86,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 31);
+            this.label1.Location = new System.Drawing.Point(40, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Estacion";
+            this.label1.Text = "Estacion:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 31);
+            this.label2.Location = new System.Drawing.Point(48, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Estado";
+            this.label2.Text = "Estado:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(440, 29);
+            this.label3.Location = new System.Drawing.Point(260, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Tipo Combustible";
+            this.label3.Text = "Tipo Combustible:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(839, 26);
+            this.button1.Location = new System.Drawing.Point(591, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -122,11 +122,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(745, 26);
+            this.button2.Location = new System.Drawing.Point(591, 55);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Limpiar";
+            this.button2.Text = "Limpiar filtros";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -142,7 +142,7 @@
             this.groupBox1.Controls.Add(this.cmb_TipoCombustible);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 67);
+            this.groupBox1.Size = new System.Drawing.Size(710, 89);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -152,10 +152,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(982, 711);
+            this.ClientSize = new System.Drawing.Size(734, 861);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
-            this.MinimumSize = new System.Drawing.Size(950, 750);
+            this.MinimumSize = new System.Drawing.Size(750, 900);
             this.Name = "frm_ListadoSurtidores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Surtidores";
