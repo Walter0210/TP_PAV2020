@@ -696,7 +696,7 @@
       <Width>11.54024in</Width>
       <Page>
         <PageHeader>
-          <Height>2.54cm</Height>
+          <Height>2.46062cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -709,8 +709,7 @@
                     <TextRun>
                       <Value>Listado de Ventas</Value>
                       <Style>
-                        <FontFamily>Arial Narrow</FontFamily>
-                        <FontSize>20pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -722,14 +721,13 @@
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
               <Top>0.34079cm</Top>
-              <Left>9.63384cm</Left>
-              <Height>0.89104cm</Height>
-              <Width>10.04453cm</Width>
+              <Left>0.55563cm</Left>
+              <Height>0.70583cm</Height>
+              <Width>4.69995cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <BackgroundColor>Moccasin</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -756,7 +754,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.40822cm</Top>
-              <Left>2.55198cm</Left>
+              <Left>0.635cm</Left>
               <Height>0.6cm</Height>
               <Width>24.20826cm</Width>
               <ZIndex>1</ZIndex>

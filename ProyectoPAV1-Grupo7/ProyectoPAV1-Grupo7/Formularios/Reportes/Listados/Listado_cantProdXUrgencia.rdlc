@@ -49,8 +49,7 @@
                   <TextRun>
                     <Value>Cantidad de Items segun Urgencia</Value>
                     <Style>
-                      <FontFamily>Arial Narrow</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -64,12 +63,11 @@
             <Top>0.47307cm</Top>
             <Left>0.79185cm</Left>
             <Height>0.75875cm</Height>
-            <Width>15.795cm</Width>
+            <Width>9.02167cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>LightGrey</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>

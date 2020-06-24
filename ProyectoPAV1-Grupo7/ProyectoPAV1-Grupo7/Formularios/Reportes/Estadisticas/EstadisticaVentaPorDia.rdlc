@@ -370,7 +370,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Grafico Ventas de Surtidor por dia.</Caption>
+                <Caption>Grafico Ventas de Surtidor por dia</Caption>
                 <Style>
                   <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
                   <FontSize>12pt</FontSize>

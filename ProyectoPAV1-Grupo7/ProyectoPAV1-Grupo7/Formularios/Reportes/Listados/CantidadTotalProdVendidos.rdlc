@@ -311,7 +311,6 @@
                     <TextRun>
                       <Value>Cantidad Total de Unidades Vendidas</Value>
                       <Style>
-                        <FontFamily>Arial Narrow</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -326,12 +325,11 @@
               <Top>0.60509cm</Top>
               <Left>0.91948cm</Left>
               <Height>0.89104cm</Height>
-              <Width>11.76042cm</Width>
+              <Width>9.29979cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <BackgroundColor>PapayaWhip</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
