@@ -372,13 +372,14 @@
               <ChartTitle Name="Default">
                 <Caption>Grafico Ventas de Surtidor por dia</Caption>
                 <Style>
-                  <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
-                  <FontSize>12pt</FontSize>
+                  <BackgroundColor>#88c3b6</BackgroundColor>
+                  <BackgroundGradientType>LeftRight</BackgroundGradientType>
+                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
                 </Style>
-                <Position>TopLeft</Position>
                 <DockOutsideChartArea>true</DockOutsideChartArea>
               </ChartTitle>
               <ChartTitle Name="Title1">
