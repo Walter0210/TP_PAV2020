@@ -32,30 +32,30 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnLimpiarFiltrosGeneral = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_GeneralFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtp_GeneralFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.btnLimpiarFiltrosGeneral = new System.Windows.Forms.Button();
             this.btnFiltrarGeneral = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtp_GeneralFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.rv_EstadisticaGeneral = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.rv_Meses = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btn_LimpiarFiltrosSucursal = new System.Windows.Forms.Button();
-            this.dtp_SucursalFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtp_SucursalFechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.btnFiltrarSucursal = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rv_Sucursal = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtp_SucursalFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.btn_LimpiarFiltrosSucursal = new System.Windows.Forms.Button();
+            this.btnFiltrarSucursal = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtp_SucursalFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.rv_Sucursal = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.MinimumSize = new System.Drawing.Size(1690, 823);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -78,19 +78,41 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.rv_EstadisticaGeneral);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1699, 824);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Estadistica General";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtp_GeneralFechaHasta);
+            this.groupBox1.Controls.Add(this.btnLimpiarFiltrosGeneral);
+            this.groupBox1.Controls.Add(this.btnFiltrarGeneral);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dtp_GeneralFechaDesde);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(585, 90);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            // 
+            // dtp_GeneralFechaHasta
+            // 
+            this.dtp_GeneralFechaHasta.Location = new System.Drawing.Point(100, 22);
+            this.dtp_GeneralFechaHasta.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_GeneralFechaHasta.Name = "dtp_GeneralFechaHasta";
+            this.dtp_GeneralFechaHasta.Size = new System.Drawing.Size(265, 22);
+            this.dtp_GeneralFechaHasta.TabIndex = 16;
             // 
             // btnLimpiarFiltrosGeneral
             // 
             this.btnLimpiarFiltrosGeneral.Location = new System.Drawing.Point(436, 19);
-            this.btnLimpiarFiltrosGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarFiltrosGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarFiltrosGeneral.Name = "btnLimpiarFiltrosGeneral";
             this.btnLimpiarFiltrosGeneral.Size = new System.Drawing.Size(113, 28);
             this.btnLimpiarFiltrosGeneral.TabIndex = 17;
@@ -98,32 +120,26 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.btnLimpiarFiltrosGeneral.UseVisualStyleBackColor = true;
             this.btnLimpiarFiltrosGeneral.Click += new System.EventHandler(this.btnLimpiarFiltrosGeneral_Click);
             // 
-            // dtp_GeneralFechaHasta
-            // 
-            this.dtp_GeneralFechaHasta.Location = new System.Drawing.Point(100, 22);
-            this.dtp_GeneralFechaHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtp_GeneralFechaHasta.Name = "dtp_GeneralFechaHasta";
-            this.dtp_GeneralFechaHasta.Size = new System.Drawing.Size(265, 22);
-            this.dtp_GeneralFechaHasta.TabIndex = 16;
-            // 
-            // dtp_GeneralFechaDesde
-            // 
-            this.dtp_GeneralFechaDesde.Location = new System.Drawing.Point(100, 55);
-            this.dtp_GeneralFechaDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtp_GeneralFechaDesde.Name = "dtp_GeneralFechaDesde";
-            this.dtp_GeneralFechaDesde.Size = new System.Drawing.Size(265, 22);
-            this.dtp_GeneralFechaDesde.TabIndex = 15;
-            // 
             // btnFiltrarGeneral
             // 
             this.btnFiltrarGeneral.Location = new System.Drawing.Point(436, 52);
-            this.btnFiltrarGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltrarGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltrarGeneral.Name = "btnFiltrarGeneral";
             this.btnFiltrarGeneral.Size = new System.Drawing.Size(113, 28);
             this.btnFiltrarGeneral.TabIndex = 14;
             this.btnFiltrarGeneral.Text = "Filtrar";
             this.btnFiltrarGeneral.UseVisualStyleBackColor = true;
             this.btnFiltrarGeneral.Click += new System.EventHandler(this.btnFiltrarGeneral_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 58);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Mes desde:";
             // 
             // label3
             // 
@@ -135,15 +151,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.label3.TabIndex = 13;
             this.label3.Text = "Mes hasta:";
             // 
-            // label4
+            // dtp_GeneralFechaDesde
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 58);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Mes desde:";
+            this.dtp_GeneralFechaDesde.Location = new System.Drawing.Point(100, 55);
+            this.dtp_GeneralFechaDesde.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_GeneralFechaDesde.Name = "dtp_GeneralFechaDesde";
+            this.dtp_GeneralFechaDesde.Size = new System.Drawing.Size(265, 22);
+            this.dtp_GeneralFechaDesde.TabIndex = 15;
             // 
             // rv_EstadisticaGeneral
             // 
@@ -165,9 +179,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             // 
             this.tabPage2.Controls.Add(this.rv_Meses);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1699, 824);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estadistica Mensual";
@@ -192,18 +206,41 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.rv_Sucursal);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1699, 824);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Proporcion por Estacion";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dtp_SucursalFechaHasta);
+            this.groupBox2.Controls.Add(this.btn_LimpiarFiltrosSucursal);
+            this.groupBox2.Controls.Add(this.btnFiltrarSucursal);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.dtp_SucursalFechaDesde);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(585, 90);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtros";
+            // 
+            // dtp_SucursalFechaHasta
+            // 
+            this.dtp_SucursalFechaHasta.Location = new System.Drawing.Point(97, 22);
+            this.dtp_SucursalFechaHasta.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_SucursalFechaHasta.Name = "dtp_SucursalFechaHasta";
+            this.dtp_SucursalFechaHasta.Size = new System.Drawing.Size(265, 22);
+            this.dtp_SucursalFechaHasta.TabIndex = 10;
+            // 
             // btn_LimpiarFiltrosSucursal
             // 
             this.btn_LimpiarFiltrosSucursal.Location = new System.Drawing.Point(436, 19);
-            this.btn_LimpiarFiltrosSucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_LimpiarFiltrosSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.btn_LimpiarFiltrosSucursal.Name = "btn_LimpiarFiltrosSucursal";
             this.btn_LimpiarFiltrosSucursal.Size = new System.Drawing.Size(120, 30);
             this.btn_LimpiarFiltrosSucursal.TabIndex = 11;
@@ -211,32 +248,26 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.btn_LimpiarFiltrosSucursal.UseVisualStyleBackColor = true;
             this.btn_LimpiarFiltrosSucursal.Click += new System.EventHandler(this.btn_LimpiarFiltrosSucursal_Click);
             // 
-            // dtp_SucursalFechaHasta
-            // 
-            this.dtp_SucursalFechaHasta.Location = new System.Drawing.Point(97, 22);
-            this.dtp_SucursalFechaHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtp_SucursalFechaHasta.Name = "dtp_SucursalFechaHasta";
-            this.dtp_SucursalFechaHasta.Size = new System.Drawing.Size(265, 22);
-            this.dtp_SucursalFechaHasta.TabIndex = 10;
-            // 
-            // dtp_SucursalFechaDesde
-            // 
-            this.dtp_SucursalFechaDesde.Location = new System.Drawing.Point(97, 57);
-            this.dtp_SucursalFechaDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtp_SucursalFechaDesde.Name = "dtp_SucursalFechaDesde";
-            this.dtp_SucursalFechaDesde.Size = new System.Drawing.Size(265, 22);
-            this.dtp_SucursalFechaDesde.TabIndex = 9;
-            // 
             // btnFiltrarSucursal
             // 
             this.btnFiltrarSucursal.Location = new System.Drawing.Point(436, 50);
-            this.btnFiltrarSucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltrarSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltrarSucursal.Name = "btnFiltrarSucursal";
             this.btnFiltrarSucursal.Size = new System.Drawing.Size(120, 30);
             this.btnFiltrarSucursal.TabIndex = 8;
             this.btnFiltrarSucursal.Text = "Filtrar";
             this.btnFiltrarSucursal.UseVisualStyleBackColor = true;
             this.btnFiltrarSucursal.Click += new System.EventHandler(this.btnFiltrarSucursal_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Mes desde:";
             // 
             // label2
             // 
@@ -248,15 +279,13 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.label2.TabIndex = 7;
             this.label2.Text = "Mes hasta:";
             // 
-            // label1
+            // dtp_SucursalFechaDesde
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Mes desde:";
+            this.dtp_SucursalFechaDesde.Location = new System.Drawing.Point(97, 57);
+            this.dtp_SucursalFechaDesde.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_SucursalFechaDesde.Name = "dtp_SucursalFechaDesde";
+            this.dtp_SucursalFechaDesde.Size = new System.Drawing.Size(265, 22);
+            this.dtp_SucursalFechaDesde.TabIndex = 9;
             // 
             // rv_Sucursal
             // 
@@ -273,36 +302,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.rv_Sucursal.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             this.rv_Sucursal.Load += new System.EventHandler(this.rv_Sucursal_Load);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dtp_GeneralFechaHasta);
-            this.groupBox1.Controls.Add(this.btnLimpiarFiltrosGeneral);
-            this.groupBox1.Controls.Add(this.btnFiltrarGeneral);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dtp_GeneralFechaDesde);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 92);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dtp_SucursalFechaHasta);
-            this.groupBox2.Controls.Add(this.btn_LimpiarFiltrosSucursal);
-            this.groupBox2.Controls.Add(this.btnFiltrarSucursal);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dtp_SucursalFechaDesde);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(584, 92);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filtros";
-            // 
             // frm_EstadisticaOrdenesCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,10 +316,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.Load += new System.EventHandler(this.frm_estadisticaOrdenesCompra_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
