@@ -171,6 +171,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.rv_Meses.ServerReport.BearerToken = null;
             this.rv_Meses.Size = new System.Drawing.Size(872, 637);
             this.rv_Meses.TabIndex = 2;
+            this.rv_Meses.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rv_Meses.Load += new System.EventHandler(this.rv_Meses_Load);
             // 
             // tabPage3
@@ -196,7 +197,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             this.btn_LimpiarFiltrosSucursal.Name = "btn_LimpiarFiltrosSucursal";
             this.btn_LimpiarFiltrosSucursal.Size = new System.Drawing.Size(85, 23);
             this.btn_LimpiarFiltrosSucursal.TabIndex = 11;
-            this.btn_LimpiarFiltrosSucursal.Text = "Limpiar";
+            this.btn_LimpiarFiltrosSucursal.Text = "Limpiar filtros";
             this.btn_LimpiarFiltrosSucursal.UseVisualStyleBackColor = true;
             this.btn_LimpiarFiltrosSucursal.Click += new System.EventHandler(this.btn_LimpiarFiltrosSucursal_Click);
             // 

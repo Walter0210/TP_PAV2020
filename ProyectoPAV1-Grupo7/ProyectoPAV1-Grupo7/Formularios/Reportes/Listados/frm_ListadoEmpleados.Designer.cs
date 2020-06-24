@@ -32,11 +32,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_limpiar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_filtrar = new System.Windows.Forms.Button();
             this.dateTime_hasta = new System.Windows.Forms.DateTimePicker();
             this.dateTime_desde = new System.Windows.Forms.DateTimePicker();
-            this.btn_limpiar = new System.Windows.Forms.Button();
-            this.btn_filtrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_dni = new System.Windows.Forms.TextBox();
             this.dni = new System.Windows.Forms.Label();
@@ -44,12 +44,12 @@
             this.legajo = new System.Windows.Forms.Label();
             this.rv_empleadosGeneral = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rv_empleadosXjefe = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblEmpleadoJefe = new System.Windows.Forms.Label();
+            this.btnFiltrarEmpleados2 = new System.Windows.Forms.Button();
             this.cmb_JefeEmpleado = new System.Windows.Forms.ComboBox();
             this.btnLimpiarFiltros2 = new System.Windows.Forms.Button();
-            this.btnFiltrarEmpleados2 = new System.Windows.Forms.Button();
-            this.lblEmpleadoJefe = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rv_empleadosXjefe = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,6 +108,16 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Desde";
             // 
+            // btn_limpiar
+            // 
+            this.btn_limpiar.Location = new System.Drawing.Point(348, 56);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(89, 23);
+            this.btn_limpiar.TabIndex = 13;
+            this.btn_limpiar.Text = "Limpiar Filtros";
+            this.btn_limpiar.UseVisualStyleBackColor = true;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -116,6 +126,16 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Hasta";
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.Location = new System.Drawing.Point(348, 27);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(89, 23);
+            this.btn_filtrar.TabIndex = 12;
+            this.btn_filtrar.Text = "Filtrar";
+            this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click_1);
             // 
             // dateTime_hasta
             // 
@@ -130,26 +150,6 @@
             this.dateTime_desde.Name = "dateTime_desde";
             this.dateTime_desde.Size = new System.Drawing.Size(209, 20);
             this.dateTime_desde.TabIndex = 2;
-            // 
-            // btn_limpiar
-            // 
-            this.btn_limpiar.Location = new System.Drawing.Point(348, 56);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(89, 23);
-            this.btn_limpiar.TabIndex = 13;
-            this.btn_limpiar.Text = "Limpiar Filtros";
-            this.btn_limpiar.UseVisualStyleBackColor = true;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
-            // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.Location = new System.Drawing.Point(348, 27);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(89, 23);
-            this.btn_filtrar.TabIndex = 12;
-            this.btn_filtrar.Text = "Filtrar";
-            this.btn_filtrar.UseVisualStyleBackColor = true;
-            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click_1);
             // 
             // groupBox1
             // 
@@ -224,19 +224,38 @@
             this.tabPage2.Text = "Empleados por Jefe";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // rv_empleadosXjefe
+            // groupBox3
             // 
-            this.rv_empleadosXjefe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rv_empleadosXjefe.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_EmpleadosPorJefe.rdlc";
-            this.rv_empleadosXjefe.Location = new System.Drawing.Point(7, 107);
-            this.rv_empleadosXjefe.Margin = new System.Windows.Forms.Padding(2);
-            this.rv_empleadosXjefe.Name = "rv_empleadosXjefe";
-            this.rv_empleadosXjefe.ServerReport.BearerToken = null;
-            this.rv_empleadosXjefe.Size = new System.Drawing.Size(712, 721);
-            this.rv_empleadosXjefe.TabIndex = 25;
-            this.rv_empleadosXjefe.Load += new System.EventHandler(this.rv_empleadosXjefe_Load);
+            this.groupBox3.Controls.Add(this.lblEmpleadoJefe);
+            this.groupBox3.Controls.Add(this.btnFiltrarEmpleados2);
+            this.groupBox3.Controls.Add(this.cmb_JefeEmpleado);
+            this.groupBox3.Controls.Add(this.btnLimpiarFiltros2);
+            this.groupBox3.Location = new System.Drawing.Point(8, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(710, 89);
+            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Filtro";
+            // 
+            // lblEmpleadoJefe
+            // 
+            this.lblEmpleadoJefe.AutoSize = true;
+            this.lblEmpleadoJefe.Location = new System.Drawing.Point(18, 28);
+            this.lblEmpleadoJefe.Name = "lblEmpleadoJefe";
+            this.lblEmpleadoJefe.Size = new System.Drawing.Size(30, 13);
+            this.lblEmpleadoJefe.TabIndex = 18;
+            this.lblEmpleadoJefe.Text = "Jefe:";
+            this.lblEmpleadoJefe.Click += new System.EventHandler(this.lblEmpleadoJefe_Click);
+            // 
+            // btnFiltrarEmpleados2
+            // 
+            this.btnFiltrarEmpleados2.Location = new System.Drawing.Point(602, 19);
+            this.btnFiltrarEmpleados2.Name = "btnFiltrarEmpleados2";
+            this.btnFiltrarEmpleados2.Size = new System.Drawing.Size(85, 23);
+            this.btnFiltrarEmpleados2.TabIndex = 20;
+            this.btnFiltrarEmpleados2.Text = "Filtrar";
+            this.btnFiltrarEmpleados2.UseVisualStyleBackColor = true;
+            this.btnFiltrarEmpleados2.Click += new System.EventHandler(this.btnFiltrarEmpleados2_Click);
             // 
             // cmb_JefeEmpleado
             // 
@@ -257,38 +276,20 @@
             this.btnLimpiarFiltros2.UseVisualStyleBackColor = true;
             this.btnLimpiarFiltros2.Click += new System.EventHandler(this.btnLimpiarFiltros2_Click);
             // 
-            // btnFiltrarEmpleados2
+            // rv_empleadosXjefe
             // 
-            this.btnFiltrarEmpleados2.Location = new System.Drawing.Point(602, 19);
-            this.btnFiltrarEmpleados2.Name = "btnFiltrarEmpleados2";
-            this.btnFiltrarEmpleados2.Size = new System.Drawing.Size(85, 23);
-            this.btnFiltrarEmpleados2.TabIndex = 20;
-            this.btnFiltrarEmpleados2.Text = "Filtrar";
-            this.btnFiltrarEmpleados2.UseVisualStyleBackColor = true;
-            this.btnFiltrarEmpleados2.Click += new System.EventHandler(this.btnFiltrarEmpleados2_Click);
-            // 
-            // lblEmpleadoJefe
-            // 
-            this.lblEmpleadoJefe.AutoSize = true;
-            this.lblEmpleadoJefe.Location = new System.Drawing.Point(18, 28);
-            this.lblEmpleadoJefe.Name = "lblEmpleadoJefe";
-            this.lblEmpleadoJefe.Size = new System.Drawing.Size(30, 13);
-            this.lblEmpleadoJefe.TabIndex = 18;
-            this.lblEmpleadoJefe.Text = "Jefe:";
-            this.lblEmpleadoJefe.Click += new System.EventHandler(this.lblEmpleadoJefe_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblEmpleadoJefe);
-            this.groupBox3.Controls.Add(this.btnFiltrarEmpleados2);
-            this.groupBox3.Controls.Add(this.cmb_JefeEmpleado);
-            this.groupBox3.Controls.Add(this.btnLimpiarFiltros2);
-            this.groupBox3.Location = new System.Drawing.Point(8, 13);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(710, 89);
-            this.groupBox3.TabIndex = 26;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Filtro";
+            this.rv_empleadosXjefe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rv_empleadosXjefe.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_EmpleadosPorJefe.rdlc";
+            this.rv_empleadosXjefe.Location = new System.Drawing.Point(7, 107);
+            this.rv_empleadosXjefe.Margin = new System.Windows.Forms.Padding(2);
+            this.rv_empleadosXjefe.Name = "rv_empleadosXjefe";
+            this.rv_empleadosXjefe.ServerReport.BearerToken = null;
+            this.rv_empleadosXjefe.Size = new System.Drawing.Size(712, 721);
+            this.rv_empleadosXjefe.TabIndex = 25;
+            this.rv_empleadosXjefe.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rv_empleadosXjefe.Load += new System.EventHandler(this.rv_empleadosXjefe_Load);
             // 
             // frm_ListadoEmpleados
             // 

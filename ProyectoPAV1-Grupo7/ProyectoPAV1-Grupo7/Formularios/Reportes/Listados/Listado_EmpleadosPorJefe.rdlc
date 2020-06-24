@@ -15,21 +15,21 @@
               <Width>3.03295cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.45628cm</Width>
+              <Width>2.84466cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.62795cm</Width>
+              <Width>2.99295cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.85845cm</Width>
+              <Width>4.41407cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.03295cm</Width>
+              <Width>3.24462cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.12449cm</Height>
+              <Height>0.72761cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -42,6 +42,7 @@
                             <TextRun>
                               <Value>Legajo</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -78,6 +79,7 @@
                             <TextRun>
                               <Value>Nombre</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -114,6 +116,7 @@
                             <TextRun>
                               <Value>Apellido</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -150,6 +153,7 @@
                             <TextRun>
                               <Value>Tipo Documento</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -186,6 +190,7 @@
                             <TextRun>
                               <Value>Nro Documento</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -222,6 +227,7 @@
                             <TextRun>
                               <Value>Fecha Nacimiento</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -258,6 +264,7 @@
                             <TextRun>
                               <Value>Fecha Alta</Value>
                               <Style>
+                                <FontFamily>Arial Narrow</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -545,10 +552,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>empleadosXjefe</DataSetName>
-        <Top>1.4732cm</Top>
-        <Left>0.47837cm</Left>
-        <Height>2.00231cm</Height>
-        <Width>23.11446cm</Width>
+        <Top>2.4257cm</Top>
+        <Left>1.00536cm</Left>
+        <Height>1.60542cm</Height>
+        <Width>22.63515cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -564,20 +571,54 @@
               <TextRun>
                 <Value>Empleados por Jefe</Value>
                 <Style>
+                  <FontFamily>Arial Narrow</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.19792in</Top>
-        <Left>0.18833in</Left>
-        <Height>0.26042in</Height>
+        <Top>0.14584in</Top>
+        <Left>3.2554in</Left>
+        <Height>0.3125in</Height>
         <Width>3.1923in</Width>
         <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightSteelBlue</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Datos actualizados a la fecha: " &amp; Now()</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>1.64931cm</Top>
+        <Left>0.79587cm</Left>
+        <Height>0.6cm</Height>
+        <Width>12.68742cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
