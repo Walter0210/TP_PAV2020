@@ -49,7 +49,8 @@
                   <TextRun>
                     <Value>Cantidad de Items segun Urgencia</Value>
                     <Style>
-                      <FontSize>14pt</FontSize>
+                      <FontFamily>Arial Narrow</FontFamily>
+                      <FontSize>16pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -61,13 +62,14 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.47307cm</Top>
-            <Left>0.79185cm</Left>
+            <Left>3.39587cm</Left>
             <Height>0.75875cm</Height>
             <Width>9.02167cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#ffc47e</BackgroundColor>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -89,10 +91,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>1.66342cm</Top>
-            <Left>0.79185cm</Left>
+            <Top>2.70764cm</Top>
+            <Left>2.07296cm</Left>
             <Height>0.6cm</Height>
-            <Width>15.795cm</Width>
+            <Width>9.52437cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -108,10 +110,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.48739cm</Width>
+                  <Width>5.42364cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>8.3076cm</Width>
+                  <Width>6.24385cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -127,8 +129,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Nro Orden de Compra</Value>
+                                  <Value>Nro. Orden de Compra</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -144,7 +147,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>#ffc47e</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -164,6 +167,7 @@
                                 <TextRun>
                                   <Value>Cantidad de Productos</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -179,7 +183,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>#ffc47e</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -278,10 +282,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosCantidadUrgencia</DataSetName>
-            <Top>2.88078cm</Top>
-            <Left>0.79185cm</Left>
+            <Top>3.48403cm</Top>
+            <Left>2.07296cm</Left>
             <Height>1.57042cm</Height>
-            <Width>15.795cm</Width>
+            <Width>11.66749cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -289,11 +293,55 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Datos actualizados a la fecha: " &amp; Now()</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>1.43643cm</Top>
+            <Left>3.48171cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.945cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line1">
+            <Top>2.24896cm</Top>
+            <Left>0cm</Left>
+            <Height>0cm</Height>
+            <Width>15.81341cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Color>DimGray</Color>
+                <Style>Solid</Style>
+                <Width>1.5pt</Width>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>2.1875in</Height>
         <Style />
       </Body>
-      <Width>6.94109in</Width>
+      <Width>6.22575in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

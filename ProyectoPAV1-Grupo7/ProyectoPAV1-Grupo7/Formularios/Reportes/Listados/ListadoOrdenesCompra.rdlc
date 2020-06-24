@@ -84,8 +84,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>N° Orden Compra</Value>
+                                  <Value>Nro. Orden Compra</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -101,7 +102,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RosyBrown</BackgroundColor>
+                            <BackgroundColor>#88c3b6</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -122,6 +123,7 @@
                                 <TextRun>
                                   <Value>Fecha</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -137,7 +139,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RosyBrown</BackgroundColor>
+                            <BackgroundColor>#88c3b6</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -158,6 +160,7 @@
                                 <TextRun>
                                   <Value>Responsable</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -173,7 +176,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RosyBrown</BackgroundColor>
+                            <BackgroundColor>#88c3b6</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -194,6 +197,7 @@
                                 <TextRun>
                                   <Value>Cuit Solicitante</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -209,7 +213,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RosyBrown</BackgroundColor>
+                            <BackgroundColor>#88c3b6</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -230,6 +234,7 @@
                                 <TextRun>
                                   <Value>Total</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -245,7 +250,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>RosyBrown</BackgroundColor>
+                            <BackgroundColor>#88c3b6</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -449,10 +454,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosOrdenesCompra</DataSetName>
-            <Top>3.10303cm</Top>
-            <Left>0.53328cm</Left>
-            <Height>2.12075cm</Height>
-            <Width>21.32082cm</Width>
+            <Top>4.05553cm</Top>
+            <Left>0.81416cm</Left>
+            <Height>2.12076cm</Height>
+            <Width>21.32081cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -468,7 +473,8 @@
                   <TextRun>
                     <Value>Listado de Ordenes de Compra</Value>
                     <Style>
-                      <FontSize>14pt</FontSize>
+                      <FontFamily>Arial Narrow</FontFamily>
+                      <FontSize>16pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -480,7 +486,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>0.41487cm</Top>
-            <Left>0.53328cm</Left>
+            <Left>7.33308cm</Left>
             <Height>0.78521cm</Height>
             <Width>8.28297cm</Width>
             <ZIndex>1</ZIndex>
@@ -488,6 +494,7 @@
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#88c3b6</BackgroundColor>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -496,7 +503,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>1.62137cm</Top>
+            <Top>2.66911cm</Top>
             <Height>0cm</Height>
             <Width>22.94913cm</Width>
             <ZIndex>2</ZIndex>
@@ -523,11 +530,41 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>2.05147cm</Top>
-            <Left>0.53328cm</Left>
+            <Top>3.00926cm</Top>
+            <Left>0.81416cm</Left>
             <Height>0.6cm</Height>
-            <Width>19.05041cm</Width>
+            <Width>19.36791cm</Width>
             <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Datos actualizados a la fecha: " &amp; Now()</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>1.6002cm</Top>
+            <Left>0.81416cm</Left>
+            <Height>0.6cm</Height>
+            <Width>12.68742cm</Width>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -568,36 +605,6 @@
               <Left>19.80241cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox6">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Now()</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>1.2192cm</Top>
-              <Left>0.98159cm</Left>
-              <Height>0.6cm</Height>
-              <Width>6.945cm</Width>
-              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

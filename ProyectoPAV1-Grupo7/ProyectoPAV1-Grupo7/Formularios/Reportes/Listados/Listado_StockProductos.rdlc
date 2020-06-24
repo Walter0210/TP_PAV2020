@@ -65,6 +65,7 @@
                   <TextRun>
                     <Value>Stock de Productos</Value>
                     <Style>
+                      <FontFamily>Arial Narrow</FontFamily>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -76,14 +77,16 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.15335in</Top>
-            <Left>0.1938in</Left>
-            <Height>0.4375in</Height>
-            <Width>2.18188in</Width>
+            <Top>0.14795in</Top>
+            <Left>2.19355in</Left>
+            <Height>0.33333in</Height>
+            <Width>3.99438in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
+              <BackgroundColor>#c2e5df</BackgroundColor>
+              <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -114,7 +117,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.01866cm</Height>
+                  <Height>0.80699cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -127,6 +130,7 @@
                                 <TextRun>
                                   <Value>Producto</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -142,7 +146,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>#c2e5df</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -163,6 +167,7 @@
                                 <TextRun>
                                   <Value>Descripcion</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -178,7 +183,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>#c2e5df</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -199,6 +204,7 @@
                                 <TextRun>
                                   <Value>Stock Actual</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -214,7 +220,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>#c2e5df</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -235,6 +241,7 @@
                                 <TextRun>
                                   <Value>Precio Compra</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -250,7 +257,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>#c2e5df</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -271,6 +278,7 @@
                                 <TextRun>
                                   <Value>Precio Venta</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -286,7 +294,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>#c2e5df</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -307,6 +315,7 @@
                                 <TextRun>
                                   <Value>Ultima Actualizacion</Value>
                                   <Style>
+                                    <FontFamily>Arial Narrow</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -322,7 +331,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>LightSeaGreen</BackgroundColor>
+                            <BackgroundColor>#c2e5df</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -560,9 +569,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>stockProductos</DataSetName>
-            <Top>2.82167cm</Top>
-            <Left>0.80974cm</Left>
-            <Height>1.79064cm</Height>
+            <Top>3.45667cm</Top>
+            <Left>0.72613cm</Left>
+            <Height>1.57897cm</Height>
             <Width>20.1382cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -586,7 +595,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.67715cm</Top>
+            <Top>2.62965cm</Top>
             <Left>0.80974cm</Left>
             <Height>0.6cm</Height>
             <Width>8.76999cm</Width>
@@ -601,6 +610,47 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Datos actualizados a la fecha: " &amp; Now()</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>1.52231cm</Top>
+            <Left>0.80974cm</Left>
+            <Height>0.6cm</Height>
+            <Width>12.68742cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line1">
+            <Top>2.2987cm</Top>
+            <Height>0cm</Height>
+            <Width>21.59046cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
         </ReportItems>
         <Height>2.28125in</Height>
         <Style />

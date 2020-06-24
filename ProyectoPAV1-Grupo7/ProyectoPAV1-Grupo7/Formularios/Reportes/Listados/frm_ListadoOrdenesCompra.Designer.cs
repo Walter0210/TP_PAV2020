@@ -53,8 +53,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_limpiarTab3 = new System.Windows.Forms.Button();
             this.cmb_nroOrden = new System.Windows.Forms.ComboBox();
-            this.btn_filtrarTab3 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.btn_filtrarTab3 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_LimpiarFiltrosUrgencia = new System.Windows.Forms.Button();
@@ -96,7 +96,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(734, 861);
+            this.tabControl1.Size = new System.Drawing.Size(734, 661);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage2
@@ -106,7 +106,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(726, 835);
+            this.tabPage2.Size = new System.Drawing.Size(726, 635);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado General";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -236,14 +236,16 @@
             // 
             // rv_ListadoGeneral
             // 
+            this.rv_ListadoGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rv_ListadoGeneral.AutoScroll = true;
-            this.rv_ListadoGeneral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rv_ListadoGeneral.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.ListadoOrdenesCompra.rdlc";
-            this.rv_ListadoGeneral.Location = new System.Drawing.Point(3, 100);
+            this.rv_ListadoGeneral.Location = new System.Drawing.Point(3, 98);
             this.rv_ListadoGeneral.Margin = new System.Windows.Forms.Padding(2);
             this.rv_ListadoGeneral.Name = "rv_ListadoGeneral";
             this.rv_ListadoGeneral.ServerReport.BearerToken = null;
-            this.rv_ListadoGeneral.Size = new System.Drawing.Size(720, 732);
+            this.rv_ListadoGeneral.Size = new System.Drawing.Size(720, 534);
             this.rv_ListadoGeneral.TabIndex = 5;
             this.rv_ListadoGeneral.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rv_ListadoGeneral.Load += new System.EventHandler(this.rv_ListadiGeneral_Load);
@@ -257,7 +259,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(726, 835);
+            this.tabPage3.Size = new System.Drawing.Size(726, 635);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Productos por OC";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -321,12 +323,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rv_productosPorOC.AutoScroll = true;
             this.rv_productosPorOC.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorOC.rdlc";
-            this.rv_productosPorOC.Location = new System.Drawing.Point(4, 104);
+            this.rv_productosPorOC.Location = new System.Drawing.Point(3, 98);
             this.rv_productosPorOC.Margin = new System.Windows.Forms.Padding(2);
             this.rv_productosPorOC.Name = "rv_productosPorOC";
             this.rv_productosPorOC.ServerReport.BearerToken = null;
-            this.rv_productosPorOC.Size = new System.Drawing.Size(717, 727);
+            this.rv_productosPorOC.Size = new System.Drawing.Size(717, 533);
             this.rv_productosPorOC.TabIndex = 8;
+            this.rv_productosPorOC.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rv_productosPorOC.Load += new System.EventHandler(this.rv_productosPorOC_Load);
             // 
             // groupBox3
@@ -365,18 +368,6 @@
             this.cmb_nroOrden.Size = new System.Drawing.Size(121, 21);
             this.cmb_nroOrden.TabIndex = 2;
             // 
-            // btn_filtrarTab3
-            // 
-            this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_filtrarTab3.Location = new System.Drawing.Point(294, 24);
-            this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_filtrarTab3.Name = "btn_filtrarTab3";
-            this.btn_filtrarTab3.Size = new System.Drawing.Size(80, 20);
-            this.btn_filtrarTab3.TabIndex = 1;
-            this.btn_filtrarTab3.Text = "Filtrar";
-            this.btn_filtrarTab3.UseVisualStyleBackColor = true;
-            this.btn_filtrarTab3.Click += new System.EventHandler(this.btn_filtrarTab3_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -389,6 +380,18 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Nro Orden de Compra:";
             // 
+            // btn_filtrarTab3
+            // 
+            this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_filtrarTab3.Location = new System.Drawing.Point(294, 24);
+            this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_filtrarTab3.Name = "btn_filtrarTab3";
+            this.btn_filtrarTab3.Size = new System.Drawing.Size(80, 20);
+            this.btn_filtrarTab3.TabIndex = 1;
+            this.btn_filtrarTab3.Text = "Filtrar";
+            this.btn_filtrarTab3.UseVisualStyleBackColor = true;
+            this.btn_filtrarTab3.Click += new System.EventHandler(this.btn_filtrarTab3_Click);
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -396,7 +399,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(726, 835);
+            this.tabPage1.Size = new System.Drawing.Size(726, 635);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Productos Por Urgencia";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -521,14 +524,16 @@
             // 
             // rv_productosUrgencia
             // 
+            this.rv_productosUrgencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rv_productosUrgencia.AutoScroll = true;
-            this.rv_productosUrgencia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rv_productosUrgencia.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_cantProdXUrgencia.rdlc";
-            this.rv_productosUrgencia.Location = new System.Drawing.Point(3, 100);
+            this.rv_productosUrgencia.Location = new System.Drawing.Point(3, 98);
             this.rv_productosUrgencia.Margin = new System.Windows.Forms.Padding(2);
             this.rv_productosUrgencia.Name = "rv_productosUrgencia";
             this.rv_productosUrgencia.ServerReport.BearerToken = null;
-            this.rv_productosUrgencia.Size = new System.Drawing.Size(720, 732);
+            this.rv_productosUrgencia.Size = new System.Drawing.Size(720, 534);
             this.rv_productosUrgencia.TabIndex = 7;
             this.rv_productosUrgencia.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.rv_productosUrgencia.Load += new System.EventHandler(this.reportViewer2_Load);
@@ -538,11 +543,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(734, 861);
+            this.ClientSize = new System.Drawing.Size(734, 661);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtWhere);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(750, 900);
             this.Name = "frm_ListadoOrdenesCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Ordenes de Compra";
