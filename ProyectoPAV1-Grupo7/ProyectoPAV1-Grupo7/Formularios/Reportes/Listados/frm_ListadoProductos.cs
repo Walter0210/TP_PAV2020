@@ -23,11 +23,10 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes.Listados
 
         private void frm_ListadoProductos_Load(object sender, EventArgs e)
         {
-            this.rv_stockProductos.RefreshReport();
+            rv_stockProductos.RefreshReport();
             cmb_comparacion.Items.Add(">");
             cmb_comparacion.Items.Add("<");
             cmb_comparacion.Items.Add("=");
-
         }
 
         private void rv_stockProductos_Load(object sender, EventArgs e)
@@ -38,15 +37,16 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes.Listados
         private void ObtenerListadoProductos()
         {
             try
-            { 
+            {
                 ConexionBD conexion = new ConexionBD();
-
                 string sql = "SELECT * FROM Producto";
-
                 DataTable table = conexion.ejecutar_consulta(sql);
+
                 ReportDataSource ds = new ReportDataSource("stockProductos", table);
+
                 ReportParameter[] parametros = new ReportParameter[1];
                 parametros[0] = new ReportParameter("restriccion", "");
+
                 rv_stockProductos.LocalReport.SetParameters(parametros);
                 rv_stockProductos.LocalReport.DataSources.Clear();
                 rv_stockProductos.LocalReport.DataSources.Add(ds);
@@ -95,6 +95,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes.Listados
             cmb_comparacion.SelectedIndex = -1;
             txt_stock.Clear();
             rv_stockProductos.Clear();
+            ObtenerListadoProductos();
         }
 
         private void rv_stockProductos_Load_1(object sender, EventArgs e)

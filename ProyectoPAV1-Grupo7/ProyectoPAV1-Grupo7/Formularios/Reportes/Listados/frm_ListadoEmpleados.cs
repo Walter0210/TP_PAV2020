@@ -39,7 +39,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void rv_empleadosXjefe_Load(object sender, EventArgs e)
         {
-            buscarEmpleados();
+            buscarListadoEmpleados();
         }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
@@ -176,6 +176,37 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         }
 
+        private void buscarListadoEmpleados()
+        {
+            try
+            {
+                ConexionBD conexion = new ConexionBD();
+                string consulta = @"select E.legajo"
+                                    + ", E.nombre"
+                                    + ", E.apellido"
+                                    + ", TD.nombre as 'tipoDoc'"
+                                    + ", E.nroDoc as 'nroDoc'"
+                                    + ", CONVERT (char, E.fechaNacimiento, 103) as 'fechaNacimiento'"
+                                    + ", CONVERT (char, E.fechaAlta, 103) as 'fechaAlta'"
+                                    + ", J.nombre + ' ' + J.apellido as 'Jefe'"
+                                    + "from Empleado E left join TipoDocumento TD on E.tipoDoc = TD.idTipoDocumento "
+                                                     + "left join Empleado J on E.legajoSuperior = J.legajo ";
+
+                DataTable tablaEmpleados = conexion.ejecutar_consulta(consulta);
+                ReportDataSource ds = new ReportDataSource("empleadosXjefe", tablaEmpleados);
+
+                rv_empleadosXjefe.LocalReport.DataSources.Clear();
+                rv_empleadosXjefe.LocalReport.DataSources.Add(ds);
+                rv_empleadosXjefe.LocalReport.Refresh();
+                rv_empleadosXjefe.RefreshReport();
+                where = string.Empty;
+            }
+            catch
+            {
+                MessageBox.Show("Error de Base de Datos");
+            }
+        }
+
         private void btnFiltrarEmpleados2_Click(object sender, EventArgs e)
         {
             buscarEmpleadosPorJefe();
@@ -226,6 +257,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             cmb_JefeEmpleado.SelectedIndex = -1;
             rv_empleadosXjefe.Clear();
+            buscarListadoEmpleados();
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)
@@ -233,7 +265,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             txt_legajo.Clear();
             txt_dni.Clear();
             rv_empleadosGeneral.Clear();
-
+            buscarListadoEmpleados();
         }
     }
 }
