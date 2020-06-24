@@ -631,6 +631,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CantProdUrgencia" msprop:Generator_TableClassName="CantProdUrgenciaDataTable" msprop:Generator_TableVarName="tableCantProdUrgencia" msprop:Generator_RowChangedName="CantProdUrgenciaRowChanged" msprop:Generator_TablePropName="CantProdUrgencia" msprop:Generator_RowDeletingName="CantProdUrgenciaRowDeleting" msprop:Generator_RowChangingName="CantProdUrgenciaRowChanging" msprop:Generator_RowEvHandlerName="CantProdUrgenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="CantProdUrgenciaRowDeleted" msprop:Generator_RowClassName="CantProdUrgenciaRow" msprop:Generator_UserTableName="CantProdUrgencia" msprop:Generator_RowEvArgName="CantProdUrgenciaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numeroOrdenCompra" msprop:Generator_ColumnVarNameInTable="columnnumeroOrdenCompra" msprop:Generator_ColumnPropNameInRow="numeroOrdenCompra" msprop:Generator_ColumnPropNameInTable="numeroOrdenCompraColumn" msprop:Generator_UserColumnName="numeroOrdenCompra" type="xs:int" minOccurs="0" />
+              <xs:element name="cantidadItems" msprop:Generator_ColumnVarNameInTable="columncantidadItems" msprop:Generator_ColumnPropNameInRow="cantidadItems" msprop:Generator_ColumnPropNameInTable="cantidadItemsColumn" msprop:Generator_UserColumnName="cantidadItems" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
