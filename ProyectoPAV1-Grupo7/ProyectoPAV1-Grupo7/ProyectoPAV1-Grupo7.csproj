@@ -307,6 +307,7 @@
     <EmbeddedResource Include="Formularios\Reportes\Listados\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Estadisticas\EstadisticaOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listados\ListadoSurtidores.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\Listados\Listado_cantProdXUrgencia.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listados\Listado_EmpleadosPorJefe.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listados\Listado_ProductosPorVenta.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\Listados\Listado_StockProductos.rdlc" />

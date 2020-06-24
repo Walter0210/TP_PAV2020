@@ -25,8 +25,9 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void cargarCombos()
         {
-            // RESPONSABLE
             ConexionBD conexion = new ConexionBD();
+
+            // RESPONSABLE
             string sql = "SELECT  E.nombre + ' ' + E.apellido as 'ApeNom', E.legajo FROM Empleado E";
             DataTable tabla = conexion.ejecutar_consulta(sql);
 
@@ -36,22 +37,35 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             cmbResponsable.SelectedIndex = -1;
 
             //  ESTACION
-            ConexionBD conexion1 = new ConexionBD();
+
             string sql1 = "SELECT * FROM Estacion";
-            DataTable tabla1 = conexion1.ejecutar_consulta(sql1);
+            DataTable tabla1 = conexion.ejecutar_consulta(sql1);
             cmbSolicitante.DataSource = tabla1;
             cmbSolicitante.DisplayMember = "razonSocial";
             cmbSolicitante.ValueMember = "CUIT";
             cmbSolicitante.SelectedIndex = -1;
+            cmbEstacion2.DataSource = tabla1;
+            cmbEstacion2.DisplayMember = "razonSocial";
+            cmbEstacion2.ValueMember = "CUIT";
+            cmbEstacion2.SelectedIndex = -1;
+
 
             //  NRO ORDEN COMPRA
-            ConexionBD conexion2 = new ConexionBD();
+
             string sql2 = "SELECT * FROM OrdenCompra";
-            DataTable tabla2 = conexion2.ejecutar_consulta(sql2);
+            DataTable tabla2 = conexion.ejecutar_consulta(sql2);
             cmb_nroOrden.DataSource = tabla2;
             cmb_nroOrden.DisplayMember = "numeroOrdenCompra";
             cmb_nroOrden.ValueMember = "numeroOrdenCompra";
             cmb_nroOrden.SelectedIndex = -1;
+
+
+            string sql3 = "SELECT * FROM Urgencia";
+            DataTable tabla3 = conexion.ejecutar_consulta(sql3);
+            cmbUrgencia2.DataSource = tabla3;
+            cmbUrgencia2.DisplayMember = "nombre";
+            cmbUrgencia2.ValueMember = "idUrgencia";
+            cmbUrgencia2.SelectedIndex = -1;
         }
 
         private void frm_ListadoOrdenesCompra_Load(object sender, EventArgs e)
@@ -81,10 +95,6 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             stringRestriccion = string.Empty;
             ArmarStringFiltros();
             ObtenerListado();
-
-            //ReportParameter[] parametros = new ReportParameter[1];
-            //parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            //rv_ListadoGeneral.LocalReport.SetParameters(parametros);
         }
 
 
@@ -191,29 +201,79 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             txtWhere.Text = string.Empty;
             stringRestriccion = string.Empty;
-
-            ArmarStringFiltros();
-            ReportDataSource ds = new ReportDataSource("DatosOrdenesCompra", ObtenerListadoPromedios());
+            
+            
 
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("restriccion", stringRestriccion);
-            rv_ListadoGeneral.LocalReport.SetParameters(parametros);
-
-            rv_ListadoGeneral.LocalReport.DataSources.Clear();
-            rv_ListadoGeneral.LocalReport.DataSources.Add(ds);
-            rv_ListadoGeneral.RefreshReport();
+            rv_productosUrgencia.LocalReport.SetParameters(parametros);
+            ObtenerListadoProdUrgencia();
         }
 
-        private object ObtenerListadoPromedios()
+        private void ObtenerListadoProdUrgencia()
         {
-            ConexionBD conexion = new ConexionBD();
-            string sql = "SELECT OC.numeroOrdenCompra as numeroOrdenCompra, OC.fecha as fecha, E.nombre + E.apellido AS legajo, S.razonSocial as cuitSolicitante, OC.total as total" +
-                " FROM OrdenCompra OC JOIN Empleado E ON OC.legajo = E.legajo " +
-                "JOIN Estacion S ON OC.cuitSolicitante = S.CUIT " +
-                txtWhere.Text;
+            ArmarWhereUrgencias();
 
+            ConexionBD conexion = new ConexionBD();
+            string sql = "Select OC.numeroOrdenCompra, COUNT (DO.numOrdenCompra) AS cantidadItems " +
+                "FROM OrdenCompra OC LEFT JOIN DetalleOrdenCompra DO on OC.numeroOrdenCompra = DO.numOrdenCompra JOIN Urgencia U on DO.idUrgencia = DO.idUrgencia " +
+                txtWhere.Text +
+                " GROUP BY OC.numeroOrdenCompra ";
+                
             DataTable tabla = conexion.ejecutar_consulta(sql);
-            return tabla;
+
+            ReportDataSource ds = new ReportDataSource("DatosCantidadUrgencia", tabla);
+            rv_productosUrgencia.LocalReport.DataSources.Clear();
+            rv_productosUrgencia.LocalReport.DataSources.Add(ds);
+            rv_productosUrgencia.RefreshReport();
+        }
+
+        private void ArmarWhereUrgencias()
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";
+            string shortFormat = "dd-MM-yyyy";
+
+            if (cmbEstacion2.SelectedIndex != -1)
+            {
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE OC.cuitSolicitante = " + cmbEstacion2.SelectedValue;
+                    stringRestriccion = "Estación: " + cmbEstacion2.Text;
+                }
+                else
+                {
+                    txtWhere.Text += " AND OC.cuitSolicitante = " + cmbEstacion2.SelectedValue;
+                    stringRestriccion += " | Estación: " + cmbEstacion2.Text;
+                }
+            }
+
+            if (cmbUrgencia2.SelectedIndex != -1)
+            {
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE DO.idUrgencia = " + cmbUrgencia2.SelectedValue;
+                    stringRestriccion = "Urgencia: " + cmbUrgencia2.Text;
+                }
+                else
+                {
+                    txtWhere.Text += " AND DO.idUrgencia = " + cmbUrgencia2.SelectedValue;
+                    stringRestriccion += " | Urgencia: " + cmbUrgencia2.Text;
+                }
+            }
+
+            if (eligioFechaDesde || eligioFechaHasta)
+            {
+                if (txtWhere.Text == string.Empty)
+                {
+                    txtWhere.Text = "WHERE OC.fecha BETWEEN " + "'" + dtp_FechaDesde2.Value.ToString(format) + "'" + " AND " + "'" + dtp_FechaHasta2.Value.ToString(format) + "'";
+                    stringRestriccion = "Entre: " + "'" + dtp_FechaDesde2.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtp_FechaHasta2.Value.ToString(shortFormat) + "'";
+                }
+                else
+                {
+                    txtWhere.Text += " AND OC.fecha BETWEEN " + "'" + dtp_FechaDesde2.Value.ToString(format) + "'" + " AND " + "'" + dtp_FechaHasta2.Value.ToString(format) + "'";
+                    stringRestriccion += " | Entre: " + "'" + dtp_FechaDesde2.Value.ToString(shortFormat) + "'" + " Y " + "'" + dtp_FechaHasta2.Value.ToString(shortFormat) + "'";
+                }
+            }
         }
 
         private void rv_productosPorOC_Load(object sender, EventArgs e)
@@ -280,8 +340,37 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             txt_Estacion.Clear();
             txt_Responsable.Clear();
-            rv_productosPorOC.Clear();
+            //rv_productosPorOC.Clear();
             cmb_nroOrden.SelectedIndex = -1;
+        }
+
+        private void btn_FiltrarUrgencia_Click(object sender, EventArgs e)
+        {
+            stringRestriccion = string.Empty;
+            ObtenerListadoProdUrgencia();
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_productosUrgencia.LocalReport.SetParameters(parametros);
+        }
+
+        private void btn_LimpiarFiltrosUrgencia_Click(object sender, EventArgs e)
+        {
+            cmbEstacion2.SelectedIndex = -1;
+            cmbUrgencia2.SelectedIndex = -1;
+            dtp_FechaDesde2.Value = DateTime.Now;
+            dtp_FechaHasta2.Value = DateTime.Now;
+            eligioFechaDesde = false;
+            eligioFechaHasta = false;
+            txtWhere.Text = string.Empty;
+            stringRestriccion = string.Empty;
+
+            DataTable table = new DataTable();
+            ObtenerListadoProdUrgencia();
+
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("restriccion", stringRestriccion);
+            rv_productosUrgencia.LocalReport.SetParameters(parametros);
         }
     }
 }
