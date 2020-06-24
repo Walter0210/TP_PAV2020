@@ -472,10 +472,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>productosXoc</DataSetName>
-        <Top>2.25637cm</Top>
+        <Top>3.29354cm</Top>
         <Left>0.81703cm</Left>
         <Height>1.44668cm</Height>
-        <Width>17.40958cm</Width>
+        <Width>17.40956cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -516,7 +516,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>2.16667in</Height>
     <Style />
   </Body>
   <Width>7.42583in</Width>

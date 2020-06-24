@@ -442,6 +442,9 @@
             // 
             // rv_prodXventas
             // 
+            this.rv_prodXventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "productosXventa";
             reportDataSource1.Value = this.TicketXProductoBindingSource;
             this.rv_prodXventas.LocalReport.DataSources.Add(reportDataSource1);
@@ -451,6 +454,7 @@
             this.rv_prodXventas.ServerReport.BearerToken = null;
             this.rv_prodXventas.Size = new System.Drawing.Size(1141, 857);
             this.rv_prodXventas.TabIndex = 12;
+            this.rv_prodXventas.Load += new System.EventHandler(this.rv_prodXventas_Load);
             // 
             // frm_ListadoVentaProductos
             // 

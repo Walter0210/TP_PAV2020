@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,16 +43,17 @@
             this.txt_legajo = new System.Windows.Forms.TextBox();
             this.legajo = new System.Windows.Forms.Label();
             this.rv_empleadosGeneral = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.rv_empleadosXjefe = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.cmb_JefeEmpleado = new System.Windows.Forms.ComboBox();
             this.btnLimpiarFiltros2 = new System.Windows.Forms.Button();
             this.btnFiltrarEmpleados2 = new System.Windows.Forms.Button();
             this.lblEmpleadoJefe = new System.Windows.Forms.Label();
-            this.cmb_JefeEmpleado = new System.Windows.Forms.ComboBox();
-            this.rv_empleadosXjefe = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,21 +81,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado General";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.rv_empleadosXjefe);
-            this.tabPage2.Controls.Add(this.cmb_JefeEmpleado);
-            this.tabPage2.Controls.Add(this.btnLimpiarFiltros2);
-            this.tabPage2.Controls.Add(this.btnFiltrarEmpleados2);
-            this.tabPage2.Controls.Add(this.lblEmpleadoJefe);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1171, 846);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Empleados por Jefe";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -235,6 +220,45 @@
             this.rv_empleadosGeneral.Size = new System.Drawing.Size(1145, 713);
             this.rv_empleadosGeneral.TabIndex = 10;
             this.rv_empleadosGeneral.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.rv_empleadosGeneral.Load += new System.EventHandler(this.rv_empleadosGeneral_Load);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.rv_empleadosXjefe);
+            this.tabPage2.Controls.Add(this.cmb_JefeEmpleado);
+            this.tabPage2.Controls.Add(this.btnLimpiarFiltros2);
+            this.tabPage2.Controls.Add(this.btnFiltrarEmpleados2);
+            this.tabPage2.Controls.Add(this.lblEmpleadoJefe);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1171, 846);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Empleados por Jefe";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // rv_empleadosXjefe
+            // 
+            this.rv_empleadosXjefe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rv_empleadosXjefe.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_EmpleadosPorJefe.rdlc";
+            this.rv_empleadosXjefe.Location = new System.Drawing.Point(23, 51);
+            this.rv_empleadosXjefe.Name = "rv_empleadosXjefe";
+            this.rv_empleadosXjefe.ServerReport.BearerToken = null;
+            this.rv_empleadosXjefe.Size = new System.Drawing.Size(1110, 763);
+            this.rv_empleadosXjefe.TabIndex = 25;
+            this.rv_empleadosXjefe.Load += new System.EventHandler(this.rv_empleadosXjefe_Load);
+            // 
+            // cmb_JefeEmpleado
+            // 
+            this.cmb_JefeEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_JefeEmpleado.FormattingEnabled = true;
+            this.cmb_JefeEmpleado.Location = new System.Drawing.Point(197, 10);
+            this.cmb_JefeEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_JefeEmpleado.Name = "cmb_JefeEmpleado";
+            this.cmb_JefeEmpleado.Size = new System.Drawing.Size(193, 24);
+            this.cmb_JefeEmpleado.TabIndex = 24;
             // 
             // btnLimpiarFiltros2
             // 
@@ -269,35 +293,13 @@
             this.lblEmpleadoJefe.Text = "Jefe:";
             this.lblEmpleadoJefe.Click += new System.EventHandler(this.lblEmpleadoJefe_Click);
             // 
-            // cmb_JefeEmpleado
-            // 
-            this.cmb_JefeEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_JefeEmpleado.FormattingEnabled = true;
-            this.cmb_JefeEmpleado.Location = new System.Drawing.Point(197, 10);
-            this.cmb_JefeEmpleado.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_JefeEmpleado.Name = "cmb_JefeEmpleado";
-            this.cmb_JefeEmpleado.Size = new System.Drawing.Size(193, 24);
-            this.cmb_JefeEmpleado.TabIndex = 24;
-            // 
-            // rv_empleadosXjefe
-            // 
-            this.rv_empleadosXjefe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rv_empleadosXjefe.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_EmpleadosPorJefe.rdlc";
-            this.rv_empleadosXjefe.Location = new System.Drawing.Point(23, 51);
-            this.rv_empleadosXjefe.Name = "rv_empleadosXjefe";
-            this.rv_empleadosXjefe.ServerReport.BearerToken = null;
-            this.rv_empleadosXjefe.Size = new System.Drawing.Size(1110, 763);
-            this.rv_empleadosXjefe.TabIndex = 25;
-            // 
             // frm_ListadoEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 875);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(927, 912);
             this.Name = "frm_ListadoEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -306,12 +308,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }

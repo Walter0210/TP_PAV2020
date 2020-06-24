@@ -218,7 +218,25 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
 
         private void rv_productosPorOC_Load(object sender, EventArgs e)
         {
-            ObtenerListadoProductosOC();
+            ObtenerProductos();
+        }
+
+        private void ObtenerProductos()
+        {
+            ConexionBD conexion = new ConexionBD();
+            string sql = "SELECT DC.numOrdenCompra, P.descripcion as 'idProducto', DC.cantidad, UM.nombre as 'idUnidadMedida', P.precioCompra * DC.cantidad as 'precio', UR.nombre as 'idUrgencia'"
+                + " FROM DetalleOrdenCompra DC "
+                + "JOIN Producto P ON DC.idProducto = P.idProducto "
+                + "JOIN UnidadMedida UM ON DC.idUnidadMedida = UM.idUnidadMedida "
+                + "JOIN Urgencia UR ON DC.idUrgencia = UR.idUrgencia";
+
+            DataTable tabla = conexion.ejecutar_consulta(sql);
+            ReportDataSource ds = new ReportDataSource("productosXoc", tabla);
+
+            rv_productosPorOC.LocalReport.DataSources.Clear();
+            rv_productosPorOC.LocalReport.DataSources.Add(ds);
+            rv_productosPorOC.LocalReport.Refresh();
+            rv_productosPorOC.RefreshReport();
         }
 
         private void ObtenerListadoProductosOC()
@@ -282,6 +300,12 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             txt_Responsable.Clear();
             rv_productosPorOC.Clear();
             cmb_nroOrden.SelectedIndex = -1;
+            ObtenerProductos();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -313,6 +313,7 @@
             this.label9.Size = new System.Drawing.Size(95, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Responsable:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // rv_productosPorOC
             // 
@@ -326,6 +327,7 @@
             this.rv_productosPorOC.ServerReport.BearerToken = null;
             this.rv_productosPorOC.Size = new System.Drawing.Size(955, 710);
             this.rv_productosPorOC.TabIndex = 8;
+            this.rv_productosPorOC.Load += new System.EventHandler(this.rv_productosPorOC_Load);
             // 
             // groupBox3
             // 

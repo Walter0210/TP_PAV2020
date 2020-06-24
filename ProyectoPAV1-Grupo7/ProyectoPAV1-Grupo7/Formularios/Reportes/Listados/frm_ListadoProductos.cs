@@ -95,6 +95,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes.Listados
             cmb_comparacion.SelectedIndex = -1;
             txt_stock.Clear();
             rv_stockProductos.Clear();
+            ObtenerListadoProductos();
         }
     }
 }
