@@ -44,15 +44,15 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.81849cm</Width>
+                  <Width>5.47995cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.61901cm</Width>
+                  <Width>6.28047cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.79844cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -129,7 +129,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.79844cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -216,10 +216,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosCantProdVendida</DataSetName>
-            <Top>0.76412cm</Top>
-            <Left>2.08831cm</Left>
-            <Height>1.2cm</Height>
-            <Width>10.4375cm</Width>
+            <Top>0.47308cm</Top>
+            <Left>0.91948cm</Left>
+            <Height>1.59688cm</Height>
+            <Width>11.76042cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -323,10 +323,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.63182cm</Top>
-              <Left>2.43227cm</Left>
+              <Top>0.60509cm</Top>
+              <Left>0.91948cm</Left>
               <Height>0.89104cm</Height>
-              <Width>9.74958cm</Width>
+              <Width>11.76042cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -354,9 +354,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
               <Top>1.67252cm</Top>
-              <Left>2.43227cm</Left>
+              <Left>0.91948cm</Left>
               <Height>0.6cm</Height>
-              <Width>9.74958cm</Width>
+              <Width>11.76042cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

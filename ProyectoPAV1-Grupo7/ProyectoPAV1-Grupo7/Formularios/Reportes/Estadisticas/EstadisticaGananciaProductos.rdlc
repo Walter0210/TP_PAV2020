@@ -72,8 +72,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.27653in</Top>
-            <Left>2.74875in</Left>
+            <Top>0.31472in</Top>
+            <Left>0.40354in</Left>
             <Height>0.42708in</Height>
             <Width>7.25in</Width>
             <Style>
@@ -519,8 +519,9 @@
             </ChartNoDataMessage>
             <DataSetName>DatosGananciaProducto</DataSetName>
             <Top>1.35986in</Top>
-            <Height>4.87973in</Height>
-            <Width>11.83334in</Width>
+            <Left>0.63185in</Left>
+            <Height>5.57893in</Height>
+            <Width>12.51827in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -550,8 +551,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.74528in</Top>
-            <Left>2.10292in</Left>
+            <Top>0.81125in</Top>
             <Height>0.47917in</Height>
             <Width>8.38667in</Width>
             <ZIndex>2</ZIndex>
@@ -566,10 +566,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>6.57292in</Height>
+        <Height>7.17223in</Height>
         <Style />
       </Body>
-      <Width>12.03125in</Width>
+      <Width>13.58758in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

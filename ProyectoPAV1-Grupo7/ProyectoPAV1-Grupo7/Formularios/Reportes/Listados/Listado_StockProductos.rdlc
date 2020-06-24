@@ -65,7 +65,7 @@
                   <TextRun>
                     <Value>Stock de Productos</Value>
                     <Style>
-                      <FontSize>22pt</FontSize>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -77,9 +77,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.15335in</Top>
-            <Left>2.41957in</Left>
+            <Left>0.1938in</Left>
             <Height>0.4375in</Height>
-            <Width>3.1923in</Width>
+            <Width>2.18188in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -94,27 +94,27 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.92333cm</Width>
+                  <Width>3.09531cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.92333cm</Width>
+                  <Width>3.09531cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.92333cm</Width>
+                  <Width>3.09531cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.008cm</Width>
+                  <Width>3.17998cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.05033cm</Width>
+                  <Width>3.22231cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.278cm</Width>
+                  <Width>4.44998cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.84668cm</Height>
+                  <Height>1.01866cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -335,7 +335,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.77198cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -562,8 +562,8 @@
             <DataSetName>stockProductos</DataSetName>
             <Top>2.82167cm</Top>
             <Left>0.80974cm</Left>
-            <Height>1.44668cm</Height>
-            <Width>19.10632cm</Width>
+            <Height>1.79064cm</Height>
+            <Width>20.1382cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -586,7 +586,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.9812cm</Top>
+            <Top>1.67715cm</Top>
             <Left>0.80974cm</Left>
             <Height>0.6cm</Height>
             <Width>8.76999cm</Width>
@@ -602,10 +602,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>2.28125in</Height>
         <Style />
       </Body>
-      <Width>8.03143in</Width>
+      <Width>8.50018in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

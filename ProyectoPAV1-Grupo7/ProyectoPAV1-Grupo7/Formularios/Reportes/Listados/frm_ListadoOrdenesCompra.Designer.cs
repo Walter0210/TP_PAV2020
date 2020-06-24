@@ -107,7 +107,7 @@
             this.tabPage2.Controls.Add(this.rv_ListadoGeneral);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(726, 835);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado General";
@@ -128,7 +128,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 87);
+            this.groupBox1.Size = new System.Drawing.Size(706, 87);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -136,8 +136,8 @@
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(519, 51);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(601, 51);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
             this.btnLimpiarFiltros.TabIndex = 9;
@@ -185,7 +185,7 @@
             // 
             this.dtpHasta.Location = new System.Drawing.Point(357, 49);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(121, 20);
+            this.dtpHasta.Size = new System.Drawing.Size(197, 20);
             this.dtpHasta.TabIndex = 5;
             this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
@@ -193,7 +193,7 @@
             // 
             this.dtpDesde.Location = new System.Drawing.Point(357, 17);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(121, 20);
+            this.dtpDesde.Size = new System.Drawing.Size(197, 20);
             this.dtpDesde.TabIndex = 4;
             this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
@@ -203,7 +203,7 @@
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
             this.cmbSolicitante.Location = new System.Drawing.Point(106, 17);
-            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
             this.cmbSolicitante.TabIndex = 2;
@@ -211,8 +211,8 @@
             // btnFiltrar
             // 
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFiltrar.Location = new System.Drawing.Point(519, 17);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFiltrar.Location = new System.Drawing.Point(601, 20);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(71, 20);
             this.btnFiltrar.TabIndex = 1;
@@ -238,7 +238,7 @@
             this.rv_ListadoGeneral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rv_ListadoGeneral.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.ListadoOrdenesCompra.rdlc";
             this.rv_ListadoGeneral.Location = new System.Drawing.Point(3, 100);
-            this.rv_ListadoGeneral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rv_ListadoGeneral.Margin = new System.Windows.Forms.Padding(2);
             this.rv_ListadoGeneral.Name = "rv_ListadoGeneral";
             this.rv_ListadoGeneral.ServerReport.BearerToken = null;
             this.rv_ListadoGeneral.Size = new System.Drawing.Size(720, 732);
@@ -252,9 +252,9 @@
             this.tabPage3.Controls.Add(this.rv_productosPorOC);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(726, 835);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Productos por OC";
@@ -267,9 +267,9 @@
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Location = new System.Drawing.Point(6, 100);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(555, 112);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
@@ -278,7 +278,7 @@
             // txt_Estacion
             // 
             this.txt_Estacion.Location = new System.Drawing.Point(127, 72);
-            this.txt_Estacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Estacion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Estacion.Name = "txt_Estacion";
             this.txt_Estacion.Size = new System.Drawing.Size(131, 20);
             this.txt_Estacion.TabIndex = 3;
@@ -286,7 +286,7 @@
             // txt_Responsable
             // 
             this.txt_Responsable.Location = new System.Drawing.Point(127, 41);
-            this.txt_Responsable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Responsable.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Responsable.Name = "txt_Responsable";
             this.txt_Responsable.Size = new System.Drawing.Size(131, 20);
             this.txt_Responsable.TabIndex = 2;
@@ -320,7 +320,7 @@
             this.rv_productosPorOC.AutoScroll = true;
             this.rv_productosPorOC.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_ProductosPorOC.rdlc";
             this.rv_productosPorOC.Location = new System.Drawing.Point(4, 224);
-            this.rv_productosPorOC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rv_productosPorOC.Margin = new System.Windows.Forms.Padding(2);
             this.rv_productosPorOC.Name = "rv_productosPorOC";
             this.rv_productosPorOC.ServerReport.BearerToken = null;
             this.rv_productosPorOC.Size = new System.Drawing.Size(717, 577);
@@ -344,7 +344,7 @@
             // 
             this.btn_limpiarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_limpiarTab3.Location = new System.Drawing.Point(356, 43);
-            this.btn_limpiarTab3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_limpiarTab3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_limpiarTab3.Name = "btn_limpiarTab3";
             this.btn_limpiarTab3.Size = new System.Drawing.Size(71, 20);
             this.btn_limpiarTab3.TabIndex = 9;
@@ -358,7 +358,7 @@
             this.cmb_nroOrden.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmb_nroOrden.FormattingEnabled = true;
             this.cmb_nroOrden.Location = new System.Drawing.Point(168, 14);
-            this.cmb_nroOrden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_nroOrden.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_nroOrden.Name = "cmb_nroOrden";
             this.cmb_nroOrden.Size = new System.Drawing.Size(121, 21);
             this.cmb_nroOrden.TabIndex = 2;
@@ -367,7 +367,7 @@
             // 
             this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_filtrarTab3.Location = new System.Drawing.Point(356, 9);
-            this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_filtrarTab3.Name = "btn_filtrarTab3";
             this.btn_filtrarTab3.Size = new System.Drawing.Size(71, 20);
             this.btn_filtrarTab3.TabIndex = 1;
@@ -393,7 +393,7 @@
             this.tabPage1.Controls.Add(this.rv_productosUrgencia);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(726, 835);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Productos Por Urgencia";
@@ -422,7 +422,7 @@
             // 
             this.btn_LimpiarFiltrosUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_LimpiarFiltrosUrgencia.Location = new System.Drawing.Point(519, 51);
-            this.btn_LimpiarFiltrosUrgencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_LimpiarFiltrosUrgencia.Margin = new System.Windows.Forms.Padding(2);
             this.btn_LimpiarFiltrosUrgencia.Name = "btn_LimpiarFiltrosUrgencia";
             this.btn_LimpiarFiltrosUrgencia.Size = new System.Drawing.Size(71, 20);
             this.btn_LimpiarFiltrosUrgencia.TabIndex = 9;
@@ -488,7 +488,7 @@
             this.cmbEstacion2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbEstacion2.FormattingEnabled = true;
             this.cmbEstacion2.Location = new System.Drawing.Point(117, 17);
-            this.cmbEstacion2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEstacion2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstacion2.Name = "cmbEstacion2";
             this.cmbEstacion2.Size = new System.Drawing.Size(121, 21);
             this.cmbEstacion2.TabIndex = 2;
@@ -497,7 +497,7 @@
             // 
             this.btn_FiltrarUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_FiltrarUrgencia.Location = new System.Drawing.Point(519, 17);
-            this.btn_FiltrarUrgencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_FiltrarUrgencia.Margin = new System.Windows.Forms.Padding(2);
             this.btn_FiltrarUrgencia.Name = "btn_FiltrarUrgencia";
             this.btn_FiltrarUrgencia.Size = new System.Drawing.Size(71, 20);
             this.btn_FiltrarUrgencia.TabIndex = 1;
@@ -523,7 +523,7 @@
             this.rv_productosUrgencia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rv_productosUrgencia.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Listados.Listado_cantProdXUrgencia.rdlc";
             this.rv_productosUrgencia.Location = new System.Drawing.Point(3, 100);
-            this.rv_productosUrgencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rv_productosUrgencia.Margin = new System.Windows.Forms.Padding(2);
             this.rv_productosUrgencia.Name = "rv_productosUrgencia";
             this.rv_productosUrgencia.ServerReport.BearerToken = null;
             this.rv_productosUrgencia.Size = new System.Drawing.Size(720, 732);
@@ -539,7 +539,7 @@
             this.ClientSize = new System.Drawing.Size(734, 857);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.txtWhere);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(750, 843);
             this.Name = "frm_ListadoOrdenesCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

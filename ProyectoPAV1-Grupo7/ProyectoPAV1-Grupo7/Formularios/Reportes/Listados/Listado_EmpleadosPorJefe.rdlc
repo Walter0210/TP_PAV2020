@@ -6,30 +6,30 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.54cm</Width>
+              <Width>3.07295cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.03295cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.03295cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.92333cm</Width>
+              <Width>3.45628cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.095cm</Width>
+              <Width>3.62795cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.3255cm</Width>
+              <Width>3.85845cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.03295cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.84668cm</Height>
+              <Height>1.12449cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -286,7 +286,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.87781cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -545,10 +545,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>empleadosXjefe</DataSetName>
-        <Top>2.00237cm</Top>
+        <Top>1.4732cm</Top>
         <Left>0.47837cm</Left>
-        <Height>1.44668cm</Height>
-        <Width>19.38383cm</Width>
+        <Height>2.00231cm</Height>
+        <Width>23.11446cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -564,7 +564,7 @@
               <TextRun>
                 <Value>Empleados por Jefe</Value>
                 <Style>
-                  <FontSize>22pt</FontSize>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -574,8 +574,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.19792in</Top>
-        <Left>2.4673in</Left>
-        <Height>0.4375in</Height>
+        <Left>0.18833in</Left>
+        <Height>0.26042in</Height>
         <Width>3.1923in</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -589,10 +589,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.78125in</Height>
     <Style />
   </Body>
-  <Width>8.03643in</Width>
+  <Width>9.7031in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

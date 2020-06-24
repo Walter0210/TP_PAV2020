@@ -57,7 +57,7 @@
                     <Value>Productos Más Vendidos (en Litros)</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>22pt</FontSize>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -66,9 +66,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.29042in</Top>
-            <Left>3.48833in</Left>
-            <Height>0.41667in</Height>
+            <Top>0.18625in</Top>
+            <Left>0.29042in</Left>
+            <Height>0.28125in</Height>
             <Width>5.29167in</Width>
             <Style>
               <Border>
@@ -428,8 +428,8 @@
             </ChartNoDataMessage>
             <Top>0.77653in</Top>
             <Left>0.29042in</Left>
-            <Height>9.26302in</Height>
-            <Width>11.66661in</Width>
+            <Height>7.88653in</Height>
+            <Width>9.9739in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -444,7 +444,7 @@
         <Height>10.24875in</Height>
         <Style />
       </Body>
-      <Width>12.96875in</Width>
+      <Width>10.73661in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

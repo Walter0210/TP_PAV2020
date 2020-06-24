@@ -372,14 +372,14 @@
               <ChartTitle Name="Default">
                 <Caption>Grafico Ventas de Surtidor por dia.</Caption>
                 <Style>
-                  <BackgroundColor>PaleTurquoise</BackgroundColor>
                   <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
-                  <FontFamily>Arial Narrow</FontFamily>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
                 </Style>
+                <Position>TopLeft</Position>
+                <DockOutsideChartArea>true</DockOutsideChartArea>
               </ChartTitle>
               <ChartTitle Name="Title1">
                 <Caption>=Parameters!restriccion.Value(0)</Caption>
@@ -411,8 +411,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosCantidadSurtidor</DataSetName>
-            <Height>12.48452cm</Height>
-            <Width>18.8648cm</Width>
+            <Height>13.88681cm</Height>
+            <Width>21.74876cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -423,10 +423,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.91517in</Height>
+        <Height>5.46725in</Height>
         <Style />
       </Body>
-      <Width>7.42709in</Width>
+      <Width>8.5625in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

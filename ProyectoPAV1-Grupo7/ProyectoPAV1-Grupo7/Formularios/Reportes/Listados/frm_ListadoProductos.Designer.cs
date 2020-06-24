@@ -95,14 +95,14 @@
             this.groupBox3.Controls.Add(this.btn_filtrarTab3);
             this.groupBox3.Location = new System.Drawing.Point(5, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(702, 85);
+            this.groupBox3.Size = new System.Drawing.Size(747, 85);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtros";
             // 
             // txt_stock
             // 
-            this.txt_stock.Location = new System.Drawing.Point(351, 21);
+            this.txt_stock.Location = new System.Drawing.Point(377, 21);
             this.txt_stock.Margin = new System.Windows.Forms.Padding(2);
             this.txt_stock.Name = "txt_stock";
             this.txt_stock.Size = new System.Drawing.Size(120, 20);
@@ -112,7 +112,7 @@
             // 
             this.cmb_comparacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_comparacion.FormattingEnabled = true;
-            this.cmb_comparacion.Location = new System.Drawing.Point(170, 21);
+            this.cmb_comparacion.Location = new System.Drawing.Point(176, 21);
             this.cmb_comparacion.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_comparacion.Name = "cmb_comparacion";
             this.cmb_comparacion.Size = new System.Drawing.Size(120, 21);
@@ -134,7 +134,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label12.Location = new System.Drawing.Point(309, 25);
+            this.label12.Location = new System.Drawing.Point(335, 24);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
@@ -146,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Location = new System.Drawing.Point(52, 25);
+            this.label1.Location = new System.Drawing.Point(52, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 13);
@@ -156,19 +156,19 @@
             // btn_limpiarTab3
             // 
             this.btn_limpiarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_limpiarTab3.Location = new System.Drawing.Point(499, 21);
+            this.btn_limpiarTab3.Location = new System.Drawing.Point(545, 22);
             this.btn_limpiarTab3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_limpiarTab3.Name = "btn_limpiarTab3";
             this.btn_limpiarTab3.Size = new System.Drawing.Size(83, 20);
             this.btn_limpiarTab3.TabIndex = 9;
-            this.btn_limpiarTab3.Text = "Limpiar Filtros";
+            this.btn_limpiarTab3.Text = "Limpiar";
             this.btn_limpiarTab3.UseVisualStyleBackColor = true;
             this.btn_limpiarTab3.Click += new System.EventHandler(this.btn_limpiarTab3_Click);
             // 
             // btn_filtrarTab3
             // 
             this.btn_filtrarTab3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_filtrarTab3.Location = new System.Drawing.Point(605, 21);
+            this.btn_filtrarTab3.Location = new System.Drawing.Point(642, 22);
             this.btn_filtrarTab3.Margin = new System.Windows.Forms.Padding(2);
             this.btn_filtrarTab3.Name = "btn_filtrarTab3";
             this.btn_filtrarTab3.Size = new System.Drawing.Size(71, 20);

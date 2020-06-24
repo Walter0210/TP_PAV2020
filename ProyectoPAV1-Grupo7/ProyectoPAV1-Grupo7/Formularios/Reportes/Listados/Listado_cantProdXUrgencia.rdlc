@@ -62,9 +62,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.47307cm</Top>
-            <Left>4.54893cm</Left>
+            <Left>0.79185cm</Left>
             <Height>0.75875cm</Height>
-            <Width>8.5325cm</Width>
+            <Width>15.795cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -92,9 +92,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
             <Top>1.66342cm</Top>
-            <Left>4.17206cm</Left>
+            <Left>0.79185cm</Left>
             <Height>0.6cm</Height>
-            <Width>9.28625cm</Width>
+            <Width>15.795cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -110,15 +110,15 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.81858cm</Width>
+                  <Width>7.48739cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.63879cm</Width>
+                  <Width>8.3076cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.78521cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -193,7 +193,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.78521cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -280,10 +280,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosCantidadUrgencia</DataSetName>
-            <Top>3.19828cm</Top>
-            <Left>4.5865cm</Left>
-            <Height>1.2cm</Height>
-            <Width>8.45737cm</Width>
+            <Top>2.88078cm</Top>
+            <Left>0.79185cm</Left>
+            <Height>1.57042cm</Height>
+            <Width>15.795cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>

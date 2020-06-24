@@ -389,9 +389,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosEstadisticasMensuales</DataSetName>
-            <Top>0.22411cm</Top>
-            <Height>8.8747cm</Height>
-            <Width>17.59708cm</Width>
+            <Top>0.27183cm</Top>
+            <Left>0.1843in</Left>
+            <Height>9.56262cm</Height>
+            <Width>18.39083cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -402,13 +403,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>9.32292cm</Height>
+        <Height>9.83445cm</Height>
         <Style />
       </Body>
-      <Width>17.59708cm</Width>
+      <Width>19.36166cm</Width>
       <Page>
         <PageHeader>
-          <Height>2.26937cm</Height>
+          <Height>1.4227cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -421,7 +422,8 @@
                     <TextRun>
                       <Value>Estadistica Ordenes de Compra Mensuales</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -432,14 +434,13 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.56883cm</Top>
-              <Left>2.89209cm</Left>
+              <Left>0.46812cm</Left>
               <Height>0.66473cm</Height>
-              <Width>11.8129cm</Width>
+              <Width>8.97912cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <BackgroundColor>LightBlue</BackgroundColor>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -474,7 +475,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.20495cm</Top>
-              <Left>1.24037cm</Left>
+              <Left>2.15828cm</Left>
               <Height>0.6cm</Height>
               <Width>7.73875cm</Width>
               <Style>

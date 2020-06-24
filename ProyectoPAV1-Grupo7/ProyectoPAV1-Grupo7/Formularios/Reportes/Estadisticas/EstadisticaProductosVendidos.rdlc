@@ -400,10 +400,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosProductosVendidos</DataSetName>
-            <Top>0.905in</Top>
+            <Top>0.70709in</Top>
             <Left>0.29042in</Left>
-            <Height>4.65625in</Height>
-            <Width>11.66661in</Width>
+            <Height>4.77083in</Height>
+            <Width>12.12494in</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -423,7 +423,7 @@
                     <Value>Productos Más Vendidos (en Litros)</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>22pt</FontSize>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -433,7 +433,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.29042in</Top>
-            <Left>3.48833in</Left>
+            <Left>0.29042in</Left>
             <Height>0.41667in</Height>
             <Width>5.29167in</Width>
             <ZIndex>1</ZIndex>

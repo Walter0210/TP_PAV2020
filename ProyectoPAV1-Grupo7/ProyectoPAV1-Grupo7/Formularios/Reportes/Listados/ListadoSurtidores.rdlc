@@ -52,16 +52,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.15104in</Width>
+                  <Width>1.52344in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.40104in</Width>
+                  <Width>1.77344in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.27604in</Width>
+                  <Width>1.64844in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.73438in</Width>
+                  <Width>2.10678in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -372,51 +372,18 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosSurtidores</DataSetName>
-            <Top>0.63417in</Top>
-            <Left>0.97792in</Left>
+            <Top>0.29042in</Top>
+            <Left>0.30084in</Left>
             <Height>0.71875in</Height>
-            <Width>5.5625in</Width>
+            <Width>7.05208in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox7">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!restriccion.Value</Value>
-                    <Style>
-                      <FontFamily>Arial Narrow</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>0.16667in</Top>
-            <Left>0.97792in</Left>
-            <Height>0.25in</Height>
-            <Width>5.5625in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>4.53125in</Height>
+        <Height>1.51042in</Height>
         <Style />
       </Body>
       <Width>7.59375in</Width>
@@ -435,8 +402,7 @@
                     <TextRun>
                       <Value>Surtidores</Value>
                       <Style>
-                        <FontFamily>Arial Narrow</FontFamily>
-                        <FontSize>18pt</FontSize>
+                        <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -448,9 +414,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.15958in</Top>
-              <Left>2.44667in</Left>
+              <Left>0.30084in</Left>
               <Height>0.36458in</Height>
-              <Width>2.80729in</Width>
+              <Width>1.08333in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -462,7 +428,7 @@
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>0.8425in</Top>
+              <Top>0.5936in</Top>
               <Height>0in</Height>
               <Width>7.59375in</Width>
               <ZIndex>1</ZIndex>
@@ -493,6 +459,39 @@
                 </RightBorder>
               </Style>
             </Line>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!restriccion.Value</Value>
+                      <Style>
+                        <FontFamily>Arial Narrow</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox7</rd:DefaultName>
+              <Top>0.73833in</Top>
+              <Left>0.30084in</Left>
+              <Height>0.25in</Height>
+              <Width>5.5625in</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -501,7 +500,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1in</Height>
+          <Height>0.71875in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -520,8 +519,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.46875in</Top>
-              <Left>0.97792in</Left>
+              <Top>0.20833in</Top>
+              <Left>0.30084in</Left>
               <Height>0.25in</Height>
               <Width>1in</Width>
               <Style>

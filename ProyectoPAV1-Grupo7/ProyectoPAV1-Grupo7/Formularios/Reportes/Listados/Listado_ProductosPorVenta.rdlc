@@ -326,7 +326,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>productosXventa</DataSetName>
-        <Top>2.44687cm</Top>
+        <Top>1.61043cm</Top>
         <Left>0.53256cm</Left>
         <Height>1.44668cm</Height>
         <Width>17.145cm</Width>
@@ -347,7 +347,7 @@
               <TextRun>
                 <Value>Productos por Venta</Value>
                 <Style>
-                  <FontSize>22pt</FontSize>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -357,9 +357,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.23125in</Top>
-        <Left>1.95617in</Left>
-        <Height>0.4375in</Height>
-        <Width>3.19167in</Width>
+        <Left>0.20967in</Left>
+        <Height>0.33333in</Height>
+        <Width>2.16042in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -372,7 +372,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.58333in</Height>
     <Style />
   </Body>
   <Width>7.25034in</Width>

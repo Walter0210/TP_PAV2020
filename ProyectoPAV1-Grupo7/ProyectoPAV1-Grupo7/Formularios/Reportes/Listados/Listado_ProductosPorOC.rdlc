@@ -6,27 +6,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.51896cm</Width>
+              <Width>4.07899cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.77812cm</Width>
+              <Width>3.33815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.77812cm</Width>
+              <Width>3.33815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.77812cm</Width>
+              <Width>3.33815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.77812cm</Width>
+              <Width>3.33815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.77812cm</Width>
+              <Width>3.33815cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.84668cm</Height>
+              <Height>1.13772cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -247,7 +247,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.89104cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -472,10 +472,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>productosXoc</DataSetName>
-        <Top>3.29354cm</Top>
-        <Left>0.81703cm</Left>
-        <Height>1.44668cm</Height>
-        <Width>17.40956cm</Width>
+        <Top>1.7325cm</Top>
+        <Left>0.51859cm</Left>
+        <Height>2.02876cm</Height>
+        <Width>20.76977cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -491,7 +491,7 @@
               <TextRun>
                 <Value>Productos por Orden de Compra</Value>
                 <Style>
-                  <FontSize>22pt</FontSize>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -501,9 +501,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.23958in</Top>
-        <Left>1.26667in</Left>
-        <Height>0.4375in</Height>
-        <Width>4.96667in</Width>
+        <Left>0.20417in</Left>
+        <Height>0.27083in</Height>
+        <Width>3.35209in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -516,10 +516,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.16667in</Height>
+    <Height>1.9375in</Height>
     <Style />
   </Body>
-  <Width>7.42583in</Width>
+  <Width>8.58208in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

@@ -56,24 +56,24 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.66664cm</Width>
+                  <Width>4.12072cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.89823cm</Width>
+                  <Width>4.35231cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.76031cm</Width>
+                  <Width>4.21439cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.76031cm</Width>
+                  <Width>4.21439cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.96492cm</Width>
+                  <Width>4.419cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6635cm</Height>
+                  <Height>1.06038cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -258,7 +258,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6635cm</Height>
+                  <Height>1.06038cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -450,9 +450,9 @@
             </TablixRowHierarchy>
             <DataSetName>DatosOrdenesCompra</DataSetName>
             <Top>3.10303cm</Top>
-            <Left>1.94936cm</Left>
-            <Height>1.327cm</Height>
-            <Width>19.05041cm</Width>
+            <Left>0.53328cm</Left>
+            <Height>2.12075cm</Height>
+            <Width>21.32082cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -468,7 +468,7 @@
                   <TextRun>
                     <Value>Listado de Ordenes de Compra</Value>
                     <Style>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -480,15 +480,14 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>0.41487cm</Top>
-            <Left>5.3487cm</Left>
-            <Height>0.6cm</Height>
-            <Width>12.25172cm</Width>
+            <Left>0.53328cm</Left>
+            <Height>0.78521cm</Height>
+            <Width>8.28297cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>RosyBrown</BackgroundColor>
               <VerticalAlign>Middle</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -525,7 +524,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
             <Top>2.05147cm</Top>
-            <Left>1.94936cm</Left>
+            <Left>0.53328cm</Left>
             <Height>0.6cm</Height>
             <Width>19.05041cm</Width>
             <ZIndex>3</ZIndex>

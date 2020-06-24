@@ -11,7 +11,7 @@
               <TextRun>
                 <Value>Empleados </Value>
                 <Style>
-                  <FontSize>22pt</FontSize>
+                  <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -21,9 +21,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.22792in</Top>
-        <Left>4.66542in</Left>
-        <Height>0.4375in</Height>
-        <Width>1.75in</Width>
+        <Left>0.24875in</Left>
+        <Height>0.27083in</Height>
+        <Width>1.19792in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -658,8 +658,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DatosEmpleados</DataSetName>
-        <Top>0.99875in</Top>
-        <Left>0.44667in</Left>
+        <Top>0.76958in</Top>
+        <Left>0.24875in</Left>
         <Height>0.58334in</Height>
         <Width>10.17709in</Width>
         <ZIndex>1</ZIndex>
@@ -671,7 +671,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.78125in</Height>
+    <Height>2.0625in</Height>
     <Style />
   </Body>
   <Width>11.10293in</Width>

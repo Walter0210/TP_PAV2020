@@ -61,7 +61,7 @@
                   <TextRun>
                     <Value>Ganancia por Producto (en Dólares estadounidenses) </Value>
                     <Style>
-                      <FontSize>22pt</FontSize>
+                      <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -73,9 +73,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.24876in</Top>
-            <Left>2.31251in</Left>
+            <Left>0.19793in</Left>
             <Height>0.42708in</Height>
-            <Width>8.07292in</Width>
+            <Width>5.76042in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -551,7 +551,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.74528in</Top>
-            <Left>2.10292in</Left>
+            <Left>0.19793in</Left>
             <Height>0.47917in</Height>
             <Width>8.38667in</Width>
             <ZIndex>2</ZIndex>
@@ -574,19 +574,22 @@
                   <TextRun>
                     <Value>1 U$D = </Value>
                     <Style>
-                      <FontSize>11pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!valorDolar.Value</Value>
                     <Style>
-                      <FontSize>11pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> AR$</Value>
                     <Style>
-                      <FontSize>11pt</FontSize>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -594,10 +597,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>valorDolar</rd:DefaultName>
-            <Top>1.155in</Top>
-            <Left>5.00917in</Left>
+            <Top>0.42584in</Top>
+            <Left>9.87375in</Left>
             <Height>0.25in</Height>
-            <Width>2.11458in</Width>
+            <Width>2.32291in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>

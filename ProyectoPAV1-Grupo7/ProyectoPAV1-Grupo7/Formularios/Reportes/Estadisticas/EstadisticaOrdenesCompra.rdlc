@@ -62,14 +62,13 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.38312cm</Top>
-            <Left>3.53367cm</Left>
+            <Left>0.55741cm</Left>
             <Height>0.68467cm</Height>
-            <Width>16.99917cm</Width>
+            <Width>8.00334cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>MediumTurquoise</BackgroundColor>
               <VerticalAlign>Top</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -496,7 +495,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
             <Top>1.27537cm</Top>
-            <Left>0.84349cm</Left>
+            <Left>0.55741cm</Left>
             <Height>0.6cm</Height>
             <Width>11.31062cm</Width>
             <ZIndex>4</ZIndex>
@@ -511,10 +510,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.6985in</Height>
+        <Height>4.5735in</Height>
         <Style />
       </Body>
-      <Width>9.475in</Width>
+      <Width>9.61042in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

@@ -35,6 +35,8 @@
             this.cmbSolicitante = new System.Windows.Forms.ComboBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -44,10 +46,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Estadisticas.EstadisticaVentaPorDia.rdlc" +
     "";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 38);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 73);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(910, 611);
+            this.reportViewer1.Size = new System.Drawing.Size(910, 576);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -55,7 +57,7 @@
             // btnLimpiarFiltros
             // 
             this.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(492, 10);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(663, 21);
             this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(71, 20);
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(251, 14);
+            this.label2.Location = new System.Drawing.Point(306, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 13;
@@ -74,9 +76,9 @@
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(348, 10);
+            this.dtpFecha.Location = new System.Drawing.Point(384, 23);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(202, 20);
             this.dtpFecha.TabIndex = 12;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged_1);
             // 
@@ -85,7 +87,7 @@
             this.cmbSolicitante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSolicitante.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSolicitante.FormattingEnabled = true;
-            this.cmbSolicitante.Location = new System.Drawing.Point(87, 10);
+            this.cmbSolicitante.Location = new System.Drawing.Point(134, 22);
             this.cmbSolicitante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSolicitante.Name = "cmbSolicitante";
             this.cmbSolicitante.Size = new System.Drawing.Size(121, 21);
@@ -94,7 +96,7 @@
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalcular.Location = new System.Drawing.Point(587, 10);
+            this.btnCalcular.Location = new System.Drawing.Point(754, 23);
             this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(71, 20);
@@ -107,32 +109,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label1.Location = new System.Drawing.Point(32, 14);
+            this.label1.Location = new System.Drawing.Point(79, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Estacion:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtpFecha);
+            this.groupBox1.Controls.Add(this.btnLimpiarFiltros);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnCalcular);
+            this.groupBox1.Controls.Add(this.cmbSolicitante);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(893, 55);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            // 
             // frm_EstadisticasVentaSurtidorPorDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 661);
-            this.Controls.Add(this.btnLimpiarFiltros);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.cmbSolicitante);
-            this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.MinimumSize = new System.Drawing.Size(950, 700);
             this.Name = "frm_EstadisticasVentaSurtidorPorDia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_EstadisticasVentaSurtidorPorDia";
             this.Load += new System.EventHandler(this.frm_EstadisticasVentaSurtidorPorDia_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -145,5 +158,6 @@
         private System.Windows.Forms.ComboBox cmbSolicitante;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -63,12 +63,12 @@
             this.Responsable,
             this.Solicitante,
             this.PrecioTotal});
-            this.dgrOrdenCompra.Location = new System.Drawing.Point(12, 39);
+            this.dgrOrdenCompra.Location = new System.Drawing.Point(12, 32);
             this.dgrOrdenCompra.MultiSelect = false;
             this.dgrOrdenCompra.Name = "dgrOrdenCompra";
             this.dgrOrdenCompra.ReadOnly = true;
             this.dgrOrdenCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrOrdenCompra.Size = new System.Drawing.Size(760, 248);
+            this.dgrOrdenCompra.Size = new System.Drawing.Size(846, 296);
             this.dgrOrdenCompra.TabIndex = 0;
             this.dgrOrdenCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrOrdenCompra_CellContentClick);
             // 
@@ -122,12 +122,12 @@
             this.UnidadMedida,
             this.Precio,
             this.Urgencia});
-            this.dgrDetallesOrden.Location = new System.Drawing.Point(15, 308);
+            this.dgrDetallesOrden.Location = new System.Drawing.Point(15, 366);
             this.dgrDetallesOrden.MultiSelect = false;
             this.dgrDetallesOrden.Name = "dgrDetallesOrden";
             this.dgrDetallesOrden.ReadOnly = true;
             this.dgrDetallesOrden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrDetallesOrden.Size = new System.Drawing.Size(757, 179);
+            this.dgrDetallesOrden.Size = new System.Drawing.Size(843, 247);
             this.dgrDetallesOrden.TabIndex = 1;
             this.dgrDetallesOrden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDetallesOrden_CellContentClick);
             // 
@@ -176,9 +176,9 @@
             // btnRegistrarPedido
             // 
             this.btnRegistrarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarPedido.Location = new System.Drawing.Point(644, 497);
+            this.btnRegistrarPedido.Location = new System.Drawing.Point(304, 628);
             this.btnRegistrarPedido.Name = "btnRegistrarPedido";
-            this.btnRegistrarPedido.Size = new System.Drawing.Size(128, 46);
+            this.btnRegistrarPedido.Size = new System.Drawing.Size(281, 37);
             this.btnRegistrarPedido.TabIndex = 4;
             this.btnRegistrarPedido.Text = "Registrar Pedido";
             this.btnRegistrarPedido.UseVisualStyleBackColor = true;
@@ -189,10 +189,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 290);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 343);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 15);
+            this.label2.Size = new System.Drawing.Size(142, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Detalle de orden";
             // 
@@ -201,10 +201,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 15);
+            this.label1.Size = new System.Drawing.Size(160, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Odenes de compra";
             // 
@@ -212,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 555);
+            this.ClientSize = new System.Drawing.Size(870, 677);
             this.Controls.Add(this.btnRegistrarPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
