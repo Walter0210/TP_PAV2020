@@ -53,12 +53,10 @@
             this.reportViewerProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewerProductos.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Estadisticas.EstadisticaProductosVendido" +
     "s.rdlc";
-            this.reportViewerProductos.Location = new System.Drawing.Point(3, 2);
-            this.reportViewerProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.reportViewerProductos.MinimumSize = new System.Drawing.Size(1466, 676);
+            this.reportViewerProductos.Location = new System.Drawing.Point(2, 2);
             this.reportViewerProductos.Name = "reportViewerProductos";
             this.reportViewerProductos.ServerReport.BearerToken = null;
-            this.reportViewerProductos.Size = new System.Drawing.Size(1679, 693);
+            this.reportViewerProductos.Size = new System.Drawing.Size(912, 550);
             this.reportViewerProductos.TabIndex = 0;
             this.reportViewerProductos.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerProductos.Load += new System.EventHandler(this.reportViewer1_Load);
@@ -71,22 +69,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tab_Barras.Controls.Add(this.tabPage1);
             this.tab_Barras.Controls.Add(this.tabPage2);
-            this.tab_Barras.Location = new System.Drawing.Point(15, 107);
-            this.tab_Barras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab_Barras.Location = new System.Drawing.Point(11, 94);
+            this.tab_Barras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tab_Barras.Name = "tab_Barras";
             this.tab_Barras.SelectedIndex = 0;
-            this.tab_Barras.Size = new System.Drawing.Size(1693, 700);
+            this.tab_Barras.Size = new System.Drawing.Size(910, 606);
             this.tab_Barras.TabIndex = 1;
             this.tab_Barras.Tag = "asdas";
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.reportViewerProductos);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1685, 697);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(916, 554);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gráfico de Barras";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,11 +92,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.reportViewerProductos2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1685, 671);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(902, 580);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gráfico de Torta";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -108,21 +106,20 @@
             this.reportViewerProductos2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewerProductos2.LocalReport.ReportEmbeddedResource = "ProyectoPAV1_Grupo7.Formularios.Reportes.Estadisticas.EstadisticaProductosVendido" +
     "sTorta.rdlc";
-            this.reportViewerProductos2.Location = new System.Drawing.Point(3, 2);
-            this.reportViewerProductos2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportViewerProductos2.Location = new System.Drawing.Point(2, 2);
             this.reportViewerProductos2.Name = "reportViewerProductos2";
             this.reportViewerProductos2.ServerReport.BearerToken = null;
-            this.reportViewerProductos2.Size = new System.Drawing.Size(1679, 667);
+            this.reportViewerProductos2.Size = new System.Drawing.Size(898, 576);
             this.reportViewerProductos2.TabIndex = 7;
             this.reportViewerProductos2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewerProductos2.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(768, 22);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(538, 14);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 30);
+            this.button2.Size = new System.Drawing.Size(90, 24);
             this.button2.TabIndex = 3;
             this.button2.Text = "Limpiar Filtros";
             this.button2.UseVisualStyleBackColor = true;
@@ -130,10 +127,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(768, 56);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(538, 44);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
+            this.button1.Size = new System.Drawing.Size(90, 24);
             this.button1.TabIndex = 2;
             this.button1.Text = "Filtrar";
             this.button1.UseVisualStyleBackColor = true;
@@ -151,11 +148,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmb_Estacion);
             this.groupBox1.Controls.Add(this.dateTime_hasta);
-            this.groupBox1.Location = new System.Drawing.Point(15, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(900, 92);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(643, 75);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -163,41 +160,37 @@
             // 
             // dateTime_desde
             // 
-            this.dateTime_desde.Location = new System.Drawing.Point(452, 26);
-            this.dateTime_desde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTime_desde.Location = new System.Drawing.Point(315, 17);
             this.dateTime_desde.Name = "dateTime_desde";
-            this.dateTime_desde.Size = new System.Drawing.Size(265, 22);
+            this.dateTime_desde.Size = new System.Drawing.Size(200, 20);
             this.dateTime_desde.TabIndex = 4;
             this.dateTime_desde.ValueChanged += new System.EventHandler(this.dateTime_desde_ValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(395, 59);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(241, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Hasta";
+            this.label3.Text = "Fecha Hasta:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(395, 29);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(238, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Desde";
+            this.label2.Text = "Fecha Desde:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(42, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Estacion";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -206,32 +199,28 @@
             // 
             this.cmb_Estacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Estacion.FormattingEnabled = true;
-            this.cmb_Estacion.Location = new System.Drawing.Point(155, 25);
-            this.cmb_Estacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_Estacion.Location = new System.Drawing.Point(106, 18);
             this.cmb_Estacion.Name = "cmb_Estacion";
-            this.cmb_Estacion.Size = new System.Drawing.Size(160, 24);
+            this.cmb_Estacion.Size = new System.Drawing.Size(121, 21);
             this.cmb_Estacion.TabIndex = 1;
             // 
             // dateTime_hasta
             // 
-            this.dateTime_hasta.Location = new System.Drawing.Point(452, 59);
-            this.dateTime_hasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTime_hasta.Location = new System.Drawing.Point(315, 47);
             this.dateTime_hasta.Name = "dateTime_hasta";
-            this.dateTime_hasta.Size = new System.Drawing.Size(265, 22);
+            this.dateTime_hasta.Size = new System.Drawing.Size(200, 20);
             this.dateTime_hasta.TabIndex = 0;
             this.dateTime_hasta.ValueChanged += new System.EventHandler(this.dateTime_hasta_ValueChanged);
             // 
             // frm_EstadisticaProductosVendidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1707, 853);
+            this.ClientSize = new System.Drawing.Size(934, 711);
             this.Controls.Add(this.tab_Barras);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1540, 900);
             this.Name = "frm_EstadisticaProductosVendidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos Vendidos";
