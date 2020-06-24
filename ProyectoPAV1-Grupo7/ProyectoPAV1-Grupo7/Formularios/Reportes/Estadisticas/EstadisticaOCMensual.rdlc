@@ -390,7 +390,7 @@
             </ChartNoDataMessage>
             <DataSetName>DatosEstadisticasMensuales</DataSetName>
             <Top>0.27183cm</Top>
-            <Left>0.1843in</Left>
+            <Left>0.31677in</Left>
             <Height>9.56262cm</Height>
             <Width>18.39083cm</Width>
             <Style>
@@ -403,13 +403,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>9.83445cm</Height>
+        <Height>10cm</Height>
         <Style />
       </Body>
-      <Width>19.36166cm</Width>
+      <Width>20cm</Width>
       <Page>
         <PageHeader>
-          <Height>1.4227cm</Height>
+          <Height>1.84603cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -422,6 +422,7 @@
                     <TextRun>
                       <Value>Estadistica Ordenes de Compra Mensuales</Value>
                       <Style>
+                        <FontFamily>Arial Narrow</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -434,13 +435,15 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.56883cm</Top>
-              <Left>0.46812cm</Left>
-              <Height>0.66473cm</Height>
-              <Width>11.1487cm</Width>
+              <Left>2.91753cm</Left>
+              <Height>0.74411cm</Height>
+              <Width>14.16495cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <BackgroundColor>LightBlue</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -455,7 +458,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.06953cm</Height>
+          <Height>1.57224cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -474,8 +477,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.20495cm</Top>
-              <Left>2.15828cm</Left>
+              <Top>0.49599cm</Top>
+              <Left>0.80458cm</Left>
               <Height>0.6cm</Height>
               <Width>7.73875cm</Width>
               <Style>

@@ -358,7 +358,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Monto total de Ordenes de Compra por Sucursal</Caption>
+                <Caption>Gasto total en Ordenes de Compra por Sucursal</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontFamily>Arial Narrow</FontFamily>
@@ -389,9 +389,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosOCSucursal</DataSetName>
-            <Top>0cm</Top>
-            <Height>15.13037cm</Height>
-            <Width>29.74613cm</Width>
+            <Height>12.3787cm</Height>
+            <Width>22.23196cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -401,11 +400,41 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Generado el día: " + Now()</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>13.12571cm</Top>
+            <Left>1.37266cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.36833cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>7.60651in</Height>
+        <Height>5.75799in</Height>
         <Style />
       </Body>
-      <Width>11.97423in</Width>
+      <Width>8.75274in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -421,6 +450,7 @@
                     <TextRun>
                       <Value>Ordenes de Compra</Value>
                       <Style>
+                        <FontFamily>Arial Narrow</FontFamily>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -433,43 +463,15 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.42016cm</Top>
-              <Left>0.55245cm</Left>
+              <Left>6.1089cm</Left>
               <Height>0.75282cm</Height>
-              <Width>5.51625cm</Width>
+              <Width>10.01416cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>="Generado el día: " + Now()</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>1.5105cm</Top>
-              <Left>0.55245cm</Left>
-              <Height>0.6cm</Height>
-              <Width>7.36833cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
+                <BackgroundColor>LightGrey</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -492,10 +494,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>1.5105cm</Top>
-              <Left>8.27829cm</Left>
+              <Left>1.37266cm</Left>
               <Height>0.6cm</Height>
               <Width>6.83916cm</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
