@@ -262,20 +262,23 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
             ObtenerListadoProductos();
         }
 
-        private DataTable ObtenerListadoProductos()
+        private void ObtenerListadoProductos()
         {
             object numTicket = cmb_nroTicket.SelectedValue;
 
             ConexionBD conexion = new ConexionBD();
 
-            string sql = "SELECT TP.numeroTicket, P.descripcion, TP.cantidad, TP.precio " +
-                "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto " +
-                "WHERE numeroTicket = '" + numTicket.ToString() + "'";
+            string sql = "SELECT TP.numeroTicket, P.descripcion as 'idProducto', TP.cantidad, TP.precio " +
+                "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto ";
 
 
             DataTable tabla = conexion.ejecutar_consulta(sql);
+            ReportDataSource ds = new ReportDataSource("productosXventa", tabla);
 
-            return tabla;
+            rv_prodXventas.LocalReport.DataSources.Clear();
+            rv_prodXventas.LocalReport.DataSources.Add(ds);
+            rv_prodXventas.LocalReport.Refresh();
+            rv_prodXventas.RefreshReport();
         }
 
         private void btn_FiltrarTab3_Click(object sender, EventArgs e)
@@ -295,8 +298,8 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
                 "FROM TicketXProducto TP join Producto P on TP.idProducto = P.idProducto " +
                 "WHERE numeroTicket = '" + numTicket.ToString() + "'";
 
-                DataTable tablaEmpleados = conexion.ejecutar_consulta(consulta);
-                ReportDataSource ds = new ReportDataSource("productosXventa", tablaEmpleados);
+                DataTable tabla = conexion.ejecutar_consulta(consulta);
+                ReportDataSource ds = new ReportDataSource("productosXventa", tabla);
 
                 rv_prodXventas.LocalReport.DataSources.Clear();
                 rv_prodXventas.LocalReport.DataSources.Add(ds);
@@ -314,6 +317,7 @@ namespace ProyectoPAV1_Grupo7.Formularios.Reportes
         {
             rv_prodXventas.Clear();
             cmb_nroTicket.SelectedIndex = -1;
+            ObtenerListadoProductos();
         }
     }
 }
